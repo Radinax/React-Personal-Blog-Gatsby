@@ -1,0 +1,357 @@
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Adrian Beria Blog]]></title><description><![CDATA[A blog made by Adrian Beria to write articles related to Web Development and React JS]]></description><link>https://radinax.github.io/React-Personal-Blog-Gatsby</link><generator>RSS for Node</generator><lastBuildDate>Tue, 11 Dec 2018 00:34:20 GMT</lastBuildDate><item><title><![CDATA[First Project - Bitcoin Chart]]></title><description><![CDATA[What we will make? A simple  Bitcoin Chart application  where we can check its latest values. To make it we will use  Apex Charts  which is…]]></description><link>https://radinax.github.io/React-Personal-Blog-Gatsby/4-first-project/</link><guid isPermaLink="false">https://radinax.github.io/React-Personal-Blog-Gatsby/4-first-project/</guid><pubDate>Mon, 10 Dec 2018 11:53:32 GMT</pubDate><content:encoded>&lt;h2&gt;What we will make?&lt;/h2&gt;
+&lt;p&gt;A simple &lt;a href=&quot;http://knowledgeable-boat.surge.sh/&quot;&gt;Bitcoin Chart application&lt;/a&gt; where we can check its latest values.&lt;/p&gt;
+&lt;p&gt;To make it we will use &lt;a href=&quot;https://apexcharts.com/&quot;&gt;Apex Charts&lt;/a&gt; which is a charting library which will help us graph our data. Follow the instructions in the documentation which are pretty simple.&lt;/p&gt;
+&lt;p&gt;We used a single HTML file to code our React component, but now we will use a great tool given by React which is called &lt;a href=&quot;https://github.com/facebook/create-react-app&quot;&gt;create-react-app&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;I use &lt;a href=&quot;https://code.visualstudio.com/&quot;&gt;VS Code&lt;/a&gt; for writing code since it comes with helpful plugins, but that’s out of the scope of this article.&lt;/p&gt;
+&lt;p&gt;First create a Projects Folder and open your terminal (you can use Windows CMD or Gitbash) and write the following command:&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;npx create-react-app Bitcoin-Chart
+cd Bitcoin-Chart
+npm start&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;We will get a cool playground in &lt;a href=&quot;http://localhost:3000&quot;&gt;http://localhost:3000&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Now in our terminal write ”&lt;strong&gt;code .&lt;/strong&gt;” to open our code editor and we will see the following setup:&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;my-app
+├── README.md
+├── node_modules
+├── package.json
+├── .gitignore
+├── public
+│   ├── favicon.ico
+│   ├── index.html
+│   └── manifest.json
+└── src
+    ├── App.css
+    ├── App.js
+    ├── App.test.js
+    ├── index.css
+    ├── index.js
+    ├── logo.svg
+    └── serviceWorker.js&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;README&lt;/strong&gt;: Is a markdown file which is where we write the basics of our app, as developers its important that someone can read this section and understand what your app is doing.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Node Modules&lt;/strong&gt;: Its where we will store our modules which you can consider as Javascript Libraries.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&lt;a href=&quot;https://docs.npmjs.com/files/package.json&quot;&gt;Package.json&lt;/a&gt;&lt;/strong&gt;: This file holds various metadata relevant to the project. This file is used to give information to npm that allows it to identify the project as well as handle the project’s dependencies.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;.gitignore&lt;/strong&gt;: Its files we generally ignore when uploading our project in github, we don’t want to upload ALL our node modules into our github, with the Package.json we can do &lt;strong&gt;npm install&lt;/strong&gt; and we can have our dependencies back.&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Public Folder&lt;/strong&gt;: It has our HTML file and &lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;manifest.json&lt;/strong&gt;: Which provides information about an application (such as name, author, icon, and description) in a &lt;strong&gt;JSON&lt;/strong&gt; text &lt;strong&gt;file&lt;/strong&gt;. The purpose of the &lt;strong&gt;manifest&lt;/strong&gt; is to install web applications to the homescreen of a device, providing users with quicker access and a richer experience.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;src folder&lt;/strong&gt;: Its where our React code will be.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Index.js&lt;/strong&gt;: Its where our ReactDOM.render will be and it will render our App.js component.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;App.js&lt;/strong&gt;: Its where will put all our components.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;serviceWorker.js:&lt;/strong&gt; The &lt;strong&gt;service worker code&lt;/strong&gt; basically registers a service worker for the React app. We first check if the app is being served from localhost via the &lt;code class=&quot;language-text&quot;&gt;isLocalhost&lt;/code&gt; const value that will either return a truthy or falsy value. The &lt;code class=&quot;language-text&quot;&gt;register()&lt;/code&gt; function helps to register the service worker to the React app only if its in a production mode and if the browser supports Service workers.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The rest of the files aren’t important. We will work on &lt;strong&gt;tests&lt;/strong&gt; in later posts.&lt;/p&gt;
+&lt;p&gt;Now erase every file inside src folder except those two files mentioned above.&lt;/p&gt;
+&lt;h2&gt;Lets build our app!&lt;/h2&gt;
+&lt;p&gt;Create a Components folder inside the src folder and inside create a &lt;strong&gt;Chart.js&lt;/strong&gt; file and inside that file we will have the following code:&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;import React, { Component } from &amp;#39;react&amp;#39;;
+import BitcoinChart from &amp;#39;react-apexcharts&amp;#39;;
+
+class BitcoinChart extends Component{
+	state = {
+	
+	}
+
+	render() {
+		return(
+			&amp;lt;div&amp;gt;
+				// React code
+			&amp;lt;/div&amp;gt;
+		)
+	}
+}
+export  default  BitcoinChart;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;According to the &lt;a href=&quot;https://apexcharts.com/docs/react-charts/&quot;&gt;documentation&lt;/a&gt; we need to define our state with the following object:&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;options: {
+    chart: {
+	    foreColor:  &amp;#39;#333&amp;#39;
+    },
+    xaxis: {
+	    categories: []
+    },
+    plotOptions: {
+	    bar: {
+		    horizontal:  false  // if true it would be horizontal
+		}
+    },
+    fill: {
+	    colors: [&amp;#39;#f44336&amp;#39;]
+    },
+    dateLabels: {
+	    enabled:  false
+    },
+    title: {
+	    text:  &amp;#39;Bitcoin Price Chart&amp;#39;,
+	    align:  &amp;#39;center&amp;#39;,
+	    margin:  20,
+	    offsetY:  20,
+	    style: {
+		    fontSize:  &amp;#39;25px&amp;#39;
+	    }
+    }
+},
+series: [{
+    name:  &amp;#39;Numbers&amp;#39;,
+    data: []
+}]&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;So our data that will be in the x-axis will be an object with the array &lt;strong&gt;categories&lt;/strong&gt; inside, you can use the name you want, while the y-axis data will be inside the data key as an array.
+&lt;br&gt;
+Now how will we get the Bitcoin value? We will use&lt;/p&gt;
+&lt;h2&gt;Fetch API&lt;/h2&gt;
+&lt;p&gt;Which is a simple interface for &lt;strong&gt;fetching&lt;/strong&gt; resources. &lt;strong&gt;Fetch&lt;/strong&gt; makes it easier to make web requests and handle responses than with the older XMLHttpRequest,&lt;strong&gt;which&lt;/strong&gt; often requires additional logic (for example, for handling redirects).&lt;/p&gt;
+&lt;p&gt;First of all our Bitcoin data will be obtained from &lt;strong&gt;coindesk api&lt;/strong&gt; using the url ”&lt;a href=&quot;https://api.coindesk.com/v1/bpi/historical/close.json&quot;&gt;https://api.coindesk.com/v1/bpi/historical/close.json&lt;/a&gt;” where if you open it you can see a json file inside the link, use a JSON viewer extension.&lt;/p&gt;
+&lt;p&gt;In that link we see an object with the format like this:&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;bpi:  {
+	date: value
+}&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Fetch API is based on &lt;a href=&quot;https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Promise&quot;&gt;Promises&lt;/a&gt; which do something and when its done it does another. In our context it will look like this:&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;fetch(&amp;quot;https://api.coindesk.com/v1/bpi/historical/close.json&amp;quot;)
+    .then(response =&amp;gt; response.json())
+    .then(data =&amp;gt; this.setState({
+	    options: {
+		    ...this.state.options,
+		    xaxis: {
+			    categories: Object.keys(data.bpi)
+		    }
+	    },
+	    series: [{
+		    name: &amp;#39;Price&amp;#39;,
+		    data: Object.values(data.bpi)
+	    }]
+}));&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;This is read as fetching an external data from the url, when we get it then we turn it into &lt;strong&gt;json&lt;/strong&gt;, then we take that data and fill up our state.&lt;/p&gt;
+&lt;p&gt;You will notice ”&lt;strong&gt;…this.state.options&lt;/strong&gt;”, this is called &lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax&quot;&gt;spread operator&lt;/a&gt; and what it does is copy everything inside the &lt;strong&gt;options&lt;/strong&gt; except &lt;strong&gt;xaxis&lt;/strong&gt; which will be equal to an array with the date &lt;strong&gt;key&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;We’re using &lt;strong&gt;Object.keys&lt;/strong&gt; which creates an array filled with every key inside the object. As you could guess we did the same for the &lt;strong&gt;yaxis&lt;/strong&gt; but we used &lt;strong&gt;Object.values&lt;/strong&gt;.&lt;/p&gt;
+&lt;h2&gt;Life Cycle Methods&lt;/h2&gt;
+&lt;p&gt;So where do we put our Fetch API? React has what is called &lt;a href=&quot;https://reactjs.org/docs/state-and-lifecycle.html&quot;&gt;Life Cycle Methods&lt;/a&gt;:&lt;/p&gt;
+&lt;p&gt;
+  &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/React-Personal-Blog-Gatsby/static/cb23c7d21dcbf3b7b7910e21f41e4faa/c1266/lifecyclemethods.jpg&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+  
+  &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 54.75%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAALABQDASIAAhEBAxEB/8QAGAAAAgMAAAAAAAAAAAAAAAAAAAECAwX/xAAVAQEBAAAAAAAAAAAAAAAAAAAAAf/aAAwDAQACEAMQAAAB3EhJlYv/xAAYEAACAwAAAAAAAAAAAAAAAAAAEQEQQf/aAAgBAQABBQK2a5P/xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAEDAQE/AT//xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAECAQE/AT//xAAVEAEBAAAAAAAAAAAAAAAAAAAQgf/aAAgBAQAGPwJr/8QAGhAAAgMBAQAAAAAAAAAAAAAAAAERIVEQQf/aAAgBAQABPyFy8PeNrEuotj//2gAMAwEAAgADAAAAEMTP/8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAwEBPxA//8QAFREBAQAAAAAAAAAAAAAAAAAAEBH/2gAIAQIBAT8Qp//EABoQAQADAQEBAAAAAAAAAAAAAAEAETEhQVH/2gAIAQEAAT8QYJxT52DhEftwKwhBjlIgA8SIu8M//9k=&apos;); background-size: cover; display: block;&quot;
+    &gt;
+      &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;LifeCycle Methods&quot;
+        title=&quot;&quot;
+        src=&quot;/React-Personal-Blog-Gatsby/static/cb23c7d21dcbf3b7b7910e21f41e4faa/f8fb9/lifecyclemethods.jpg&quot;
+        srcset=&quot;/React-Personal-Blog-Gatsby/static/cb23c7d21dcbf3b7b7910e21f41e4faa/e8976/lifecyclemethods.jpg 148w,
+/React-Personal-Blog-Gatsby/static/cb23c7d21dcbf3b7b7910e21f41e4faa/63df2/lifecyclemethods.jpg 295w,
+/React-Personal-Blog-Gatsby/static/cb23c7d21dcbf3b7b7910e21f41e4faa/f8fb9/lifecyclemethods.jpg 590w,
+/React-Personal-Blog-Gatsby/static/cb23c7d21dcbf3b7b7910e21f41e4faa/85e3d/lifecyclemethods.jpg 885w,
+/React-Personal-Blog-Gatsby/static/cb23c7d21dcbf3b7b7910e21f41e4faa/d1924/lifecyclemethods.jpg 1180w,
+/React-Personal-Blog-Gatsby/static/cb23c7d21dcbf3b7b7910e21f41e4faa/c1266/lifecyclemethods.jpg 1200w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+      /&gt;
+    &lt;/span&gt;
+  &lt;/span&gt;
+  
+  &lt;/a&gt;
+    &lt;/p&gt;
+&lt;p&gt;In our case we want to fetch the data when the component is mounted. So inside our class we will put:&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;componentDidMount() {
+    fetch(...)
+}&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;And finally from the documentation we need to add the state data into the props of the Chart component along some other data to configure our Graphic:&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;render() {
+    const {options, series} = this.state;
+    return (
+        &amp;lt;Chart
+			options = {options}
+		    series = {series}
+		    type=&amp;quot;line&amp;quot;
+		    height= &amp;quot;450&amp;quot;
+		    width= &amp;quot;100%&amp;quot;
+		/&amp;gt;
+	)
+}&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;And now we have our code ready! We can check the tragic fall of Bitcoin at the date of this article!&lt;/p&gt;
+&lt;p&gt;You can check &lt;a href=&quot;https://github.com/Radinax/React-Bitcoin-Chart&quot;&gt;here&lt;/a&gt; and for the demo check &lt;a href=&quot;http://knowledgeable-boat.surge.sh/&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;h2&gt;Conclusion&lt;/h2&gt;
+&lt;p&gt;We learned how to use Fetch API and use the data to setup our initial state with modern Javascript, we also used a Life Cycle Hook such as &lt;strong&gt;componentDidMount&lt;/strong&gt; (you’re going to use it a lot).&lt;/p&gt;
+&lt;p&gt;For our next post we will be making a website and setting up our router and working with styling our site.&lt;/p&gt;
+&lt;p&gt;See you on the next post.&lt;/p&gt;
+&lt;p&gt;Sincerely,&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Eng Adrian Beria.&lt;/strong&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[State]]></title><description><![CDATA[Its how React handles dynamic data in the DOM, any click event, form submission, must pass using states. Whereas props are immutable and…]]></description><link>https://radinax.github.io/React-Personal-Blog-Gatsby/3-state/</link><guid isPermaLink="false">https://radinax.github.io/React-Personal-Blog-Gatsby/3-state/</guid><pubDate>Thu, 06 Dec 2018 11:52:32 GMT</pubDate><content:encoded>&lt;p&gt;Its how React handles dynamic data in the DOM, any click event, form submission, must pass using states.&lt;/p&gt;
+&lt;p&gt;Whereas props are immutable and owned by a component’s parent, state is owned by the component. &lt;strong&gt;this.state is private to the component&lt;/strong&gt; and as we’ll see can be updated with
+this.setState(). &lt;/p&gt;
+&lt;p&gt;When the state or props of a component update, the component will re-render itself.&lt;/p&gt;
+&lt;h2&gt;Lets work with a component with State!&lt;/h2&gt;
+&lt;p&gt;We will make a simple counter, we press a ”+” button in the UI to raise its value. We first need to plan how our state will look like.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;class Counter extends React.Component {
+    constructor(props) {
+		super(props);
+		this.state = {
+			count: 0
+		}
+	}
+	increase = (e) =&amp;gt; {
+		this.setState({
+			count: this.state.count+1
+		})
+	}
+	render() {
+		const {count} = this.state;
+		return(
+			&amp;lt;div&amp;gt;
+				&amp;lt;div&amp;gt;{count}&amp;lt;/div&amp;gt;
+				&amp;lt;button onClick={this.increase}&amp;gt;+&amp;lt;/button&amp;gt;
+			&amp;lt;/div&amp;gt;
+		);
+	}
+}
+
+ReactDOM.render(&amp;lt;Counter /&amp;gt;, document.getElementById(&amp;#39;root&amp;#39;));&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;We’re seeing new stuff here.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;&lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/constructor&quot;&gt;constructor(props)&lt;/a&gt;&lt;/strong&gt;:   The &lt;strong&gt;constructor&lt;/strong&gt; method is a special method for creating and initializing an object created within a class. &lt;/p&gt;
+&lt;p&gt;If you don’t initialize state and you don’t bind methods, you don’t need to implement a constructor for your React component. You can use a stateless function instead but don’t worry, we will get more into that in later projects.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;super(props)&lt;/strong&gt;: Will call the constructor of its parent class. This is required when you need to access some variables from the parent class. In &lt;strong&gt;React&lt;/strong&gt;, when you call &lt;strong&gt;super&lt;/strong&gt; with props. &lt;strong&gt;React&lt;/strong&gt; will make props available across the component through this.props .&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Lets make something clear, you don’t need to use constructor and super even when defining a new class, you generally need them for using &lt;strong&gt;props&lt;/strong&gt; and make it available inside the constructor, but if you don’t need it then you can define the above code like this:&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;class Counter extends React.Component {
+	   state = {
+			count: 0
+		}&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;And the code will still work! Now lets get back to exploring the parts of the component.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;increase&lt;/strong&gt;:  We defined it as an Arrow Function to bind &lt;strong&gt;this&lt;/strong&gt;. The arrow function introduced in ES6 is a function with the current &lt;strong&gt;‘this’&lt;/strong&gt; context already bound to the function. If we didn’t do it this way, we would need the constructor but we Arrow Functions we don’t need it.  So when we invoke this function we create a new state adding a +1 to the value it had before.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;const {count} = this.state&lt;/strong&gt;:  Its an simpler way to say &lt;strong&gt;this.state.count&lt;/strong&gt;, we can just say &lt;strong&gt;count&lt;/strong&gt; and it would mean the same. &lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Conclusion&lt;/h2&gt;
+&lt;p&gt;We learned more about &lt;strong&gt;State&lt;/strong&gt;, as you can see its very simple to use and it makes controlling your Data more organized, you know what’s happening and when. &lt;/p&gt;
+&lt;p&gt;For the next post we will take on our first Project! We will stop using one HTML file and we will create our first App.&lt;/p&gt;
+&lt;p&gt;See you on the next post.&lt;/p&gt;
+&lt;p&gt;Sincerely,&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Eng. Adrian Beria.&lt;/strong&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Our First Component]]></title><description><![CDATA[Building a React app is all about components. An individual React component can be thought of as a UI component in an app. Not only do React…]]></description><link>https://radinax.github.io/React-Personal-Blog-Gatsby/2-first-component/</link><guid isPermaLink="false">https://radinax.github.io/React-Personal-Blog-Gatsby/2-first-component/</guid><pubDate>Tue, 04 Dec 2018 11:50:37 GMT</pubDate><content:encoded>&lt;p&gt;Building a React app is all about components. An individual React component can be thought of as a UI component in an app.&lt;/p&gt;
+&lt;p&gt;Not only do React components map cleanly to UI components, but they are self-contained. The markup, view logic, and often component-specific style is all housed in one place. This feature makes React components &lt;strong&gt;reusable&lt;/strong&gt;.&lt;/p&gt;
+&lt;h2&gt;Lets make a Component!&lt;/h2&gt;
+&lt;p&gt;Lets get right into action, first lets make a project folder named “React Tutorial - My First Component”, inside make a html file with the following information:&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;&amp;lt;!doctype html&amp;gt;  
+&amp;lt;html&amp;gt;  
+    &amp;lt;head&amp;gt;  
+	    &amp;lt;meta charset=&amp;quot;utf-8&amp;quot;&amp;gt;  
+	    &amp;lt;title&amp;gt;My First Component!&amp;lt;/title&amp;gt;  
+	    &amp;lt;script src=&amp;quot;https://unpkg.com/react@16/umd/react.development.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;  
+	    &amp;lt;script src=&amp;quot;https://unpkg.com/react-dom@16/umd/react-dom.development.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;  
+	    &amp;lt;script src=&amp;quot;https://unpkg.com/babel-standalone@6.26.0/babel.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;  
+	&amp;lt;/head&amp;gt;  
+	&amp;lt;body&amp;gt;  
+		&amp;lt;div id=&amp;quot;root&amp;quot;&amp;gt;&amp;lt;/div&amp;gt;  
+		&amp;lt;script type=&amp;quot;text/babel&amp;quot;&amp;gt; 
+			// React code will go here 
+		&amp;lt;/script&amp;gt;  
+	&amp;lt;/body&amp;gt;  
+&amp;lt;/html&amp;gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;These are the latest packages used at the moment of writing this post, so please double check if you need to use a more recent version.&lt;/p&gt;
+&lt;p&gt;Now lets check what are we loading:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://reactjs.org/docs/react-api.html&quot;&gt;React&lt;/a&gt;: You’re getting the React &lt;strong&gt;Top-Level API&lt;/strong&gt; which is the main entry point to the library.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://reactjs.org/docs/react-dom.html&quot;&gt;React DOM&lt;/a&gt;: This is where we can access the Top-Level APIs, most notably “render()“.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://babeljs.io/&quot;&gt;Babel&lt;/a&gt;: Its a Javascript transpiler that let us turn our ES6+ into older ES5 because some browsers don’t support it yet.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;In your React code put the following:&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;class HelloMessage extends React.Component {
+  render() {
+    return (
+      &amp;lt;div&amp;gt;
+        Hello {this.props.name}
+      &amp;lt;/div&amp;gt;
+    );
+  }
+}
+
+ReactDOM.render(
+  &amp;lt;HelloMessage name=&amp;quot;Adrian&amp;quot; /&amp;gt;,
+  mountNode
+);&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;We’re using classes where &lt;strong&gt;“HelloMessage”&lt;/strong&gt; is the name of our first component and then we &lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/extends&quot;&gt;&lt;strong&gt;extend&lt;/strong&gt;&lt;/a&gt; our Parent Class which is &lt;strong&gt;“React.Component”&lt;/strong&gt;. We’re basically making &lt;strong&gt;HelloMessage&lt;/strong&gt; a React Component.&lt;/p&gt;
+&lt;p&gt;Notice we’re using a capital letter to define our Component, and this is because if we used lowercase JSX reads it as HTML tag and not as a React Component. This is how React knows to render a Component, and not a HTML Element.&lt;/p&gt;
+&lt;p&gt;There are two ways we can define a component, functional or classes. We generally use functional components when we don’t have a state and we won’t use Life Cycle Hooks methods which are available to classes.&lt;/p&gt;
+&lt;p&gt;We use &lt;strong&gt;render&lt;/strong&gt; (refers to a technique for sharing code between React components using a prop whose value is a function) to return a JSX which is “React Code”.&lt;/p&gt;
+&lt;p&gt;JSX can be seen as HTML inside Javascript.&lt;/p&gt;
+&lt;p&gt;Now what is this weird ”&lt;strong&gt;this.props.name&lt;/strong&gt;” in curly braces? With curly braces we can write Javascript inside our HTML, we will go more in depth with this feature in other posts working with arrays and objects.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;this.props&lt;/strong&gt;, the “this”will be bound to the React Component Class so we’re accessing the ”&lt;strong&gt;prop&lt;/strong&gt;erties” of the Component.&lt;/p&gt;
+&lt;p&gt;We use &lt;strong&gt;props&lt;/strong&gt; to send data to components, in this case ours is named &lt;strong&gt;HelloMessage&lt;/strong&gt; and we’re sending the data called “Adrian”.&lt;/p&gt;
+&lt;p&gt;So we render our HelloMessage component:&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;ReactDOM.render( 
+	&amp;lt;HelloMessage name=&amp;quot;Adrian&amp;quot; /&amp;gt;,
+    document.getElementById(&amp;#39;root&amp;#39;) 
+);&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Which will give us the same output (Hello) but with different names. &lt;/p&gt;
+&lt;h2&gt;Conclusion&lt;/h2&gt;
+&lt;p&gt;We learned the basics of what’s going on in a React code, what means extending a parent component to its child, then rendering the component with the ReactDOM “render method” to render our component into the “root” id we created in our HTML file.&lt;/p&gt;
+&lt;p&gt;This is barely the start, we will go much more in depth in the next post with &lt;strong&gt;state&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;See you on the next post.&lt;/p&gt;
+&lt;p&gt;Sincerely,&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Eng. Adrian Beria.&lt;/strong&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Introduction to React.]]></title><description><![CDATA[Hello my name is  Adrian Beria , I’m an Engineer that works with React JS to make Web Applications and decided to share my knowledge in…]]></description><link>https://radinax.github.io/React-Personal-Blog-Gatsby/1-introduction-react/</link><guid isPermaLink="false">https://radinax.github.io/React-Personal-Blog-Gatsby/1-introduction-react/</guid><pubDate>Sat, 01 Dec 2018 11:33:03 GMT</pubDate><content:encoded>&lt;p&gt;Hello my name is &lt;a href=&quot;https://radinax.github.io/gatsby-react-personal-portfolio/&quot;&gt;Adrian Beria&lt;/a&gt;, I’m an Engineer that works with React JS to make Web Applications and decided to share my knowledge in these posts, we will go from the very basics of the Library to more advanced setups like using Redux or GraphQL.&lt;/p&gt;
+&lt;h2&gt;What is React?&lt;/h2&gt;
+&lt;p&gt;React is a library for building composable user interfaces. It encourages the creation of reusable UI components which present data that changes over time.&lt;/p&gt;
+&lt;p&gt;React also streamlines how data is stored and handled, using &lt;strong&gt;state&lt;/strong&gt; and &lt;strong&gt;props&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;In React data flows from Parent to Child through &lt;strong&gt;props&lt;/strong&gt;, but &lt;strong&gt;not from Child to Parent&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;It is not a complete application framework like Angular, it is just a view layer. So it is not directly comparable to frameworks like Angular or Vue.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Library&lt;/strong&gt; is a collection of precompiled routines that a &lt;strong&gt;program&lt;/strong&gt; can use. The routines, sometimes called modules, are stored in object format. &lt;strong&gt;Libraries&lt;/strong&gt; are particularly useful for storing frequently used routines because you do not need to explicitly link them to every &lt;strong&gt;program&lt;/strong&gt; that uses them.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Framework&lt;/strong&gt; is an abstraction in &lt;strong&gt;which&lt;/strong&gt; software providing generic functionality can be selectively changed by additional user-written code, thus providing application-specific software. … In other words, users can extend the &lt;strong&gt;framework&lt;/strong&gt;, but should not modify its code.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2&gt;What makes it different?&lt;/h2&gt;
+&lt;p&gt;It introduces a concept of virtual DOM, which is a programming concept where an ideal, or &lt;strong&gt;virtual&lt;/strong&gt;, representation of a UI is kept in memory and synced with the &lt;strong&gt;real&lt;/strong&gt; DOM by a library such as ReactDOM - it is very fast to generate, and it can be generated for every data change.&lt;/p&gt;
+&lt;p&gt;React takes care of rendering virtual DOM into actual DOM.&lt;/p&gt;
+&lt;p&gt;And it is quite efficient, in this - before applying changes it computes a difference between new and previous virtual DOM and applies only minimal required set of changes.&lt;/p&gt;
+&lt;p&gt;By using  &lt;strong&gt;virtual DOM, React&lt;/strong&gt;  provides following benefits:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;no coupling with DOM implementation&lt;/li&gt;
+&lt;li&gt;completely declarative&lt;/li&gt;
+&lt;li&gt;typically faster&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Because React components are declarative, not imperative…&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Declarative programming&lt;/strong&gt; is a programming paradigm … that expresses the logic of a computation without describing its control flow.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Imperative programming&lt;/strong&gt; is a programming paradigm that uses statements that change a program’s state.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;…they are much simple to write, and to reason about. This immediately results in:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;fewer bugs&lt;/li&gt;
+&lt;li&gt;faster development&lt;/li&gt;
+&lt;li&gt;less debugging&lt;/li&gt;
+&lt;li&gt;and more maintainable code in general&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Why should you learn React?&lt;/h2&gt;
+&lt;p&gt;React, as stated already, is not a framework on its own. It is a library… a Javascript library, and enables the flexibility to tie with other frameworks and create high performance applications. As is mentioned in React’s official website, it is the V of the MVC (Model View Controller). It mainly provides specific solutions to problems in an application, rather than a whole structure to build applications. The focus is on solving problems while simultaneously providing high level of flexibility and capability of extension to larger levels. Nevertheless, the possibilities with React are numerous and therefore up-to-date applications can rely on React for their development.&lt;/p&gt;
+&lt;p&gt;React is most suitable for single developer or lean team applications. React requires many informed decisions to be made at several points during development and therefore the learning can be more rewarding in the long run. It forces a more thorough understanding of architectural and design patterns, which is good for the holistic growth of a developer, and also allows to create high performance applications, since it is the core concept of React.&lt;/p&gt;
+&lt;p&gt;React is ideal for Web Applications and manage the data in a controlled way thanks to the Life Cycle Hooks the Library gives us, you can control the Data before the Web App is shown, not only that, but it also has support for phone apps thanks to &lt;a href=&quot;https://facebook.github.io/react-native/&quot;&gt;React Native&lt;/a&gt; allowing us to use React and Javascript to build Native Mobile Apps.&lt;/p&gt;
+&lt;h2&gt;Conclusion&lt;/h2&gt;
+&lt;p&gt;So we learned why React can be useful for us and some basic knowledge that’s good to know.  In the next posts we be jumping directly into action.&lt;/p&gt;
+&lt;p&gt;See you on the next post.&lt;/p&gt;
+&lt;p&gt;Sincerely,&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Eng. Adrian Beria.&lt;/strong&gt;&lt;/p&gt;</content:encoded></item></channel></rss>
