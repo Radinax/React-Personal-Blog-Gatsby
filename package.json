@@ -1,8 +1,8 @@
 {
   "name": "gatsby-starter-blog",
-  "description": "Starter Gatsby Blog",
+  "description": "Adrian Beria personal blog about React",
   "version": "1.0.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "Adrian Beria <adrberia@gmail.com>",
   "bugs": {
     "url": "https://github.com/gatsbyjs/gatsby-starter-blog/issues"
   },

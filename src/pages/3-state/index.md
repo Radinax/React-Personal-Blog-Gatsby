@@ -14,30 +14,7 @@ When the state or props of a component update, the component will re-render itse
 
 We will make a simple counter, we press a "+" button in the UI to raise its value. We first need to plan how our state will look like.
 
-    class Counter extends React.Component {
-	    constructor(props) {
-			super(props);
-			this.state = {
-				count: 0
-			}
-		}
-		increase = (e) => {
-			this.setState({
-				count: this.state.count+1
-			})
-		}
-		render() {
-			const {count} = this.state;
-			return(
-				<div>
-					<div>{count}</div>
-					<button onClick={this.increase}>+</button>
-				</div>
-			);
-		}
-    }
-	
-	ReactDOM.render(<Counter />, document.getElementById('root'));
+![state](state-2.png)
 
 We're seeing new stuff here.
 
@@ -49,10 +26,8 @@ We're seeing new stuff here.
 
 Lets make something clear, you don't need to use constructor and super even when defining a new class, you generally need them for using **props** and make it available inside the constructor, but if you don't need it then you can define the above code like this:
 
-    class Counter extends React.Component {
-    	   state = {
-				count: 0
-			}
+![state](state-3.png)
+
 And the code will still work! Now lets get back to exploring the parts of the component.
 
 - **increase**:  We defined it as an Arrow Function to bind **this**. The arrow function introduced in ES6 is a function with the current **‘this’** context already bound to the function. If we didn't do it this way, we would need the constructor but we Arrow Functions we don't need it.  So when we invoke this function we create a new state adding a +1 to the value it had before.

@@ -61,58 +61,11 @@ Now erase every file inside src folder except those two files mentioned above.
 
 Create a Components folder inside the src folder and inside create a **Chart.js** file and inside that file we will have the following code:
 
-    import React, { Component } from 'react';
-    import BitcoinChart from 'react-apexcharts';
-    
-    class BitcoinChart extends Component{
-		state = {
-		
-		}
-
-		render() {
-			return(
-				<div>
-					// React code
-				</div>
-			)
-		}
-	}
-	export  default  BitcoinChart;
+![firstProject](first-project-1.png)
 
 According to the [documentation](https://apexcharts.com/docs/react-charts/) we need to define our state with the following object:
 
-    options: {
-	    chart: {
-		    foreColor:  '#333'
-	    },
-	    xaxis: {
-		    categories: []
-	    },
-	    plotOptions: {
-		    bar: {
-			    horizontal:  false  // if true it would be horizontal
-			}
-	    },
-	    fill: {
-		    colors: ['#f44336']
-	    },
-	    dateLabels: {
-		    enabled:  false
-	    },
-	    title: {
-		    text:  'Bitcoin Price Chart',
-		    align:  'center',
-		    margin:  20,
-		    offsetY:  20,
-		    style: {
-			    fontSize:  '25px'
-		    }
-	    }
-	},
-    series: [{
-	    name:  'Numbers',
-	    data: []
-	}]
+![firstProject](first-project-2.png)
 
 So our data that will be in the x-axis will be an object with the array **categories** inside, you can use the name you want, while the y-axis data will be inside the data key as an array.
     
@@ -132,20 +85,8 @@ In that link we see an object with the format like this:
 
 Fetch API is based on [Promises](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Promise) which do something and when its done it does another. In our context it will look like this:
 
-    fetch("https://api.coindesk.com/v1/bpi/historical/close.json")
-	    .then(response => response.json())
-	    .then(data => this.setState({
-		    options: {
-			    ...this.state.options,
-			    xaxis: {
-				    categories: Object.keys(data.bpi)
-			    }
-		    },
-		    series: [{
-			    name: 'Price',
-			    data: Object.values(data.bpi)
-		    }]
-    }));
+![firstProject](first-project-3.png)
+
 This is read as fetching an external data from the url, when we get it then we turn it into **json**, then we take that data and fill up our state.
 
 You will notice "**...this.state.options**", this is called [spread operator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax) and what it does is copy everything inside the **options** except **xaxis** which will be equal to an array with the date **key**.
@@ -166,18 +107,8 @@ In our case we want to fetch the data when the component is mounted. So inside o
 
 And finally from the documentation we need to add the state data into the props of the Chart component along some other data to configure our Graphic:
 
-    render() {
-	    const {options, series} = this.state;
-	    return (
-            <Chart
-				options = {options}
-			    series = {series}
-			    type="line"
-			    height= "450"
-			    width= "100%"
-			/>
-		)
-	}
+![firstProject](first-project-4.png)
+
 And now we have our code ready! We can check the tragic fall of Bitcoin at the date of this article!
 
 You can check [here](https://github.com/Radinax/React-Bitcoin-Chart) and for the demo check [here](http://knowledgeable-boat.surge.sh/).
