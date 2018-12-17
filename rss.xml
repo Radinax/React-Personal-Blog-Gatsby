@@ -1,4 +1,406 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Adrian Beria Blog]]></title><description><![CDATA[A blog made by Adrian Beria to write articles related to Web Development and React JS]]></description><link>https://radinax.github.io/React-Personal-Blog-Gatsby</link><generator>RSS for Node</generator><lastBuildDate>Tue, 11 Dec 2018 00:34:20 GMT</lastBuildDate><item><title><![CDATA[First Project - Bitcoin Chart]]></title><description><![CDATA[What we will make? A simple  Bitcoin Chart application  where we can check its latest values. To make it we will use  Apex Charts  which is…]]></description><link>https://radinax.github.io/React-Personal-Blog-Gatsby/4-first-project/</link><guid isPermaLink="false">https://radinax.github.io/React-Personal-Blog-Gatsby/4-first-project/</guid><pubDate>Mon, 10 Dec 2018 11:53:32 GMT</pubDate><content:encoded>&lt;h2&gt;What we will make?&lt;/h2&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Adrian Beria Blog]]></title><description><![CDATA[A blog made by Adrian Beria to write articles related to Web Development and React JS]]></description><link>https://radinax.github.io/React-Personal-Blog-Gatsby</link><generator>RSS for Node</generator><lastBuildDate>Mon, 17 Dec 2018 18:30:49 GMT</lastBuildDate><item><title><![CDATA[Second Project - Graphing data in state]]></title><description><![CDATA[Lets imagine we’re getting the following data we need to graph: We’re creating imaginary data and we want to graph each of those datas which…]]></description><link>https://radinax.github.io/React-Personal-Blog-Gatsby/6-second-project/</link><guid isPermaLink="false">https://radinax.github.io/React-Personal-Blog-Gatsby/6-second-project/</guid><pubDate>Mon, 17 Dec 2018 11:53:32 GMT</pubDate><content:encoded>&lt;p&gt;Lets imagine we’re getting the following data we need to graph:&lt;/p&gt;
+&lt;p&gt;
+  &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/React-Personal-Blog-Gatsby/static/89d970baa829112af723d12ccc6fe1b3/f924e/second-project-1.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+  
+  &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 136.36363636363637%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAbCAYAAAB836/YAAAACXBIWXMAAAsSAAALEgHS3X78AAACJElEQVRIx81VW3KjMBDkNDGWkAAJIZ6Od/f+J6KKSY+wADuJt3D2Yz+69G7NaFoziVB+ynI/qcKhrSep3XRWgK5Dm2bVdJJ2Sp8h7kGbSNVQZS/UNiP1XUeu6UmWHYmiJZF7wqZDSN6kmVPpZqHbufTDLPN6PmXVjBsXoA8r5pTbJzjd9iTMigGdMkuprimrRhLKhbm4dsjC9YDkiaUv/XsgzormOGHs8EEEgbKypf3cUStXwvR2SNqeMjsgIM2d64ddju2ZAVJpOpKI8ksux0MCQWG3T8IseNXl8H4gU9UQLNwTvBaUIBu4CheDbLQP4x/JJrQxMP5Kyo2k/o1susXin7zh3u0gG7ylgHUcpP9NNn6TDVu8kt2TPrskWBj0B2yJYgvSfvxI9BUxpy9SeUu2RFSNJ10224GHb7kn/i5gwUKlahpNTw7BUO2VSmQbU79T3v2hor5QbhvSVY8L2+BNimf51sK4INB2CIQ1IG1+UekuZEFc8iUNXzJSaeEBkyJxnB+sjbiL8hug8wEl4UoGZaGoOoCzT0/aDZDTJfTT258PgLz4/eVt7k6HZ1UFcGLNYVluFjLB3xE/RyJXSsyzVrnesKwE9gh4lsFqHn/SocIGvhEVEHNmyzxRSvv++qO2cbL/dho3BXGjL7Q7XPFilGep/VzYAZWvXqqY3Kpeuq+Af8Fa9aRuyJnflBc9GS5QL2SZ1UI85ATL1sofweOj4HMf1hU+meqhxUsAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+    &gt;
+      &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;code&quot;
+        title=&quot;&quot;
+        src=&quot;/React-Personal-Blog-Gatsby/static/89d970baa829112af723d12ccc6fe1b3/fb8a0/second-project-1.png&quot;
+        srcset=&quot;/React-Personal-Blog-Gatsby/static/89d970baa829112af723d12ccc6fe1b3/1a291/second-project-1.png 148w,
+/React-Personal-Blog-Gatsby/static/89d970baa829112af723d12ccc6fe1b3/2bc4a/second-project-1.png 295w,
+/React-Personal-Blog-Gatsby/static/89d970baa829112af723d12ccc6fe1b3/fb8a0/second-project-1.png 590w,
+/React-Personal-Blog-Gatsby/static/89d970baa829112af723d12ccc6fe1b3/526de/second-project-1.png 885w,
+/React-Personal-Blog-Gatsby/static/89d970baa829112af723d12ccc6fe1b3/fa2eb/second-project-1.png 1180w,
+/React-Personal-Blog-Gatsby/static/89d970baa829112af723d12ccc6fe1b3/f924e/second-project-1.png 1518w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+      /&gt;
+    &lt;/span&gt;
+  &lt;/span&gt;
+  
+  &lt;/a&gt;
+    &lt;/p&gt;
+&lt;p&gt;We’re creating imaginary data and we want to graph each of those datas which have the following format:&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;data: [{time, value},{time, value},{time, value}]&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;In total we would have four different lines to graph where the x-axis would be time and y-axis would be value.&lt;/p&gt;
+&lt;p&gt;On the x-axis will be the time and on the y-axis will be the four datas in c1 and c2 called &lt;strong&gt;value&lt;/strong&gt;.&lt;/p&gt;
+&lt;h2&gt;Creating our enviroment.&lt;/h2&gt;
+&lt;p&gt;First create a Projects Folder and open your terminal (you can use Windows CMD or Gitbash) and write the following command:&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;npx create-react-app Bitcoin-Chart
+cd Bitcoin-Chart
+npm install --save react-apexcharts apexcharts
+npm start&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Erase the files you don’t need and make the same setup you did as the last project, copy the App.js and the component BitcoinChart which we will rename Graph.&lt;/p&gt;
+&lt;h2&gt;Lets work on our imaginary data&lt;/h2&gt;
+&lt;p&gt;On App.js we will have the following code:&lt;/p&gt;
+&lt;p&gt;
+  &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/React-Personal-Blog-Gatsby/static/afda553aa5bb6596d4a654a5fc83da6e/05a57/second-project-3.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+  
+  &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 190.53549190535492%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAmCAYAAADEO7urAAAACXBIWXMAAAsSAAALEgHS3X78AAADOklEQVRIx61WWXbiMBD0ZQaMZWuXFxkDmczP3P8UPkReT7UMxBDMksyHXsuLStV7Z0I2JGWkSjekbE2bKiTpfEuVClRWHZVlRwXvTU156WktXJLzdXqXGb2j3v8l5yLtd1sytqe2fqPQdBT6SM2wJ9cM5Lc9+X5LucDh0t0EY5ltyppE1YCZpxIsCjDkdyt83KiaCo1n6RPDjQwXh28yLGVHRu/J+0ihbqkGs8o0JHQHwBYX1bQuXDqwBDZfGX8sq5asOZB2HfkAtrBroZo7troDOP1kaQ2VC9iPWeU4tCrsBaN7rL4wTA98CLLQLZXtAR6FZ2X9NNAFwxMLBmBVczgmrQf2egiYA1C4Pjnk24DXnmOvinr3M5X5EGfI5sTq6JBnwmQRMDkD6s69+m3AM0s4RCB0hI2fbH9sQ/kfbHhWGwwZKN+YL4H9LYZrqFkAsOrefu7lKWSOnp57/HUbThtmMwHMvHzjwKMLpmqjOhJcFFBFisonOQ+dBHJVIJaAsxUqjVGRoh0Qh5FUPZD1WxKwIachF12BlasmmeFR5Ukqb7AJ6Ck9gCRCRsXf5FBxfHwn3exIdwcyqJXatam8nZx1a2XzzJBoBVpvUWTfSYKhtADxPTwfsW9J4sLSD2DcfNqXbZ/aRrgV2CEVBxvACoc1DpcBAHhmoJJNgX1xBGFggfcpbbH4+QKQfzzfzhW88ouqXVfzk+OyazC+mfcpBeUxFhd6yK3OlxgykDTxwovzW2+C3csUbqXevmFSQEuFzdgeS333YaYUap4hk3p8eDVbrxSJjHtyVSEsMCFUAFcKsah6zDuYb8BUzwL6KYYCYSLNjtzuD1nMMFoPVPHwBIc4tm3K8fDFloupN6ln4VkMRw4BrWN6ZvWTyuVUJObq3zPBVGDF1Oh5tNNILQ9VB+Tx4LZUx4FcHTGuwCSyPpe4uwzPAQo2XFgDwAwOG6js0F8sLrHYGzNVpXuF97KN4kfJ8w3kL7QAVvEkn1b5lCWcw/yCe0n+hEcXGWKI/ICqH3BEWvgR0iWJH5J8ZWHgbFPcsVQoXUnCXsWRcQqZF1YmVRyt2Y8Y3EdnDiM/w8ujqMKIG0eAJvns+ge8Z5IesgbSjAAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+    &gt;
+      &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;code&quot;
+        title=&quot;&quot;
+        src=&quot;/React-Personal-Blog-Gatsby/static/afda553aa5bb6596d4a654a5fc83da6e/fb8a0/second-project-3.png&quot;
+        srcset=&quot;/React-Personal-Blog-Gatsby/static/afda553aa5bb6596d4a654a5fc83da6e/1a291/second-project-3.png 148w,
+/React-Personal-Blog-Gatsby/static/afda553aa5bb6596d4a654a5fc83da6e/2bc4a/second-project-3.png 295w,
+/React-Personal-Blog-Gatsby/static/afda553aa5bb6596d4a654a5fc83da6e/fb8a0/second-project-3.png 590w,
+/React-Personal-Blog-Gatsby/static/afda553aa5bb6596d4a654a5fc83da6e/526de/second-project-3.png 885w,
+/React-Personal-Blog-Gatsby/static/afda553aa5bb6596d4a654a5fc83da6e/fa2eb/second-project-3.png 1180w,
+/React-Personal-Blog-Gatsby/static/afda553aa5bb6596d4a654a5fc83da6e/05a57/second-project-3.png 1606w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+      /&gt;
+    &lt;/span&gt;
+  &lt;/span&gt;
+  
+  &lt;/a&gt;
+    &lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;mock_lines&lt;/strong&gt; is simply a function that returns the Object setup we will be working with, now we’re seeing some now terminology here:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Object.keys(Obj)&lt;/strong&gt;  takes an object (Obj) and returns an array with its keys.
+&lt;strong&gt;Object.values(Obj)&lt;/strong&gt;  takes an object (Obj) and returns an array with its values.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;We will work with these a lot in our career as React Developers so its crucial to understand how to use them. Lets check line by line what we’re doing:&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;Object.keys(lines).map((c, ci) =&amp;gt; {&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;We’re taking the object &lt;strong&gt;lines&lt;/strong&gt; and creating an array with its keys:&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;[c1,c2]&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Where c1 and c2 are objects. Now we use &lt;strong&gt;.map()&lt;/strong&gt; to check each element in the array which are objects as well:&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;Object.keys(lines[c]).map((e, ei) =&amp;gt; {&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Now we proceed on filling our imaginary data:&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;for (let i = 0; i &amp;lt; 5; i++) { 
+    lines[c][e].data.push({ value: i + j, time: i }); 
+}; 
+j = j + 3;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;What the code is doing is, on &lt;strong&gt;c1&lt;/strong&gt; we’re going inside the &lt;strong&gt;e&lt;/strong&gt; objects and inside the data array to push an object &lt;strong&gt;{ value, time }&lt;/strong&gt; and we’re filling them. So for the first &lt;strong&gt;c1&lt;/strong&gt; we go direct into the first &lt;strong&gt;e1&lt;/strong&gt; and then into its data where inside the &lt;strong&gt;for loop&lt;/strong&gt; we’re doing this:&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;{value: 0+0, time: 0}
+{value: 1+0, time: 1}
+{value: 2+0, time: 2}
+{value: 3+0, time: 3}
+{value: 4+0, time: 4}&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;On the next iteration for the &lt;strong&gt;e2&lt;/strong&gt; inside &lt;strong&gt;c1&lt;/strong&gt;:&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;{value: 0+3, time: 0}
+{value: 1+3, time: 1}
+{value: 2+3, time: 2}
+{value: 3+3, time: 3}
+{value: 4+3, time: 4}&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Now that &lt;strong&gt;c1&lt;/strong&gt; is filled, the &lt;strong&gt;.map()&lt;/strong&gt; goes to &lt;strong&gt;c2&lt;/strong&gt; and fills the data the exact same way but with j = 6 by that point, for e1:&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;{value: 0+6, time: 0}
+{value: 1+6, time: 1}
+{value: 2+6, time: 2}
+{value: 3+6, time: 3}
+{value: 4+6, time: 4}&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Now for e2:&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;{value: 0+9, time: 0}
+{value: 1+9, time: 1}
+{value: 2+9, time: 2}
+{value: 3+9, time: 3}
+{value: 4+9, time: 4}&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;And thats it. We now  pass the data as props inside the component which will be available as props, lets go inside!&lt;/p&gt;
+&lt;h2&gt;Inside our Chart component&lt;/h2&gt;
+&lt;p&gt;This almost the exact same component of our first project, where options will be the same too but didn’t put here due to being unnecesary.&lt;/p&gt;
+&lt;p&gt;
+  &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/React-Personal-Blog-Gatsby/static/d663e11605a7f2da37691eb0dac06c85/1062e/second-project-4.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+  
+  &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 438.52941176470586%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,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&apos;); background-size: cover; display: block;&quot;
+    &gt;
+      &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;code&quot;
+        title=&quot;&quot;
+        src=&quot;/React-Personal-Blog-Gatsby/static/d663e11605a7f2da37691eb0dac06c85/fb8a0/second-project-4.png&quot;
+        srcset=&quot;/React-Personal-Blog-Gatsby/static/d663e11605a7f2da37691eb0dac06c85/1a291/second-project-4.png 148w,
+/React-Personal-Blog-Gatsby/static/d663e11605a7f2da37691eb0dac06c85/2bc4a/second-project-4.png 295w,
+/React-Personal-Blog-Gatsby/static/d663e11605a7f2da37691eb0dac06c85/fb8a0/second-project-4.png 590w,
+/React-Personal-Blog-Gatsby/static/d663e11605a7f2da37691eb0dac06c85/526de/second-project-4.png 885w,
+/React-Personal-Blog-Gatsby/static/d663e11605a7f2da37691eb0dac06c85/fa2eb/second-project-4.png 1180w,
+/React-Personal-Blog-Gatsby/static/d663e11605a7f2da37691eb0dac06c85/1062e/second-project-4.png 1360w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+      /&gt;
+    &lt;/span&gt;
+  &lt;/span&gt;
+  
+  &lt;/a&gt;
+    &lt;/p&gt;
+&lt;p&gt;For graphing the state will pretty much be the same according to Apex Chart documentation, but we need to find a way to explore the &lt;strong&gt;this.props.data&lt;/strong&gt; we’re sending to the Chart component. Since its an object:&lt;/p&gt;
+&lt;p&gt;
+  &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/React-Personal-Blog-Gatsby/static/f8914362a6ed0f1331625d05bc38c8f9/1062e/second-project-5.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+  
+  &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 93.97058823529412%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAATCAYAAACQjC21AAAACXBIWXMAAAsSAAALEgHS3X78AAABPElEQVQ4y6WUXY6EIBCEOctuRkRABF1/5v5H8RYTYatbnfAymYgPlQZpvnQ1oGja8VWb4VXp/iUhGpPeY4rflOWLpp2Ssn9JQzWEhYSFYgkAojJDDN0SXTdHZceIaqM8hKQ96uGzzhxEQVQJAZJ8OyYfnqlFbNxe+dWKBcHqY9MDcoBMfkkWQn+vA7nCYxNVpwD5bUKqoPP7FajIJw6wAKiHXe3mMsvvCiAJAEFH2DWlls8NZJUB1Eu2W2iZkska9U+a3aLKEgor7JND3zzbnNKD7B8qOhTaQPewRaXBP1MA3HRzYQ+ze1gBaKEBMN3dPGVSjz7SC/m5dQ+zZMuWF67Q3H0pvNGOO5Qvdulb1v2GwYZqNgA2muOUOZ5rMpt/k6Anxs8M9viCoyp1/Btrc10ATisAK+grgBzv6B9tMkNVIxJEfwAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+    &gt;
+      &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;code&quot;
+        title=&quot;&quot;
+        src=&quot;/React-Personal-Blog-Gatsby/static/f8914362a6ed0f1331625d05bc38c8f9/fb8a0/second-project-5.png&quot;
+        srcset=&quot;/React-Personal-Blog-Gatsby/static/f8914362a6ed0f1331625d05bc38c8f9/1a291/second-project-5.png 148w,
+/React-Personal-Blog-Gatsby/static/f8914362a6ed0f1331625d05bc38c8f9/2bc4a/second-project-5.png 295w,
+/React-Personal-Blog-Gatsby/static/f8914362a6ed0f1331625d05bc38c8f9/fb8a0/second-project-5.png 590w,
+/React-Personal-Blog-Gatsby/static/f8914362a6ed0f1331625d05bc38c8f9/526de/second-project-5.png 885w,
+/React-Personal-Blog-Gatsby/static/f8914362a6ed0f1331625d05bc38c8f9/fa2eb/second-project-5.png 1180w,
+/React-Personal-Blog-Gatsby/static/f8914362a6ed0f1331625d05bc38c8f9/1062e/second-project-5.png 1360w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+      /&gt;
+    &lt;/span&gt;
+  &lt;/span&gt;
+  
+  &lt;/a&gt;
+    &lt;/p&gt;
+&lt;p&gt;We send that Object inside &lt;strong&gt;Object.values&lt;/strong&gt;, where the parameter &lt;strong&gt;c&lt;/strong&gt; will be:&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;{
+	data: [{},{},{},{},{}]
+}&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;We pass that Object through another &lt;strong&gt;Object.values&lt;/strong&gt;, where each &lt;strong&gt;a&lt;/strong&gt; parameter will be:&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;{value, time}&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;So if we do &lt;strong&gt;a.value&lt;/strong&gt; we can get it! Now lets see whats inside array1, array2 and time:&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;array1 = [
+	[0,1,2,3,4],
+	[3,4,5,6,7]
+]
+array2 = [
+	[6,7,8,9,10],
+	[9,10,11,12,13]
+]
+time = [
+	[0,1,2,3,4],
+	[0,1,2,3,4]
+]&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Now we our graphic will look like this:&lt;/p&gt;
+&lt;p&gt;
+  &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/React-Personal-Blog-Gatsby/static/3c73d3ada01f8451d31ae4d79dbdb1d2/35c89/second-project-6.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+  
+  &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 37.312312312312315%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAHCAYAAAAIy204AAAACXBIWXMAAA7DAAAOwwHHb6hkAAAA7klEQVQoz3WR646FIAyEff8n3eOJqCjl1na2giSryf74UkKm48hMqgoF0OZf2i0QU8K6rnCrQ6DQ7vQ/bG9i5naQYXxbKQukVGjlB0IJchDkpD4NPQLUtJfHJCLdIJVbGE1AgPfG/mIDTgfQ+kDJQThbMIyE5pjtd8JyCxaU7FDq9iAZOx9GwC6nzc5SA5L5YCS8IpJkbCbyEuCYMNeCrzGXGzt/csUcBd8XS1RU0W7YEpqpz4yfwPhQxZcYG0ljtwVvC7tBWSypIL/g672F25xGqyz9Kxfa3kBao2fKOOOBFDwyxd6nDs1d4yjV+AWLnCUsCjyW/wAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+    &gt;
+      &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;finishedProduct&quot;
+        title=&quot;&quot;
+        src=&quot;/React-Personal-Blog-Gatsby/static/3c73d3ada01f8451d31ae4d79dbdb1d2/fb8a0/second-project-6.png&quot;
+        srcset=&quot;/React-Personal-Blog-Gatsby/static/3c73d3ada01f8451d31ae4d79dbdb1d2/1a291/second-project-6.png 148w,
+/React-Personal-Blog-Gatsby/static/3c73d3ada01f8451d31ae4d79dbdb1d2/2bc4a/second-project-6.png 295w,
+/React-Personal-Blog-Gatsby/static/3c73d3ada01f8451d31ae4d79dbdb1d2/fb8a0/second-project-6.png 590w,
+/React-Personal-Blog-Gatsby/static/3c73d3ada01f8451d31ae4d79dbdb1d2/526de/second-project-6.png 885w,
+/React-Personal-Blog-Gatsby/static/3c73d3ada01f8451d31ae4d79dbdb1d2/fa2eb/second-project-6.png 1180w,
+/React-Personal-Blog-Gatsby/static/3c73d3ada01f8451d31ae4d79dbdb1d2/35c89/second-project-6.png 1332w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+      /&gt;
+    &lt;/span&gt;
+  &lt;/span&gt;
+  
+  &lt;/a&gt;
+    &lt;/p&gt;
+&lt;h2&gt;Conclusion&lt;/h2&gt;
+&lt;p&gt;We learned how to get data inside a deep JSON just by using Object.values and .map(), knowing this is crucial and will save you many hours trying to figure out how to get the data, so simply writting it down in a piece of paper can help you figure out how to get that data. In future posts we will learn how to use GraphQL to get data that are much deep inside a more complex JSON and doing a simple Query we can get it without wasting time and code lines.&lt;/p&gt;
+&lt;p&gt;On the next post we will go into the big beast which is called Redux, its a state management that can seem very complex at first, but we will break it down so its much easier to digest.&lt;/p&gt;
+&lt;p&gt;See you on the next post.&lt;/p&gt;
+&lt;p&gt;Sincerely,&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Eng Adrian Beria.&lt;/strong&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Array Manipulation in React]]></title><description><![CDATA[Most of the time you will be fetching Data from somewhere, either an external source like we did before with the Bitcoin Chart, or some data…]]></description><link>https://radinax.github.io/React-Personal-Blog-Gatsby/5-array-manipulation/</link><guid isPermaLink="false">https://radinax.github.io/React-Personal-Blog-Gatsby/5-array-manipulation/</guid><pubDate>Sun, 16 Dec 2018 11:53:32 GMT</pubDate><content:encoded>&lt;p&gt;Most of the time you will be fetching Data from somewhere, either an external source like we did before with the Bitcoin Chart, or some data sent through the Backend. Said Data is generally an Object that we need to turn into arrays sometimes and then do some short of manipulation using Javascript. In this post we will go through some examples on how to deal with some common problems.&lt;/p&gt;
+&lt;h2&gt;Rendering a list of components&lt;/h2&gt;
+&lt;p&gt;One of the first examples come from the documentation and its something we will be doing a lot:&lt;/p&gt;
+&lt;p&gt;
+  &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/React-Personal-Blog-Gatsby/static/9b175cded15aecddc95507e93f0355fe/1062e/array-map-4.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+  
+  &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 84.26470588235294%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAARCAYAAADdRIy+AAAACXBIWXMAAAsSAAALEgHS3X78AAACDElEQVQ4y4VTW5ajIBR0MYkvUBEE32Y66Z79L6J34dGawjE5mU4m+ahTiFC3uBSByOtZZM2cZvUsczdnys6yIPKdiURWcyTMHN/xT1znA5k3aMwXnP5E3074/TmhaTvU7Yhx/IV2mJC7E5KiRiwMuOklglDoVatppeBqXbd2XbdK5Vaph1W705qaYZX9ZU2rYaWLlZue4vov4ACFGlCbM2Te4hCXCFODY6pxSPxYI4oVIvL/XEV3zgN/jJAoTQdRDYjLlsIOOVHkNTJy5MHFm/hP7GJXDq4fiRfoLyjbD7R2wslNuNgRne5QslCpGmSEKDukpkdKliyesrf/OrxTz/lTZxaKCw1hKVCwkOW8H5cUyqoRkkUli+ZmgFTtc8GCLjyOewt8D2/jHbcjs7eew2dH3o6bub0aoyHfR+PlpSQ8Ypyx4ax6iPV2w9Hm5i9Hu8tw2+S/3+RQFA17x774PrkGSln4IkXZ8LYt5x0yj839o6MHQUXBsTqjZ//GcYIez2CIIZRDSsENhYWg6NXxK9FA0E1jWnxQxDAKBW+v0j0qzvs8ajqvmEdJiKJ+7/DIXllm7czMDT5z5Mpn0WeScN0FXT2gahgZRumtYJq5ha9iKYt6UeTE9EtcDUtEJESsuyVRbhHaLdywUOzGzxCk27OyCP3T8lV89QdUd7drX8IH+5ubvjd+B66L3uAPKD4N7XsV6cgAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+    &gt;
+      &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;Code&quot;
+        title=&quot;&quot;
+        src=&quot;/React-Personal-Blog-Gatsby/static/9b175cded15aecddc95507e93f0355fe/fb8a0/array-map-4.png&quot;
+        srcset=&quot;/React-Personal-Blog-Gatsby/static/9b175cded15aecddc95507e93f0355fe/1a291/array-map-4.png 148w,
+/React-Personal-Blog-Gatsby/static/9b175cded15aecddc95507e93f0355fe/2bc4a/array-map-4.png 295w,
+/React-Personal-Blog-Gatsby/static/9b175cded15aecddc95507e93f0355fe/fb8a0/array-map-4.png 590w,
+/React-Personal-Blog-Gatsby/static/9b175cded15aecddc95507e93f0355fe/526de/array-map-4.png 885w,
+/React-Personal-Blog-Gatsby/static/9b175cded15aecddc95507e93f0355fe/fa2eb/array-map-4.png 1180w,
+/React-Personal-Blog-Gatsby/static/9b175cded15aecddc95507e93f0355fe/1062e/array-map-4.png 1360w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+      /&gt;
+    &lt;/span&gt;
+  &lt;/span&gt;
+  
+  &lt;/a&gt;
+    &lt;/p&gt;
+&lt;p&gt;First we have a functional component &lt;strong&gt;NumberList&lt;/strong&gt; which takes &lt;strong&gt;props&lt;/strong&gt; which in the render we’re passing the &lt;strong&gt;array numbers&lt;/strong&gt;, so we define another numbers variable so we don’t have to write &lt;strong&gt;props.numbers&lt;/strong&gt; every time.&lt;/p&gt;
+&lt;p&gt;WAIT A SECOND! Isn’t it &lt;strong&gt;this.props.numbers&lt;/strong&gt;? Well you do not use the keyword &lt;strong&gt;this&lt;/strong&gt;, since it’s not a class you don’t have to reference the component itself.&lt;/p&gt;
+&lt;p&gt;So here we have an array where we use the &lt;strong&gt;.map()&lt;/strong&gt; method to take each value and do something with it, in this case we will put them inside a &lt;code class=&quot;language-text&quot;&gt;&amp;lt;li&amp;gt;&amp;lt;/li&amp;gt;&lt;/code&gt; tag.&lt;/p&gt;
+&lt;p&gt;WAIT ANOTHER SECOND! What is that &lt;strong&gt;key&lt;/strong&gt;? &lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Keys help React identify which items have changed, are added, or are removed. Keys should be given to the elements inside the array to give the elements a stable identity.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;It should be &lt;strong&gt;unique&lt;/strong&gt;, its not a good idea to define it always as the index if you know it will change.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;In practice, finding a key is not really hard. Most of the time, the element you are going to display already has a unique id. When that’s not the case, you can add a new ID property to your model or hash some parts of the content to generate a key. Remember that the key only has to be unique among its siblings, not globally unique.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Lets check another example:&lt;/p&gt;
+&lt;p&gt;
+  &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/React-Personal-Blog-Gatsby/static/4a3b90ee95840dc703545d08dbc6431d/1062e/array-map-5.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+  
+  &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 45.44117647058823%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAJCAYAAAAywQxIAAAACXBIWXMAAAsSAAALEgHS3X78AAABBUlEQVQoz5WRa46DMAyEOU0JCQmQJ28k1PtfCClTE4q0i1a0+2Nka8BfxkkmVNiEPFRIt5WV21TtU5UkTl4uTBIr7dHv9YdOf5/PStkimCe8fsLaAcMwoB8mjNNCmlCHGYUKYMKABm9FUGQPoaNulkjAaFwXrW8jUyE2bolcj5H5mWof6edIaSINpp69e3bxsp1a1SNas6JWHbj0kE0HoTwq6VDRybIKKEj5FykTMC8NVN3C+Rm2W6HDgsYMMASx5BvqOR3yFfDcXdkJsl9psMeD60PkJ1F/wlKAG3BKyCmJ1D0ErZjT8N2lf/qWcbor8b6fXyk+rPYXLL1yQY9wNdk/YFfoCx4HFjbNLms5AAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+    &gt;
+      &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;Code&quot;
+        title=&quot;&quot;
+        src=&quot;/React-Personal-Blog-Gatsby/static/4a3b90ee95840dc703545d08dbc6431d/fb8a0/array-map-5.png&quot;
+        srcset=&quot;/React-Personal-Blog-Gatsby/static/4a3b90ee95840dc703545d08dbc6431d/1a291/array-map-5.png 148w,
+/React-Personal-Blog-Gatsby/static/4a3b90ee95840dc703545d08dbc6431d/2bc4a/array-map-5.png 295w,
+/React-Personal-Blog-Gatsby/static/4a3b90ee95840dc703545d08dbc6431d/fb8a0/array-map-5.png 590w,
+/React-Personal-Blog-Gatsby/static/4a3b90ee95840dc703545d08dbc6431d/526de/array-map-5.png 885w,
+/React-Personal-Blog-Gatsby/static/4a3b90ee95840dc703545d08dbc6431d/fa2eb/array-map-5.png 1180w,
+/React-Personal-Blog-Gatsby/static/4a3b90ee95840dc703545d08dbc6431d/1062e/array-map-5.png 1360w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+      /&gt;
+    &lt;/span&gt;
+  &lt;/span&gt;
+  
+  &lt;/a&gt;
+    &lt;/p&gt;
+&lt;p&gt;Is there a problem here? &lt;strong&gt;YES!&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;We don’t actually need to define a key here, because there is only one element, if we had more then we would need.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;A good rule of thumb is that elements inside the &lt;code class=&quot;language-text&quot;&gt;map()&lt;/code&gt; call need keys.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2&gt;State as Array.&lt;/h2&gt;
+&lt;h3&gt;Removing an item inside our state.&lt;/h3&gt;
+&lt;p&gt;Lets work with a more practical case in manipulating our array. &lt;/p&gt;
+&lt;p&gt;
+  &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/React-Personal-Blog-Gatsby/static/f404e63a4f6bc06803f1e7c19f2e3426/4a312/array-map-7.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+  
+  &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 218.29608938547486%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAsCAYAAABloJjNAAAACXBIWXMAAAsSAAALEgHS3X78AAAD8UlEQVRIx61X7ZaaMBD1YVoVSMgXCRBY17a27/8+nsP0TgQWXD2rtj/mJCC5mZncuRM3uQxnWcazUPW5NOGclx7zkOZsBeaFbGD1OVc+2V5U513h0jgZP2fSnzf4mGp3IqUjNW1LQgcqTU1dF6nFs8SzUj0Z/UYq1LCW9sITADBWK+N3G3g4CNEMSodBlmEoZT9I2Q1Z2QzSdoM0EXM/bAs7bHOXDAsHAKRxh3Ga8wgPA1l/oqo/kotHqsKJ+vZITYd584NKGykvw01vrt+xbfiHTDfk/G8y4WcC9XWXQuXftrlN4wRwD2gFiIRTZ/+QDkfS/W8StqNMhtXir4A+AHnCoAApwoEK065AtlfefenhvLv0JFwP4IiT9lT4NxKwytV4bh73cALMMAoHL2HS+OStrN//A+DooQBYCbO2puIZwCkv7AWYTlNOH6XJTcBc3Qhr3GhXVM8fSs6eZYZ2zLkl757g35rYoEpWdZQjf2kuK4Io0E6Gp8BmQFG9kW3/kGh/UAFiF/5AoYmkfUzpSKCj999zrh723F6qaIxoqqjNFJpTB9L2nXTzBjtQVffUxkPiIpM+45qG2aohATXKVUMKrOCI9thUYiwwphxCSSBfHbUoP4dFUlWUYUEJoJxToFvKHaekIwdAyYD6ApibeAHEuhlwqmcTfqGO+zEk9xHSwr4MeQJkicpMQ/vS3+ThU4fChFZVv6LJ/gHO3eWh0O2lSmaA20CPbJAA55JLiz4q4toeqZaLwIJ3ZXeiksUh8e6yIEMzSh9K/7iH6UBEoNqeSJtD4hlTowAdnDmSshBdJjyeHwdEiXmLfmLeP6T/1ZCnj9DoySPk5aIJOL27I2u3e0qqFkcmCWyXOCnZOHdj/u7Ztbeb5Q8ZQAQLA4AjajhidNiAy2o7NqypOrhatjekbbN8kUIHaIv6TaAge0DNeoBbjHYUgQzv+bqiTLjv4ewlQmSgDgsNDigDL3kTAzCnmwsguiMLBINe9+4VYDpZjOwNhytxMVI1KISm9Q2K/j03tN1r2sG2/My2SMOnHM6HA4/eABhCTxbaWLgWm7wjRPTq+JNEc6SC7z1otZySEhEJGz97OIGmy1EivE+85JPma18OiUstgjskjNWcmcAjH+gKcOmhVnzXieljFt8LycfmtdTHxVVlWr865SmHDg0+xl9kEMozEnbx8OqUOBcaNNlPpB43eUpg5zaAUBUocV2zuyfEdg55B28sTo8bzyv3ws93GyYyQl1eNF9qAVODYmOy/gtYAmQgzt3uH25cK8Bs5Frqs7O5lz3dcIO3Gj1FxTRq/MGxuDXIMrzmoSghS5B+WbYJrFRdEgcG3L4A+Bd/wk/lAh3ASgAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+    &gt;
+      &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;Code&quot;
+        title=&quot;&quot;
+        src=&quot;/React-Personal-Blog-Gatsby/static/f404e63a4f6bc06803f1e7c19f2e3426/fb8a0/array-map-7.png&quot;
+        srcset=&quot;/React-Personal-Blog-Gatsby/static/f404e63a4f6bc06803f1e7c19f2e3426/1a291/array-map-7.png 148w,
+/React-Personal-Blog-Gatsby/static/f404e63a4f6bc06803f1e7c19f2e3426/2bc4a/array-map-7.png 295w,
+/React-Personal-Blog-Gatsby/static/f404e63a4f6bc06803f1e7c19f2e3426/fb8a0/array-map-7.png 590w,
+/React-Personal-Blog-Gatsby/static/f404e63a4f6bc06803f1e7c19f2e3426/526de/array-map-7.png 885w,
+/React-Personal-Blog-Gatsby/static/f404e63a4f6bc06803f1e7c19f2e3426/fa2eb/array-map-7.png 1180w,
+/React-Personal-Blog-Gatsby/static/f404e63a4f6bc06803f1e7c19f2e3426/4a312/array-map-7.png 1432w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+      /&gt;
+    &lt;/span&gt;
+  &lt;/span&gt;
+  
+  &lt;/a&gt;
+    &lt;/p&gt;
+&lt;p&gt;We’re using filter in this case since we need to remove an item inside our array. In this case we take note of the id of the object and since the button is linked with the state through &lt;strong&gt;item.id&lt;/strong&gt; which explores each object, when we press it we send the id to our function &lt;strong&gt;onRemoveItem()&lt;/strong&gt; which updates our state and returns everything that isn’t related to that id, which ends up removing the item selected.&lt;/p&gt;
+&lt;p&gt;Not going to go through adding or updating the state with a click, because for adding its using a simple concat and updating just using .map with spread operator to do what we need is enough.&lt;/p&gt;
+&lt;p&gt;We will continue this as a project in the other post where we will tackle Object manipulation as well. With the next project you should be able to handle any kind of weird Object distribution you encounter.&lt;/p&gt;
+&lt;h2&gt;Conclusion&lt;/h2&gt;
+&lt;p&gt;So we learned a bit of Array Manipulation on this post and about the “key” element which is a way of React to keep track of what’s changing so its important you give it a unique identification. &lt;/p&gt;
+&lt;p&gt;On the next post we will be handling a more complex JSON and how you could easily identify the best way to get the values you need.&lt;/p&gt;
+&lt;p&gt;See you on the next post.&lt;/p&gt;
+&lt;p&gt;Sincerely,&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Eng Adrian Beria.&lt;/strong&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[First Project - Bitcoin Chart]]></title><description><![CDATA[What we will make? A simple  Bitcoin Chart application  where we can check its latest values. To make it we will use  Apex Charts  which is…]]></description><link>https://radinax.github.io/React-Personal-Blog-Gatsby/4-first-project/</link><guid isPermaLink="false">https://radinax.github.io/React-Personal-Blog-Gatsby/4-first-project/</guid><pubDate>Mon, 10 Dec 2018 11:53:32 GMT</pubDate><content:encoded>&lt;h2&gt;What we will make?&lt;/h2&gt;
 &lt;p&gt;A simple &lt;a href=&quot;http://knowledgeable-boat.surge.sh/&quot;&gt;Bitcoin Chart application&lt;/a&gt; where we can check its latest values.&lt;/p&gt;
 &lt;p&gt;To make it we will use &lt;a href=&quot;https://apexcharts.com/&quot;&gt;Apex Charts&lt;/a&gt; which is a charting library which will help us graph our data. Follow the instructions in the documentation which are pretty simple.&lt;/p&gt;
 &lt;p&gt;We used a single HTML file to code our React component, but now we will use a great tool given by React which is called &lt;a href=&quot;https://github.com/facebook/create-react-app&quot;&gt;create-react-app&lt;/a&gt;.&lt;/p&gt;
@@ -50,56 +452,79 @@ npm start&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Now erase every file inside src folder except those two files mentioned above.&lt;/p&gt;
 &lt;h2&gt;Lets build our app!&lt;/h2&gt;
 &lt;p&gt;Create a Components folder inside the src folder and inside create a &lt;strong&gt;Chart.js&lt;/strong&gt; file and inside that file we will have the following code:&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;import React, { Component } from &amp;#39;react&amp;#39;;
-import BitcoinChart from &amp;#39;react-apexcharts&amp;#39;;
-
-class BitcoinChart extends Component{
-	state = {
-	
-	}
-
-	render() {
-		return(
-			&amp;lt;div&amp;gt;
-				// React code
-			&amp;lt;/div&amp;gt;
-		)
-	}
-}
-export  default  BitcoinChart;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;
+  &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/React-Personal-Blog-Gatsby/static/1886114ceca29bd600625ee1c187fb48/1062e/first-project-1.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+  
+  &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 89.26470588235294%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAASCAYAAABb0P4QAAAACXBIWXMAAAsSAAALEgHS3X78AAAB7klEQVQ4y51UW5KbMBDkMDG2EZJAoAfg52a/c/8jcAeq1GnJ8cbOxltrf3SNGA1dPQ9NUUm31DIsycrGLltpl01teb58C01f7RZRB1q7VDrd98tadBn/ngulRpz8L/TdEW/nPVyY0Fn6jnuc9icMYQfdTwjuHcZNcMcdGj+i0g4k+IRCSB97c45KD9H0PsOHITbGx7qeolRjlNZFQegQonYhNn6INe9JEKnszhZMA0IG1Kq/QFswVVSSVg0ZgjFaOqjaMdah3HYgQUZSdbVXhejNG9x4JnYYiHEc0ZgAS781P2GaAZMZMRBNO2Bd/yW4JcuEybESBlu7x6adsFEeKyooK/qrNqNkzI/KZJT/UfWJMKVdJQd/2DwIvMX6i5ji41I5Kn1cm+/iQki0JGw4CltlwVl8iexOoW0Cxu6Avj9D6EBC81SqH4TXwNQYIQcO+Imd3bGT9LOm6yfLUNwGlFlVB53SZreT0i3nTmj/fYW3QbnjrKXqdpCct0T0NOE1MJNJmwl1N6GiLV9NORElgmRz6n+IXmoKxySWtYkb2Ue+ioz00Pki4uqKytwtga9Q6GaC79+5BEa07QGue4fWXGEcI8s6uowRQvnvzSED57Y5zFwSM3djPnPhzlq5ueFdQqv9zO0zU8HMR5DtI/wGRHcqwBNjQLUAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+    &gt;
+      &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;firstProject&quot;
+        title=&quot;&quot;
+        src=&quot;/React-Personal-Blog-Gatsby/static/1886114ceca29bd600625ee1c187fb48/fb8a0/first-project-1.png&quot;
+        srcset=&quot;/React-Personal-Blog-Gatsby/static/1886114ceca29bd600625ee1c187fb48/1a291/first-project-1.png 148w,
+/React-Personal-Blog-Gatsby/static/1886114ceca29bd600625ee1c187fb48/2bc4a/first-project-1.png 295w,
+/React-Personal-Blog-Gatsby/static/1886114ceca29bd600625ee1c187fb48/fb8a0/first-project-1.png 590w,
+/React-Personal-Blog-Gatsby/static/1886114ceca29bd600625ee1c187fb48/526de/first-project-1.png 885w,
+/React-Personal-Blog-Gatsby/static/1886114ceca29bd600625ee1c187fb48/fa2eb/first-project-1.png 1180w,
+/React-Personal-Blog-Gatsby/static/1886114ceca29bd600625ee1c187fb48/1062e/first-project-1.png 1360w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+      /&gt;
+    &lt;/span&gt;
+  &lt;/span&gt;
+  
+  &lt;/a&gt;
+    &lt;/p&gt;
 &lt;p&gt;According to the &lt;a href=&quot;https://apexcharts.com/docs/react-charts/&quot;&gt;documentation&lt;/a&gt; we need to define our state with the following object:&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;options: {
-    chart: {
-	    foreColor:  &amp;#39;#333&amp;#39;
-    },
-    xaxis: {
-	    categories: []
-    },
-    plotOptions: {
-	    bar: {
-		    horizontal:  false  // if true it would be horizontal
-		}
-    },
-    fill: {
-	    colors: [&amp;#39;#f44336&amp;#39;]
-    },
-    dateLabels: {
-	    enabled:  false
-    },
-    title: {
-	    text:  &amp;#39;Bitcoin Price Chart&amp;#39;,
-	    align:  &amp;#39;center&amp;#39;,
-	    margin:  20,
-	    offsetY:  20,
-	    style: {
-		    fontSize:  &amp;#39;25px&amp;#39;
-	    }
-    }
-},
-series: [{
-    name:  &amp;#39;Numbers&amp;#39;,
-    data: []
-}]&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;
+  &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/React-Personal-Blog-Gatsby/static/0d223b9dd2d6f10ea0ed13b94d00aeb2/f924e/first-project-2.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+  
+  &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 145.19104084321478%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAdCAYAAACqhkzFAAAACXBIWXMAAAsSAAALEgHS3X78AAACXElEQVRIx51VWZKrMBDjMgk7eMGsyd+rd/875ByURzI2kMnUAPOhGIgRrW51OypKY+uqtTmQ4DrJtU2KZkWM+/jbs58Q9kQlSFrR26l52ALr3RMQ90x/vPAbGdcoEDDKXo12AOqqs4VqrRrG6xHyIgNBjEhTPMj9mpQNnhtsbE4RBjjCEtF1crA1JGfMo/vTvEV3ljQKGxlVC1JC1p0t5WjT0lyKbosQBBLRVYiUucxY8QskH4TMGyU/9GQV1hSE912l4/w8IrLuKy0QKSWresmnUh08apxHMx996tZuvSdyvMMURfuE80EFCPwp3IbGCtkuhP5/R/hBvnyAH/W22fLGaInbXyXzh+3XsChA6ivO6Igl2Rd8yN6NKRswIFRisKXqrZ5Gq8fJRX7d2CwCyNjXuTf2LVWb3KvGznx0/8zTPjAkStFZrZfqxj9Mn0NCVopRVH6UMXe1XNat9Ra4fOYHhAVIGuSugPQg7+blJqGCrjD6cFhEJOBLbLsBncJBWxmYu8ewwFpCuuiW61OSg/dolScIBTqkajrbPEAuWzfG0spbiNEVJwhDP08YrgbSJdqNOQwTO97LPpIcXmClRxJiOBQCskW72mar8EnJsb/RKEqnJqtBmmPAUjJzeMnYb4mGbJpboDBsx0wYd7Zc7pQwQfbDYc3btzweEnKOuTM5GHjnv7Pd8UZI//EcEbBMgTWrcfKJ9uO8PS85U3Mqh7l6/p8L2c+YMDOMPOMInUE0Y5Nbz4B7Ize+ccLlHArupGudPZjTq3ATGzl84ex43VP5wlcc8KX1+gr43hdna3pOqzxnZgAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+    &gt;
+      &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;firstProject&quot;
+        title=&quot;&quot;
+        src=&quot;/React-Personal-Blog-Gatsby/static/0d223b9dd2d6f10ea0ed13b94d00aeb2/fb8a0/first-project-2.png&quot;
+        srcset=&quot;/React-Personal-Blog-Gatsby/static/0d223b9dd2d6f10ea0ed13b94d00aeb2/1a291/first-project-2.png 148w,
+/React-Personal-Blog-Gatsby/static/0d223b9dd2d6f10ea0ed13b94d00aeb2/2bc4a/first-project-2.png 295w,
+/React-Personal-Blog-Gatsby/static/0d223b9dd2d6f10ea0ed13b94d00aeb2/fb8a0/first-project-2.png 590w,
+/React-Personal-Blog-Gatsby/static/0d223b9dd2d6f10ea0ed13b94d00aeb2/526de/first-project-2.png 885w,
+/React-Personal-Blog-Gatsby/static/0d223b9dd2d6f10ea0ed13b94d00aeb2/fa2eb/first-project-2.png 1180w,
+/React-Personal-Blog-Gatsby/static/0d223b9dd2d6f10ea0ed13b94d00aeb2/f924e/first-project-2.png 1518w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+      /&gt;
+    &lt;/span&gt;
+  &lt;/span&gt;
+  
+  &lt;/a&gt;
+    &lt;/p&gt;
 &lt;p&gt;So our data that will be in the x-axis will be an object with the array &lt;strong&gt;categories&lt;/strong&gt; inside, you can use the name you want, while the y-axis data will be inside the data key as an array.
 &lt;br&gt;
 Now how will we get the Bitcoin value? We will use&lt;/p&gt;
@@ -111,20 +536,42 @@ Now how will we get the Bitcoin value? We will use&lt;/p&gt;
 	date: value
 }&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Fetch API is based on &lt;a href=&quot;https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Promise&quot;&gt;Promises&lt;/a&gt; which do something and when its done it does another. In our context it will look like this:&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;fetch(&amp;quot;https://api.coindesk.com/v1/bpi/historical/close.json&amp;quot;)
-    .then(response =&amp;gt; response.json())
-    .then(data =&amp;gt; this.setState({
-	    options: {
-		    ...this.state.options,
-		    xaxis: {
-			    categories: Object.keys(data.bpi)
-		    }
-	    },
-	    series: [{
-		    name: &amp;#39;Price&amp;#39;,
-		    data: Object.values(data.bpi)
-	    }]
-}));&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;
+  &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/React-Personal-Blog-Gatsby/static/3ccff251b3af01e60b1bc0561d628020/c6200/first-project-3.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+  
+  &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 69.83471074380165%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAOCAYAAAAvxDzwAAAACXBIWXMAAAsSAAALEgHS3X78AAABrElEQVQ4y4VS27KbMAzkZ5rEsrG52ebiAKeX6f9/DzPWWQPJoQ1pH3aQhbzalZUp7RYNKGMXWdhFaAAx6f1smoX2fxvcDsTlFm//3SJyu2Qqt+zKjstu4jrc2Q8Dd/eBte+4wdkF5LvAZRhxHrlA3tj2C25D4TqGCM6uso4XQA6/YtNPcQp9rF2IVTVHY+dYj79j0f+M2n9EMl28ySZeqD5F4spuquEEAZVF+M7lMDNVPed5y5Q7vhrPAiDU4AJqa37cOcNKmArXYly8ac+2mjmvApMbWQEyoR5OCbYmB8JjIsWyCaztxMq0LLRDA7c2umLWa2OqngIed48c2UsSFwlq8uHHpgz2+6JlC5Ad2fiZmxYOAELuReHRskBMuxKx2ndrA5maAOmcVNP+PbX8SGKHWKU5peJESq/2zvBi+ZiQ9s7ST9ivO+yA2EDVPrdLIj80ePsoxx8XUbJqP1iB1GJpG98zYZ0EZqUACaT4jOiPR3kqTPtWB1bVwB6vXGGFCK+eVFd4IOOm1YX4F2EasNq7SpBcd2vfkuLHmlC5Wj7afqfySfj3bP6Hd7WfQ1qy5LnyEjwAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+    &gt;
+      &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;firstProject&quot;
+        title=&quot;&quot;
+        src=&quot;/React-Personal-Blog-Gatsby/static/3ccff251b3af01e60b1bc0561d628020/fb8a0/first-project-3.png&quot;
+        srcset=&quot;/React-Personal-Blog-Gatsby/static/3ccff251b3af01e60b1bc0561d628020/1a291/first-project-3.png 148w,
+/React-Personal-Blog-Gatsby/static/3ccff251b3af01e60b1bc0561d628020/2bc4a/first-project-3.png 295w,
+/React-Personal-Blog-Gatsby/static/3ccff251b3af01e60b1bc0561d628020/fb8a0/first-project-3.png 590w,
+/React-Personal-Blog-Gatsby/static/3ccff251b3af01e60b1bc0561d628020/526de/first-project-3.png 885w,
+/React-Personal-Blog-Gatsby/static/3ccff251b3af01e60b1bc0561d628020/fa2eb/first-project-3.png 1180w,
+/React-Personal-Blog-Gatsby/static/3ccff251b3af01e60b1bc0561d628020/c6200/first-project-3.png 1452w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+      /&gt;
+    &lt;/span&gt;
+  &lt;/span&gt;
+  
+  &lt;/a&gt;
+    &lt;/p&gt;
 &lt;p&gt;This is read as fetching an external data from the url, when we get it then we turn it into &lt;strong&gt;json&lt;/strong&gt;, then we take that data and fill up our state.&lt;/p&gt;
 &lt;p&gt;You will notice ”&lt;strong&gt;…this.state.options&lt;/strong&gt;”, this is called &lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax&quot;&gt;spread operator&lt;/a&gt; and what it does is copy everything inside the &lt;strong&gt;options&lt;/strong&gt; except &lt;strong&gt;xaxis&lt;/strong&gt; which will be equal to an array with the date &lt;strong&gt;key&lt;/strong&gt;.&lt;/p&gt;
 &lt;p&gt;We’re using &lt;strong&gt;Object.keys&lt;/strong&gt; which creates an array filled with every key inside the object. As you could guess we did the same for the &lt;strong&gt;yaxis&lt;/strong&gt; but we used &lt;strong&gt;Object.values&lt;/strong&gt;.&lt;/p&gt;
@@ -171,18 +618,42 @@ Now how will we get the Bitcoin value? We will use&lt;/p&gt;
     fetch(...)
 }&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;And finally from the documentation we need to add the state data into the props of the Chart component along some other data to configure our Graphic:&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;render() {
-    const {options, series} = this.state;
-    return (
-        &amp;lt;Chart
-			options = {options}
-		    series = {series}
-		    type=&amp;quot;line&amp;quot;
-		    height= &amp;quot;450&amp;quot;
-		    width= &amp;quot;100%&amp;quot;
-		/&amp;gt;
-	)
-}&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;
+  &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/React-Personal-Blog-Gatsby/static/ca67ff04698aabf16bedfe1a4213980b/1062e/first-project-4.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+  
+  &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 64.8529411764706%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAANCAYAAACpUE5eAAAACXBIWXMAAAsSAAALEgHS3X78AAABhklEQVQ4y6WSYY6bMBCFuUtFAtiY2MaYAEG7Uqve/xB7igi/vgGSZqusNlJ/PM3Ynvl4g51Vdbga010VY2nC9VD5VUfFqP7mR+U2VXvU7bVQ21nB/BYzXQdMbkBsZxg3wdhIdVBNgKYkrwzXpoemytMmNj9VRnLKqbP/nbx9S6EfUuzPyfo++bZPMQ5Juz6d7JzsaU5VnJMOc6K7RJep2CUciQJESTKL0bXvMHWHvLDIS4e8cvhxzy0OyoEjbxJH7JX+Tw6L/SBncd10GNoJJz+iktGMjHxGzVzLmOphPIF9MfL9QBzVBJz7d7j2AuUnhMsvtONPNPzIv26e/sPHBW8VlhcwENq4iCZOKBzd8tKejfcl8Fa4ApuImWM3YYDtZdSw/rNbw3fQ7LHgwEYBvhFo7QB/GeHHkfv+Jdgnh2sxYfIuBSpvr+nokO/wFdCjw4XJUtZhKUxceEEL3+Ui+4eSsdrOj/ved8rU7qak5FmUOoBwFPUW11y/roywDzr4IP0e/0d/AFhajtwApBu9AAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+    &gt;
+      &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;firstProject&quot;
+        title=&quot;&quot;
+        src=&quot;/React-Personal-Blog-Gatsby/static/ca67ff04698aabf16bedfe1a4213980b/fb8a0/first-project-4.png&quot;
+        srcset=&quot;/React-Personal-Blog-Gatsby/static/ca67ff04698aabf16bedfe1a4213980b/1a291/first-project-4.png 148w,
+/React-Personal-Blog-Gatsby/static/ca67ff04698aabf16bedfe1a4213980b/2bc4a/first-project-4.png 295w,
+/React-Personal-Blog-Gatsby/static/ca67ff04698aabf16bedfe1a4213980b/fb8a0/first-project-4.png 590w,
+/React-Personal-Blog-Gatsby/static/ca67ff04698aabf16bedfe1a4213980b/526de/first-project-4.png 885w,
+/React-Personal-Blog-Gatsby/static/ca67ff04698aabf16bedfe1a4213980b/fa2eb/first-project-4.png 1180w,
+/React-Personal-Blog-Gatsby/static/ca67ff04698aabf16bedfe1a4213980b/1062e/first-project-4.png 1360w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+      /&gt;
+    &lt;/span&gt;
+  &lt;/span&gt;
+  
+  &lt;/a&gt;
+    &lt;/p&gt;
 &lt;p&gt;And now we have our code ready! We can check the tragic fall of Bitcoin at the date of this article!&lt;/p&gt;
 &lt;p&gt;You can check &lt;a href=&quot;https://github.com/Radinax/React-Bitcoin-Chart&quot;&gt;here&lt;/a&gt; and for the demo check &lt;a href=&quot;http://knowledgeable-boat.surge.sh/&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
 &lt;h2&gt;Conclusion&lt;/h2&gt;
@@ -196,30 +667,42 @@ this.setState(). &lt;/p&gt;
 &lt;p&gt;When the state or props of a component update, the component will re-render itself.&lt;/p&gt;
 &lt;h2&gt;Lets work with a component with State!&lt;/h2&gt;
 &lt;p&gt;We will make a simple counter, we press a ”+” button in the UI to raise its value. We first need to plan how our state will look like.&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;class Counter extends React.Component {
-    constructor(props) {
-		super(props);
-		this.state = {
-			count: 0
-		}
-	}
-	increase = (e) =&amp;gt; {
-		this.setState({
-			count: this.state.count+1
-		})
-	}
-	render() {
-		const {count} = this.state;
-		return(
-			&amp;lt;div&amp;gt;
-				&amp;lt;div&amp;gt;{count}&amp;lt;/div&amp;gt;
-				&amp;lt;button onClick={this.increase}&amp;gt;+&amp;lt;/button&amp;gt;
-			&amp;lt;/div&amp;gt;
-		);
-	}
-}
-
-ReactDOM.render(&amp;lt;Counter /&amp;gt;, document.getElementById(&amp;#39;root&amp;#39;));&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;
+  &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/React-Personal-Blog-Gatsby/static/ca35f1d439f2238210f17dfd938b7d53/c6200/state-2.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+  
+  &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 115.28925619834712%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAXCAYAAAALHW+jAAAACXBIWXMAAAsSAAALEgHS3X78AAACiElEQVQ4y5VVbXajMAzkMFsIYAy2MTaQJpuk3ftfglPwinZkIGHbbpL+mCf8NdZIsohy6UZRtKOQ9SgrO+YFwwPtWOC7kM2YVv4GzCW5GXeiDvYzIlF4MvpMdXckfziQ9kfq3Bvt/YW82ZOpPGXNgUR3pty+UlZYwkEC4beIsDjFwkyp6aeqPk/KXSbXHSbf7adUNlOM9STTU5Kq2WKMg1f7GRGz8o1pXlNn/pCxJyr7NxIG3sjmW2/uergDUSLmDamwlLO89kRSNZQ+kPc94eZG9mgHkrQA2TKfrPZJYo5hIEpZ3kp+j2C55C7hDmQsVfozZaYnZXsSdk85MoxEzB6udiX9z4W3pECqVkeSzYnE/kKqe6cSidmVjlIGlw+H5JGHtxjOpBlqj72syj2VFbx0R8rrfVBQ6PZJyUwK5OUiEYhzlqiv4xlPSF6ToiEpL5DpsgGZoTibD8XL4UC4lNejlxJKpAFhW/+mUr+Sqn1ABo9ZeqbaIPuZurzG8AVw5p2suVBlPIiRCOlIyo6yqg1xvUe4zsPD22RaOKqR2RLe/lpjmSkANlUPveP1a1LWQDMkCA08EpxhQDVHqiB5XY83e7f4kmW28ULYg9Aidk53ZIG6OZNRv5E8Rx3mLS4Q9kC1P5HBpWs4os9ZK3RPGjXHfS9dEpauIUHz4O9snQvvfsYXyTyZ40Vs4/FTBMl8a2gOmwz+tGX9UzboMh+I28dLpj+SFTwGeD5Z7MvGbhH2ZAvwHeEnFP4bNWpNqA4F/EoFgs4vp1oaQwnwHoVCV1wBgA62DSUmjMMZbh6OImwenGoDhOkHlMkgdTfg5Qw4NKDbDGrZU2NsgWbZz1DKD9K6odB+QOiGvxYTxlLUyBPdAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+    &gt;
+      &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;state&quot;
+        title=&quot;&quot;
+        src=&quot;/React-Personal-Blog-Gatsby/static/ca35f1d439f2238210f17dfd938b7d53/fb8a0/state-2.png&quot;
+        srcset=&quot;/React-Personal-Blog-Gatsby/static/ca35f1d439f2238210f17dfd938b7d53/1a291/state-2.png 148w,
+/React-Personal-Blog-Gatsby/static/ca35f1d439f2238210f17dfd938b7d53/2bc4a/state-2.png 295w,
+/React-Personal-Blog-Gatsby/static/ca35f1d439f2238210f17dfd938b7d53/fb8a0/state-2.png 590w,
+/React-Personal-Blog-Gatsby/static/ca35f1d439f2238210f17dfd938b7d53/526de/state-2.png 885w,
+/React-Personal-Blog-Gatsby/static/ca35f1d439f2238210f17dfd938b7d53/fa2eb/state-2.png 1180w,
+/React-Personal-Blog-Gatsby/static/ca35f1d439f2238210f17dfd938b7d53/c6200/state-2.png 1452w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+      /&gt;
+    &lt;/span&gt;
+  &lt;/span&gt;
+  
+  &lt;/a&gt;
+    &lt;/p&gt;
 &lt;p&gt;We’re seeing new stuff here.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
@@ -231,10 +714,42 @@ ReactDOM.render(&amp;lt;Counter /&amp;gt;, document.getElementById(&amp;#39;root
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Lets make something clear, you don’t need to use constructor and super even when defining a new class, you generally need them for using &lt;strong&gt;props&lt;/strong&gt; and make it available inside the constructor, but if you don’t need it then you can define the above code like this:&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;class Counter extends React.Component {
-	   state = {
-			count: 0
-		}&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;
+  &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/React-Personal-Blog-Gatsby/static/37efa10a4452005b4101f4ffc16eed39/1062e/state-3.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+  
+  &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 26.029411764705884%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAFCAYAAABFA8wzAAAACXBIWXMAAAsSAAALEgHS3X78AAAAwUlEQVQY03WOWQ7CMAxEcxkoWdu0WUoBFQH3v5ClmGkqKhDwMbHzLI9HKJvI2JG0jWS7SKaN6DMZdyTrMllw5RLJblwFJsEaPdDBBGqgWvFfuNB25NDfOOSZp9OZU56491dOw4ODv/DRj9z6ic10r9LhzAjBMGAYfWhhAk/Z676oNBcZ56L8qSgXwHzZge/qfCiN9KtUX5YdGGz1vRcHvbpLuNfr8cKuS0gBrsNXivc0v7h4DVSbGderkGhb+Lf4T084VZpQdNRU3QAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+    &gt;
+      &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;state&quot;
+        title=&quot;&quot;
+        src=&quot;/React-Personal-Blog-Gatsby/static/37efa10a4452005b4101f4ffc16eed39/fb8a0/state-3.png&quot;
+        srcset=&quot;/React-Personal-Blog-Gatsby/static/37efa10a4452005b4101f4ffc16eed39/1a291/state-3.png 148w,
+/React-Personal-Blog-Gatsby/static/37efa10a4452005b4101f4ffc16eed39/2bc4a/state-3.png 295w,
+/React-Personal-Blog-Gatsby/static/37efa10a4452005b4101f4ffc16eed39/fb8a0/state-3.png 590w,
+/React-Personal-Blog-Gatsby/static/37efa10a4452005b4101f4ffc16eed39/526de/state-3.png 885w,
+/React-Personal-Blog-Gatsby/static/37efa10a4452005b4101f4ffc16eed39/fa2eb/state-3.png 1180w,
+/React-Personal-Blog-Gatsby/static/37efa10a4452005b4101f4ffc16eed39/1062e/state-3.png 1360w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+      /&gt;
+    &lt;/span&gt;
+  &lt;/span&gt;
+  
+  &lt;/a&gt;
+    &lt;/p&gt;
 &lt;p&gt;And the code will still work! Now lets get back to exploring the parts of the component.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;

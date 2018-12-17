@@ -1,0 +1,277 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><style data-href="/React-Personal-Blog-Gatsby/1.8a22d5eb22a0d5bb33ba.css">@font-face{font-family:Montserrat;font-style:normal;font-display:swap;font-weight:100;src:local("Montserrat Thin "),local("Montserrat-Thin"),url(/React-Personal-Blog-Gatsby/static/montserrat-latin-100-50d279861fb3cbfed809eae6ed8b9ac9.woff2) format("woff2"),url(/React-Personal-Blog-Gatsby/static/montserrat-latin-100-5e334eff013f12fbb8ed72c2a253f119.woff) format("woff")}@font-face{font-family:Montserrat;font-style:italic;font-display:swap;font-weight:100;src:local("Montserrat Thin italic"),local("Montserrat-Thinitalic"),url(/React-Personal-Blog-Gatsby/static/montserrat-latin-100italic-8c0705336558194799a8729840d7ed9d.woff2) format("woff2"),url(/React-Personal-Blog-Gatsby/static/montserrat-latin-100italic-03e19243272affe738654a157625ec26.woff) format("woff")}@font-face{font-family:Montserrat;font-style:normal;font-display:swap;font-weight:200;src:local("Montserrat Extra Light "),local("Montserrat-Extra Light"),url(/React-Personal-Blog-Gatsby/static/montserrat-latin-200-4343d3d91a9446226e7a8bbb024111ad.woff2) format("woff2"),url(/React-Personal-Blog-Gatsby/static/montserrat-latin-200-f2022ecd65a0703ec3edcb7641709a75.woff) format("woff")}@font-face{font-family:Montserrat;font-style:italic;font-display:swap;font-weight:200;src:local("Montserrat Extra Light italic"),local("Montserrat-Extra Lightitalic"),url(/React-Personal-Blog-Gatsby/static/montserrat-latin-200italic-116c4c4b14ef76b0555da09854512022.woff2) format("woff2"),url(/React-Personal-Blog-Gatsby/static/montserrat-latin-200italic-89614a6008fc5c60739012463d0ee7e6.woff) format("woff")}@font-face{font-family:Montserrat;font-style:normal;font-display:swap;font-weight:300;src:local("Montserrat Light "),local("Montserrat-Light"),url(/React-Personal-Blog-Gatsby/static/montserrat-latin-300-d2ad295b60682a6537c358e06ea80c61.woff2) format("woff2"),url(/React-Personal-Blog-Gatsby/static/montserrat-latin-300-3a371ee0d175f5c2b15ce1d6b981dc4e.woff) format("woff")}@font-face{font-family:Montserrat;font-style:italic;font-display:swap;font-weight:300;src:local("Montserrat Light italic"),local("Montserrat-Lightitalic"),url(/React-Personal-Blog-Gatsby/static/montserrat-latin-300italic-f6b6bf2431003f8142e800f9df157989.woff2) format("woff2"),url(/React-Personal-Blog-Gatsby/static/montserrat-latin-300italic-16521668f5f238098329cdd7d27c391e.woff) format("woff")}@font-face{font-family:Montserrat;font-style:normal;font-display:swap;font-weight:400;src:local("Montserrat Regular "),local("Montserrat-Regular"),url(/React-Personal-Blog-Gatsby/static/montserrat-latin-400-240a84447b78da0920fcb07e378f2c5f.woff2) format("woff2"),url(/React-Personal-Blog-Gatsby/static/montserrat-latin-400-b20cc131034316b1c85d0498fb9ed5c5.woff) format("woff")}@font-face{font-family:Montserrat;font-style:italic;font-display:swap;font-weight:400;src:local("Montserrat Regular italic"),local("Montserrat-Regularitalic"),url(/React-Personal-Blog-Gatsby/static/montserrat-latin-400italic-86172bb829de6be08b92512096b6aca6.woff2) format("woff2"),url(/React-Personal-Blog-Gatsby/static/montserrat-latin-400italic-9405e78785a55cf0e4ea7669d4616ea9.woff) format("woff")}@font-face{font-family:Montserrat;font-style:normal;font-display:swap;font-weight:500;src:local("Montserrat Medium "),local("Montserrat-Medium"),url(/React-Personal-Blog-Gatsby/static/montserrat-latin-500-fb8d6b71dbe8d9294be43082936f649e.woff2) format("woff2"),url(/React-Personal-Blog-Gatsby/static/montserrat-latin-500-50825d47af7ae47e055018eb689c6c99.woff) format("woff")}@font-face{font-family:Montserrat;font-style:italic;font-display:swap;font-weight:500;src:local("Montserrat Medium italic"),local("Montserrat-Mediumitalic"),url(/React-Personal-Blog-Gatsby/static/montserrat-latin-500italic-c0a555a4f8e997385a3eebbd4da0b9ee.woff2) format("woff2"),url(/React-Personal-Blog-Gatsby/static/montserrat-latin-500italic-635de59c4be86285b1f70068c95b9816.woff) format("woff")}@font-face{font-family:Montserrat;font-style:normal;font-display:swap;font-weight:600;src:local("Montserrat SemiBold "),local("Montserrat-SemiBold"),url(/React-Personal-Blog-Gatsby/static/montserrat-latin-600-d5615136a08cfee70deb4be1ee1651df.woff2) format("woff2"),url(/React-Personal-Blog-Gatsby/static/montserrat-latin-600-f300da4fb4fe00e23915f62b2c643681.woff) format("woff")}@font-face{font-family:Montserrat;font-style:italic;font-display:swap;font-weight:600;src:local("Montserrat SemiBold italic"),local("Montserrat-SemiBolditalic"),url(/React-Personal-Blog-Gatsby/static/montserrat-latin-600italic-10f29d139edacde92df63374c5672568.woff2) format("woff2"),url(/React-Personal-Blog-Gatsby/static/montserrat-latin-600italic-2bc37d86a4ba12ce526c4af904a9946e.woff) format("woff")}@font-face{font-family:Montserrat;font-style:normal;font-display:swap;font-weight:700;src:local("Montserrat Bold "),local("Montserrat-Bold"),url(/React-Personal-Blog-Gatsby/static/montserrat-latin-700-7d77e1f03eefc452dab14d7f89080083.woff2) format("woff2"),url(/React-Personal-Blog-Gatsby/static/montserrat-latin-700-81826529772e52f0f14a4c73c2f2c7f1.woff) format("woff")}@font-face{font-family:Montserrat;font-style:italic;font-display:swap;font-weight:700;src:local("Montserrat Bold italic"),local("Montserrat-Bolditalic"),url(/React-Personal-Blog-Gatsby/static/montserrat-latin-700italic-1dd2b53f1567a29e0505de9b27c4352c.woff2) format("woff2"),url(/React-Personal-Blog-Gatsby/static/montserrat-latin-700italic-c162d257f5e9f9b108a96a604cfb2132.woff) format("woff")}@font-face{font-family:Montserrat;font-style:normal;font-display:swap;font-weight:800;src:local("Montserrat ExtraBold "),local("Montserrat-ExtraBold"),url(/React-Personal-Blog-Gatsby/static/montserrat-latin-800-d4e7bf86bbd8e5f43ca73fa831218648.woff2) format("woff2"),url(/React-Personal-Blog-Gatsby/static/montserrat-latin-800-895aadbff357be35ac8dd107c7975ee7.woff) format("woff")}@font-face{font-family:Montserrat;font-style:italic;font-display:swap;font-weight:800;src:local("Montserrat ExtraBold italic"),local("Montserrat-ExtraBolditalic"),url(/React-Personal-Blog-Gatsby/static/montserrat-latin-800italic-fc0cbe442f7b3733c91e982e825c4daa.woff2) format("woff2"),url(/React-Personal-Blog-Gatsby/static/montserrat-latin-800italic-b3362875067300abedb7a8fb97903258.woff) format("woff")}@font-face{font-family:Montserrat;font-style:normal;font-display:swap;font-weight:900;src:local("Montserrat Black "),local("Montserrat-Black"),url(/React-Personal-Blog-Gatsby/static/montserrat-latin-900-c8bdd772c0d1347720ff7e3fb72719f3.woff2) format("woff2"),url(/React-Personal-Blog-Gatsby/static/montserrat-latin-900-1b99ef78e627dd9bbd0ca4b5c0789547.woff) format("woff")}@font-face{font-family:Montserrat;font-style:italic;font-display:swap;font-weight:900;src:local("Montserrat Black italic"),local("Montserrat-Blackitalic"),url(/React-Personal-Blog-Gatsby/static/montserrat-latin-900italic-cb72c1f90f66c124fb897a75bec64c78.woff2) format("woff2"),url(/React-Personal-Blog-Gatsby/static/montserrat-latin-900italic-b78bb9f8ecec6c5a924c873f1818095f.woff) format("woff")}@font-face{font-family:Merriweather;font-style:normal;font-display:swap;font-weight:300;src:local("Merriweather Light "),local("Merriweather-Light"),url(/React-Personal-Blog-Gatsby/static/merriweather-latin-300-f015f1e9a46a3b9db4fd64564dacece4.woff2) format("woff2"),url(/React-Personal-Blog-Gatsby/static/merriweather-latin-300-92dfe81b725c342d31d962da975c07a6.woff) format("woff")}@font-face{font-family:Merriweather;font-style:italic;font-display:swap;font-weight:300;src:local("Merriweather Light italic"),local("Merriweather-Lightitalic"),url(/React-Personal-Blog-Gatsby/static/merriweather-latin-300italic-7fd86b32accf2df4403d1d4fa3a81502.woff2) format("woff2"),url(/React-Personal-Blog-Gatsby/static/merriweather-latin-300italic-878b76f59d5ba58dd1652dc8d2a0f4f9.woff) format("woff")}@font-face{font-family:Merriweather;font-style:normal;font-display:swap;font-weight:400;src:local("Merriweather Regular "),local("Merriweather-Regular"),url(/React-Personal-Blog-Gatsby/static/merriweather-latin-400-12dbf4c00ae43698f278b099e4b0ec9e.woff2) format("woff2"),url(/React-Personal-Blog-Gatsby/static/merriweather-latin-400-1fffad22b085a877995812dbf1d9ac08.woff) format("woff")}@font-face{font-family:Merriweather;font-style:italic;font-display:swap;font-weight:400;src:local("Merriweather Regular italic"),local("Merriweather-Regularitalic"),url(/React-Personal-Blog-Gatsby/static/merriweather-latin-400italic-1e0d3e8121d88969bfb153c8f174b758.woff2) format("woff2"),url(/React-Personal-Blog-Gatsby/static/merriweather-latin-400italic-de18d4c4e8e808a7248a185f866ff094.woff) format("woff")}@font-face{font-family:Merriweather;font-style:normal;font-display:swap;font-weight:700;src:local("Merriweather Bold "),local("Merriweather-Bold"),url(/React-Personal-Blog-Gatsby/static/merriweather-latin-700-dc8fec81a125fc63856587e6683da73b.woff2) format("woff2"),url(/React-Personal-Blog-Gatsby/static/merriweather-latin-700-d7d2ed8e58f303392cc3fc00ba3a9186.woff) format("woff")}@font-face{font-family:Merriweather;font-style:italic;font-display:swap;font-weight:700;src:local("Merriweather Bold italic"),local("Merriweather-Bolditalic"),url(/React-Personal-Blog-Gatsby/static/merriweather-latin-700italic-b7b7e5da4d7be8c12bd5a6c809edc8fc.woff2) format("woff2"),url(/React-Personal-Blog-Gatsby/static/merriweather-latin-700italic-6210a5fc1c54ca85a5d82aa85d7a9b5c.woff) format("woff")}@font-face{font-family:Merriweather;font-style:normal;font-display:swap;font-weight:900;src:local("Merriweather Black "),local("Merriweather-Black"),url(/React-Personal-Blog-Gatsby/static/merriweather-latin-900-43f870d543dd89fbeb66d417c0d97276.woff2) format("woff2"),url(/React-Personal-Blog-Gatsby/static/merriweather-latin-900-8f3806df74937c7b8b53f24ae1e725d1.woff) format("woff")}@font-face{font-family:Merriweather;font-style:italic;font-display:swap;font-weight:900;src:local("Merriweather Black italic"),local("Merriweather-Blackitalic"),url(/React-Personal-Blog-Gatsby/static/merriweather-latin-900italic-168c1ab28ed0e4e7d654334def288bc1.woff2) format("woff2"),url(/React-Personal-Blog-Gatsby/static/merriweather-latin-900italic-ae7778f01871e35ee142ef207b313b34.woff) format("woff")}</style><meta name="generator" content="Gatsby 2.0.64"/><link rel="alternate" type="application/rss+xml" href="/React-Personal-Blog-Gatsby/rss.xml"/><link rel="shortcut icon" href="/React-Personal-Blog-Gatsby/icons/icon-48x48.png"/><link rel="manifest" href="/React-Personal-Blog-Gatsby/manifest.webmanifest"/><meta name="theme-color" content="#663399"/><title data-react-helmet="true">Second Project - Graphing data in state | Adrian Beria Blog</title><meta data-react-helmet="true" name="description" content="Lets imagine we’re getting the following data we need to graph: We’re creating imaginary data and we want to graph each of those datas which…"/><style id="typography.js">html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}article,aside,details,figcaption,figure,footer,header,main,menu,nav,section,summary{display:block}audio,canvas,progress,video{display:inline-block}audio:not([controls]){display:none;height:0}progress{vertical-align:baseline}[hidden],template{display:none}a{background-color:transparent;-webkit-text-decoration-skip:objects}a:active,a:hover{outline-width:0}abbr[title]{border-bottom:none;text-decoration:underline;text-decoration:underline dotted}b,strong{font-weight:inherit;font-weight:bolder}dfn{font-style:italic}h1{font-size:2em;margin:.67em 0}mark{background-color:#ff0;color:#000}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}img{border-style:none}svg:not(:root){overflow:hidden}code,kbd,pre,samp{font-family:monospace,monospace;font-size:1em}figure{margin:1em 40px}hr{box-sizing:content-box;height:0;overflow:visible}button,input,optgroup,select,textarea{font:inherit;margin:0}optgroup{font-weight:700}button,input{overflow:visible}button,select{text-transform:none}[type=reset],[type=submit],button,html [type=button]{-webkit-appearance:button}[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner,button::-moz-focus-inner{border-style:none;padding:0}[type=button]:-moz-focusring,[type=reset]:-moz-focusring,[type=submit]:-moz-focusring,button:-moz-focusring{outline:1px dotted ButtonText}fieldset{border:1px solid silver;margin:0 2px;padding:.35em .625em .75em}legend{box-sizing:border-box;color:inherit;display:table;max-width:100%;padding:0;white-space:normal}textarea{overflow:auto}[type=checkbox],[type=radio]{box-sizing:border-box;padding:0}[type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}[type=search]::-webkit-search-cancel-button,[type=search]::-webkit-search-decoration{-webkit-appearance:none}::-webkit-input-placeholder{color:inherit;opacity:.54}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}html{font:100%/1.625 -apple-system,'BlinkMacSystemFont','Segoe UI','Roboto','Helvetica','Arial',sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';box-sizing:border-box;overflow-y:scroll;}*{box-sizing:inherit;}*:before{box-sizing:inherit;}*:after{box-sizing:inherit;}body{color:hsla(0,0%,0%,0.8);font-family:-apple-system,'BlinkMacSystemFont','Segoe UI','Roboto','Helvetica','Arial',sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';font-weight:normal;word-wrap:break-word;font-kerning:normal;-moz-font-feature-settings:"kern", "liga", "clig", "calt";-ms-font-feature-settings:"kern", "liga", "clig", "calt";-webkit-font-feature-settings:"kern", "liga", "clig", "calt";font-feature-settings:"kern", "liga", "clig", "calt";}img{max-width:100%;margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:0.8125rem;}h1{margin-left:0;margin-right:0;margin-top:2.4375rem;padding-bottom:calc(0.40625rem - 1px);padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.21875rem;color:inherit;font-family:-apple-system,'BlinkMacSystemFont','Segoe UI','Roboto','Helvetica','Arial',sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';font-weight:600;text-rendering:optimizeLegibility;font-size:2rem;line-height:1.1;border-bottom:1px solid hsla(0,0%,0%,0.07);}h2{margin-left:0;margin-right:0;margin-top:1.625rem;padding-bottom:calc(0.40625rem - 1px);padding-left:0;padding-right:0;padding-top:0;margin-bottom:0.40625rem;color:inherit;font-family:-apple-system,'BlinkMacSystemFont','Segoe UI','Roboto','Helvetica','Arial',sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';font-weight:600;text-rendering:optimizeLegibility;font-size:1.51572rem;line-height:1.1;border-bottom:1px solid hsla(0,0%,0%,0.07);}h3{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:0.8125rem;color:inherit;font-family:-apple-system,'BlinkMacSystemFont','Segoe UI','Roboto','Helvetica','Arial',sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';font-weight:600;text-rendering:optimizeLegibility;font-size:1.31951rem;line-height:1.1;}h4{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:0.8125rem;color:inherit;font-family:-apple-system,'BlinkMacSystemFont','Segoe UI','Roboto','Helvetica','Arial',sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';font-weight:600;text-rendering:optimizeLegibility;font-size:1rem;line-height:1.1;}h5{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:0.8125rem;color:inherit;font-family:-apple-system,'BlinkMacSystemFont','Segoe UI','Roboto','Helvetica','Arial',sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';font-weight:600;text-rendering:optimizeLegibility;font-size:0.87055rem;line-height:1.1;}h6{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:0.8125rem;color:hsla(0,0%,0%,0.53);font-family:-apple-system,'BlinkMacSystemFont','Segoe UI','Roboto','Helvetica','Arial',sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';font-weight:600;text-rendering:optimizeLegibility;font-size:0.81225rem;line-height:1.1;}hgroup{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:0.8125rem;}ul{margin-left:1.625rem;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:0.8125rem;list-style-position:outside;list-style-image:none;}ol{margin-left:1.625rem;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:0.8125rem;list-style-position:outside;list-style-image:none;}dl{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:0.8125rem;}dd{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:0.8125rem;}p{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:0.8125rem;}figure{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:0.8125rem;}pre{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:0.8125rem;font-size:0.85rem;line-height:1.625rem;}table{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:0.8125rem;font-size:1rem;line-height:1.625rem;border-collapse:collapse;width:100%;}fieldset{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:0.8125rem;}blockquote{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:calc(0.8125rem - 1px);padding-right:0;padding-top:0;margin-bottom:0.8125rem;border-left:4px solid hsla(0,0%,0%,0.13);color:hsla(0,0%,0%,0.53);}form{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:0.8125rem;}noscript{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:0.8125rem;}iframe{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:0.8125rem;}hr{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:calc(0.8125rem - 1px);background:hsla(0,0%,0%,0.2);border:none;height:1px;}address{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:0.8125rem;}b{font-weight:600;}strong{font-weight:600;}dt{font-weight:600;}th{font-weight:600;}li{margin-bottom:calc(0.8125rem / 2);}ol li{padding-left:0;}ul li{padding-left:0;}li > ol{margin-left:1.625rem;margin-bottom:calc(0.8125rem / 2);margin-top:calc(0.8125rem / 2);}li > ul{margin-left:1.625rem;margin-bottom:calc(0.8125rem / 2);margin-top:calc(0.8125rem / 2);}blockquote *:last-child{margin-bottom:0;}li *:last-child{margin-bottom:0;}p *:last-child{margin-bottom:0;}li > p{margin-bottom:calc(0.8125rem / 2);}code{font-size:0.85rem;line-height:1.625rem;}kbd{font-size:0.85rem;line-height:1.625rem;}samp{font-size:0.85rem;line-height:1.625rem;}abbr{border-bottom:1px dotted hsla(0,0%,0%,0.5);cursor:help;}acronym{border-bottom:1px dotted hsla(0,0%,0%,0.5);cursor:help;}abbr[title]{border-bottom:1px dotted hsla(0,0%,0%,0.5);cursor:help;text-decoration:none;}thead{text-align:left;}td,th{text-align:left;border-bottom:1px solid hsla(0,0%,0%,0.12);font-feature-settings:"tnum";-moz-font-feature-settings:"tnum";-ms-font-feature-settings:"tnum";-webkit-font-feature-settings:"tnum";padding-left:1.08333rem;padding-right:1.08333rem;padding-top:0.8125rem;padding-bottom:calc(0.8125rem - 1px);}th:first-child,td:first-child{padding-left:0;}th:last-child,td:last-child{padding-right:0;}h3,h4,h5,h6{margin-bottom:0.8125rem;margin-top:1.625rem;}ol,ul{margin-left:2.03125rem;}li>ol,li>ul{margin-left:2.03125rem;}a{color:#4078c0;text-decoration:none;}a:hover,a:active{text-decoration:underline;}a.gatsby-resp-image-link{box-shadow:none;}</style><link as="script" rel="preload" href="/React-Personal-Blog-Gatsby/1-0ca38feffad4eeaaf45d.js"/><link as="script" rel="preload" href="/React-Personal-Blog-Gatsby/component---src-templates-blog-post-js-453bf1286b7dd5e6e7f5.js"/><link as="script" rel="preload" href="/React-Personal-Blog-Gatsby/app-409877d0f01dd7b88b9a.js"/><link as="script" rel="preload" href="/React-Personal-Blog-Gatsby/0-7e455f3cc2a6d08ad506.js"/><link as="script" rel="preload" href="/React-Personal-Blog-Gatsby/webpack-runtime-c83c60e19cd6bee7dd19.js"/><link rel="preload" href="/React-Personal-Blog-Gatsby/static/d/715/path---6-second-project-b-7-f-eed-TSyob0DV5pnNz554bhXcOU2kvk.json" as="fetch" crossOrigin="use-credentials"/></head><body><div id="___gatsby"><div style="outline:none" tabindex="-1" role="group"><div style="margin-left:auto;margin-right:auto;max-width:39rem;padding:2.4375rem 1.21875rem"><h3 style="margin-top:0;margin-bottom:-1.625rem;text-align:center;font-size:3rem;padding:15px"><a style="box-shadow:none;text-decoration:none;color:inherit" href="/React-Personal-Blog-Gatsby/">Adrian Beria Blog</a></h3><h1>Second Project - Graphing data in state</h1><p style="font-size:0.87055rem;line-height:1.625rem;display:block;margin-bottom:1.625rem;margin-top:-0.8125rem">December 17, 2018</p><div><p>Lets imagine we’re getting the following data we need to graph:</p>
+<p>
+  <a
+    class="gatsby-resp-image-link"
+    href="/React-Personal-Blog-Gatsby/static/89d970baa829112af723d12ccc6fe1b3/f924e/second-project-1.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+  
+  <span
+    class="gatsby-resp-image-wrapper"
+    style="position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;"
+  >
+    <span
+      class="gatsby-resp-image-background-image"
+      style="padding-bottom: 136.36363636363637%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAbCAYAAAB836/YAAAACXBIWXMAAAsSAAALEgHS3X78AAACJElEQVRIx81VW3KjMBDkNDGWkAAJIZ6Od/f+J6KKSY+wADuJt3D2Yz+69G7NaFoziVB+ynI/qcKhrSep3XRWgK5Dm2bVdJJ2Sp8h7kGbSNVQZS/UNiP1XUeu6UmWHYmiJZF7wqZDSN6kmVPpZqHbufTDLPN6PmXVjBsXoA8r5pTbJzjd9iTMigGdMkuprimrRhLKhbm4dsjC9YDkiaUv/XsgzormOGHs8EEEgbKypf3cUStXwvR2SNqeMjsgIM2d64ddju2ZAVJpOpKI8ksux0MCQWG3T8IseNXl8H4gU9UQLNwTvBaUIBu4CheDbLQP4x/JJrQxMP5Kyo2k/o1susXin7zh3u0gG7ylgHUcpP9NNn6TDVu8kt2TPrskWBj0B2yJYgvSfvxI9BUxpy9SeUu2RFSNJ10224GHb7kn/i5gwUKlahpNTw7BUO2VSmQbU79T3v2hor5QbhvSVY8L2+BNimf51sK4INB2CIQ1IG1+UekuZEFc8iUNXzJSaeEBkyJxnB+sjbiL8hug8wEl4UoGZaGoOoCzT0/aDZDTJfTT258PgLz4/eVt7k6HZ1UFcGLNYVluFjLB3xE/RyJXSsyzVrnesKwE9gh4lsFqHn/SocIGvhEVEHNmyzxRSvv++qO2cbL/dho3BXGjL7Q7XPFilGep/VzYAZWvXqqY3Kpeuq+Af8Fa9aRuyJnflBc9GS5QL2SZ1UI85ATL1sofweOj4HMf1hU+meqhxUsAAAAASUVORK5CYII='); background-size: cover; display: block;"
+    >
+      <img
+        class="gatsby-resp-image-image"
+        style="width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;"
+        alt="code"
+        title=""
+        src="/React-Personal-Blog-Gatsby/static/89d970baa829112af723d12ccc6fe1b3/fb8a0/second-project-1.png"
+        srcset="/React-Personal-Blog-Gatsby/static/89d970baa829112af723d12ccc6fe1b3/1a291/second-project-1.png 148w,
+/React-Personal-Blog-Gatsby/static/89d970baa829112af723d12ccc6fe1b3/2bc4a/second-project-1.png 295w,
+/React-Personal-Blog-Gatsby/static/89d970baa829112af723d12ccc6fe1b3/fb8a0/second-project-1.png 590w,
+/React-Personal-Blog-Gatsby/static/89d970baa829112af723d12ccc6fe1b3/526de/second-project-1.png 885w,
+/React-Personal-Blog-Gatsby/static/89d970baa829112af723d12ccc6fe1b3/fa2eb/second-project-1.png 1180w,
+/React-Personal-Blog-Gatsby/static/89d970baa829112af723d12ccc6fe1b3/f924e/second-project-1.png 1518w"
+        sizes="(max-width: 590px) 100vw, 590px"
+      />
+    </span>
+  </span>
+  
+  </a>
+    </p>
+<p>We’re creating imaginary data and we want to graph each of those datas which have the following format:</p>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">data: [{time, value},{time, value},{time, value}]</code></pre></div>
+<p>In total we would have four different lines to graph where the x-axis would be time and y-axis would be value.</p>
+<p>On the x-axis will be the time and on the y-axis will be the four datas in c1 and c2 called <strong>value</strong>.</p>
+<h2>Creating our enviroment.</h2>
+<p>First create a Projects Folder and open your terminal (you can use Windows CMD or Gitbash) and write the following command:</p>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">npx create-react-app Bitcoin-Chart
+cd Bitcoin-Chart
+npm install --save react-apexcharts apexcharts
+npm start</code></pre></div>
+<p>Erase the files you don’t need and make the same setup you did as the last project, copy the App.js and the component BitcoinChart which we will rename Graph.</p>
+<h2>Lets work on our imaginary data</h2>
+<p>On App.js we will have the following code:</p>
+<p>
+  <a
+    class="gatsby-resp-image-link"
+    href="/React-Personal-Blog-Gatsby/static/afda553aa5bb6596d4a654a5fc83da6e/05a57/second-project-3.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+  
+  <span
+    class="gatsby-resp-image-wrapper"
+    style="position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;"
+  >
+    <span
+      class="gatsby-resp-image-background-image"
+      style="padding-bottom: 190.53549190535492%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAmCAYAAADEO7urAAAACXBIWXMAAAsSAAALEgHS3X78AAADOklEQVRIx61WWXbiMBD0ZQaMZWuXFxkDmczP3P8UPkReT7UMxBDMksyHXsuLStV7Z0I2JGWkSjekbE2bKiTpfEuVClRWHZVlRwXvTU156WktXJLzdXqXGb2j3v8l5yLtd1sytqe2fqPQdBT6SM2wJ9cM5Lc9+X5LucDh0t0EY5ltyppE1YCZpxIsCjDkdyt83KiaCo1n6RPDjQwXh28yLGVHRu/J+0ihbqkGs8o0JHQHwBYX1bQuXDqwBDZfGX8sq5asOZB2HfkAtrBroZo7troDOP1kaQ2VC9iPWeU4tCrsBaN7rL4wTA98CLLQLZXtAR6FZ2X9NNAFwxMLBmBVczgmrQf2egiYA1C4Pjnk24DXnmOvinr3M5X5EGfI5sTq6JBnwmQRMDkD6s69+m3AM0s4RCB0hI2fbH9sQ/kfbHhWGwwZKN+YL4H9LYZrqFkAsOrefu7lKWSOnp57/HUbThtmMwHMvHzjwKMLpmqjOhJcFFBFisonOQ+dBHJVIJaAsxUqjVGRoh0Qh5FUPZD1WxKwIachF12BlasmmeFR5Ukqb7AJ6Ck9gCRCRsXf5FBxfHwn3exIdwcyqJXatam8nZx1a2XzzJBoBVpvUWTfSYKhtADxPTwfsW9J4sLSD2DcfNqXbZ/aRrgV2CEVBxvACoc1DpcBAHhmoJJNgX1xBGFggfcpbbH4+QKQfzzfzhW88ouqXVfzk+OyazC+mfcpBeUxFhd6yK3OlxgykDTxwovzW2+C3csUbqXevmFSQEuFzdgeS333YaYUap4hk3p8eDVbrxSJjHtyVSEsMCFUAFcKsah6zDuYb8BUzwL6KYYCYSLNjtzuD1nMMFoPVPHwBIc4tm3K8fDFloupN6ln4VkMRw4BrWN6ZvWTyuVUJObq3zPBVGDF1Oh5tNNILQ9VB+Tx4LZUx4FcHTGuwCSyPpe4uwzPAQo2XFgDwAwOG6js0F8sLrHYGzNVpXuF97KN4kfJ8w3kL7QAVvEkn1b5lCWcw/yCe0n+hEcXGWKI/ICqH3BEWvgR0iWJH5J8ZWHgbFPcsVQoXUnCXsWRcQqZF1YmVRyt2Y8Y3EdnDiM/w8ujqMKIG0eAJvns+ge8Z5IesgbSjAAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+    >
+      <img
+        class="gatsby-resp-image-image"
+        style="width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;"
+        alt="code"
+        title=""
+        src="/React-Personal-Blog-Gatsby/static/afda553aa5bb6596d4a654a5fc83da6e/fb8a0/second-project-3.png"
+        srcset="/React-Personal-Blog-Gatsby/static/afda553aa5bb6596d4a654a5fc83da6e/1a291/second-project-3.png 148w,
+/React-Personal-Blog-Gatsby/static/afda553aa5bb6596d4a654a5fc83da6e/2bc4a/second-project-3.png 295w,
+/React-Personal-Blog-Gatsby/static/afda553aa5bb6596d4a654a5fc83da6e/fb8a0/second-project-3.png 590w,
+/React-Personal-Blog-Gatsby/static/afda553aa5bb6596d4a654a5fc83da6e/526de/second-project-3.png 885w,
+/React-Personal-Blog-Gatsby/static/afda553aa5bb6596d4a654a5fc83da6e/fa2eb/second-project-3.png 1180w,
+/React-Personal-Blog-Gatsby/static/afda553aa5bb6596d4a654a5fc83da6e/05a57/second-project-3.png 1606w"
+        sizes="(max-width: 590px) 100vw, 590px"
+      />
+    </span>
+  </span>
+  
+  </a>
+    </p>
+<p><strong>mock_lines</strong> is simply a function that returns the Object setup we will be working with, now we’re seeing some now terminology here:</p>
+<blockquote>
+<p><strong>Object.keys(Obj)</strong>  takes an object (Obj) and returns an array with its keys.
+<strong>Object.values(Obj)</strong>  takes an object (Obj) and returns an array with its values.</p>
+</blockquote>
+<p>We will work with these a lot in our career as React Developers so its crucial to understand how to use them. Lets check line by line what we’re doing:</p>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">Object.keys(lines).map((c, ci) =&gt; {</code></pre></div>
+<p>We’re taking the object <strong>lines</strong> and creating an array with its keys:</p>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">[c1,c2]</code></pre></div>
+<p>Where c1 and c2 are objects. Now we use <strong>.map()</strong> to check each element in the array which are objects as well:</p>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">Object.keys(lines[c]).map((e, ei) =&gt; {</code></pre></div>
+<p>Now we proceed on filling our imaginary data:</p>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">for (let i = 0; i &lt; 5; i++) { 
+    lines[c][e].data.push({ value: i + j, time: i }); 
+}; 
+j = j + 3;</code></pre></div>
+<p>What the code is doing is, on <strong>c1</strong> we’re going inside the <strong>e</strong> objects and inside the data array to push an object <strong>{ value, time }</strong> and we’re filling them. So for the first <strong>c1</strong> we go direct into the first <strong>e1</strong> and then into its data where inside the <strong>for loop</strong> we’re doing this:</p>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">{value: 0+0, time: 0}
+{value: 1+0, time: 1}
+{value: 2+0, time: 2}
+{value: 3+0, time: 3}
+{value: 4+0, time: 4}</code></pre></div>
+<p>On the next iteration for the <strong>e2</strong> inside <strong>c1</strong>:</p>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">{value: 0+3, time: 0}
+{value: 1+3, time: 1}
+{value: 2+3, time: 2}
+{value: 3+3, time: 3}
+{value: 4+3, time: 4}</code></pre></div>
+<p>Now that <strong>c1</strong> is filled, the <strong>.map()</strong> goes to <strong>c2</strong> and fills the data the exact same way but with j = 6 by that point, for e1:</p>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">{value: 0+6, time: 0}
+{value: 1+6, time: 1}
+{value: 2+6, time: 2}
+{value: 3+6, time: 3}
+{value: 4+6, time: 4}</code></pre></div>
+<p>Now for e2:</p>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">{value: 0+9, time: 0}
+{value: 1+9, time: 1}
+{value: 2+9, time: 2}
+{value: 3+9, time: 3}
+{value: 4+9, time: 4}</code></pre></div>
+<p>And thats it. We now  pass the data as props inside the component which will be available as props, lets go inside!</p>
+<h2>Inside our Chart component</h2>
+<p>This almost the exact same component of our first project, where options will be the same too but didn’t put here due to being unnecesary.</p>
+<p>
+  <a
+    class="gatsby-resp-image-link"
+    href="/React-Personal-Blog-Gatsby/static/d663e11605a7f2da37691eb0dac06c85/1062e/second-project-4.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+  
+  <span
+    class="gatsby-resp-image-wrapper"
+    style="position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;"
+  >
+    <span
+      class="gatsby-resp-image-background-image"
+      style="padding-bottom: 438.52941176470586%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,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'); background-size: cover; display: block;"
+    >
+      <img
+        class="gatsby-resp-image-image"
+        style="width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;"
+        alt="code"
+        title=""
+        src="/React-Personal-Blog-Gatsby/static/d663e11605a7f2da37691eb0dac06c85/fb8a0/second-project-4.png"
+        srcset="/React-Personal-Blog-Gatsby/static/d663e11605a7f2da37691eb0dac06c85/1a291/second-project-4.png 148w,
+/React-Personal-Blog-Gatsby/static/d663e11605a7f2da37691eb0dac06c85/2bc4a/second-project-4.png 295w,
+/React-Personal-Blog-Gatsby/static/d663e11605a7f2da37691eb0dac06c85/fb8a0/second-project-4.png 590w,
+/React-Personal-Blog-Gatsby/static/d663e11605a7f2da37691eb0dac06c85/526de/second-project-4.png 885w,
+/React-Personal-Blog-Gatsby/static/d663e11605a7f2da37691eb0dac06c85/fa2eb/second-project-4.png 1180w,
+/React-Personal-Blog-Gatsby/static/d663e11605a7f2da37691eb0dac06c85/1062e/second-project-4.png 1360w"
+        sizes="(max-width: 590px) 100vw, 590px"
+      />
+    </span>
+  </span>
+  
+  </a>
+    </p>
+<p>For graphing the state will pretty much be the same according to Apex Chart documentation, but we need to find a way to explore the <strong>this.props.data</strong> we’re sending to the Chart component. Since its an object:</p>
+<p>
+  <a
+    class="gatsby-resp-image-link"
+    href="/React-Personal-Blog-Gatsby/static/f8914362a6ed0f1331625d05bc38c8f9/1062e/second-project-5.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+  
+  <span
+    class="gatsby-resp-image-wrapper"
+    style="position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;"
+  >
+    <span
+      class="gatsby-resp-image-background-image"
+      style="padding-bottom: 93.97058823529412%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAATCAYAAACQjC21AAAACXBIWXMAAAsSAAALEgHS3X78AAABPElEQVQ4y6WUXY6EIBCEOctuRkRABF1/5v5H8RYTYatbnfAymYgPlQZpvnQ1oGja8VWb4VXp/iUhGpPeY4rflOWLpp2Ssn9JQzWEhYSFYgkAojJDDN0SXTdHZceIaqM8hKQ96uGzzhxEQVQJAZJ8OyYfnqlFbNxe+dWKBcHqY9MDcoBMfkkWQn+vA7nCYxNVpwD5bUKqoPP7FajIJw6wAKiHXe3mMsvvCiAJAEFH2DWlls8NZJUB1Eu2W2iZkska9U+a3aLKEgor7JND3zzbnNKD7B8qOhTaQPewRaXBP1MA3HRzYQ+ze1gBaKEBMN3dPGVSjz7SC/m5dQ+zZMuWF67Q3H0pvNGOO5Qvdulb1v2GwYZqNgA2muOUOZ5rMpt/k6Anxs8M9viCoyp1/Btrc10ATisAK+grgBzv6B9tMkNVIxJEfwAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+    >
+      <img
+        class="gatsby-resp-image-image"
+        style="width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;"
+        alt="code"
+        title=""
+        src="/React-Personal-Blog-Gatsby/static/f8914362a6ed0f1331625d05bc38c8f9/fb8a0/second-project-5.png"
+        srcset="/React-Personal-Blog-Gatsby/static/f8914362a6ed0f1331625d05bc38c8f9/1a291/second-project-5.png 148w,
+/React-Personal-Blog-Gatsby/static/f8914362a6ed0f1331625d05bc38c8f9/2bc4a/second-project-5.png 295w,
+/React-Personal-Blog-Gatsby/static/f8914362a6ed0f1331625d05bc38c8f9/fb8a0/second-project-5.png 590w,
+/React-Personal-Blog-Gatsby/static/f8914362a6ed0f1331625d05bc38c8f9/526de/second-project-5.png 885w,
+/React-Personal-Blog-Gatsby/static/f8914362a6ed0f1331625d05bc38c8f9/fa2eb/second-project-5.png 1180w,
+/React-Personal-Blog-Gatsby/static/f8914362a6ed0f1331625d05bc38c8f9/1062e/second-project-5.png 1360w"
+        sizes="(max-width: 590px) 100vw, 590px"
+      />
+    </span>
+  </span>
+  
+  </a>
+    </p>
+<p>We send that Object inside <strong>Object.values</strong>, where the parameter <strong>c</strong> will be:</p>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">{
+	data: [{},{},{},{},{}]
+}</code></pre></div>
+<p>We pass that Object through another <strong>Object.values</strong>, where each <strong>a</strong> parameter will be:</p>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">{value, time}</code></pre></div>
+<p>So if we do <strong>a.value</strong> we can get it! Now lets see whats inside array1, array2 and time:</p>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">array1 = [
+	[0,1,2,3,4],
+	[3,4,5,6,7]
+]
+array2 = [
+	[6,7,8,9,10],
+	[9,10,11,12,13]
+]
+time = [
+	[0,1,2,3,4],
+	[0,1,2,3,4]
+]</code></pre></div>
+<p>Now we our graphic will look like this:</p>
+<p>
+  <a
+    class="gatsby-resp-image-link"
+    href="/React-Personal-Blog-Gatsby/static/3c73d3ada01f8451d31ae4d79dbdb1d2/35c89/second-project-6.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+  
+  <span
+    class="gatsby-resp-image-wrapper"
+    style="position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;"
+  >
+    <span
+      class="gatsby-resp-image-background-image"
+      style="padding-bottom: 37.312312312312315%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAHCAYAAAAIy204AAAACXBIWXMAAA7DAAAOwwHHb6hkAAAA7klEQVQoz3WR646FIAyEff8n3eOJqCjl1na2giSryf74UkKm48hMqgoF0OZf2i0QU8K6rnCrQ6DQ7vQ/bG9i5naQYXxbKQukVGjlB0IJchDkpD4NPQLUtJfHJCLdIJVbGE1AgPfG/mIDTgfQ+kDJQThbMIyE5pjtd8JyCxaU7FDq9iAZOx9GwC6nzc5SA5L5YCS8IpJkbCbyEuCYMNeCrzGXGzt/csUcBd8XS1RU0W7YEpqpz4yfwPhQxZcYG0ljtwVvC7tBWSypIL/g672F25xGqyz9Kxfa3kBao2fKOOOBFDwyxd6nDs1d4yjV+AWLnCUsCjyW/wAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+    >
+      <img
+        class="gatsby-resp-image-image"
+        style="width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;"
+        alt="finishedProduct"
+        title=""
+        src="/React-Personal-Blog-Gatsby/static/3c73d3ada01f8451d31ae4d79dbdb1d2/fb8a0/second-project-6.png"
+        srcset="/React-Personal-Blog-Gatsby/static/3c73d3ada01f8451d31ae4d79dbdb1d2/1a291/second-project-6.png 148w,
+/React-Personal-Blog-Gatsby/static/3c73d3ada01f8451d31ae4d79dbdb1d2/2bc4a/second-project-6.png 295w,
+/React-Personal-Blog-Gatsby/static/3c73d3ada01f8451d31ae4d79dbdb1d2/fb8a0/second-project-6.png 590w,
+/React-Personal-Blog-Gatsby/static/3c73d3ada01f8451d31ae4d79dbdb1d2/526de/second-project-6.png 885w,
+/React-Personal-Blog-Gatsby/static/3c73d3ada01f8451d31ae4d79dbdb1d2/fa2eb/second-project-6.png 1180w,
+/React-Personal-Blog-Gatsby/static/3c73d3ada01f8451d31ae4d79dbdb1d2/35c89/second-project-6.png 1332w"
+        sizes="(max-width: 590px) 100vw, 590px"
+      />
+    </span>
+  </span>
+  
+  </a>
+    </p>
+<h2>Conclusion</h2>
+<p>We learned how to get data inside a deep JSON just by using Object.values and .map(), knowing this is crucial and will save you many hours trying to figure out how to get the data, so simply writting it down in a piece of paper can help you figure out how to get that data. In future posts we will learn how to use GraphQL to get data that are much deep inside a more complex JSON and doing a simple Query we can get it without wasting time and code lines.</p>
+<p>On the next post we will go into the big beast which is called Redux, its a state management that can seem very complex at first, but we will break it down so its much easier to digest.</p>
+<p>See you on the next post.</p>
+<p>Sincerely,</p>
+<p><strong>Eng Adrian Beria.</strong></p></div><hr style="margin-bottom:1.625rem"/><ul style="display:flex;flex-wrap:wrap;justify-content:space-between;list-style:none;padding:0"><li><a rel="prev" href="/React-Personal-Blog-Gatsby/5-array-manipulation/">← <!-- -->Array Manipulation in React</a></li><li></li></ul></div></div></div><script>
+  
+  
+  if(true) {
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  }
+  if (typeof ga === "function") {
+    ga('create', 'undefined', 'auto', {});
+      
+      }
+      </script><script id="gatsby-script-loader">/*<![CDATA[*/window.page={"componentChunkName":"component---src-templates-blog-post-js","jsonName":"6-second-project-b7f","path":"/6-second-project/"};window.dataPath="715/path---6-second-project-b-7-f-eed-TSyob0DV5pnNz554bhXcOU2kvk";/*]]>*/</script><script id="gatsby-chunk-mapping">/*<![CDATA[*/window.___chunkMapping={"app":["/app-409877d0f01dd7b88b9a.js"],"component---node-modules-gatsby-plugin-offline-app-shell-js":["/component---node-modules-gatsby-plugin-offline-app-shell-js-0d0a529deb4700809c6b.js"],"component---src-templates-blog-post-js":["/component---src-templates-blog-post-js-453bf1286b7dd5e6e7f5.js"],"component---src-pages-404-js":["/component---src-pages-404-js-12d1e7628384a501a7eb.js"],"component---src-pages-index-js":["/component---src-pages-index-js-d957837aa6e586a5cd6b.js"]};/*]]>*/</script><script src="/React-Personal-Blog-Gatsby/webpack-runtime-c83c60e19cd6bee7dd19.js" async=""></script><script src="/React-Personal-Blog-Gatsby/0-7e455f3cc2a6d08ad506.js" async=""></script><script src="/React-Personal-Blog-Gatsby/app-409877d0f01dd7b88b9a.js" async=""></script><script src="/React-Personal-Blog-Gatsby/component---src-templates-blog-post-js-453bf1286b7dd5e6e7f5.js" async=""></script><script src="/React-Personal-Blog-Gatsby/1-0ca38feffad4eeaaf45d.js" async=""></script></body></html>
