@@ -1,0 +1,325 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><style data-href="/React-Personal-Blog-Gatsby/1.8a22d5eb22a0d5bb33ba.css">@font-face{font-family:Montserrat;font-style:normal;font-display:swap;font-weight:100;src:local("Montserrat Thin "),local("Montserrat-Thin"),url(/React-Personal-Blog-Gatsby/static/montserrat-latin-100-50d279861fb3cbfed809eae6ed8b9ac9.woff2) format("woff2"),url(/React-Personal-Blog-Gatsby/static/montserrat-latin-100-5e334eff013f12fbb8ed72c2a253f119.woff) format("woff")}@font-face{font-family:Montserrat;font-style:italic;font-display:swap;font-weight:100;src:local("Montserrat Thin italic"),local("Montserrat-Thinitalic"),url(/React-Personal-Blog-Gatsby/static/montserrat-latin-100italic-8c0705336558194799a8729840d7ed9d.woff2) format("woff2"),url(/React-Personal-Blog-Gatsby/static/montserrat-latin-100italic-03e19243272affe738654a157625ec26.woff) format("woff")}@font-face{font-family:Montserrat;font-style:normal;font-display:swap;font-weight:200;src:local("Montserrat Extra Light "),local("Montserrat-Extra Light"),url(/React-Personal-Blog-Gatsby/static/montserrat-latin-200-4343d3d91a9446226e7a8bbb024111ad.woff2) format("woff2"),url(/React-Personal-Blog-Gatsby/static/montserrat-latin-200-f2022ecd65a0703ec3edcb7641709a75.woff) format("woff")}@font-face{font-family:Montserrat;font-style:italic;font-display:swap;font-weight:200;src:local("Montserrat Extra Light italic"),local("Montserrat-Extra Lightitalic"),url(/React-Personal-Blog-Gatsby/static/montserrat-latin-200italic-116c4c4b14ef76b0555da09854512022.woff2) format("woff2"),url(/React-Personal-Blog-Gatsby/static/montserrat-latin-200italic-89614a6008fc5c60739012463d0ee7e6.woff) format("woff")}@font-face{font-family:Montserrat;font-style:normal;font-display:swap;font-weight:300;src:local("Montserrat Light "),local("Montserrat-Light"),url(/React-Personal-Blog-Gatsby/static/montserrat-latin-300-d2ad295b60682a6537c358e06ea80c61.woff2) format("woff2"),url(/React-Personal-Blog-Gatsby/static/montserrat-latin-300-3a371ee0d175f5c2b15ce1d6b981dc4e.woff) format("woff")}@font-face{font-family:Montserrat;font-style:italic;font-display:swap;font-weight:300;src:local("Montserrat Light italic"),local("Montserrat-Lightitalic"),url(/React-Personal-Blog-Gatsby/static/montserrat-latin-300italic-f6b6bf2431003f8142e800f9df157989.woff2) format("woff2"),url(/React-Personal-Blog-Gatsby/static/montserrat-latin-300italic-16521668f5f238098329cdd7d27c391e.woff) format("woff")}@font-face{font-family:Montserrat;font-style:normal;font-display:swap;font-weight:400;src:local("Montserrat Regular "),local("Montserrat-Regular"),url(/React-Personal-Blog-Gatsby/static/montserrat-latin-400-240a84447b78da0920fcb07e378f2c5f.woff2) format("woff2"),url(/React-Personal-Blog-Gatsby/static/montserrat-latin-400-b20cc131034316b1c85d0498fb9ed5c5.woff) format("woff")}@font-face{font-family:Montserrat;font-style:italic;font-display:swap;font-weight:400;src:local("Montserrat Regular italic"),local("Montserrat-Regularitalic"),url(/React-Personal-Blog-Gatsby/static/montserrat-latin-400italic-86172bb829de6be08b92512096b6aca6.woff2) format("woff2"),url(/React-Personal-Blog-Gatsby/static/montserrat-latin-400italic-9405e78785a55cf0e4ea7669d4616ea9.woff) format("woff")}@font-face{font-family:Montserrat;font-style:normal;font-display:swap;font-weight:500;src:local("Montserrat Medium "),local("Montserrat-Medium"),url(/React-Personal-Blog-Gatsby/static/montserrat-latin-500-fb8d6b71dbe8d9294be43082936f649e.woff2) format("woff2"),url(/React-Personal-Blog-Gatsby/static/montserrat-latin-500-50825d47af7ae47e055018eb689c6c99.woff) format("woff")}@font-face{font-family:Montserrat;font-style:italic;font-display:swap;font-weight:500;src:local("Montserrat Medium italic"),local("Montserrat-Mediumitalic"),url(/React-Personal-Blog-Gatsby/static/montserrat-latin-500italic-c0a555a4f8e997385a3eebbd4da0b9ee.woff2) format("woff2"),url(/React-Personal-Blog-Gatsby/static/montserrat-latin-500italic-635de59c4be86285b1f70068c95b9816.woff) format("woff")}@font-face{font-family:Montserrat;font-style:normal;font-display:swap;font-weight:600;src:local("Montserrat SemiBold "),local("Montserrat-SemiBold"),url(/React-Personal-Blog-Gatsby/static/montserrat-latin-600-d5615136a08cfee70deb4be1ee1651df.woff2) format("woff2"),url(/React-Personal-Blog-Gatsby/static/montserrat-latin-600-f300da4fb4fe00e23915f62b2c643681.woff) format("woff")}@font-face{font-family:Montserrat;font-style:italic;font-display:swap;font-weight:600;src:local("Montserrat SemiBold italic"),local("Montserrat-SemiBolditalic"),url(/React-Personal-Blog-Gatsby/static/montserrat-latin-600italic-10f29d139edacde92df63374c5672568.woff2) format("woff2"),url(/React-Personal-Blog-Gatsby/static/montserrat-latin-600italic-2bc37d86a4ba12ce526c4af904a9946e.woff) format("woff")}@font-face{font-family:Montserrat;font-style:normal;font-display:swap;font-weight:700;src:local("Montserrat Bold "),local("Montserrat-Bold"),url(/React-Personal-Blog-Gatsby/static/montserrat-latin-700-7d77e1f03eefc452dab14d7f89080083.woff2) format("woff2"),url(/React-Personal-Blog-Gatsby/static/montserrat-latin-700-81826529772e52f0f14a4c73c2f2c7f1.woff) format("woff")}@font-face{font-family:Montserrat;font-style:italic;font-display:swap;font-weight:700;src:local("Montserrat Bold italic"),local("Montserrat-Bolditalic"),url(/React-Personal-Blog-Gatsby/static/montserrat-latin-700italic-1dd2b53f1567a29e0505de9b27c4352c.woff2) format("woff2"),url(/React-Personal-Blog-Gatsby/static/montserrat-latin-700italic-c162d257f5e9f9b108a96a604cfb2132.woff) format("woff")}@font-face{font-family:Montserrat;font-style:normal;font-display:swap;font-weight:800;src:local("Montserrat ExtraBold "),local("Montserrat-ExtraBold"),url(/React-Personal-Blog-Gatsby/static/montserrat-latin-800-d4e7bf86bbd8e5f43ca73fa831218648.woff2) format("woff2"),url(/React-Personal-Blog-Gatsby/static/montserrat-latin-800-895aadbff357be35ac8dd107c7975ee7.woff) format("woff")}@font-face{font-family:Montserrat;font-style:italic;font-display:swap;font-weight:800;src:local("Montserrat ExtraBold italic"),local("Montserrat-ExtraBolditalic"),url(/React-Personal-Blog-Gatsby/static/montserrat-latin-800italic-fc0cbe442f7b3733c91e982e825c4daa.woff2) format("woff2"),url(/React-Personal-Blog-Gatsby/static/montserrat-latin-800italic-b3362875067300abedb7a8fb97903258.woff) format("woff")}@font-face{font-family:Montserrat;font-style:normal;font-display:swap;font-weight:900;src:local("Montserrat Black "),local("Montserrat-Black"),url(/React-Personal-Blog-Gatsby/static/montserrat-latin-900-c8bdd772c0d1347720ff7e3fb72719f3.woff2) format("woff2"),url(/React-Personal-Blog-Gatsby/static/montserrat-latin-900-1b99ef78e627dd9bbd0ca4b5c0789547.woff) format("woff")}@font-face{font-family:Montserrat;font-style:italic;font-display:swap;font-weight:900;src:local("Montserrat Black italic"),local("Montserrat-Blackitalic"),url(/React-Personal-Blog-Gatsby/static/montserrat-latin-900italic-cb72c1f90f66c124fb897a75bec64c78.woff2) format("woff2"),url(/React-Personal-Blog-Gatsby/static/montserrat-latin-900italic-b78bb9f8ecec6c5a924c873f1818095f.woff) format("woff")}@font-face{font-family:Merriweather;font-style:normal;font-display:swap;font-weight:300;src:local("Merriweather Light "),local("Merriweather-Light"),url(/React-Personal-Blog-Gatsby/static/merriweather-latin-300-f015f1e9a46a3b9db4fd64564dacece4.woff2) format("woff2"),url(/React-Personal-Blog-Gatsby/static/merriweather-latin-300-92dfe81b725c342d31d962da975c07a6.woff) format("woff")}@font-face{font-family:Merriweather;font-style:italic;font-display:swap;font-weight:300;src:local("Merriweather Light italic"),local("Merriweather-Lightitalic"),url(/React-Personal-Blog-Gatsby/static/merriweather-latin-300italic-7fd86b32accf2df4403d1d4fa3a81502.woff2) format("woff2"),url(/React-Personal-Blog-Gatsby/static/merriweather-latin-300italic-878b76f59d5ba58dd1652dc8d2a0f4f9.woff) format("woff")}@font-face{font-family:Merriweather;font-style:normal;font-display:swap;font-weight:400;src:local("Merriweather Regular "),local("Merriweather-Regular"),url(/React-Personal-Blog-Gatsby/static/merriweather-latin-400-12dbf4c00ae43698f278b099e4b0ec9e.woff2) format("woff2"),url(/React-Personal-Blog-Gatsby/static/merriweather-latin-400-1fffad22b085a877995812dbf1d9ac08.woff) format("woff")}@font-face{font-family:Merriweather;font-style:italic;font-display:swap;font-weight:400;src:local("Merriweather Regular italic"),local("Merriweather-Regularitalic"),url(/React-Personal-Blog-Gatsby/static/merriweather-latin-400italic-1e0d3e8121d88969bfb153c8f174b758.woff2) format("woff2"),url(/React-Personal-Blog-Gatsby/static/merriweather-latin-400italic-de18d4c4e8e808a7248a185f866ff094.woff) format("woff")}@font-face{font-family:Merriweather;font-style:normal;font-display:swap;font-weight:700;src:local("Merriweather Bold "),local("Merriweather-Bold"),url(/React-Personal-Blog-Gatsby/static/merriweather-latin-700-dc8fec81a125fc63856587e6683da73b.woff2) format("woff2"),url(/React-Personal-Blog-Gatsby/static/merriweather-latin-700-d7d2ed8e58f303392cc3fc00ba3a9186.woff) format("woff")}@font-face{font-family:Merriweather;font-style:italic;font-display:swap;font-weight:700;src:local("Merriweather Bold italic"),local("Merriweather-Bolditalic"),url(/React-Personal-Blog-Gatsby/static/merriweather-latin-700italic-b7b7e5da4d7be8c12bd5a6c809edc8fc.woff2) format("woff2"),url(/React-Personal-Blog-Gatsby/static/merriweather-latin-700italic-6210a5fc1c54ca85a5d82aa85d7a9b5c.woff) format("woff")}@font-face{font-family:Merriweather;font-style:normal;font-display:swap;font-weight:900;src:local("Merriweather Black "),local("Merriweather-Black"),url(/React-Personal-Blog-Gatsby/static/merriweather-latin-900-43f870d543dd89fbeb66d417c0d97276.woff2) format("woff2"),url(/React-Personal-Blog-Gatsby/static/merriweather-latin-900-8f3806df74937c7b8b53f24ae1e725d1.woff) format("woff")}@font-face{font-family:Merriweather;font-style:italic;font-display:swap;font-weight:900;src:local("Merriweather Black italic"),local("Merriweather-Blackitalic"),url(/React-Personal-Blog-Gatsby/static/merriweather-latin-900italic-168c1ab28ed0e4e7d654334def288bc1.woff2) format("woff2"),url(/React-Personal-Blog-Gatsby/static/merriweather-latin-900italic-ae7778f01871e35ee142ef207b313b34.woff) format("woff")}</style><meta name="generator" content="Gatsby 2.0.64"/><link rel="alternate" type="application/rss+xml" href="/React-Personal-Blog-Gatsby/rss.xml"/><link rel="shortcut icon" href="/React-Personal-Blog-Gatsby/icons/icon-48x48.png"/><link rel="manifest" href="/React-Personal-Blog-Gatsby/manifest.webmanifest"/><meta name="theme-color" content="#663399"/><title data-react-helmet="true">Redux Thunk | Adrian Beria Blog</title><meta data-react-helmet="true" name="description" content="Introduction Redux Thunk middleware allows you to write action creators that return a function instead of an action. The thunk can be used…"/><style id="typography.js">html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}article,aside,details,figcaption,figure,footer,header,main,menu,nav,section,summary{display:block}audio,canvas,progress,video{display:inline-block}audio:not([controls]){display:none;height:0}progress{vertical-align:baseline}[hidden],template{display:none}a{background-color:transparent;-webkit-text-decoration-skip:objects}a:active,a:hover{outline-width:0}abbr[title]{border-bottom:none;text-decoration:underline;text-decoration:underline dotted}b,strong{font-weight:inherit;font-weight:bolder}dfn{font-style:italic}h1{font-size:2em;margin:.67em 0}mark{background-color:#ff0;color:#000}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}img{border-style:none}svg:not(:root){overflow:hidden}code,kbd,pre,samp{font-family:monospace,monospace;font-size:1em}figure{margin:1em 40px}hr{box-sizing:content-box;height:0;overflow:visible}button,input,optgroup,select,textarea{font:inherit;margin:0}optgroup{font-weight:700}button,input{overflow:visible}button,select{text-transform:none}[type=reset],[type=submit],button,html [type=button]{-webkit-appearance:button}[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner,button::-moz-focus-inner{border-style:none;padding:0}[type=button]:-moz-focusring,[type=reset]:-moz-focusring,[type=submit]:-moz-focusring,button:-moz-focusring{outline:1px dotted ButtonText}fieldset{border:1px solid silver;margin:0 2px;padding:.35em .625em .75em}legend{box-sizing:border-box;color:inherit;display:table;max-width:100%;padding:0;white-space:normal}textarea{overflow:auto}[type=checkbox],[type=radio]{box-sizing:border-box;padding:0}[type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}[type=search]::-webkit-search-cancel-button,[type=search]::-webkit-search-decoration{-webkit-appearance:none}::-webkit-input-placeholder{color:inherit;opacity:.54}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}html{font:100%/1.625 -apple-system,'BlinkMacSystemFont','Segoe UI','Roboto','Helvetica','Arial',sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';box-sizing:border-box;overflow-y:scroll;}*{box-sizing:inherit;}*:before{box-sizing:inherit;}*:after{box-sizing:inherit;}body{color:hsla(0,0%,0%,0.8);font-family:-apple-system,'BlinkMacSystemFont','Segoe UI','Roboto','Helvetica','Arial',sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';font-weight:normal;word-wrap:break-word;font-kerning:normal;-moz-font-feature-settings:"kern", "liga", "clig", "calt";-ms-font-feature-settings:"kern", "liga", "clig", "calt";-webkit-font-feature-settings:"kern", "liga", "clig", "calt";font-feature-settings:"kern", "liga", "clig", "calt";}img{max-width:100%;margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:0.8125rem;}h1{margin-left:0;margin-right:0;margin-top:2.4375rem;padding-bottom:calc(0.40625rem - 1px);padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.21875rem;color:inherit;font-family:-apple-system,'BlinkMacSystemFont','Segoe UI','Roboto','Helvetica','Arial',sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';font-weight:600;text-rendering:optimizeLegibility;font-size:2rem;line-height:1.1;border-bottom:1px solid hsla(0,0%,0%,0.07);}h2{margin-left:0;margin-right:0;margin-top:1.625rem;padding-bottom:calc(0.40625rem - 1px);padding-left:0;padding-right:0;padding-top:0;margin-bottom:0.40625rem;color:inherit;font-family:-apple-system,'BlinkMacSystemFont','Segoe UI','Roboto','Helvetica','Arial',sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';font-weight:600;text-rendering:optimizeLegibility;font-size:1.51572rem;line-height:1.1;border-bottom:1px solid hsla(0,0%,0%,0.07);}h3{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:0.8125rem;color:inherit;font-family:-apple-system,'BlinkMacSystemFont','Segoe UI','Roboto','Helvetica','Arial',sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';font-weight:600;text-rendering:optimizeLegibility;font-size:1.31951rem;line-height:1.1;}h4{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:0.8125rem;color:inherit;font-family:-apple-system,'BlinkMacSystemFont','Segoe UI','Roboto','Helvetica','Arial',sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';font-weight:600;text-rendering:optimizeLegibility;font-size:1rem;line-height:1.1;}h5{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:0.8125rem;color:inherit;font-family:-apple-system,'BlinkMacSystemFont','Segoe UI','Roboto','Helvetica','Arial',sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';font-weight:600;text-rendering:optimizeLegibility;font-size:0.87055rem;line-height:1.1;}h6{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:0.8125rem;color:hsla(0,0%,0%,0.53);font-family:-apple-system,'BlinkMacSystemFont','Segoe UI','Roboto','Helvetica','Arial',sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';font-weight:600;text-rendering:optimizeLegibility;font-size:0.81225rem;line-height:1.1;}hgroup{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:0.8125rem;}ul{margin-left:1.625rem;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:0.8125rem;list-style-position:outside;list-style-image:none;}ol{margin-left:1.625rem;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:0.8125rem;list-style-position:outside;list-style-image:none;}dl{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:0.8125rem;}dd{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:0.8125rem;}p{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:0.8125rem;}figure{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:0.8125rem;}pre{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:0.8125rem;font-size:0.85rem;line-height:1.625rem;}table{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:0.8125rem;font-size:1rem;line-height:1.625rem;border-collapse:collapse;width:100%;}fieldset{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:0.8125rem;}blockquote{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:calc(0.8125rem - 1px);padding-right:0;padding-top:0;margin-bottom:0.8125rem;border-left:4px solid hsla(0,0%,0%,0.13);color:hsla(0,0%,0%,0.53);}form{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:0.8125rem;}noscript{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:0.8125rem;}iframe{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:0.8125rem;}hr{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:calc(0.8125rem - 1px);background:hsla(0,0%,0%,0.2);border:none;height:1px;}address{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:0.8125rem;}b{font-weight:600;}strong{font-weight:600;}dt{font-weight:600;}th{font-weight:600;}li{margin-bottom:calc(0.8125rem / 2);}ol li{padding-left:0;}ul li{padding-left:0;}li > ol{margin-left:1.625rem;margin-bottom:calc(0.8125rem / 2);margin-top:calc(0.8125rem / 2);}li > ul{margin-left:1.625rem;margin-bottom:calc(0.8125rem / 2);margin-top:calc(0.8125rem / 2);}blockquote *:last-child{margin-bottom:0;}li *:last-child{margin-bottom:0;}p *:last-child{margin-bottom:0;}li > p{margin-bottom:calc(0.8125rem / 2);}code{font-size:0.85rem;line-height:1.625rem;}kbd{font-size:0.85rem;line-height:1.625rem;}samp{font-size:0.85rem;line-height:1.625rem;}abbr{border-bottom:1px dotted hsla(0,0%,0%,0.5);cursor:help;}acronym{border-bottom:1px dotted hsla(0,0%,0%,0.5);cursor:help;}abbr[title]{border-bottom:1px dotted hsla(0,0%,0%,0.5);cursor:help;text-decoration:none;}thead{text-align:left;}td,th{text-align:left;border-bottom:1px solid hsla(0,0%,0%,0.12);font-feature-settings:"tnum";-moz-font-feature-settings:"tnum";-ms-font-feature-settings:"tnum";-webkit-font-feature-settings:"tnum";padding-left:1.08333rem;padding-right:1.08333rem;padding-top:0.8125rem;padding-bottom:calc(0.8125rem - 1px);}th:first-child,td:first-child{padding-left:0;}th:last-child,td:last-child{padding-right:0;}h3,h4,h5,h6{margin-bottom:0.8125rem;margin-top:1.625rem;}ol,ul{margin-left:2.03125rem;}li>ol,li>ul{margin-left:2.03125rem;}a{color:#4078c0;text-decoration:none;}a:hover,a:active{text-decoration:underline;}a.gatsby-resp-image-link{box-shadow:none;}</style><link as="script" rel="preload" href="/React-Personal-Blog-Gatsby/1-0ca38feffad4eeaaf45d.js"/><link as="script" rel="preload" href="/React-Personal-Blog-Gatsby/component---src-templates-blog-post-js-453bf1286b7dd5e6e7f5.js"/><link as="script" rel="preload" href="/React-Personal-Blog-Gatsby/app-4e11346c8e77271929a6.js"/><link as="script" rel="preload" href="/React-Personal-Blog-Gatsby/0-536b63d17895bdbe58d7.js"/><link as="script" rel="preload" href="/React-Personal-Blog-Gatsby/webpack-runtime-34e1e3e2ad25dc2694d2.js"/><link rel="preload" href="/React-Personal-Blog-Gatsby/static/d/877/path---8-redux-thunk-79-b-f72-iydRXNAUKl7hxlgIaKgbsRJfLGU.json" as="fetch" crossOrigin="use-credentials"/></head><body><div id="___gatsby"><div style="outline:none" tabindex="-1" role="group"><div style="margin-left:auto;margin-right:auto;max-width:39rem;padding:2.4375rem 1.21875rem"><h3 style="margin-top:0;margin-bottom:-1.625rem;text-align:center;font-size:3rem;padding:15px"><a style="box-shadow:none;text-decoration:none;color:inherit" href="/React-Personal-Blog-Gatsby/">Adrian Beria Blog</a></h3><h1>Redux Thunk</h1><p style="font-size:0.87055rem;line-height:1.625rem;display:block;margin-bottom:1.625rem;margin-top:-0.8125rem">March 17, 2020</p><div><h2>Introduction</h2>
+<p>Redux Thunk middleware allows you to write action creators that return a function instead of an action. The thunk can be used to delay the dispatch of an action, or to dispatch only if a certain condition is met. The inner function receives the store methods dispatch and getState as parameters.</p>
+<h2>What is a middleware</h2>
+<p>The middleware sits in between the dispatch and reducers, which means we can alter our dispatched actions before they get to the reducers or execute some code during the dispatch.</p>
+<h2>When to use</h2>
+<p>When we need to do any kind of asynchronous logic, we generally pair it with axios, which is a library for making HTTP requests. One of my favorite reasons to use axios over ES6 fetch is that with axios you don’t have to do convert the data you obtained from your request using .json(), axios does this automatically, for example:</p>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">fetch(url).then(response =&gt; response.json()).then(data =&gt; console.log(data))
+
+axios.get(url).then(response =&gt; console.log(response))</code></pre></div>
+<h2>Installing dependencies</h2>
+<p>For an alredy created project:</p>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">yarn add redux react-redux</code></pre></div>
+<p>If you’re doing some async</p>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">yarn add axios redux-thunk</code></pre></div>
+<h2>Project structure</h2>
+<ul>
+<li>
+<p>src</p>
+<ul>
+<li>actions</li>
+<li>api</li>
+<li>components</li>
+<li>pages</li>
+<li>reducers</li>
+<li>store</li>
+<li>types</li>
+<li>App.js</li>
+<li>index.js</li>
+</ul>
+</li>
+</ul>
+<p>Each folder will have an index.js file inside.</p>
+<h2>Types</h2>
+<p>Inside the types folder we add our constants</p>
+<p>
+  <a
+    class="gatsby-resp-image-link"
+    href="/React-Personal-Blog-Gatsby/static/4092180e8335a6d19ddd15b9703a1530/ff67a/redux-thunk-1.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+  
+  <span
+    class="gatsby-resp-image-wrapper"
+    style="position: relative; display: block;  max-width: 544px; margin-left: auto; margin-right: auto;"
+  >
+    <span
+      class="gatsby-resp-image-background-image"
+      style="padding-bottom: 21.507352941176467%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAECAYAAACOXx+WAAAACXBIWXMAAAsSAAALEgHS3X78AAAA5UlEQVQY002PyW7DMAxE/Q+RvEiWbdlyLbteDinaBlmQtgha9P9/xVdOaSWHHgZDDgniMRJxsu7idJVJFlxsNWebhJCrkHLdCXGvt0zes9A/9H8e6Vyj8xa2sXCuROEcjJ9gumdolmo66Cf2dkDKu6pukbFU20M5H5QPC+8MkKlC1PuSfm8jLXNNH6eOumWkYn+m+v1K7vJD9vVC7vxN5bSQ8QNV+yM1hy9qjjf2T6rfrlTML5QUFckkpagoNaaRCa0BH4epLbLGB6qcSTey3I9ItWLaB1E/B8KNLKsc+F0IGYNfxh9iAG4v0g6uRgAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+    >
+      <img
+        class="gatsby-resp-image-image"
+        style="width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;"
+        alt="code"
+        title=""
+        src="/React-Personal-Blog-Gatsby/static/4092180e8335a6d19ddd15b9703a1530/ff67a/redux-thunk-1.png"
+        srcset="/React-Personal-Blog-Gatsby/static/4092180e8335a6d19ddd15b9703a1530/c2e61/redux-thunk-1.png 148w,
+/React-Personal-Blog-Gatsby/static/4092180e8335a6d19ddd15b9703a1530/08c14/redux-thunk-1.png 295w,
+/React-Personal-Blog-Gatsby/static/4092180e8335a6d19ddd15b9703a1530/ff67a/redux-thunk-1.png 544w"
+        sizes="(max-width: 544px) 100vw, 544px"
+      />
+    </span>
+  </span>
+  
+  </a>
+    </p>
+<h2>Actions</h2>
+<p>Inside the actions folder we add our actions creator, importing the constants we made.</p>
+<p>
+  <a
+    class="gatsby-resp-image-link"
+    href="/React-Personal-Blog-Gatsby/static/6e924fbc690e64eaad420bedc09a85a5/3edcd/redux-thunk-2.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+  
+  <span
+    class="gatsby-resp-image-wrapper"
+    style="position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;"
+  >
+    <span
+      class="gatsby-resp-image-background-image"
+      style="padding-bottom: 20.802919708029197%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAECAYAAACOXx+WAAAACXBIWXMAAAsSAAALEgHS3X78AAAA1UlEQVQY01WPQW6EMAxFOQSE2CHBCQkEmKFqd73/pSYbu26pVHXx9b6tb8vuiKZXTL7ZOTVctoa53kqlQVr/ekvVTPyXAcqNYmg4YbPqjfOvzliQESfprZNB/TBaJf4KboKTHlAzVgk/fkDNK0ewYrRv4J7vSgl8HMS1Erv1YP/4YJcy+zhzSCsHKpxo5YV2LvHkLT05ao0YGGBiUI6A3BujGrk7dpLrGeU8o7jtIfP7p0z7JS5n8VXrUiQvVXSh5HjKtrypLqF5FV0swSexem3//ZnqCzzEbAWiQsEaAAAAAElFTkSuQmCC'); background-size: cover; display: block;"
+    >
+      <img
+        class="gatsby-resp-image-image"
+        style="width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;"
+        alt="code"
+        title=""
+        src="/React-Personal-Blog-Gatsby/static/6e924fbc690e64eaad420bedc09a85a5/fb8a0/redux-thunk-2.png"
+        srcset="/React-Personal-Blog-Gatsby/static/6e924fbc690e64eaad420bedc09a85a5/1a291/redux-thunk-2.png 148w,
+/React-Personal-Blog-Gatsby/static/6e924fbc690e64eaad420bedc09a85a5/2bc4a/redux-thunk-2.png 295w,
+/React-Personal-Blog-Gatsby/static/6e924fbc690e64eaad420bedc09a85a5/fb8a0/redux-thunk-2.png 590w,
+/React-Personal-Blog-Gatsby/static/6e924fbc690e64eaad420bedc09a85a5/3edcd/redux-thunk-2.png 822w"
+        sizes="(max-width: 590px) 100vw, 590px"
+      />
+    </span>
+  </span>
+  
+  </a>
+    </p>
+<h2>API</h2>
+<p>This is where we will use axios, we will do all our requests on these folders and it will look like this.</p>
+<p>
+  <a
+    class="gatsby-resp-image-link"
+    href="/React-Personal-Blog-Gatsby/static/802f5a5003bfcdf441ee670609aef96b/139d2/redux-thunk-3.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+  
+  <span
+    class="gatsby-resp-image-wrapper"
+    style="position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;"
+  >
+    <span
+      class="gatsby-resp-image-background-image"
+      style="padding-bottom: 13.6226034308779%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAADCAYAAACTWi8uAAAACXBIWXMAAAsSAAALEgHS3X78AAAAtUlEQVQI1y3KTW7CMBQE4Nyh8b9jx3aIk4qUQEWhi264/5H8NDzaLj7NjDSdsrYJpZvQ/ylVk1I3+dqs16YJw924Jtnr0wvR3nom/vRSMvWr+75O2PYV6f5A+tiRTxcctgvqUlGWjfOT9w3j+Y50/UE8fSHuN4TjGWFaMecNpazQzkNpi65kTyFFMmUhOyayE2fKZL0l7wNFX8jFQmZk6cC/Sq4eyc3vFFOlMc7khpGMCzQMmZ7xYFHPptP8EAAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+    >
+      <img
+        class="gatsby-resp-image-image"
+        style="width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;"
+        alt="code"
+        title=""
+        src="/React-Personal-Blog-Gatsby/static/802f5a5003bfcdf441ee670609aef96b/fb8a0/redux-thunk-3.png"
+        srcset="/React-Personal-Blog-Gatsby/static/802f5a5003bfcdf441ee670609aef96b/1a291/redux-thunk-3.png 148w,
+/React-Personal-Blog-Gatsby/static/802f5a5003bfcdf441ee670609aef96b/2bc4a/redux-thunk-3.png 295w,
+/React-Personal-Blog-Gatsby/static/802f5a5003bfcdf441ee670609aef96b/fb8a0/redux-thunk-3.png 590w,
+/React-Personal-Blog-Gatsby/static/802f5a5003bfcdf441ee670609aef96b/526de/redux-thunk-3.png 885w,
+/React-Personal-Blog-Gatsby/static/802f5a5003bfcdf441ee670609aef96b/fa2eb/redux-thunk-3.png 1180w,
+/React-Personal-Blog-Gatsby/static/802f5a5003bfcdf441ee670609aef96b/08f6a/redux-thunk-3.png 1770w,
+/React-Personal-Blog-Gatsby/static/802f5a5003bfcdf441ee670609aef96b/139d2/redux-thunk-3.png 1982w"
+        sizes="(max-width: 590px) 100vw, 590px"
+      />
+    </span>
+  </span>
+  
+  </a>
+    </p>
+<p>The URL we’re using is a server we created using JSON Server which gives us a service with information we can do CRUD operations to, when we build the next project we will see this in more detail.</p>
+<h2>Reducer</h2>
+<p>This is where our reducer will be, anytime we dispatch an action in our app, the reducer recieves the command to change the global state</p>
+<p>
+  <a
+    class="gatsby-resp-image-link"
+    href="/React-Personal-Blog-Gatsby/static/ec80b1067e0447ce5cd99b678006c9b0/98366/redux-thunk-4.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+  
+  <span
+    class="gatsby-resp-image-wrapper"
+    style="position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;"
+  >
+    <span
+      class="gatsby-resp-image-background-image"
+      style="padding-bottom: 138.04780876494024%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAcCAYAAABh2p9gAAAACXBIWXMAAAsSAAALEgHS3X78AAAC/klEQVRIx5VVy3LbMAz0J7SxHhRFUg/qbcWxnUnatIf2//8l0+YYH7Rd0nbqdDoT6YAhJUFLELsAVrEQr0onRyHFMYzj4zoMj0EU+XUdRtzHS+x1pXSKh0OPoWtRFg20KiGlQWZq7gvwEJqYbStGMdn8duqr++kwfJ8eNj+modpPD+PPaTc8TZEQE0+e6OzXj2wViQSNHTHUB/T1HuPwFf3wBWP76COl07IIk1RB6xJGVwgTiaRskLYjIpkiCKM3wLnAPsKIQDGBhdRIUg2ZGoTRX6clUXpSnh5rDL0lKT0qu+G6QZ4xUqPgbrAI8IbXGroa+3GLphlRZTkKRi1oHmjplUMhkOkWnd0jyxskUsEwBW+ACwjxgFJpOFAK+WQEuaFdk7HEfISJYq60Yb4MHElvZHhRJ1fvktNz/Nfneu8j1CbF/b5BXTVo653XYltuoXSGorSoy5F7Q+Y1yqyDzXvUxehJM9ryeWCqLDJLdfC2q3UUQaUFhuqeAt+iq/boqx32/Tdsu0cStvMATkrON7hOR/z+uidSYpe/iCcW2I41K6VDkZ9qOpGZP8zVtUjSdyT9j7BTDuNL8kOYzKBvbjE0ByhWimBEjqibMJhdMauLUywla7dATgn5TkP5FJTPvxF8rMOzY1uN6Oqeeex8wlu7Q0kCqmJAU94iVRn9ovmAWiuWX4FN38KWPWIhvUTWoZOJ9PKYFeHF6dM6ZOll2G07L52GzNrCYnfHhqtSAi/IoessQRyxKViCbcgyr80c9tSVVvwunCyE796zSSmLlj9bGFWfBduzxtmBssE/z28OTod0tmWNw11HLXYe3OiaRJTITeNnyyLAE2jIEtOslIsOJVK+C6jDz9ThdaOYRYoTb25aP1ssG2zLPG4onyKroNz0W3Rllp7JSj9bJMdASlaNybkWfGcXDSs/RjlHJnaVid1kooCnqtZT1+mJoHzXc5TK2aPUN9iU7SmIr5vq2RYOqMvUe2aUv2gv/Pkl8OvZ3D6MX9y3j4y+v/n/8x+lG9g0el082wAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+    >
+      <img
+        class="gatsby-resp-image-image"
+        style="width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;"
+        alt="code"
+        title=""
+        src="/React-Personal-Blog-Gatsby/static/ec80b1067e0447ce5cd99b678006c9b0/fb8a0/redux-thunk-4.png"
+        srcset="/React-Personal-Blog-Gatsby/static/ec80b1067e0447ce5cd99b678006c9b0/1a291/redux-thunk-4.png 148w,
+/React-Personal-Blog-Gatsby/static/ec80b1067e0447ce5cd99b678006c9b0/2bc4a/redux-thunk-4.png 295w,
+/React-Personal-Blog-Gatsby/static/ec80b1067e0447ce5cd99b678006c9b0/fb8a0/redux-thunk-4.png 590w,
+/React-Personal-Blog-Gatsby/static/ec80b1067e0447ce5cd99b678006c9b0/526de/redux-thunk-4.png 885w,
+/React-Personal-Blog-Gatsby/static/ec80b1067e0447ce5cd99b678006c9b0/98366/redux-thunk-4.png 1004w"
+        sizes="(max-width: 590px) 100vw, 590px"
+      />
+    </span>
+  </span>
+  
+  </a>
+    </p>
+<p>Notice how it only does something when we do only a fetch request, its because our POST, DELETE and PUT will only do a HTTP request and won’t mess with the global state, but when we do a GET the app will reload.</p>
+<h2>Store</h2>
+<p>This is where our store will be configured.</p>
+<p>
+  <a
+    class="gatsby-resp-image-link"
+    href="/React-Personal-Blog-Gatsby/static/c2604077dc021a529dfdbadda762b1a7/c5669/redux-thunk-5.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+  
+  <span
+    class="gatsby-resp-image-wrapper"
+    style="position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;"
+  >
+    <span
+      class="gatsby-resp-image-background-image"
+      style="padding-bottom: 24.834437086092716%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAFCAYAAABFA8wzAAAACXBIWXMAAAsSAAALEgHS3X78AAAA6ElEQVQY012O/W7DIAzE8xANmAAFQkrIxzpp2vs/GfHN7bZU2x8/3Z0tnd2l5FpIoZlUmh2nZmJuw1gahVFmt6c6b5sLoSkXWq906zWdXB5ZvXK3rwF1KwjbHXmpCLXCLncMtwXaRyjroIigjMGFBKUEfSIlf3I3TZ7nNfO4b+zryqnsfM2Vbcxsx5l9nJiMYyLH5qGCHBC1rLRhKWEpPelq8Xj/2HFdPxFuO1JekGNFDgvStYhfTub8jiltiDGj5DfZzzDWw7oI70YM4jsahkMTHUrRcenVIRe/0fTy/+h/dg/9Rb596hfuJISOXWBGuAAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+    >
+      <img
+        class="gatsby-resp-image-image"
+        style="width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;"
+        alt="code"
+        title=""
+        src="/React-Personal-Blog-Gatsby/static/c2604077dc021a529dfdbadda762b1a7/fb8a0/redux-thunk-5.png"
+        srcset="/React-Personal-Blog-Gatsby/static/c2604077dc021a529dfdbadda762b1a7/1a291/redux-thunk-5.png 148w,
+/React-Personal-Blog-Gatsby/static/c2604077dc021a529dfdbadda762b1a7/2bc4a/redux-thunk-5.png 295w,
+/React-Personal-Blog-Gatsby/static/c2604077dc021a529dfdbadda762b1a7/fb8a0/redux-thunk-5.png 590w,
+/React-Personal-Blog-Gatsby/static/c2604077dc021a529dfdbadda762b1a7/526de/redux-thunk-5.png 885w,
+/React-Personal-Blog-Gatsby/static/c2604077dc021a529dfdbadda762b1a7/fa2eb/redux-thunk-5.png 1180w,
+/React-Personal-Blog-Gatsby/static/c2604077dc021a529dfdbadda762b1a7/08f6a/redux-thunk-5.png 1770w,
+/React-Personal-Blog-Gatsby/static/c2604077dc021a529dfdbadda762b1a7/c5669/redux-thunk-5.png 1812w"
+        sizes="(max-width: 590px) 100vw, 590px"
+      />
+    </span>
+  </span>
+  
+  </a>
+    </p>
+<p>Not much to see, we create the store taking as arguments the rootReducer, the initial state and with composeEnhancers we can add several middlewares like Redux Thunk.</p>
+<h2>Connect Store to Provider</h2>
+<p>We configure our store importing the setup from store folder.</p>
+<p>
+  <a
+    class="gatsby-resp-image-link"
+    href="/React-Personal-Blog-Gatsby/static/d0e33436d4127201240643600b22eca1/08cdb/redux-thunk-6.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+  
+  <span
+    class="gatsby-resp-image-wrapper"
+    style="position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;"
+  >
+    <span
+      class="gatsby-resp-image-background-image"
+      style="padding-bottom: 81.81818181818181%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAQCAYAAAAWGF8bAAAACXBIWXMAAAsSAAALEgHS3X78AAACgUlEQVQ4y41T2W7bMBD0H7Q+RFHiKeqWZdmOnThFg6AI+sN9bl9a5Ls4XdK1UyBJ0YfBcClxd7g7nCkt8PCpxTQW0MMWajzA9V2My7ZEMe0h2hGiqMCyHFxbMJ5hlTAkKX+FmTbCPz32/rBz3la1N9PR2+ODV83g+67090fn66H2crrzcjx6szt5s955roynBH7F0sgRtJ4FhY+fO2xGC1M4qGEHtT1B7++h+i3cOKLrS1RNiel2i9zSTXYnWPouXYWEMVDSM4JCYyW+fhlw3Bew0wHFZofDsUe17iHWN3D3TxCugabC1mRIcwEmNFJlQSoplkioFQknUNKZkDlubyp0rYEyEm2rIesOWVlDhJ5SkYxiTYWH3oALibweCH3srRpvIPoJwjqwoJDnGapKQSqBVDtkpqDmZ1DSQavyylJQO4yN31ZvDCOoi0PJRY6u06RAgLsWedkgFLG6gVE1nOmIqxjrUCxMOB5OX3oXwSPPUi5Qmgm1m8Cp+nKZ0M/ESUJKGDGBBSRYhL0/SkKCN20TfjDWYqgnDNUeVdFGRbVbo2k7VHZE24zQhb4mOydM30/IBEe53qIZ72BouolQUWFQdOF4rQtfVb5OOlusEhRki3Z9Rzih7A80aXottkdJqApSWm6g6KVkzUDeq5Fe+/iGwlwqKFUg5zKCU/9EbpDnZB9hIYSJnGbkAhpK8B3715V5JnwutOeZIjaRGc99RswzGeNMSNrL/HKVxKd2eW6X9d+Y0UHyWYWyGNC4zdkuuorXDSjINi6YXOl3Vb0aytkWLA5gGd8me9ljZ+v8T7KYcL5Yfvs4X3wn/PwwXzyfMX9+WV9iwsd3MJ//ovM/Qq7fSLSkgmyE0P0AAAAASUVORK5CYII='); background-size: cover; display: block;"
+    >
+      <img
+        class="gatsby-resp-image-image"
+        style="width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;"
+        alt="code"
+        title=""
+        src="/React-Personal-Blog-Gatsby/static/d0e33436d4127201240643600b22eca1/fb8a0/redux-thunk-6.png"
+        srcset="/React-Personal-Blog-Gatsby/static/d0e33436d4127201240643600b22eca1/1a291/redux-thunk-6.png 148w,
+/React-Personal-Blog-Gatsby/static/d0e33436d4127201240643600b22eca1/2bc4a/redux-thunk-6.png 295w,
+/React-Personal-Blog-Gatsby/static/d0e33436d4127201240643600b22eca1/fb8a0/redux-thunk-6.png 590w,
+/React-Personal-Blog-Gatsby/static/d0e33436d4127201240643600b22eca1/526de/redux-thunk-6.png 885w,
+/React-Personal-Blog-Gatsby/static/d0e33436d4127201240643600b22eca1/08cdb/redux-thunk-6.png 902w"
+        sizes="(max-width: 590px) 100vw, 590px"
+      />
+    </span>
+  </span>
+  
+  </a>
+    </p>
+<h2>A summary</h2>
+<ul>
+<li>Create folders with the following name: types, actions, reducer, store, api.</li>
+<li>Inside types we add our constants.</li>
+<li>Import types inside our actions folders and export the action creators.</li>
+<li>If you’re doing an asynchronous request, then inside api add your requests.</li>
+<li>Configure your store.</li>
+<li>Connect it to Provider</li>
+</ul>
+<h2>Ducks pattern</h2>
+<p>Another way of making this process even easier, is to use put everything on a single file, but of course I don’t mean EVERYTHING, but if in your app you’re working with getting a set of posts or comments in a blog, then you can do two ducks files. In the case of this tutorial we were only doing it for a set of games, which we will see in detail in another post, but for now lets see how a ducks pattern would look here:</p>
+<p>
+  <a
+    class="gatsby-resp-image-link"
+    href="/React-Personal-Blog-Gatsby/static/adf0d926b52e3ca70b7c5e4c0bc049d6/6825c/redux-thunk-7.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+  
+  <span
+    class="gatsby-resp-image-wrapper"
+    style="position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;"
+  >
+    <span
+      class="gatsby-resp-image-background-image"
+      style="padding-bottom: 153.12500000000003%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAfCAYAAADnTu3OAAAACXBIWXMAAAsSAAALEgHS3X78AAADuklEQVRIx51W23ajOBD0N8QGJCQhBEIGHDuOc9k5O2fO/P8/OdSWRJzYs/FMJg91urmo6Ut1Nwvn1NG29VHY5uicPkrnj7kyx1VevCJPchn1bNazQpw9v8RiHCyGjUcZNug2PTSl2dyj9D0KZVBUDtJUqKoS/CjyUoEHQaMfYlHXenKhm2hwUv1uUpTStVPZhkmtb9O1piyknHJZTpmQEw1OPJwQ9XMsgtfw0bPtE+zdc4JqO+hxD3v/DdX+GbLrscxyIktyRU+ilydPzz1eKF3COJfCEdahMBZFyfC0gSwNyrKCkoSy0NqhVFUykBcy4VejzGGFfjeiOnyHe/oBM+5g1j3qYUDoBvR+h7F7wK7/B9v1M4ZuD1evUduOxs3/cyiSNxWWRQnmCJkgSs3k66SfQlvm+awz5Czdy3FzSsHrOxGL7abG/j4gjB724V+Y2zvY3QMc82d9A1NVcJbP2y2aOkCx+iqM0C7AN7doXA8RHYgOCYnF3bbF8yFgv1+jffyJ8PCd9NmhvX9CPY5wXYOWh7wbGaZnwQJ0v4XzGxobYGyLUlsY3aYULKQ0CM0Wa3pgqxZ12MHy67mIYc6hxureZKs5xNWMVQr3g5DjA9MOqAITTYNtM6Yvd26Lth7o3QBLz2K1hdZgJ6GIub5G7Bh3JhULIiEp48FIF6XqV10nGZGzgJFW8cy1biEPFVtLpxbL+XIm3qs6VzY/0+cqf0To99azNTbjAQ05p2k0kvpaOOe46qFgKFqxS3hRnJL86sXJw3SdFb/17M2gNgyZXBOuQ852KxQ5RQgZc2fJMd4jLYRinv9gLBmMY+lAHg63B6wDsWZrseryqwZvGIrSEgPZ79mjkg1fFOXXQ44PjTUcoGw908Jwqkjm9W+L8WYwdgNHP26HTSKx0U3i4GcOX/Uw51TxsTM4BFpD6kj1qfCuGgzBwrcte7lDZTwHaf0l794MRqXnUPA1V0FsQ1F+KX/JYFYUaBrLoeCJhqEHjiH7Vx5e7BTBtSgVqSJyCOK0J1an3s0vx9NHuNgpNSvsveF09txuI/fxmkur48AgfWqOLeolx1YsVFpMTEeUMbJZ/uJh7RQe2Cnu8A317pHT+pFF2sKYOP45cEl2S44aMxdtLlzLzilnyY66MBgvGttzmx0SsYVQqe3ijji99O5J/paC7MpujltvCj5M3m2m2oaJu3filwk/sTiT0vWrbvincPnH8NHfw0KyKMqUKTfng3V5VpTlmVef4eHLMiteosxy8cKbVxHf+RP+A3PzK5Bk+CrBAAAAAElFTkSuQmCC'); background-size: cover; display: block;"
+    >
+      <img
+        class="gatsby-resp-image-image"
+        style="width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;"
+        alt="code"
+        title=""
+        src="/React-Personal-Blog-Gatsby/static/adf0d926b52e3ca70b7c5e4c0bc049d6/fb8a0/redux-thunk-7.png"
+        srcset="/React-Personal-Blog-Gatsby/static/adf0d926b52e3ca70b7c5e4c0bc049d6/1a291/redux-thunk-7.png 148w,
+/React-Personal-Blog-Gatsby/static/adf0d926b52e3ca70b7c5e4c0bc049d6/2bc4a/redux-thunk-7.png 295w,
+/React-Personal-Blog-Gatsby/static/adf0d926b52e3ca70b7c5e4c0bc049d6/fb8a0/redux-thunk-7.png 590w,
+/React-Personal-Blog-Gatsby/static/adf0d926b52e3ca70b7c5e4c0bc049d6/526de/redux-thunk-7.png 885w,
+/React-Personal-Blog-Gatsby/static/adf0d926b52e3ca70b7c5e4c0bc049d6/fa2eb/redux-thunk-7.png 1180w,
+/React-Personal-Blog-Gatsby/static/adf0d926b52e3ca70b7c5e4c0bc049d6/6825c/redux-thunk-7.png 1728w"
+        sizes="(max-width: 590px) 100vw, 590px"
+      />
+    </span>
+  </span>
+  
+  </a>
+    </p>
+<p>Don’t worry about the URL looking so awkward, its just to showcase where its coming from.</p>
+<p>As you can see this pattern makes everything more smooth and its recomended in the Redux documentation.</p>
+<h2>Conclusion</h2>
+<p>We learned how to setup a Redux structure in our React app, its very straightforward when you start doing it, but there are even easier ways of doing this kind of setup, with a ducks pattern (everything on a single file) as we just saw and using the new Redux Toolkit which we will see later.</p>
+<p>See you on the next post.</p>
+<p>Sincerely,</p>
+<p><strong>Eng Adrian Beria.</strong></p></div><hr style="margin-bottom:1.625rem"/><ul style="display:flex;flex-wrap:wrap;justify-content:space-between;list-style:none;padding:0"><li><a rel="prev" href="/React-Personal-Blog-Gatsby/7-Redux/">← <!-- -->Redux</a></li><li><a rel="next" href="/React-Personal-Blog-Gatsby/9-redux-saga/">Redux Saga<!-- --> →</a></li></ul></div></div></div><script>
+  
+  
+  if(true) {
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  }
+  if (typeof ga === "function") {
+    ga('create', 'undefined', 'auto', {});
+      
+      }
+      </script><script id="gatsby-script-loader">/*<![CDATA[*/window.page={"componentChunkName":"component---src-templates-blog-post-js","jsonName":"8-redux-thunk-79b","path":"/8-redux-thunk/"};window.dataPath="877/path---8-redux-thunk-79-b-f72-iydRXNAUKl7hxlgIaKgbsRJfLGU";/*]]>*/</script><script id="gatsby-chunk-mapping">/*<![CDATA[*/window.___chunkMapping={"app":["/app-4e11346c8e77271929a6.js"],"component---node-modules-gatsby-plugin-offline-app-shell-js":["/component---node-modules-gatsby-plugin-offline-app-shell-js-0d0a529deb4700809c6b.js"],"component---src-templates-blog-post-js":["/component---src-templates-blog-post-js-453bf1286b7dd5e6e7f5.js"],"component---src-pages-404-js":["/component---src-pages-404-js-12d1e7628384a501a7eb.js"],"component---src-pages-index-js":["/component---src-pages-index-js-d957837aa6e586a5cd6b.js"]};/*]]>*/</script><script src="/React-Personal-Blog-Gatsby/webpack-runtime-34e1e3e2ad25dc2694d2.js" async=""></script><script src="/React-Personal-Blog-Gatsby/0-536b63d17895bdbe58d7.js" async=""></script><script src="/React-Personal-Blog-Gatsby/app-4e11346c8e77271929a6.js" async=""></script><script src="/React-Personal-Blog-Gatsby/component---src-templates-blog-post-js-453bf1286b7dd5e6e7f5.js" async=""></script><script src="/React-Personal-Blog-Gatsby/1-0ca38feffad4eeaaf45d.js" async=""></script></body></html>
