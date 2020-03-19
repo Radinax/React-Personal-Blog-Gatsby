@@ -97,7 +97,7 @@ We configure our store importing the setup from store folder.
 
 ## Ducks pattern
 
-Another way of making this process even easier, is to use put everything on a single file, but of course I don't mean EVERYTHING, but if in your app you're working with getting a set of posts or comments in a blog, then you can do two ducks files. In the case of this tutorial we were only doing it for a set of games, which we will see in detail in another post, but for now lets see how a ducks pattern would look here:
+Another way of making this process even easier, is to put everything on a single file, but of course I don't mean EVERYTHING, but if in your app you're working with getting a set of posts or comments in a blog, then you can do two ducks files. In the case of this tutorial we were only doing it for a set of games, which we will see in detail in another post, but for now lets see how a ducks pattern would look here:
 
 ![code](redux-thunk-7.png)
 

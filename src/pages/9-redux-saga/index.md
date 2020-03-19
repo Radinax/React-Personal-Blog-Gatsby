@@ -60,6 +60,8 @@ Lets see an example of both:
 
 One thing I was thinking when learning Redux Saga was "shouldn't I call a requested action before doing a call in the worker saga?", well its alredy done by the watcher saga! So once the requested action is dispatched the worker can start working.
 
+So why do we need the action creator fetchingGames? Its used in our component to make the request to the watcher saga to start the fetching.
+
 ## Installing dependencies
 
 For an alredy created project:
@@ -92,23 +94,92 @@ I added examples for POST, PUT and DELETE, but this post will focus on a fetch w
 
 ## Saga
 
+We will do a ducks pattern here, as we said in the redux-thunk post, you can have different sagas doing different things, for example, you might have a contacts saga that works doing a CRUD just for contacts. You can have another saga for handling the posts of a blog. Each saga will have its respective types, action creators, watcher and worker saga and reducer.
+
+If you have more than one saga then its adviced you create the store in a separate folder called "store" in the src folder.
+
 In this file we will have types, actions, reducer and the sagas!
 
 ![code](redux-saga-3.png)
 
 The types and actions are straight forward. One thing to take notice is that with Redux Saga we work using only ACTIONS to trigger the worker saga, for example, if we wish to request information from a server, inside one of our components we need to import the ACTION CREATOR and when it triggers the dispatch (due to mapDispatchToProps), the watcher saga takes notice and sends a worker to make the HTTP request **call** and then takes the result and **put** the action creator to work sending the data obtained from the **call** as argument to the action creator which is read by the Reducer and adds the data to the store (global state).
 
+If we need to make any change to the global state, then we need to use another worker saga and repeat the process.
 
+## Handling multiple Sagas
 
-If we need to make any change to the global state, then we need to use another worker saga and repeat the process, in the end is a simple proccess.
+As I previously mentioned, in big apps we're gonna be using different sagas to handle different entities in the application, the folder structure will look like:
 
+- src
+  - api
+      - contacts.js
+      - posts.js
+      - comments.js
+  - components
+  - pages
+  - reducers
+  - sagas
+      - contacts
+          - sagas
+            - createContact.js
+            - editContact.js
+            - deleteContact.js
+            - getContact.js
+            - index.js
+          - actions.js
+          - index.js
+          - initialState.js
+          - reducer.js
+          - types.js
+      - posts
+      - comments
+      - index.js
+  - store
+  - App.js
+  - index.js
+
+Wait... This looks more complicated! It sure does look like it, but its the same logic we did, we're just separating them. Inside the **contacts/sagas folder** we will have the four worker sagas and inside index.js we will have the watcher saga for each of them and it will look like this:
+
+![code](redux-saga-4.png)
+
+Where we export this as **contactsSaga** towards our src/saga/index.js file which will look like:
+
+![code](redux-saga-5.png)
+
+Where the other sagas are similar to contactsSaga. We also export our reducer towards **src/reducer**, we do the same with the reducer of posts and comments, applying **combineReducer** afterwards.
+
+Or you can do a ducks pattern:
+
+- src
+  - api
+      - contacts.js
+      - posts.js
+      - comments.js
+  - components
+  - pages
+  - ducks
+      - contacts
+          - index.js
+      - posts
+          - index.js
+      - comments
+          - index.js
+      - index.js
+  - reducer
+  - store
+  - App.js
+  - index.js
+
+Inside our **contacts/index.js** we will have all the logic inside, we declare our types, our action creators, watchers and workers saga, our reducer with the respective initial state which we will export towards **src/reducer** and apply **combineReducer** afterwards.
+
+I personally prefer the ducks pattern for structuring folders.
 
 ## A summary
 
 - Create folders with the following name: api, sagas.
 - Inside api we add our requests to the server.
 - In sagas we declare types, actions, reducer, watcher saga, worker saga and configure our store.
-- Connect it to Provider
+- Connect it to Provider.
 
 ## Conclusion
 
