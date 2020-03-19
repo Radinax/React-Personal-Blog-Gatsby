@@ -1,4 +1,179 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Adrian Beria Blog]]></title><description><![CDATA[A blog made by Adrian Beria to write articles related to Web Development and React JS]]></description><link>https://radinax.github.io/React-Personal-Blog-Gatsby</link><generator>RSS for Node</generator><lastBuildDate>Thu, 19 Mar 2020 15:56:18 GMT</lastBuildDate><item><title><![CDATA[Redux Saga]]></title><description><![CDATA[Introduction A saga is like a separate thread in your application that’s solely responsible for side effects. redux-saga is a redux…]]></description><link>https://radinax.github.io/React-Personal-Blog-Gatsby/9-redux-saga/</link><guid isPermaLink="false">https://radinax.github.io/React-Personal-Blog-Gatsby/9-redux-saga/</guid><pubDate>Wed, 18 Mar 2020 11:53:32 GMT</pubDate><content:encoded>&lt;h2&gt;Introduction&lt;/h2&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Adrian Beria Blog]]></title><description><![CDATA[A blog made by Adrian Beria to write articles related to Web Development and React JS]]></description><link>https://radinax.github.io/React-Personal-Blog-Gatsby</link><generator>RSS for Node</generator><lastBuildDate>Thu, 19 Mar 2020 22:03:38 GMT</lastBuildDate><item><title><![CDATA[Redux Toolkit]]></title><description><![CDATA[Introduction The Redux Toolkit package is intended to be the standard way to write Redux logic. It was originally created to help address…]]></description><link>https://radinax.github.io/React-Personal-Blog-Gatsby/10-redux-toolkit/</link><guid isPermaLink="false">https://radinax.github.io/React-Personal-Blog-Gatsby/10-redux-toolkit/</guid><pubDate>Thu, 19 Mar 2020 11:53:32 GMT</pubDate><content:encoded>&lt;h2&gt;Introduction&lt;/h2&gt;
+&lt;p&gt;The Redux Toolkit package is intended to be the standard way to write Redux logic. It was originally created to help address three common concerns about Redux:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;“Configuring a Redux store is too complicated”&lt;/li&gt;
+&lt;li&gt;“I have to add a lot of packages to get Redux to do anything useful”&lt;/li&gt;
+&lt;li&gt;“Redux requires too much boilerplate code”&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Features&lt;/h2&gt;
+&lt;p&gt;Redux Toolkit includes:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;A &lt;strong&gt;configureStore()&lt;/strong&gt; function with simplified configuration options. It can automatically combine your slice reducers, adds whatever Redux middleware you supply, includes redux-thunk by default, and enables use of the Redux DevTools Extension.&lt;/li&gt;
+&lt;li&gt;A &lt;strong&gt;createReducer()&lt;/strong&gt; utility that lets you supply a lookup table of action types to case reducer functions, rather than writing switch statements. In addition, it automatically uses the &lt;a href=&quot;https://github.com/mweststrate/immer&quot;&gt;immer&lt;/a&gt; library to let you write simpler immutable updates with normal mutative code, like state.todos[3].completed = true.&lt;/li&gt;
+&lt;li&gt;A &lt;strong&gt;createAction()&lt;/strong&gt; utility that returns an action creator function for the given action type string. The function itself has toString() defined, so that it can be used in place of the type constant.&lt;/li&gt;
+&lt;li&gt;A &lt;strong&gt;createSlice()&lt;/strong&gt; function that accepts a set of reducer functions, a slice name, and an initial state value, and automatically generates a slice reducer with corresponding action creators and action types.&lt;/li&gt;
+&lt;li&gt;The createSelector utility from the &lt;a href=&quot;https://github.com/reduxjs/reselect&quot;&gt;Reselect&lt;/a&gt; library, re-exported for ease of use.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;When to use&lt;/h2&gt;
+&lt;p&gt;This is the default way of using Redux for almost every case, its easier and the new utilities makes everything straight forward.&lt;/p&gt;
+&lt;h2&gt;Installing dependencies&lt;/h2&gt;
+&lt;p&gt;For an alredy created project:&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;yarn add @redux/toolkit&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;This also comes pre installed with a template for create-react-app&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;npx create-react-app my-app --template redux
+cd my-app
+npm start&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2&gt;Project structure&lt;/h2&gt;
+&lt;p&gt;We’re gonna do a ducks pattern here as its the recomended way of doing Redux&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;src&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;api&lt;/li&gt;
+&lt;li&gt;components&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;ducks&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;contacts&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;index.js&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;pages&lt;/li&gt;
+&lt;li&gt;store&lt;/li&gt;
+&lt;li&gt;App.js&lt;/li&gt;
+&lt;li&gt;index.js&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Difference between the original and the Redux Toolkit way&lt;/h2&gt;
+&lt;p&gt;Its easier to see for ourselves the difference in code, lets check the original way:&lt;/p&gt;
+&lt;p&gt;
+  &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/React-Personal-Blog-Gatsby/static/34a706da5f18e86a1a8a057713b300b5/13ec1/react-redux-toolkit-2.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+  
+  &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 122.6034308779011%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAZCAYAAAAxFw7TAAAACXBIWXMAAAsSAAALEgHS3X78AAAC9UlEQVQ4y51V15brNhDTN2Qts4hVIlVct5xNcpL//6j4wQhIe0scJ7v3PsAqljCDwcyoGbP9K4z55FI6hZxOMo4nYdypVZroTmulToJopa5YCXlarcV/opknh2HKcOOMME3Q4w46LSAphPXQ1sJ6A+EipAtohfxfNDm7c1g2Z7N7ObvD69mMy1kPYz13+5ezzpvzQ7s+MzrxdhRnvlxxe90Mg4XPGd24hZmZXZ9AQphph44omVJmRSvUBVJh1a4ramZrAQYjBJppDthvKXsm6XKEzSPscoCLFs5ZDH5Gynu4+QDD+3b3jPD8B9z2CSFtMaUjXEgQqoOQGs12k/D6uMHmeER8+hN5/4z8+Cump98RRmarLesYWMNwqWMYoPoRKmZYO6AzAVIbdF0gPBohO4xTiUZThg1i3vJ8g2F5QYg0STsoZYkOa8pdU9abAaxtRZH6QMkFTbmQoYemvGgTvBtguwhvBvSUG/1E6bxn4zULB+kDFLNdl1reuqwNIytG5oMrHlfXSBVte8VHJqt3Ay7XhWT1Keumjz0mmuHorLKuRv2q1z7jM9klQ8owXQ/JiO2/MvnAtwlDNPBpYO8tML6H8rG6ZlhHRdfKdGhjLsRCfD0pndE47BOW+Yg87NHHGbor0nVFW4/qbjZ3CR9awV6yJGOGbI22FPv68j3ZX5E2aymRc4Szoco0rKmi5HvyvpchH/LeYTMdENj5pZE/COQPOV4JWyHq+FjDpqYJnXaX7L4p8Q6hxDQF5DRyCnoYkgulf5jonbCOHmc19zsMrmeG9jpOP0lYflKK1elCLIvTPzklV5cVJXvEyDWkzPuMfge3pHXBSt3hF/bi2/atcqWsW/mC6/nt/bdeFf8M0PT8BMybHn7Z1k0duPZNWWdcojZNMM7XzMs4FhTDynauq+smu8tHKhk8v+7gD78hLo9s8j0N4oINS92F5diHuZqW4w7Bp3oe3VRH1JjIXcnlQqVVstKafzCqKB+em/rcOP1VK5X//wZ/Po1fs9HU8wAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+    &gt;
+      &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;code&quot;
+        title=&quot;&quot;
+        src=&quot;/React-Personal-Blog-Gatsby/static/34a706da5f18e86a1a8a057713b300b5/fb8a0/react-redux-toolkit-2.png&quot;
+        srcset=&quot;/React-Personal-Blog-Gatsby/static/34a706da5f18e86a1a8a057713b300b5/1a291/react-redux-toolkit-2.png 148w,
+/React-Personal-Blog-Gatsby/static/34a706da5f18e86a1a8a057713b300b5/2bc4a/react-redux-toolkit-2.png 295w,
+/React-Personal-Blog-Gatsby/static/34a706da5f18e86a1a8a057713b300b5/fb8a0/react-redux-toolkit-2.png 590w,
+/React-Personal-Blog-Gatsby/static/34a706da5f18e86a1a8a057713b300b5/526de/react-redux-toolkit-2.png 885w,
+/React-Personal-Blog-Gatsby/static/34a706da5f18e86a1a8a057713b300b5/13ec1/react-redux-toolkit-2.png 991w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+      /&gt;
+    &lt;/span&gt;
+  &lt;/span&gt;
+  
+  &lt;/a&gt;
+    &lt;/p&gt;
+&lt;p&gt;The store is just here to show the difference. But as you can see its the typical API, types, action creators, reducers and store.&lt;/p&gt;
+&lt;p&gt;Now lets check the new way with Redux Toolkit and explain what’s going on:&lt;/p&gt;
+&lt;p&gt;
+  &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/React-Personal-Blog-Gatsby/static/d4a18d80211a726ad1f90e6014cad1b9/13ec1/react-redux-toolkit-1.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+  
+  &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 104.43995963673058%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAVCAYAAABG1c6oAAAACXBIWXMAAAsSAAALEgHS3X78AAAChElEQVQ4y5VU2XLaQBDUPxhpV3sfupAxYOyKK5WH/P8nWQ/bmV0DcWyDw0PXqtCq6Z6ZnioE9Wq8W0ToFkngvl+4DUvr6Vm7hRu/cBcXodSirKZ3sbxvpF5WDTujZjzjtfJBw3YR0gcoAtMejVBv4AJNq8CkJihwQqMMGKHmLYgAjO7kc9U0BIZqt43px8Gn6XGb9OFXcpttik8vabjvUxymNMVt6qd90jNhc0ju8DP5l9/JPTylYXhMU79PyoYkpUut1Kkaeo/dZkIcZ8T5Gd24BpUALji0YYByAa22pNyCbJJiWdQX1fk5uyC1jMtyVrwVeJhn+HGPvpsxdQOcGeF9Jh7QZDLjC3mxSrZWBc3x/BdVS3XpQg9HH1vbQ6sIpVyBEAZaejoluPVgpCx/lGt2CZVQEjWprIsdkn/lckFWco3QO49heoCJA9psqXSMXcTp/WWF0pLNAJ5rUte4y5evfPCtZWM1hHWl8Mp0EGT9qw+/IzoTWiJajwfEaUcj0qN9R3iL1TNhwwQijUjvZmjbQRpqDr/d6pmwZgzBTVj3jxjjBoOfoGmEuKHBdhFCqxKzGwg5vB3Q+XsEUuhzVikB9TEB79X9l+V8KVueuj0N+BoxjNCue1NHzeJCXJ27j39ScUpBySRrC3hWRmcZIcKqbi7G7CvllBRFnaVoZWKyWxZAjhplmGf7x0XwttJkqedpGdTsc20r6xVCp8kmEXjqchzJKu1HSo7I6cnbxobyLDyNlTbIYZCEvAs/Eebo7eYd+uEefb/DFDaIbg1PM9mc7LxH/o393TafLEtlqctjiZ8zA4w0aKmmp/22Oi6DMz5E84umiPJvd3VTmnD3oQG3ZvoPRXIkh4/wR28AAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+    &gt;
+      &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;code&quot;
+        title=&quot;&quot;
+        src=&quot;/React-Personal-Blog-Gatsby/static/d4a18d80211a726ad1f90e6014cad1b9/fb8a0/react-redux-toolkit-1.png&quot;
+        srcset=&quot;/React-Personal-Blog-Gatsby/static/d4a18d80211a726ad1f90e6014cad1b9/1a291/react-redux-toolkit-1.png 148w,
+/React-Personal-Blog-Gatsby/static/d4a18d80211a726ad1f90e6014cad1b9/2bc4a/react-redux-toolkit-1.png 295w,
+/React-Personal-Blog-Gatsby/static/d4a18d80211a726ad1f90e6014cad1b9/fb8a0/react-redux-toolkit-1.png 590w,
+/React-Personal-Blog-Gatsby/static/d4a18d80211a726ad1f90e6014cad1b9/526de/react-redux-toolkit-1.png 885w,
+/React-Personal-Blog-Gatsby/static/d4a18d80211a726ad1f90e6014cad1b9/13ec1/react-redux-toolkit-1.png 991w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+      /&gt;
+    &lt;/span&gt;
+  &lt;/span&gt;
+  
+  &lt;/a&gt;
+    &lt;/p&gt;
+&lt;p&gt;Wait… where did the types, action creators and reducers go to?! They’re all part of the slice!&lt;/p&gt;
+&lt;p&gt;The new createSlice takes as arguments the following:&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;createSlice({
+  name: &amp;#39;nameOfTheSlice&amp;#39;,
+  state,
+  reducers: {
+    actionName: state =&amp;gt; {
+      // Do Something with the state
+    },
+    anotherActionName: state =&amp;gt; {
+      // With immer you can mutate the original state!
+    }
+  }
+})&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;So the magic happens inside the reducers key, what I call actionName is the name you would give the action in this context, so if it was:&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;javascript&quot;&gt;&lt;pre class=&quot;language-javascript&quot;&gt;&lt;code class=&quot;language-javascript&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; initialState &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  data&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+  loading&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token boolean&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+  error&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;&apos;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;javascript&quot;&gt;&lt;pre class=&quot;language-javascript&quot;&gt;&lt;code class=&quot;language-javascript&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;// Action&lt;/span&gt;
+&lt;span class=&quot;token function-variable function&quot;&gt;fetchingGames&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; type&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;FETCH_GAMES_REQUESTED&apos;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;// Reducer&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;token function-variable function&quot;&gt;rootReducer&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;state &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; initialState&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; action&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token keyword&quot;&gt;switch&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;action&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;type&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;case&lt;/span&gt; &lt;span class=&quot;token constant&quot;&gt;FETCH_GAMES_REQUESTED&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+      &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;token operator&quot;&gt;...&lt;/span&gt;state&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+        loading&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token boolean&quot;&gt;true&lt;/span&gt;
+      &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;default&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; state
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;You can do now:&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;javascript&quot;&gt;&lt;pre class=&quot;language-javascript&quot;&gt;&lt;code class=&quot;language-javascript&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; slice &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;createSlice&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  name&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;rootReducer&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+  initialState&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+  reducers&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    fetchingGames&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; state &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; state&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;loading &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token boolean&quot;&gt;true&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;But… don’t we need the export the actions to our components to trigger the reducer? We can get the actions from the slice!&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;javascript&quot;&gt;&lt;pre class=&quot;language-javascript&quot;&gt;&lt;code class=&quot;language-javascript&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;// Destructuring the actions we&apos;re gonna use in the app&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;export&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; fetchingGames &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; slice&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;actions&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;If you ever need the types, for example, to use on Redux Saga, you can get it from the slice as well! The name is the name of the reducer and the name of the action, so in this case ‘rootReducer/fetchingGames’&lt;/p&gt;
+&lt;p&gt;If you need to trigger any action you need to destructure the slice and import them in the component that’s gonna use them, which will get trigger the reducer to change the global state.&lt;/p&gt;
+&lt;h2&gt;Conclusion&lt;/h2&gt;
+&lt;p&gt;Thanks to &lt;a href=&quot;https://twitter.com/acemarke&quot;&gt;@acemarke&lt;/a&gt; for creating an easier way of using Redux, this is the default way of setting up our projects with Redux from now on, less code, more organized and easier to understand for new people, I personally took nearly four months before I understood Redux.&lt;/p&gt;
+&lt;p&gt;See you on the next post.&lt;/p&gt;
+&lt;p&gt;Sincerely,&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Eng Adrian Beria.&lt;/strong&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Redux Saga]]></title><description><![CDATA[Introduction A saga is like a separate thread in your application that’s solely responsible for side effects. redux-saga is a redux…]]></description><link>https://radinax.github.io/React-Personal-Blog-Gatsby/9-redux-saga/</link><guid isPermaLink="false">https://radinax.github.io/React-Personal-Blog-Gatsby/9-redux-saga/</guid><pubDate>Wed, 18 Mar 2020 11:53:32 GMT</pubDate><content:encoded>&lt;h2&gt;Introduction&lt;/h2&gt;
 &lt;p&gt;A saga is like a separate thread in your application that’s solely responsible for side effects. redux-saga is a redux middleware, which means this thread can be started, paused and cancelled from the main application with normal redux actions, it has access to the full redux application state and it can dispatch redux actions as well.&lt;/p&gt;
 &lt;p&gt;It uses an ES6 feature called Generators to make those asynchronous flows easy to read, write and test. By doing so, these asynchronous flows look like your standard synchronous JavaScript code.&lt;/p&gt;
 &lt;p&gt;You might’ve used redux-thunk before to handle your data fetching. Contrary to redux thunk, you don’t end up in callback hell, you can test your asynchronous flows easily and your actions stay pure.&lt;/p&gt;
@@ -32,7 +207,7 @@
 &lt;p&gt;
   &lt;a
     class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/React-Personal-Blog-Gatsby/static/6c3c418fe0307ca31a9e17a54ac8642d/08740/redux-saga-1.png&quot;
+    href=&quot;/React-Personal-Blog-Gatsby/static/d0ceaf3bd4512cdaf3b749dd5fbfc8d4/2fe89/redux-saga-1.png&quot;
     style=&quot;display: block&quot;
     target=&quot;_blank&quot;
     rel=&quot;noopener&quot;
@@ -44,19 +219,20 @@
   &gt;
     &lt;span
       class=&quot;gatsby-resp-image-background-image&quot;
-      style=&quot;padding-bottom: 126.83397683397683%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAZCAYAAAAxFw7TAAAACXBIWXMAAAsSAAALEgHS3X78AAADs0lEQVQ4y51VyXbjNhDUH0y0cAGxcCclklqsxXbsmYk9hyQ/nJxzmZe/Qk0BWiJP5Lwkh1JDINio7q5ujoRMUFYpTFVDtwNk2SIhRF4jqebEArE2iKSCKFrEJkdScy8rIZuO6Hm2wiyMEEQxRkWh7ctzY6vlYNP9Z1s8vtr68682P3yy1adfbLZ9tKqubLq5t9n+o60+/myLhxdb/PiFZ1+sbAcbKWPp0NKhHSktMXQpdFFAtkuoxQp62ELOl9DLHYRWno1arI/P+jueG/yzUEjMgtDDsXMsR24RSY2YONOeBcHpoLPc475bh2FMHP9PZ8Hl/NmZD9kxXA4ZdFkiYT7MsCODHomSSIsMJktRpHPkWYuq6FETydXl1868Q88wkQgJZ6dh6A9Mycitz7j18vX64lAbifWqQDnvYLo7lMt7lHfPqDfPyPudR1Y2UMyp6jaQVYk0N1Am5aXh3x3OeHsYJVg2B7TlCmXWIdU1qrxHZupjuGnLM8IzOuPM8HuWI3eTSVNIlUPpEoFIMIkijMPgaIMpJly7/SBOEMZMEde3wr2EvBpyVCyEWWzQrJ/Q7n9Cv3tF2R9QN0s0wx6a6ZDNHDpTLFT+vkP3IIwk+nrnQ84YrhQGqSqhJauvCtr8JJ3w34UsXWvFErFQmDHMY2WDN3b2HZN3GU69RI43TQLnzB2OuXeEf9E/Dy9d8Z4z7zBOEi9gycJkBUMlVKoo3piFchoVCCjkgMMhYCSx0r4wnj21OnF6PVnfeq4oTw8N9tsK+02P/XqNVddjt1nisFlhwf7tt68szAOG3Resqc+6XEAxr05OTmY5pVVkc1/9keDtgiylEuxTDoKYLFiUSGjm1UDQJjFBKwnh1onx+XZWsnDSFy8nc+Faj4KlsGex05lgiInP19QPhtmlBX07Xgn7+P+v1pyecjsyqcT2rmb71cjLHJpjSnfrY5tReyn1qYw55up00TQI3q+y+ykKRYcVX2SYnNSCEzvWmkXSfppLyXmp2UkMzbCbtC58eNd6fCPsSAg87CsMA3u4v2cBDqjqHstFh82wouDXaCsWqN5gaA++7+u685oNwhsMdWrw9Fhjw7Cbbk9sMa8HsmnYOXMOC7Jn0o0puMfJrlOSkDcF7opipda2qrTNMmONqYjSsuUsp43N08YyTKtUZhkqbc7zxrII/hvi4L4nZ4xc28UcrJNZ6DvmXLGLvR60p/1buXsT8j+10n/FaDyZ/vbDePLHh/Hk64fx+M//h8lX54O+fv8GeKWTBIKFH8IAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+      style=&quot;padding-bottom: 69.67005076142132%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAOCAYAAAAvxDzwAAAACXBIWXMAAAsSAAALEgHS3X78AAACBUlEQVQ4y41S2W6cMBTlHwI23jfAbLMk07RKpfb//wmJ0ztDSdtkEvXhyMbI12crYjRL09hFxm5ReV5kaBYd4lK7uLjoFxPcUvt2EXEDt34pGV9KXm/rGxQ+aNBQSB8h2wHSBXgnwbWFsB6MVShZjYoThNzA+PZ9B4W1avVdt8p2XO14Ws1wWkU7rcL5VaS8qv6w6jyvmtbahpVYrHTxQxR9tsiHHmK8wF++w52/wQwzdDfAnr7CPb3A0plIHcpa4KFihAoPjBFz/g6FcSQ5OfhgUBuH2ieQf+BSQWgFpR2kclDSQqsAaxKcaW7njB64ymRc0F5ukucp4Omc8HhKMOMR7ssPhOefsNMJpm3hpzNS7tB3RwztI6bugvPwgkN+RhtnxNDDuQbGRAilUUhioZ3Flakw+saKK4VKGVRSg0mJkm8hlL/DuLLhtbqtG8QfyTEZHA8R89ATix5Tn5G7kVg9oh0u6LoDFEm2JNPbjqT6u/69prxpJy8YvcSJTUU/mAC/+sJ2f8SN0c5qZ3y3NtcwxjGCygzR5FuaOjXg1Lf99beMdvnlnT4WtRQ4HwPyNMANT0hdxpB7pDAg+h45UVAu/XO5/KzYVwmH2eN4nND2F0puRBsoPdcj+I4GU0cpoJtMVn846HWg1JrkkU97n/jVL/m6r+r6ndRPB/7tx0f4H6k7fgFBeHLYcUnsDgAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
     &gt;
       &lt;img
         class=&quot;gatsby-resp-image-image&quot;
         style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
         alt=&quot;code&quot;
         title=&quot;&quot;
-        src=&quot;/React-Personal-Blog-Gatsby/static/6c3c418fe0307ca31a9e17a54ac8642d/fb8a0/redux-saga-1.png&quot;
-        srcset=&quot;/React-Personal-Blog-Gatsby/static/6c3c418fe0307ca31a9e17a54ac8642d/1a291/redux-saga-1.png 148w,
-/React-Personal-Blog-Gatsby/static/6c3c418fe0307ca31a9e17a54ac8642d/2bc4a/redux-saga-1.png 295w,
-/React-Personal-Blog-Gatsby/static/6c3c418fe0307ca31a9e17a54ac8642d/fb8a0/redux-saga-1.png 590w,
-/React-Personal-Blog-Gatsby/static/6c3c418fe0307ca31a9e17a54ac8642d/526de/redux-saga-1.png 885w,
-/React-Personal-Blog-Gatsby/static/6c3c418fe0307ca31a9e17a54ac8642d/08740/redux-saga-1.png 1036w&quot;
+        src=&quot;/React-Personal-Blog-Gatsby/static/d0ceaf3bd4512cdaf3b749dd5fbfc8d4/fb8a0/redux-saga-1.png&quot;
+        srcset=&quot;/React-Personal-Blog-Gatsby/static/d0ceaf3bd4512cdaf3b749dd5fbfc8d4/1a291/redux-saga-1.png 148w,
+/React-Personal-Blog-Gatsby/static/d0ceaf3bd4512cdaf3b749dd5fbfc8d4/2bc4a/redux-saga-1.png 295w,
+/React-Personal-Blog-Gatsby/static/d0ceaf3bd4512cdaf3b749dd5fbfc8d4/fb8a0/redux-saga-1.png 590w,
+/React-Personal-Blog-Gatsby/static/d0ceaf3bd4512cdaf3b749dd5fbfc8d4/526de/redux-saga-1.png 885w,
+/React-Personal-Blog-Gatsby/static/d0ceaf3bd4512cdaf3b749dd5fbfc8d4/fa2eb/redux-saga-1.png 1180w,
+/React-Personal-Blog-Gatsby/static/d0ceaf3bd4512cdaf3b749dd5fbfc8d4/2fe89/redux-saga-1.png 1576w&quot;
         sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
       /&gt;
     &lt;/span&gt;
@@ -65,6 +241,7 @@
   &lt;/a&gt;
     &lt;/p&gt;
 &lt;p&gt;One thing I was thinking when learning Redux Saga was “shouldn’t I call a requested action before doing a call in the worker saga?”, well its alredy done by the watcher saga! So once the requested action is dispatched the worker can start working.&lt;/p&gt;
+&lt;p&gt;So why do we need the action creator fetchingGames? Its used in our component to make the request to the watcher saga to start the fetching.&lt;/p&gt;
 &lt;h2&gt;Installing dependencies&lt;/h2&gt;
 &lt;p&gt;For an alredy created project:&lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;yarn add redux-saga&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
@@ -125,6 +302,8 @@
 &lt;p&gt;The URL we’re using is a server we created using JSON Server which gives us a service with information we can do CRUD operations to, when we build the next project we will see this in more detail.&lt;/p&gt;
 &lt;p&gt;I added examples for POST, PUT and DELETE, but this post will focus on a fetch which is one of the most common features in every app.&lt;/p&gt;
 &lt;h2&gt;Saga&lt;/h2&gt;
+&lt;p&gt;We will do a ducks pattern here, as we said in the redux-thunk post, you can have different sagas doing different things, for example, you might have a contacts saga that works doing a CRUD just for contacts. You can have another saga for handling the posts of a blog. Each saga will have its respective types, action creators, watcher and worker saga and reducer.&lt;/p&gt;
+&lt;p&gt;If you have more than one saga then its adviced you create the store in a separate folder called “store” in the src folder.&lt;/p&gt;
 &lt;p&gt;In this file we will have types, actions, reducer and the sagas!&lt;/p&gt;
 &lt;p&gt;
   &lt;a
@@ -163,13 +342,180 @@
   &lt;/a&gt;
     &lt;/p&gt;
 &lt;p&gt;The types and actions are straight forward. One thing to take notice is that with Redux Saga we work using only ACTIONS to trigger the worker saga, for example, if we wish to request information from a server, inside one of our components we need to import the ACTION CREATOR and when it triggers the dispatch (due to mapDispatchToProps), the watcher saga takes notice and sends a worker to make the HTTP request &lt;strong&gt;call&lt;/strong&gt; and then takes the result and &lt;strong&gt;put&lt;/strong&gt; the action creator to work sending the data obtained from the &lt;strong&gt;call&lt;/strong&gt; as argument to the action creator which is read by the Reducer and adds the data to the store (global state).&lt;/p&gt;
-&lt;p&gt;If we need to make any change to the global state, then we need to use another worker saga and repeat the process, in the end is a simple proccess.&lt;/p&gt;
+&lt;p&gt;If we need to make any change to the global state, then we need to use another worker saga and repeat the process.&lt;/p&gt;
+&lt;h2&gt;Handling multiple Sagas&lt;/h2&gt;
+&lt;p&gt;As I previously mentioned, in big apps we’re gonna be using different sagas to handle different entities in the application, the folder structure will look like:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;src&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;api&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;contacts.js&lt;/li&gt;
+&lt;li&gt;posts.js&lt;/li&gt;
+&lt;li&gt;comments.js&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;components&lt;/li&gt;
+&lt;li&gt;pages&lt;/li&gt;
+&lt;li&gt;reducers&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;sagas&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;contacts&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;sagas&lt;/li&gt;
+&lt;li&gt;createContact.js&lt;/li&gt;
+&lt;li&gt;editContact.js&lt;/li&gt;
+&lt;li&gt;deleteContact.js&lt;/li&gt;
+&lt;li&gt;getContact.js&lt;/li&gt;
+&lt;li&gt;index.js&lt;/li&gt;
+&lt;li&gt;actions.js&lt;/li&gt;
+&lt;li&gt;index.js&lt;/li&gt;
+&lt;li&gt;initialState.js&lt;/li&gt;
+&lt;li&gt;reducer.js&lt;/li&gt;
+&lt;li&gt;types.js&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;posts&lt;/li&gt;
+&lt;li&gt;comments&lt;/li&gt;
+&lt;li&gt;index.js&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;store&lt;/li&gt;
+&lt;li&gt;App.js&lt;/li&gt;
+&lt;li&gt;index.js&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Wait… This looks more complicated! It sure does look like it, but its the same logic we did, we’re just separating them. Inside the &lt;strong&gt;contacts/sagas folder&lt;/strong&gt; we will have the four worker sagas and inside index.js we will have the watcher saga for each of them and it will look like this:&lt;/p&gt;
+&lt;p&gt;
+  &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/React-Personal-Blog-Gatsby/static/2ac95261195f66ba85a2077fbd5465ec/236ba/redux-saga-4.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+  
+  &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 34.68559837728195%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAHCAYAAAAIy204AAAACXBIWXMAAAsSAAALEgHS3X78AAABL0lEQVQoz62R3XKDIBCFfYUmKIpRoqhAMDHmZ5JmptO+/xvFiz1FkmamM73sxcdhD8suPxHPsnu+yqZUpNOsMzxLJ5bwaZkkAfbUv2L2Uj7FPL1Hpcxx3GtY3Xo1Aas1pGyQ5xJloSCERLGqPHVAiDJ483rQlUSSZvBFES1YTLV0NJgbWXUi0460sxcfX6nvTnTuP8k2I4325udfwTftQEYNtNMX2nZn6vWZmsaSL0rRIo7RVBsM9grXHuH0AaN7h1F7+M0B0+xxcB/wReGboK0dfBNs2sMjbhyKokKSZYi4EJBli67eQq0tVGXQqR61NKh9rNUOldS+SO/ng2/uUK274IX89SbklaUK145SkYNxjgVjmE/7w/LJm/eXL58915JfucFLkscbzoP/nX/jG5W0vc8o7ZVcAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+    &gt;
+      &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;code&quot;
+        title=&quot;&quot;
+        src=&quot;/React-Personal-Blog-Gatsby/static/2ac95261195f66ba85a2077fbd5465ec/fb8a0/redux-saga-4.png&quot;
+        srcset=&quot;/React-Personal-Blog-Gatsby/static/2ac95261195f66ba85a2077fbd5465ec/1a291/redux-saga-4.png 148w,
+/React-Personal-Blog-Gatsby/static/2ac95261195f66ba85a2077fbd5465ec/2bc4a/redux-saga-4.png 295w,
+/React-Personal-Blog-Gatsby/static/2ac95261195f66ba85a2077fbd5465ec/fb8a0/redux-saga-4.png 590w,
+/React-Personal-Blog-Gatsby/static/2ac95261195f66ba85a2077fbd5465ec/526de/redux-saga-4.png 885w,
+/React-Personal-Blog-Gatsby/static/2ac95261195f66ba85a2077fbd5465ec/236ba/redux-saga-4.png 986w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+      /&gt;
+    &lt;/span&gt;
+  &lt;/span&gt;
+  
+  &lt;/a&gt;
+    &lt;/p&gt;
+&lt;p&gt;Where we export this as &lt;strong&gt;contactsSaga&lt;/strong&gt; towards our src/saga/index.js file which will look like:&lt;/p&gt;
+&lt;p&gt;
+  &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/React-Personal-Blog-Gatsby/static/7327b9f00d1bbc6451063b1cb697cec2/4a284/redux-saga-5.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+  
+  &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 51.49863760217983%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAYAAAC0VX7mAAAACXBIWXMAAAsSAAALEgHS3X78AAABkElEQVQoz52S3W6bQBCFeYTEC/vHPwYMjrFjY5Sorfr+j5HLKOlNr4qrek5nCYkUyVGkXBzOMux8e3ZZz5fq99VCnq6EHEWgxmtfjtc8XrALqUZXn2qzeP4ohD8KnyXE5Fz7wzoHSj94xprT0Jfo90tkeYQD+92xxHaTY7lMMPQVtl2B3bZA26SwSYxovUfS9Uj770jajvtyFFUNEchHj6ljXSf4+a2hoS+oW7fUtR3dbBpSRlMUazKhYrcURpakNqTijJWSySvSSU7GhmcTxeCUjx4/TixESURxlqLKN2jLHqtqhyJrsS6PaMoDlImwCKRrgu/cyQ9eXCqa6lI9ccIXoFCGZJiirQ4M3OOmPmK7ukORr2BszEALnsvSl0TOmfM8JZwm8lZ0nDFwj8P6B7rVgE09YNfec8JbSG2ndJeALuE7oFu9alpiKBQ3Tol0OEGsTRFy8rnhM+AvT9vwlBVLtyVXdGdBQkqaz2Uav76/fr+kNyAP/rqE/Ms/Op9P9Q44X0pXOLvL+UX9m4FP/wHXXwQIPJAcDQAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+    &gt;
+      &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;code&quot;
+        title=&quot;&quot;
+        src=&quot;/React-Personal-Blog-Gatsby/static/7327b9f00d1bbc6451063b1cb697cec2/fb8a0/redux-saga-5.png&quot;
+        srcset=&quot;/React-Personal-Blog-Gatsby/static/7327b9f00d1bbc6451063b1cb697cec2/1a291/redux-saga-5.png 148w,
+/React-Personal-Blog-Gatsby/static/7327b9f00d1bbc6451063b1cb697cec2/2bc4a/redux-saga-5.png 295w,
+/React-Personal-Blog-Gatsby/static/7327b9f00d1bbc6451063b1cb697cec2/fb8a0/redux-saga-5.png 590w,
+/React-Personal-Blog-Gatsby/static/7327b9f00d1bbc6451063b1cb697cec2/4a284/redux-saga-5.png 734w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+      /&gt;
+    &lt;/span&gt;
+  &lt;/span&gt;
+  
+  &lt;/a&gt;
+    &lt;/p&gt;
+&lt;p&gt;Where the other sagas are similar to contactsSaga. We also export our reducer towards &lt;strong&gt;src/reducer&lt;/strong&gt;, we do the same with the reducer of posts and comments, applying &lt;strong&gt;combineReducer&lt;/strong&gt; afterwards.&lt;/p&gt;
+&lt;p&gt;Or you can do a ducks pattern:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;src&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;api&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;contacts.js&lt;/li&gt;
+&lt;li&gt;posts.js&lt;/li&gt;
+&lt;li&gt;comments.js&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;components&lt;/li&gt;
+&lt;li&gt;pages&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;ducks&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;contacts&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;index.js&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;posts&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;index.js&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;comments&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;index.js&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;index.js&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;reducer&lt;/li&gt;
+&lt;li&gt;store&lt;/li&gt;
+&lt;li&gt;App.js&lt;/li&gt;
+&lt;li&gt;index.js&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Inside our &lt;strong&gt;contacts/index.js&lt;/strong&gt; we will have all the logic inside, we declare our types, our action creators, watchers and workers saga, our reducer with the respective initial state which we will export towards &lt;strong&gt;src/reducer&lt;/strong&gt; and apply &lt;strong&gt;combineReducer&lt;/strong&gt; afterwards.&lt;/p&gt;
+&lt;p&gt;I personally prefer the ducks pattern for structuring folders.&lt;/p&gt;
 &lt;h2&gt;A summary&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;Create folders with the following name: api, sagas.&lt;/li&gt;
 &lt;li&gt;Inside api we add our requests to the server.&lt;/li&gt;
 &lt;li&gt;In sagas we declare types, actions, reducer, watcher saga, worker saga and configure our store.&lt;/li&gt;
-&lt;li&gt;Connect it to Provider&lt;/li&gt;
+&lt;li&gt;Connect it to Provider.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2&gt;Conclusion&lt;/h2&gt;
 &lt;p&gt;We learned how to setup a Redux structure with Redux Saga in our React app, it can be a bit overkill for simple apps, but in general its very easy to use and its a matter of preference, but in the next post we will see why Redux Thunks is prefered for most apps when used with the brand new Redux Toolkit.&lt;/p&gt;
@@ -443,7 +789,7 @@ axios.get(url).then(response =&amp;gt; console.log(response))&lt;/code&gt;&lt;/p
 &lt;li&gt;Connect it to Provider&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2&gt;Ducks pattern&lt;/h2&gt;
-&lt;p&gt;Another way of making this process even easier, is to use put everything on a single file, but of course I don’t mean EVERYTHING, but if in your app you’re working with getting a set of posts or comments in a blog, then you can do two ducks files. In the case of this tutorial we were only doing it for a set of games, which we will see in detail in another post, but for now lets see how a ducks pattern would look here:&lt;/p&gt;
+&lt;p&gt;Another way of making this process even easier, is to put everything on a single file, but of course I don’t mean EVERYTHING, but if in your app you’re working with getting a set of posts or comments in a blog, then you can do two ducks files. In the case of this tutorial we were only doing it for a set of games, which we will see in detail in another post, but for now lets see how a ducks pattern would look here:&lt;/p&gt;
 &lt;p&gt;
   &lt;a
     class=&quot;gatsby-resp-image-link&quot;
