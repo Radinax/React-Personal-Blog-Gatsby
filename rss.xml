@@ -1,4 +1,140 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Adrian Beria Blog]]></title><description><![CDATA[A blog made by Adrian Beria to write articles related to Web Development and React JS]]></description><link>https://radinax.github.io/React-Personal-Blog-Gatsby</link><generator>RSS for Node</generator><lastBuildDate>Sun, 29 Mar 2020 20:34:17 GMT</lastBuildDate><item><title><![CDATA[React Router]]></title><description><![CDATA[Introduction Routing is the capacity to show different pages to the user. That means the user can move between different parts of an…]]></description><link>https://radinax.github.io/React-Personal-Blog-Gatsby/11-react-router/</link><guid isPermaLink="false">https://radinax.github.io/React-Personal-Blog-Gatsby/11-react-router/</guid><pubDate>Sun, 29 Mar 2020 11:53:32 GMT</pubDate><content:encoded>&lt;h2&gt;Introduction&lt;/h2&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Adrian Beria Blog]]></title><description><![CDATA[A blog made by Adrian Beria to write articles related to Web Development and React JS]]></description><link>https://radinax.github.io/React-Personal-Blog-Gatsby</link><generator>RSS for Node</generator><lastBuildDate>Tue, 31 Mar 2020 02:06:58 GMT</lastBuildDate><item><title><![CDATA[React Table]]></title><description><![CDATA[Introduction Using tables is a common way of introducing data into the UI, there are several tools available for the job, from UI only…]]></description><link>https://radinax.github.io/React-Personal-Blog-Gatsby/13-react-table/</link><guid isPermaLink="false">https://radinax.github.io/React-Personal-Blog-Gatsby/13-react-table/</guid><pubDate>Mon, 30 Mar 2020 11:53:32 GMT</pubDate><content:encoded>&lt;h2&gt;Introduction&lt;/h2&gt;
+&lt;p&gt;Using tables is a common way of introducing data into the UI, there are several tools available for the job, from UI only options inside CSS Frameworks like Material UI, Bootstrap, Bulma, etc, to actual libraries like &lt;a href=&quot;https://react-table.js.org/&quot;&gt;react-table&lt;/a&gt;, which gives us many options to use and interact with the props in our components. In this post we will see a more in depth look.&lt;/p&gt;
+&lt;h2&gt;When to use&lt;/h2&gt;
+&lt;p&gt;When we need to handle table data with tools like filtering, sorting, editing, pagination, all in one package.&lt;/p&gt;
+&lt;h2&gt;Installing dependencies&lt;/h2&gt;
+&lt;p&gt;For an alredy created project:&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;yarn add react-table&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2&gt;How to use&lt;/h2&gt;
+&lt;p&gt;Lets check the following code for a more visual representation and then explain what’s going on:&lt;/p&gt;
+&lt;p&gt;
+  &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/React-Personal-Blog-Gatsby/static/dc18831288d83e2dfec560a9899f53e5/11218/react-table-1.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+  
+  &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 109.06217070600633%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAWCAYAAADAQbwGAAAACXBIWXMAAAsSAAALEgHS3X78AAACe0lEQVQ4y5VVSWKjMBD0FzIGrWhBYo2zH/L/b3FxTQkmjpNxEudQbglD01VdanZau0X7tEjnlkbrpTHNokNarHeL0GappVpqpbd4hkrIi9gxIYb+ESnNCD5DmwbSOihrIbUFk57iG5gQtZBb/IQdf45zfj5O+ekYfHfkW477WqzxO5TnLl3fCalxOzyyygmNjXBNhmGFl95+juqrCoUyuB8nPB9muDxCcl+J7YESf0r8X8LyYN8ekFtW2CRYGxBiAzYIxmhUUuJPJQjG+m0tsOf6HFsBcksolIJLI+J0h9wfkGKH5BICEQPXuWXTGnS+QYwOfR+QO89rDm3brNEFx4bpLaEyFtFHdpkausBKPQK7ba3nPqLrAuHIgshMlHmPt9RaQxMlKmPWwkqXedFCSQEpSvmkIwoKBbHuC8Wbf1Q/UBbvOFGW9JVhFYbaCbVptiX5qM/VTSk/3fSAaXrBkGdMw8RI9AkttfGBRjfmlLQ6q+YSTk3J3cRmEGHGOAy4v20xFM1Gdt4H+nPTsu897+Xet/DUPGUH3fawMUE7j12h53MHEyNpVpt+9ZlNuL62urVCxXPahAxLi6xnVp1rIr9Y/6BhpPfGccbTXcaBVOeZFooBtbquqnMGK2VHw76+jrife4wdtRvKafFr18uNpeoN7/ta6otne1eto4hJY0sTd+wuExbnM2ERuZg8U/gifmzb1fjlZOjQwoZIhI8J16Z0Awz/3Nf1auCbamvMG53P5t1/R1nTY66NqHkOhSzHULM5+tdT5lShUJw280yqd/RfIj0OgPTekF+Pr2KHwDk4DA8on4NyTj/T+FXCMmn4EVoNXYbBNVP5O/wFCmE5lZULhEAAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+    &gt;
+      &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;code&quot;
+        title=&quot;&quot;
+        src=&quot;/React-Personal-Blog-Gatsby/static/dc18831288d83e2dfec560a9899f53e5/fb8a0/react-table-1.png&quot;
+        srcset=&quot;/React-Personal-Blog-Gatsby/static/dc18831288d83e2dfec560a9899f53e5/1a291/react-table-1.png 148w,
+/React-Personal-Blog-Gatsby/static/dc18831288d83e2dfec560a9899f53e5/2bc4a/react-table-1.png 295w,
+/React-Personal-Blog-Gatsby/static/dc18831288d83e2dfec560a9899f53e5/fb8a0/react-table-1.png 590w,
+/React-Personal-Blog-Gatsby/static/dc18831288d83e2dfec560a9899f53e5/526de/react-table-1.png 885w,
+/React-Personal-Blog-Gatsby/static/dc18831288d83e2dfec560a9899f53e5/11218/react-table-1.png 949w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+      /&gt;
+    &lt;/span&gt;
+  &lt;/span&gt;
+  
+  &lt;/a&gt;
+    &lt;/p&gt;
+&lt;p&gt;This is our main component Table, now lets go from bottom to up. We have a HTML tag table as a container for the headers and body of the table because that’s what tables are consist of.&lt;/p&gt;
+&lt;p&gt;If we check the header called in this case &lt;strong&gt;tableHead&lt;/strong&gt;, we’re mapping some… headerGroups? This array comes from react-table, more precisely &lt;strong&gt;import { useTable, useRowSelect } from ‘react-table’&lt;/strong&gt;, where useTable takes three parameters in this example, an object with &lt;strong&gt;the column and data available which is sent by props&lt;/strong&gt;, we will see how it looks like, the second (optional) property useTables takes is the useRowSelect hook that comes from the same ‘react-table’ which is used for adding a checkbox to the tables, and talking about checkbox, the third (optional) property is a function that adds the checkbox to our table.&lt;/p&gt;
+&lt;p&gt;Easy right? useTable has the following props:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;getTableProps&lt;/strong&gt;: We assign it to our &lt;strong&gt;table HTML tag&lt;/strong&gt; which will act as a wrapper.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;getTableBodyProps&lt;/strong&gt;: We assign it to our &lt;strong&gt;tbody HTML tag&lt;/strong&gt; which will act as a wrapper.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;headerGroups&lt;/strong&gt;: We assign it to our &lt;strong&gt;thead HTML tag&lt;/strong&gt; which will act as a wrapper.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;rows&lt;/strong&gt;: An array of materialized row objects from the original data array and columns passed into the table options&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;prepareRow&lt;/strong&gt;: This function is responsible for lazily preparing a row for rendering. Any row that you intend to render in your table needs to be passed to this function before every render.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;state: { selectedRowIds }&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Those are the ones we used, for the rest of props check this &lt;a href=&quot;https://react-table.js.org/api/useTable&quot;&gt;link&lt;/a&gt; and for applied examples check &lt;a href=&quot;https://react-table.js.org/examples/simple&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;If we check the code we put initially, in tableBody we’re preparing the body with the properties to react to our needs, this is a mechanical process we do with our component everytime we want to use react-table.&lt;/p&gt;
+&lt;p&gt;Now to use this component:&lt;/p&gt;
+&lt;p&gt;
+  &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/React-Personal-Blog-Gatsby/static/612c2a6604ce18fde04a76c7afe34691/56a1e/react-table-2.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+  
+  &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block;  max-width: 578px; margin-left: auto; margin-right: auto;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 119.8961937716263%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAYCAYAAAD6S912AAAACXBIWXMAAAsSAAALEgHS3X78AAADJklEQVQ4y5VUy3IbNxDk3ZGikLtYAAsssE9xSS5X4stVdrnyGXH5W2LKTk4+pMqVj+WRnRmQZkjZluVD1+A5mJnuwWAUJ7tRLHexSHZxLA42UbtYqp0I0DuhdBhHtPcjDJy3mHclTNMi65Yw4xmsd9DGgpxBkpWpQaIN4iQhyCcxkFrvvXd7lbq9y9u9sn6vfLFXrthTlPtICEISQBdO4+9hMIoFjCnQVj1ad4s0dUh8AZXXFFUKKsHp9Ug8I8JEabi8wCiOMYwj8ANRFGMURScHz3F0csiHjclRF1PMqjtklqKrKNJ6QjVUz3J2fmbAl2yWkyMihqINB84OPgfnTgfMJtcqIgYZ/ACDCEGi0sAuyeYrHPbSiyzYMstUQwdbNkiLGtpTpEUFm5dQ1iF1ebDa+WDDmK3Jwp5M7WXKrMPZpIAkR7qZQFdjkGygU42ICXqU1g9THglBUvHomg1Kko2iKE07R75+E4hhxp9i+rHTIykeWrvAtqCNhNOqW0hX0CHxkywrBUcpOltDKRNSF0RE0GF8dPaN6L4XcegU7o5JvUDlW6RUQzPpv0rpqbpdOGTZmCwLE/4MOBoRPoIvh9SjS+rJtAfsJOJU+Uc5apDH/MtwORKC1CZoLiGJ8f6hTcWhTc8iDg4zl6LvK/jpHNn0Hm52D183yKsGbnKHvN/A1LfI6FvLuxVs28OQZn3hkXkPSQLnb21IjxxZllgvSsz6MbLFa3LcYXp7j6acYTp+iUX/O9pZh7wpMRmv0U1eYdzc0bjHbLxCR2tVSXcz0jJlQDpMUFUWZUlpUU8L6gBmm7WptYVNcxhLkWhJ6ylSlhetKZ2R+LMwNnTWuRL8c4Xfprl1WMw7FL6iOspjL19arjVfCGuBwAPiL0iS/2VzdXNDPVpSXebEsoESXBsNJR1kkkEKG6JNVU4PalwPf8WLX67x4uoSQ+qq0Cl/vHuLT5//xYdP/+Dhr7+x3T5g+/Bwsu/P51ueby/w5/stPnz8iOV6g8Hd/QI9YblcEZZYrddYbTZkz7B5NA54ecRhfU3jzOeHlG+GI1zf/EYYHu3P44rA2vwPq1OJ0xN63JwAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+    &gt;
+      &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;code&quot;
+        title=&quot;&quot;
+        src=&quot;/React-Personal-Blog-Gatsby/static/612c2a6604ce18fde04a76c7afe34691/56a1e/react-table-2.png&quot;
+        srcset=&quot;/React-Personal-Blog-Gatsby/static/612c2a6604ce18fde04a76c7afe34691/8869e/react-table-2.png 148w,
+/React-Personal-Blog-Gatsby/static/612c2a6604ce18fde04a76c7afe34691/87a4d/react-table-2.png 295w,
+/React-Personal-Blog-Gatsby/static/612c2a6604ce18fde04a76c7afe34691/56a1e/react-table-2.png 578w&quot;
+        sizes=&quot;(max-width: 578px) 100vw, 578px&quot;
+      /&gt;
+    &lt;/span&gt;
+  &lt;/span&gt;
+  
+  &lt;/a&gt;
+    &lt;/p&gt;
+&lt;p&gt;The component we made before is called Table and it takes two props in this case, data and column, which are arrays of objects where &lt;strong&gt;column&lt;/strong&gt; communicates with &lt;strong&gt;data&lt;/strong&gt; through the accessor, then we need to memoize the data applying React.Memo which will prevent useless renderings and will only do it when the internal data changes.&lt;/p&gt;
+&lt;p&gt;If we need it to be responsive, like we should, then the docs has a great example in how to do it.&lt;/p&gt;
+&lt;h2&gt;Responsiveness&lt;/h2&gt;
+&lt;p&gt;To make our table responsive we can add the following styled component:&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;javascript&quot;&gt;&lt;pre class=&quot;language-javascript&quot;&gt;&lt;code class=&quot;language-javascript&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; TableContainer &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; styled&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;div&lt;span class=&quot;token template-string&quot;&gt;&lt;span class=&quot;token string&quot;&gt;`
+  padding: 1rem;
+
+  table {
+    border-spacing: 0;
+    border: 1px solid black;
+
+    tr {
+      :last-child {
+        td {
+          border-bottom: 0;
+        }
+      }
+    }
+
+    th,
+    td {
+      margin: 0;
+      padding: 0.5rem;
+      border-bottom: 1px solid black;
+      border-right: 1px solid black;
+
+      :last-child {
+        border-right: 0;
+      }
+    }
+  }
+`&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;And use it as a container, this way in mobile we scroll horizontally.&lt;/p&gt;
+&lt;h2&gt;Summary&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;import { useTable, useRowSelect } from ‘react-table’.&lt;/li&gt;
+&lt;li&gt;Create a styled component that acts as a container for the table to add responsiveness.&lt;/li&gt;
+&lt;li&gt;In our component we apply useTable and its props to prepare the body and header to be applied the props of useTable.&lt;/li&gt;
+&lt;li&gt;To use the component we send a memoized data and column with React.Memo.&lt;/li&gt;
+&lt;li&gt;Check doc for more examples if we want to add filtering, sorting, edit, pagination, etc.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Conclusion&lt;/h2&gt;
+&lt;p&gt;We have learned how to use react-table v7! This was a long waited library I wanted to get my hands on as soon as possible because it gives us a lot of tools to create great tables with low work from our behalf reducing time in finishing the app you’re working on.&lt;/p&gt;
+&lt;p&gt;See you on the next post.&lt;/p&gt;
+&lt;p&gt;Sincerely,&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Eng Adrian Beria.&lt;/strong&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[React Router]]></title><description><![CDATA[Introduction Routing is the capacity to show different pages to the user. That means the user can move between different parts of an…]]></description><link>https://radinax.github.io/React-Personal-Blog-Gatsby/11-react-router/</link><guid isPermaLink="false">https://radinax.github.io/React-Personal-Blog-Gatsby/11-react-router/</guid><pubDate>Sun, 29 Mar 2020 11:53:32 GMT</pubDate><content:encoded>&lt;h2&gt;Introduction&lt;/h2&gt;
 &lt;p&gt;Routing is the capacity to show different pages to the user. That means the user can move between different parts of an application by entering a URL or clicking on an element.&lt;/p&gt;
 &lt;p&gt;As you may already know, by default, React comes without routing. And to enable it in our project, we need to add a library named react-router.&lt;/p&gt;
 &lt;h2&gt;When to use&lt;/h2&gt;
