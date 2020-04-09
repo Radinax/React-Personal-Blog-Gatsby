@@ -13,7 +13,7 @@ You might've used redux-thunk before to handle your data fetching. Contrary to r
 
 ## When to use
 
-When we need to do any kind of asynchronous logic, its also prefered on big apps that requires the user to dispatch a lot of actions making Saga ideal for testing and controlling the flow in a more efficent way.
+When we need to do any kind of asynchronous logic, it's also prefered on big apps that requires the user to dispatch a lot of actions making Saga ideal for testing and controlling the flow in a more efficent way.
 
 ## What are Generators
 
@@ -58,13 +58,13 @@ Lets see an example of both:
 
 ![code](redux-saga-1.png)
 
-One thing I was thinking when learning Redux Saga was "shouldn't I call a requested action before doing a call in the worker saga?", well its alredy done by the watcher saga! So once the requested action is dispatched the worker can start working.
+One thing I was thinking when learning Redux Saga was "shouldn't I call a requested action before doing a call in the worker saga?", well it's already done by the watcher saga! So once the requested action is dispatched the worker can start working.
 
-So why do we need the action creator fetchingGames? Its used in our component to make the request to the watcher saga to start the fetching.
+So why do we need the action creator fetchingGames? It's used in our component to make the request to the watcher saga to start the fetching.
 
 ## Installing dependencies
 
-For an alredy created project:
+For an alreday created project:
 
     yarn add redux-saga
 
@@ -96,7 +96,7 @@ I added examples for POST, PUT and DELETE, but this post will focus on a fetch w
 
 We will do a ducks pattern here, as we said in the redux-thunk post, you can have different sagas doing different things, for example, you might have a contacts saga that works doing a CRUD just for contacts. You can have another saga for handling the posts of a blog. Each saga will have its respective types, action creators, watcher and worker saga and reducer.
 
-If you have more than one saga then its adviced you create the store in a separate folder called "store" in the src folder.
+If you have more than one saga then it's adviced you create the store in a separate folder called "store" in the src folder.
 
 In this file we will have types, actions, reducer and the sagas!
 
@@ -138,7 +138,7 @@ As I previously mentioned, in big apps we're gonna be using different sagas to h
   - App.js
   - index.js
 
-Wait... This looks more complicated! It sure does look like it, but its the same logic we did, we're just separating them. Inside the **contacts/sagas folder** we will have the four worker sagas and inside index.js we will have the watcher saga for each of them and it will look like this:
+Wait... This looks more complicated! It sure does look like it, but it's the same logic we did, we're just separating them. Inside the **contacts/sagas folder** we will have the four worker sagas and inside index.js we will have the watcher saga for each of them and it will look like this:
 
 ![code](redux-saga-4.png)
 
@@ -183,7 +183,7 @@ I personally prefer the ducks pattern for structuring folders.
 
 ## Conclusion
 
-We learned how to setup a Redux structure with Redux Saga in our React app, it can be a bit overkill for simple apps, but in general its very easy to use and its a matter of preference, but in the next post we will see why Redux Thunks is prefered for most apps when used with the brand new Redux Toolkit.
+We learned how to setup a Redux structure with Redux Saga in our React app, it can be a bit overkill for simple apps, but in general it's very easy to use and a matter of preference, but in the next post we will see why Redux Thunks is prefered for most apps when used with the brand new Redux Toolkit.
 
 See you on the next post.
 

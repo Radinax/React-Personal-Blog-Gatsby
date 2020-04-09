@@ -23,11 +23,11 @@ Redux Toolkit includes:
 
 ## When to use
 
-This is the default way of using Redux for almost every case, its easier and the new utilities makes everything straight forward.
+This is the default way of using Redux for almost every case, it's easier and the new utilities makes everything straight forward.
 
 ## Installing dependencies
 
-For an alredy created project:
+For an already created project:
 
     yarn add @redux/toolkit
 
@@ -39,7 +39,7 @@ This also comes pre installed with a template for create-react-app
 
 ## Project structure
 
-We're gonna do a ducks pattern here as its the recomended way of doing Redux
+We're gonna do a ducks pattern here as it's the recomended way of doing Redux
 
 - src
     - api
@@ -54,11 +54,11 @@ We're gonna do a ducks pattern here as its the recomended way of doing Redux
 
 ## Difference between the original and the Redux Toolkit way
 
-Its easier to see for ourselves the difference in code, lets check the original way:
+It's easier to see for ourselves the difference in code, lets check the original way:
 
 ![code](react-redux-toolkit-2.png)
 
-The store is just here to show the difference. But as you can see its the typical API, types, action creators, reducers and store.
+The store is just here to show the difference. But as you can see it's the typical API, types, action creators, reducers and store.
 
 Now lets check the new way with Redux Toolkit and explain what's going on:
 

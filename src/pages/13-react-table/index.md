@@ -13,7 +13,7 @@ When we need to handle table data with tools like filtering, sorting, editing, p
 
 ## Installing dependencies
 
-For an alredy created project:
+For an already created project:
 
     yarn add react-table
 

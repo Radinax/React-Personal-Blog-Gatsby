@@ -32,7 +32,7 @@ These are the latest packages used at the moment of writing this post, so please
 Now lets check what are we loading:
 - [React](https://reactjs.org/docs/react-api.html): You're getting the React **Top-Level API** which is the main entry point to the library.
 - [React DOM](https://reactjs.org/docs/react-dom.html): This is where we can access the Top-Level APIs, most notably "render()".
-- [Babel](https://babeljs.io/): Its a Javascript transpiler that let us turn our ES6+ into older ES5 because some browsers don't support it yet.
+- [Babel](https://babeljs.io/): It's a Javascript transpiler that let us turn our ES6+ into older ES5 because some browsers don't support it yet.
 
 In your React code put the following:
 

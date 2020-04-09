@@ -13,7 +13,7 @@ The answer is whenever you need it, this is up to the designer in most cases, bu
 
 ## Installing dependencies
 
-For an alredy created project:
+For an already created project:
 
     yarn add react-modal
 

@@ -38,7 +38,7 @@ On App.js we will have the following code:
 > **Object.keys(Obj)**  takes an object (Obj) and returns an array with its keys.
 > **Object.values(Obj)**  takes an object (Obj) and returns an array with its values.
 
-We will work with these a lot in our career as React Developers so its crucial to understand how to use them. Lets check line by line what we're doing:
+We will work with these a lot in our career as React Developers so it's crucial to understand how to use them. Lets check line by line what we're doing:
 
     Object.keys(lines).map((c, ci) => {
 
@@ -97,7 +97,7 @@ This almost the exact same component of our first project, where options will be
 
 ![code](second-project-4.png)
 
-For graphing the state will pretty much be the same according to Apex Chart documentation, but we need to find a way to explore the **this.props.data** we're sending to the Chart component. Since its an object:
+For graphing the state will pretty much be the same according to Apex Chart documentation, but we need to find a way to explore the **this.props.data** we're sending to the Chart component. Since it's an object:
 
 ![code](second-project-5.png)
 
@@ -134,7 +134,7 @@ Now we our graphic will look like this:
 
 We learned how to get data inside a deep JSON just by using Object.values and .map(), knowing this is crucial and will save you many hours trying to figure out how to get the data, so simply writting it down in a piece of paper can help you figure out how to get that data. In future posts we will learn how to use GraphQL to get data that are much deep inside a more complex JSON and doing a simple Query we can get it without wasting time and code lines.
 
-On the next post we will go into the big beast which is called Redux, its a state management that can seem very complex at first, but we will break it down so its much easier to digest.
+On the next post we will go into the big beast which is called Redux, it's a state management that can seem very complex at first, but we will break it down so it's much easier to digest.
 
 See you on the next post.
 

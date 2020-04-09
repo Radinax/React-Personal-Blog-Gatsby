@@ -15,13 +15,13 @@ When we need to connect different pages between each other.
 
 ## Installing dependencies
 
-For an alredy created project:
+For an already created project:
 
     yarn add yarn add react-router-dom
 
 ## Project structure
 
-We're gonna do a ducks pattern here as its the recomended way of doing Redux
+We're gonna do a ducks pattern here as it's the recomended way of doing Redux
 
 - src
     - api
@@ -36,7 +36,7 @@ We're gonna do a ducks pattern here as its the recomended way of doing Redux
 
 ## How to use
 
-We will show it applies to a Navbar since its the most common case.
+We will show it applies to a Navbar since it's the most common case.
 
 In App.js we **import { BrowserRouter as Router, Route } from "react-router-dom"**, where Router will be the container of our routing system, and Route will be the component in charge of saying which component to show at which link:
 
@@ -65,7 +65,7 @@ So... how do we actually manage our links? Inside Navbar of course! So inside we
 
 ![code](react-router-2.png)
 
-The one called NavLink is a styled component with a custom name, its actually the Link we were talking about. Notice the pattern it has:
+The one called NavLink is a styled component with a custom name, it's actually the Link we were talking about. Notice the pattern it has:
 
 ```javascript
 <NavLink

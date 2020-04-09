@@ -36,7 +36,7 @@ And the code will still work! Now lets get back to exploring the parts of the co
 
 ## Conclusion
 
-We learned more about **State**, as you can see its very simple to use and it makes controlling your Data more organized, you know what's happening and when. 
+We learned more about **State**, as you can see it's very simple to use and it makes controlling your Data more organized, you know what's happening and when. 
 
 For the next post we will take on our first Project! We will stop using one HTML file and we will create our first App.
 

@@ -7,7 +7,7 @@ Most of the time you will be fetching Data from somewhere, either an external so
 
 ## Rendering a list of components
 
-One of the first examples come from the documentation and its something we will be doing a lot:
+One of the first examples come from the documentation and it's something we will be doing a lot:
 
 ![Code](array-map-4.png)
 
@@ -21,7 +21,7 @@ WAIT ANOTHER SECOND! What is that **key**?
 
 > Keys help React identify which items have changed, are added, or are removed. Keys should be given to the elements inside the array to give the elements a stable identity.
 
-It should be **unique**, its not a good idea to define it always as the index if you know it will change.
+It should be **unique**, it's not a good idea to define it always as the index if you know it will change.
 
 > In practice, finding a key is not really hard. Most of the time, the element you are going to display already has a unique id. When that's not the case, you can add a new ID property to your model or hash some parts of the content to generate a key. Remember that the key only has to be unique among its siblings, not globally unique.
 
@@ -51,7 +51,7 @@ We will continue this as a project in the other post where we will tackle Object
 
 ## Conclusion
 
-So we learned a bit of Array Manipulation on this post and about the "key" element which is a way of React to keep track of what's changing so its important you give it a unique identification. 
+So we learned a bit of Array Manipulation on this post and about the "key" element which is a way of React to keep track of what's changing so it's important you give it a unique identification. 
 
 On the next post we will be handling a more complex JSON and how you could easily identify the best way to get the values you need.
 

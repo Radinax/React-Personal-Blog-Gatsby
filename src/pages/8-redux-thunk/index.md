@@ -21,7 +21,7 @@ When we need to do any kind of asynchronous logic, we generally pair it with axi
 
 ## Installing dependencies
 
-For an alredy created project:
+For an already created project:
 
     yarn add redux react-redux
 
@@ -70,7 +70,7 @@ This is where our reducer will be, anytime we dispatch an action in our app, the
 
 ![code](redux-thunk-4.png)
 
-Notice how it only does something when we do only a fetch request, its because our POST, DELETE and PUT will only do a HTTP request and won't mess with the global state, but when we do a GET the app will reload.
+Notice how it only does something when we do only a fetch request, it's because our POST, DELETE and PUT will only do a HTTP request and won't mess with the global state, but when we do a GET the app will reload.
 
 ## Store
 
@@ -101,13 +101,13 @@ Another way of making this process even easier, is to put everything on a single
 
 ![code](redux-thunk-7.png)
 
-Don't worry about the URL looking so awkward, its just to showcase where its coming from.
+Don't worry about the URL looking so awkward, it's just to showcase where it's coming from.
 
-As you can see this pattern makes everything more smooth and its recomended in the Redux documentation.
+As you can see this pattern makes everything more smooth and it's recomended in the Redux documentation.
 
 ## Conclusion
 
-We learned how to setup a Redux structure in our React app, its very straightforward when you start doing it, but there are even easier ways of doing this kind of setup, with a ducks pattern (everything on a single file) as we just saw and using the new Redux Toolkit which we will see later.
+We learned how to setup a Redux structure in our React app, it's very straightforward when you start doing it, but there are even easier ways of doing this kind of setup, with a ducks pattern (everything on a single file) as we just saw and using the new Redux Toolkit which we will see later.
 
 See you on the next post.
 

@@ -9,13 +9,13 @@ According to the documentation:
 
 > Redux is a predictable state container for JavaScript apps.
 
-Its generally used with React when we need to make our state available for the whole app. The global state is stored inside an object tree called **STORE** and the only way to make changes (Create, Update and Delete) is with **ACTIONS** which is an object describing the change in the main state using **REDUCERS** which says how it will change.
+It's generally used with React when we need to make our state available for the whole app. The global state is stored inside an object tree called **STORE** and the only way to make changes (Create, Update and Delete) is with **ACTIONS** which is an object describing the change in the main state using **REDUCERS** which says how it will change.
 
 The flow in which these three core concepts relate to each other is shown in the following diagram:
 
 ![code](redux-overview-1.svg)
 
-Seeing it like this its very simple in theory, you create a store, declare an initial state, create a rootReducer that will have all the reducers and use actions creators to **dispatch** actions to the reducer stating how the state will change.
+Seeing it like this it's very simple in theory, you create a store, declare an initial state, create a rootReducer that will have all the reducers and use actions creators to **dispatch** actions to the reducer stating how the state will change.
 
 Lets check some small concepts we need to grasp before creating our project:
 
@@ -73,13 +73,13 @@ This is the WRONG WAY, because we're modifying the original state, so we do it t
 
 ![code](redux-overview-3.png)
 
-Spread operator is commonly used and its more elegant than Object.assign, which is one of the most common alternatives.
+Spread operator is commonly used and it's more elegant than Object.assign, which is one of the most common alternatives.
 
 To organize our reducers we generally have a rootReducer where we import all our reducers into that file and then we import that rootReducer into our store.
 
 ### react-redux important functions
 
-Redux on can be used with React or with Vanilla Javascript, this post is focusing more on React so there are several things I'm not talking about like subscribe, dispatch, getState, since we will take on a more practical look we will focus instead on what we be using more often and its a source of confusion by many people learning Redux for the first time.
+Redux on can be used with React or with Vanilla Javascript, this post is focusing more on React so there are several things I'm not talking about like subscribe, dispatch, getState, since we will take on a more practical look we will focus instead on what we be using more often and it's a source of confusion by many people learning Redux for the first time.
 
 - **mapStateToProps**: You use this inside a component or page and make it read a specific part of the store's state as props.
 - **mapDispatchToProps**: You use this to dispatch action creators, you import the AC inside the component and then use mapDispatchToProps to use it as props.

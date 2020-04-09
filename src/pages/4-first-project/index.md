@@ -43,15 +43,15 @@ my-app
     └── serviceWorker.js
 ```
 - **README**: Is a markdown file which is where we write the basics of our app, as developers its important that someone can read this section and understand what your app is doing.
-- **Node Modules**: Its where we will store our modules which you can consider as Javascript Libraries.
+- **Node Modules**: It's where we will store our modules which you can consider as Javascript Libraries.
 - **[Package.json](https://docs.npmjs.com/files/package.json)**: This file holds various metadata relevant to the project. This file is used to give information to npm that allows it to identify the project as well as handle the project's dependencies.
 - **.gitignore**: Its files we generally ignore when uploading our project in github, we don't want to upload ALL our node modules into our github, with the Package.json we can do **npm install** and we can have our dependencies back.
 - **Public Folder**: It has our HTML file and 
 	- **manifest.json**: Which provides information about an application (such as name, author, icon, and description) in a **JSON** text **file**. The purpose of the **manifest** is to install web applications to the homescreen of a device, providing users with quicker access and a richer experience.
-- **src folder**: Its where our React code will be.
-	- **Index.js**: Its where our ReactDOM.render will be and it will render our App.js component.
-	- **App.js**: Its where will put all our components.
-	- **serviceWorker.js:** The **service worker code** basically registers a service worker for the React app. We first check if the app is being served from localhost via the `isLocalhost` const value that will either return a truthy or falsy value. The `register()` function helps to register the service worker to the React app only if its in a production mode and if the browser supports Service workers.
+- **src folder**: It's where our React code will be.
+	- **Index.js**: It's where our ReactDOM.render will be and it will render our App.js component.
+	- **App.js**: It's where will put all our components.
+	- **serviceWorker.js:** The **service worker code** basically registers a service worker for the React app. We first check if the app is being served from localhost via the `isLocalhost` const value that will either return a truthy or falsy value. The `register()` function helps to register the service worker to the React app only if it's in a production mode and if the browser supports Service workers.
 
 The rest of the files aren't important. We will work on **tests** in later posts.
 
@@ -83,7 +83,7 @@ In that link we see an object with the format like this:
     	date: value
     }
 
-Fetch API is based on [Promises](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Promise) which do something and when its done it does another. In our context it will look like this:
+Fetch API is based on [Promises](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Promise) which do something and when it's done it does another. In our context it will look like this:
 
 ![firstProject](first-project-3.png)
 
