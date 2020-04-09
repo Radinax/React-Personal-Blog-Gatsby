@@ -1,9 +1,162 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Adrian Beria Blog]]></title><description><![CDATA[A blog made by Adrian Beria to write articles related to Web Development and React JS]]></description><link>https://radinax.github.io/React-Personal-Blog-Gatsby</link><generator>RSS for Node</generator><lastBuildDate>Tue, 31 Mar 2020 02:06:58 GMT</lastBuildDate><item><title><![CDATA[React Table]]></title><description><![CDATA[Introduction Using tables is a common way of introducing data into the UI, there are several tools available for the job, from UI only…]]></description><link>https://radinax.github.io/React-Personal-Blog-Gatsby/13-react-table/</link><guid isPermaLink="false">https://radinax.github.io/React-Personal-Blog-Gatsby/13-react-table/</guid><pubDate>Mon, 30 Mar 2020 11:53:32 GMT</pubDate><content:encoded>&lt;h2&gt;Introduction&lt;/h2&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Adrian Beria Blog]]></title><description><![CDATA[A blog made by Adrian Beria to write articles related to Web Development and React JS]]></description><link>https://radinax.github.io/React-Personal-Blog-Gatsby</link><generator>RSS for Node</generator><lastBuildDate>Thu, 09 Apr 2020 17:13:31 GMT</lastBuildDate><item><title><![CDATA[Unit Test]]></title><description><![CDATA[Introduction Testing is mandatory in almost every company, we will check about Unit Test, which allows us to check the functionality and…]]></description><link>https://radinax.github.io/React-Personal-Blog-Gatsby/14-testing/</link><guid isPermaLink="false">https://radinax.github.io/React-Personal-Blog-Gatsby/14-testing/</guid><pubDate>Tue, 07 Apr 2020 11:53:32 GMT</pubDate><content:encoded>&lt;h2&gt;Introduction&lt;/h2&gt;
+&lt;p&gt;Testing is mandatory in almost every company, we will check about Unit Test, which allows us to check the functionality and behaviour of our functions, the idea is to mimic the user inputs instead of having them to do it themselves. It’s easy to think that our components and functions will work because we wrote them to work and doing a test to see something we already know is a bit of waste of time, but it isn’t the case and we will see why in this post.&lt;/p&gt;
+&lt;h2&gt;When to use&lt;/h2&gt;
+&lt;p&gt;Everytime you make a project you need to have testing in them to be sure everything works correctly, from functionality to behavior.&lt;/p&gt;
+&lt;h2&gt;Installing dependencies&lt;/h2&gt;
+&lt;p&gt;For an already created project:&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;yarn add @testing-library/react react-test-render jest-dom&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2&gt;How to use&lt;/h2&gt;
+&lt;p&gt;Inside the components folder add a ”&lt;strong&gt;test&lt;/strong&gt;” folder which will contain the test with the name index.test.js, so when we use &lt;strong&gt;yarn test&lt;/strong&gt;, it will check every file with the “.test.” added to their name.&lt;/p&gt;
+&lt;p&gt;We’re gonna check some examples.&lt;/p&gt;
+&lt;h2&gt;Testing without the DOM&lt;/h2&gt;
+&lt;p&gt;For now lets check of the file would look:&lt;/p&gt;
+&lt;p&gt;
+  &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/React-Personal-Blog-Gatsby/static/8316dc09b0020e1ff71e96590c2b79a6/5870d/unit-test-1.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+  
+  &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 77.66143106457241%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAQCAYAAAAWGF8bAAAACXBIWXMAAAsSAAALEgHS3X78AAAC20lEQVQ4y61UyZacOBDkE8ZdrFqQEAiEoBbK5bJn+v9/qQ8ciAkoP7+2zz7ESwlEKjMikuTxfK5xGtdxntdhvq7DOK5hmtcwX9ZhIsZpnee4hhj5ft/H1fc9Maz9ENY+jL8hiVOP9+8t/OAgxhvUMEN0Aer8gBkCxtAgzB4qzFCXJ0Q7oGj8gaySeEuz35AMYdicU5uszVbWzSas24Sut8q4TWq9Gau2XGmi3rJKbLlQx7lS260QcsuLcss+IenDgMtsEK8R9fUJ1Q+wIULffsDGM6xt0PsRzvYQpkFWCpzyHGleMhY4FSWYCGmWETkS07Q4zxaPpUUzL/DLO0y8w7L1znvsF07+gbl/YIgL2uUJd35Cdh4Nz3XLf6inC2TTIZcaiSdPxgi4VkEqDaNbSGGgZUMYNDxo6x5KOtR1C9u2jB1ELY7omh6Sz0Q3glTsHE4oCo2yNCiVQaYJIZGzvZwHUhKflwUKURzx7ZSS/BSnND/ia50R6avlvo/wzYQYrqjjFeb+DsVol39hlh8wu9pU2IwRlq1VtjuUFvxO1hbKaGhb87IKKblMjHOsrqIwIww/cPdvFCaS9JwCVLSGQEohdjF2m+z7PebsotjXTJKXP4WhSIlrO5yygipGBH+FdwOUkuSsgTUexjpYTR9KSy4dxeD7aaEvz6joRbnHjtWyUqEVEutalKLCPHVQtYFwASWFoBcPMZwdUeuOaFFV+qh0V5N+PKrNj2rV0fJeZdKwwoJkf394tCNvJGd1vMDSTmO3IHQ3Vj3jPDzRt5wWy8SuB41PMenF0+kFCnO0vFdYFBLn8A2B5A/kb2xviP6O0S/E7Ug89jfM4x2GguyiSR8pEO1C08t9XJu9sOrwIceLYybNL1RCb0LWR3yt+Uzqjf7kWHLddFvJ0SyUOeKx30exrDYmHCh3gX9Y9pdfSP/A6VMk3t6Iz+vX/vg53O5fP1znP/gr+vB/Af8DwOG2GvSYvccAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+    &gt;
+      &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;code&quot;
+        title=&quot;&quot;
+        src=&quot;/React-Personal-Blog-Gatsby/static/8316dc09b0020e1ff71e96590c2b79a6/fb8a0/unit-test-1.png&quot;
+        srcset=&quot;/React-Personal-Blog-Gatsby/static/8316dc09b0020e1ff71e96590c2b79a6/1a291/unit-test-1.png 148w,
+/React-Personal-Blog-Gatsby/static/8316dc09b0020e1ff71e96590c2b79a6/2bc4a/unit-test-1.png 295w,
+/React-Personal-Blog-Gatsby/static/8316dc09b0020e1ff71e96590c2b79a6/fb8a0/unit-test-1.png 590w,
+/React-Personal-Blog-Gatsby/static/8316dc09b0020e1ff71e96590c2b79a6/526de/unit-test-1.png 885w,
+/React-Personal-Blog-Gatsby/static/8316dc09b0020e1ff71e96590c2b79a6/5870d/unit-test-1.png 1146w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+      /&gt;
+    &lt;/span&gt;
+  &lt;/span&gt;
+  
+  &lt;/a&gt;
+    &lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;describe&lt;/strong&gt;: Jest method for containing one or more related tests. Takes two arguments: a string for describing the test suite and a callback function for wrapping the actual test.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;test&lt;/strong&gt;: The first argument is the test name, the second argument is a function that contains the expectations to test. The third argument (optional) is timeout (in milliseconds) for specifying how long to wait before aborting. Note: The default timeout is 5 seconds.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;act&lt;/strong&gt;: To prepare a component for assertions, wrap the code rendering it and performing updates inside an act() call. This makes your test run closer to how React works in the browser. Look at the &lt;a href=&quot;https://reactjs.org/docs/test-utils.html&quot;&gt;API&lt;/a&gt; to find out more. &lt;strong&gt;act&lt;/strong&gt; is available in react-test-renderer and on &lt;strong&gt;react-dom/test-utils&lt;/strong&gt; and when imported from the latter it’s possible to use ReactDOM.render, thus mounting the React component into the Document Object Model.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;findByType&lt;/strong&gt;: Find a single descendant test instance with the provided type. If there is not exactly one test instance with the provided type, it will throw an error. Take a look at the &lt;a href=&quot;https://reactjs.org/docs/test-renderer.html&quot;&gt;API&lt;/a&gt; to find out more about the rest.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;We’re testing the functionality with this example, the button component when clicked it changes the text to “PROCEED TO CHECKOUT”, to test this we call &lt;strong&gt;describe&lt;/strong&gt; which will contain the &lt;strong&gt;test&lt;/strong&gt; where we will use &lt;strong&gt;act&lt;/strong&gt; from &lt;strong&gt;react-test-renderer&lt;/strong&gt; to create the component, now we can access the props of the &lt;strong&gt;html tag button&lt;/strong&gt;, in this case onClick and test if we &lt;strong&gt;expect&lt;/strong&gt; the result of that test to be “PROCEED TO CHECKOUT”.&lt;/p&gt;
+&lt;h2&gt;Testing with DOM&lt;/h2&gt;
+&lt;p&gt;We will write a similar test but now with the DOM, the first step is to mount the component with &lt;strong&gt;act()&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;
+  &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/React-Personal-Blog-Gatsby/static/5f347b2f4ada3e030ad96e58cb1a0b67/2d89f/unit-test-2.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+  
+  &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 121.26348228043142%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAYCAYAAAD6S912AAAACXBIWXMAAAsSAAALEgHS3X78AAADr0lEQVQ4y31VXW/bOBD0+6Fpm+iTFEmRFPVhybGvzblpC9zDof//DwnQ3FBKUDtp8rAgRUvD3ZnZ9e705cvcDd3c7qc5DPu56YbZ7++5H+ehb+dhaOcw8rnfzz4ERvsqQtfPytTzf79+zbvTscfjg4UeJujjN4TDhO7QQ+5PqMcD3DQhrwOyyuA2zXCbpK8iyXL89eEGD+czdtPULfuhXiofFtHsF+fN4l21lK7l87CUPCuNW8q6WTJRLWmWL2leXEVeiuXm0+fl/Ph92fVDgHYGqu1RNS3SUiApBPgiI0dW5Os+Y+RCcl+uGW2/b5EVJT58/ITzt0fs+s5jChqnziGEBtYzbAtZ1dC6gTEtVw9Re5TKgBm+D0hS4esRwZGvuuc6ofdHNDaeMSw59QdI45Ax+xUwAl2AXgO2He54eJcV24tPkazBj4ptTShIcgGWvAU49B6HTuPQOzTk0YYAqexasqSylXbrGj96Brm8+HWGTcMSR4zhhNDs0dEiltypyq/cqcrB8LmgIC+5+yNgzCrJoqpUN02RZSwtSXDH/e1FvAX2WmXapu81VD+ibDoox3KHe1qog6kNtLHMriJghrtoYnJ5F/eR03R7vgK03uPH2eP49QD/9V/40yP88YwwDBh4yd/DTxymM88eYLojFG0lhYZQGrmukVf6GtDRzJWSFEKgkpovG8hCcVVQURxBcWQNYx2qyhJIrryqmLklt9q+VJlGVinqWiF3LfL4ItfCt2v/lqqC0BXLzDf7xE55ttFacvpClMbhvs0xDB5mOkHv7yHbEYrDQYYBVejXKG1AyW4RvEhUzD4mIMQq1hWgqukzKTCEEW0zsmsohvLMmLahdZRkeSwtCia7iTGu4HFf1qRIKljTQZQGjz9+YqdrSz4q9EO8vV8zUOTF1QNBW1i2o2cberdHYAu2/h41M5f9gWv8zbGbSnDabBlqHkiRow+SHxHAPgFZdo2NIBZ9S1V5SV5Klie2lX0dp0+Mq5I1S65khi5QSRfVc+SIANLQf1SbfJVlsY6tzcjlb1PH/ieHnIe4+Xz7O8OS5HpmZmoqzuy0ivw18N4wS8sLOzqhoWXou3WMafLGKgwFo+k9n2PZ/2yixEEgKIji7GPfRkBDxU3gvmP5mj1uVsVlw78G69euSZ4mziuVfaCqRqHWBY1sVhMLobeVoSqJ2ggUvKSIHiUF7w7YhvMwIRe3ab7259qnl8Hz+NuziaOh1xF2MROvAGNLxaZ/a5L8Kd7L8H9l6IdX/+BhgAAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+    &gt;
+      &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;code&quot;
+        title=&quot;&quot;
+        src=&quot;/React-Personal-Blog-Gatsby/static/5f347b2f4ada3e030ad96e58cb1a0b67/fb8a0/unit-test-2.png&quot;
+        srcset=&quot;/React-Personal-Blog-Gatsby/static/5f347b2f4ada3e030ad96e58cb1a0b67/1a291/unit-test-2.png 148w,
+/React-Personal-Blog-Gatsby/static/5f347b2f4ada3e030ad96e58cb1a0b67/2bc4a/unit-test-2.png 295w,
+/React-Personal-Blog-Gatsby/static/5f347b2f4ada3e030ad96e58cb1a0b67/fb8a0/unit-test-2.png 590w,
+/React-Personal-Blog-Gatsby/static/5f347b2f4ada3e030ad96e58cb1a0b67/526de/unit-test-2.png 885w,
+/React-Personal-Blog-Gatsby/static/5f347b2f4ada3e030ad96e58cb1a0b67/fa2eb/unit-test-2.png 1180w,
+/React-Personal-Blog-Gatsby/static/5f347b2f4ada3e030ad96e58cb1a0b67/2d89f/unit-test-2.png 1298w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+      /&gt;
+    &lt;/span&gt;
+  &lt;/span&gt;
+  
+  &lt;/a&gt;
+    &lt;/p&gt;
+&lt;p&gt;Very similar, only that now we will mount a div element and when the test is done we remove it. Now we use the first &lt;strong&gt;act&lt;/strong&gt; to mount the Button in container, then we access the element button in container and now we can access its information, in this case &lt;strong&gt;textContent&lt;/strong&gt; and see if we &lt;strong&gt;expect it to be&lt;/strong&gt; “SUBSCRIBE TO BASIC”, then we add another act where we click the button and see if the text changes.&lt;/p&gt;
+&lt;p&gt;Now in this case we learned that we can use &lt;strong&gt;dispatchEvent&lt;/strong&gt; for clicking purpose and that it will change the button element making us simulate a user clicking a button. But of course this might seems bit simple, lets check a more fun example.&lt;/p&gt;
+&lt;h2&gt;Testing a fetch call&lt;/h2&gt;
+&lt;p&gt;You can check the slice file we’re testing &lt;a href=&quot;https://github.com/Radinax/covid-19-chart/blob/master/src/slices/index.js&quot;&gt;here&lt;/a&gt;, notice we’re using @reduxjs/toolkit.&lt;/p&gt;
+&lt;p&gt;
+  &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/React-Personal-Blog-Gatsby/static/49e66a674536c3e7eb6a812b7608423c/b1675/unit-test-4.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+  
+  &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 129.7760210803689%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAaCAYAAAC3g3x9AAAACXBIWXMAAAsSAAALEgHS3X78AAAD40lEQVRIx4VV2XLjNhDUN8SWSALEfRC8fcTl5P8/I1X+jlS45KQJrncdWd48dIFCSc2Z6e7R6fX1+e9hTN/C8LA08yPwtITpcenHfmn6fvH9vIRhxjkuLqbFOP9LnKYpffO+pottSAdH0nsqQ0fMOCpqQfcl+4mipLv7M/12vtDdFzg9PvZL1xmqtN9qwTfGq+3CxXYuiu3+UmznjyjK/8XJhrjw9oHU9LLV3QMxVFcqm6sBYQa++Alf3Z9S1y3N2JLoHjb19CfxNJJoQMoYnStO57L6QXz9glukp65vFqWqvaqN2UCFtFQrSWgfd5gjF8eXQZxxVfk16cn6tJRcExdqY1JTVUuQ1JmoQJUlzhLi7PeVkPnc794r/9xy6hYpHdUmbpWLxPYfViBgO/DMj+eS8U8ENwmHPi7WMuIOhGiZ1YqU8iSlp5obqmtNojbEQHxfFB9aLr8QpfFLhA91arcaajPjScRIteSkNEeFHK1X2WPX4tzCSVm/8BqEodl2MmsqSp6Rs4K0aciYRAI2KtByUfF8nstDpMtHVCzfnbR1izOKurbfYj/T0Dt6HDTNraWx7SiFiZowU9/8Tm14pLZ5ICFsHkmFFzGLuSuDl7GjZePDYjUjYJMqEq8tKYgkhKGgSzKwkBSBtNyBH3NFRQlLVYgrKr6w+qjuvWXn/SIUlIQoF7TMrSXh8GZtqbIt3u5I77Os97YgymXP7JnuLu8zvfxHpNxycIbadtwCEvLcS/pjUvTUKbQ8UxefKbqeoh0wz5a0b7NHLzd8eIhi3JKioK6Lm4ozGWQ5+Jki5tb4MUOhXadbkjqg+pYqaUD4OTGZUENlAYuY4LYq9lgOidhucAxb6AjrBJLwpdqfFYhR5S5KmZN0KP+x0mybFDj1Q9hU/0JueiWVJlToacY5AMlPFNBydCN511DACLLRb+QZWY6LFIwELzeGyDGmoKBCQhgpccbn/U4jNTpH8HrrfGp5V1nqmphvtn1rcwdVo8uJYW6AuS1ZmLzg1bHSrqK3n1ctu6UJMPbQb3Z4onFONA+GnkfcxZFS80Q2TvhraPNsL9935HV1PwmhcttoGroOtpmoS4mGZsDseupB1MM23vQUAJ6T0SAhezKqr1U2hpNPfqsgAIfSte9I7lVBWYM87+tN6wZpSsh4mzfSrnBOClJyXeE/0fO1H+KqhpfVza+rbKc1BL9OaVqh8pr8vELhNYV5DT6twQ0r9uQKghXtH+d3nFzERkG0lKxghX3/7btPI7+cLP4aRN6H9rjHwj0qOdq9tdJO4zT/xaV+w6Z+40L8ABMy37H8fIALeUDKt1qqm/gX1IS4BBZnthcAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+    &gt;
+      &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;code&quot;
+        title=&quot;&quot;
+        src=&quot;/React-Personal-Blog-Gatsby/static/49e66a674536c3e7eb6a812b7608423c/fb8a0/unit-test-4.png&quot;
+        srcset=&quot;/React-Personal-Blog-Gatsby/static/49e66a674536c3e7eb6a812b7608423c/1a291/unit-test-4.png 148w,
+/React-Personal-Blog-Gatsby/static/49e66a674536c3e7eb6a812b7608423c/2bc4a/unit-test-4.png 295w,
+/React-Personal-Blog-Gatsby/static/49e66a674536c3e7eb6a812b7608423c/fb8a0/unit-test-4.png 590w,
+/React-Personal-Blog-Gatsby/static/49e66a674536c3e7eb6a812b7608423c/526de/unit-test-4.png 885w,
+/React-Personal-Blog-Gatsby/static/49e66a674536c3e7eb6a812b7608423c/fa2eb/unit-test-4.png 1180w,
+/React-Personal-Blog-Gatsby/static/49e66a674536c3e7eb6a812b7608423c/08f6a/unit-test-4.png 1770w,
+/React-Personal-Blog-Gatsby/static/49e66a674536c3e7eb6a812b7608423c/b1675/unit-test-4.png 3036w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+      /&gt;
+    &lt;/span&gt;
+  &lt;/span&gt;
+  
+  &lt;/a&gt;
+    &lt;/p&gt;
+&lt;p&gt;Lets explain what’s going on here, we basically make jest take over axios functionality and makes it return undefined values because we don’t want to make a direct fetch, we only want to test. For this to work we made a mock store using the initial state as argument, then we made it so when a GET request in the test gets activated, it responds with the argument responsePayload. After that we dispatch the action which will trigger the Thunks and return the responsePayload and if everything is correct, both response payload and the result from making the GET request should be the same in this case.&lt;/p&gt;
+&lt;p&gt;Next we want to test the flow of our action types when a call is successful or not, the steps are similar, we create our mock store and make our GET requests respond with the object we gave it as argument, next we trigger the action and we store the actions inside a variable which comes from the store after dispatching the action, in this case we’re interested only in the type so we put it inside an array which will look like:&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;javascript&quot;&gt;&lt;pre class=&quot;language-javascript&quot;&gt;&lt;code class=&quot;language-javascript&quot;&gt;expectedActions &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;
+  &lt;span class=&quot;token string&quot;&gt;&apos;covidDataVenezuela/fetchingCovidDataVenezuela/pending&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;token string&quot;&gt;&apos;covidDataVenezuela/fetchingCovidDataVenezuela/successful&apos;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Which is again, the actions that we got from our fetchCovidVenezuelaData made from createAsyncThunk in our slice file which gives us the action types.&lt;/p&gt;
+&lt;p&gt;Next we will compare it with the actions from the store receivedAction which is what happens when we do a GET request, in theory it should give an array similar to above, which happens when we’re doing the request and it’s pending, and then after when it’s successful or rejected. We tested both cases.&lt;/p&gt;
+&lt;h2&gt;Summary&lt;/h2&gt;
+&lt;p&gt;Testing is a broad subject and we’re going to take it one step a time, lets see what we learned:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;For testing a component without using the DOM we can use the ACT API to create the component and get its props to see if it works properly. We of course need to import the component into the test.&lt;/li&gt;
+&lt;li&gt;For testing a component with DOM, we need to create a container with beforeEach test and then clean it up with afterEach. Next we render this component into the container and we access the omponent we want to test, if we want to simulate a click we use dispatchEvent and then we test what we need.&lt;/li&gt;
+&lt;li&gt;For testing a Redux Thunks action, we need to intercept Axios with jest.mock, then create a fake store and make so that every GET request has the payload we want, then we dispatch the action and compare the payload. For testing the flowing of the actions we do the same, but this time we need to check if the action types are working correctly after doing a dispatch.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Conclusion&lt;/h2&gt;
+&lt;p&gt;We have learned how to test a button click, with DOM and without it, in most cases we will want to do it with the DOM since it’s the most similar case to a user interaction. &lt;/p&gt;
+&lt;p&gt;We also learned about testing a Redux Thunk Axios request, which is simply creating a fake store, intercept the GET request and make them respond with the value we want and then do the tests we need, in this case test if the payload gives the correct values and if the action types are flowing correctly.&lt;/p&gt;
+&lt;p&gt;See you on the next post.&lt;/p&gt;
+&lt;p&gt;Sincerely,&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Eng Adrian Beria.&lt;/strong&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[React Table]]></title><description><![CDATA[Introduction Using tables is a common way of introducing data into the UI, there are several tools available for the job, from UI only…]]></description><link>https://radinax.github.io/React-Personal-Blog-Gatsby/13-react-table/</link><guid isPermaLink="false">https://radinax.github.io/React-Personal-Blog-Gatsby/13-react-table/</guid><pubDate>Mon, 30 Mar 2020 11:53:32 GMT</pubDate><content:encoded>&lt;h2&gt;Introduction&lt;/h2&gt;
 &lt;p&gt;Using tables is a common way of introducing data into the UI, there are several tools available for the job, from UI only options inside CSS Frameworks like Material UI, Bootstrap, Bulma, etc, to actual libraries like &lt;a href=&quot;https://react-table.js.org/&quot;&gt;react-table&lt;/a&gt;, which gives us many options to use and interact with the props in our components. In this post we will see a more in depth look.&lt;/p&gt;
 &lt;h2&gt;When to use&lt;/h2&gt;
 &lt;p&gt;When we need to handle table data with tools like filtering, sorting, editing, pagination, all in one package.&lt;/p&gt;
 &lt;h2&gt;Installing dependencies&lt;/h2&gt;
-&lt;p&gt;For an alredy created project:&lt;/p&gt;
+&lt;p&gt;For an already created project:&lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;yarn add react-table&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;h2&gt;How to use&lt;/h2&gt;
 &lt;p&gt;Lets check the following code for a more visual representation and then explain what’s going on:&lt;/p&gt;
@@ -140,10 +293,10 @@
 &lt;h2&gt;When to use&lt;/h2&gt;
 &lt;p&gt;When we need to connect different pages between each other.&lt;/p&gt;
 &lt;h2&gt;Installing dependencies&lt;/h2&gt;
-&lt;p&gt;For an alredy created project:&lt;/p&gt;
+&lt;p&gt;For an already created project:&lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;yarn add yarn add react-router-dom&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;h2&gt;Project structure&lt;/h2&gt;
-&lt;p&gt;We’re gonna do a ducks pattern here as its the recomended way of doing Redux&lt;/p&gt;
+&lt;p&gt;We’re gonna do a ducks pattern here as it’s the recomended way of doing Redux&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;src&lt;/p&gt;
@@ -169,7 +322,7 @@
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2&gt;How to use&lt;/h2&gt;
-&lt;p&gt;We will show it applies to a Navbar since its the most common case.&lt;/p&gt;
+&lt;p&gt;We will show it applies to a Navbar since it’s the most common case.&lt;/p&gt;
 &lt;p&gt;In App.js we &lt;strong&gt;import { BrowserRouter as Router, Route } from “react-router-dom”&lt;/strong&gt;, where Router will be the container of our routing system, and Route will be the component in charge of saying which component to show at which link:&lt;/p&gt;
 &lt;p&gt;
   &lt;a
@@ -254,7 +407,7 @@
   
   &lt;/a&gt;
     &lt;/p&gt;
-&lt;p&gt;The one called NavLink is a styled component with a custom name, its actually the Link we were talking about. Notice the pattern it has:&lt;/p&gt;
+&lt;p&gt;The one called NavLink is a styled component with a custom name, it’s actually the Link we were talking about. Notice the pattern it has:&lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;javascript&quot;&gt;&lt;pre class=&quot;language-javascript&quot;&gt;&lt;code class=&quot;language-javascript&quot;&gt;&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;NavLink
     key&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;link&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;name&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
     to&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;link&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;path&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
@@ -375,7 +528,7 @@
 &lt;h2&gt;When to use&lt;/h2&gt;
 &lt;p&gt;The answer is whenever you need it, this is up to the designer in most cases, but I personally use it for forms and making UX more pleasant.&lt;/p&gt;
 &lt;h2&gt;Installing dependencies&lt;/h2&gt;
-&lt;p&gt;For an alredy created project:&lt;/p&gt;
+&lt;p&gt;For an already created project:&lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;yarn add react-modal&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;h2&gt;How to use&lt;/h2&gt;
 &lt;p&gt;We will use the &lt;a href=&quot;https://github.com/reactjs/react-modal&quot;&gt;doc example&lt;/a&gt; and expand on it.&lt;/p&gt;
@@ -463,16 +616,16 @@
 &lt;li&gt;The createSelector utility from the &lt;a href=&quot;https://github.com/reduxjs/reselect&quot;&gt;Reselect&lt;/a&gt; library, re-exported for ease of use.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2&gt;When to use&lt;/h2&gt;
-&lt;p&gt;This is the default way of using Redux for almost every case, its easier and the new utilities makes everything straight forward.&lt;/p&gt;
+&lt;p&gt;This is the default way of using Redux for almost every case, it’s easier and the new utilities makes everything straight forward.&lt;/p&gt;
 &lt;h2&gt;Installing dependencies&lt;/h2&gt;
-&lt;p&gt;For an alredy created project:&lt;/p&gt;
+&lt;p&gt;For an already created project:&lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;yarn add @redux/toolkit&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;This also comes pre installed with a template for create-react-app&lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;npx create-react-app my-app --template redux
 cd my-app
 npm start&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;h2&gt;Project structure&lt;/h2&gt;
-&lt;p&gt;We’re gonna do a ducks pattern here as its the recomended way of doing Redux&lt;/p&gt;
+&lt;p&gt;We’re gonna do a ducks pattern here as it’s the recomended way of doing Redux&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;src&lt;/p&gt;
@@ -498,7 +651,7 @@ npm start&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2&gt;Difference between the original and the Redux Toolkit way&lt;/h2&gt;
-&lt;p&gt;Its easier to see for ourselves the difference in code, lets check the original way:&lt;/p&gt;
+&lt;p&gt;It’s easier to see for ourselves the difference in code, lets check the original way:&lt;/p&gt;
 &lt;p&gt;
   &lt;a
     class=&quot;gatsby-resp-image-link&quot;
@@ -534,7 +687,7 @@ npm start&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
   
   &lt;/a&gt;
     &lt;/p&gt;
-&lt;p&gt;The store is just here to show the difference. But as you can see its the typical API, types, action creators, reducers and store.&lt;/p&gt;
+&lt;p&gt;The store is just here to show the difference. But as you can see it’s the typical API, types, action creators, reducers and store.&lt;/p&gt;
 &lt;p&gt;Now lets check the new way with Redux Toolkit and explain what’s going on:&lt;/p&gt;
 &lt;p&gt;
   &lt;a
@@ -626,7 +779,7 @@ npm start&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;It uses an ES6 feature called Generators to make those asynchronous flows easy to read, write and test. By doing so, these asynchronous flows look like your standard synchronous JavaScript code.&lt;/p&gt;
 &lt;p&gt;You might’ve used redux-thunk before to handle your data fetching. Contrary to redux thunk, you don’t end up in callback hell, you can test your asynchronous flows easily and your actions stay pure.&lt;/p&gt;
 &lt;h2&gt;When to use&lt;/h2&gt;
-&lt;p&gt;When we need to do any kind of asynchronous logic, its also prefered on big apps that requires the user to dispatch a lot of actions making Saga ideal for testing and controlling the flow in a more efficent way.&lt;/p&gt;
+&lt;p&gt;When we need to do any kind of asynchronous logic, it’s also prefered on big apps that requires the user to dispatch a lot of actions making Saga ideal for testing and controlling the flow in a more efficent way.&lt;/p&gt;
 &lt;h2&gt;What are Generators&lt;/h2&gt;
 &lt;p&gt;With ES6, we have been introduced with a special type of functions called generators. With generators, the functions can be paused in the middle multiple times and resumed later which allows other codes to run in between.&lt;/p&gt;
 &lt;p&gt;Inside the generator function, we use a special keyword called yield which is used to pause the function inside itself.&lt;/p&gt;
@@ -688,10 +841,10 @@ npm start&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
   
   &lt;/a&gt;
     &lt;/p&gt;
-&lt;p&gt;One thing I was thinking when learning Redux Saga was “shouldn’t I call a requested action before doing a call in the worker saga?”, well its alredy done by the watcher saga! So once the requested action is dispatched the worker can start working.&lt;/p&gt;
-&lt;p&gt;So why do we need the action creator fetchingGames? Its used in our component to make the request to the watcher saga to start the fetching.&lt;/p&gt;
+&lt;p&gt;One thing I was thinking when learning Redux Saga was “shouldn’t I call a requested action before doing a call in the worker saga?”, well it’s already done by the watcher saga! So once the requested action is dispatched the worker can start working.&lt;/p&gt;
+&lt;p&gt;So why do we need the action creator fetchingGames? It’s used in our component to make the request to the watcher saga to start the fetching.&lt;/p&gt;
 &lt;h2&gt;Installing dependencies&lt;/h2&gt;
-&lt;p&gt;For an alredy created project:&lt;/p&gt;
+&lt;p&gt;For an alreday created project:&lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;yarn add redux-saga&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;h2&gt;Project structure&lt;/h2&gt;
 &lt;p&gt;We’re gonna do a ducks pattern here.&lt;/p&gt;
@@ -751,7 +904,7 @@ npm start&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;I added examples for POST, PUT and DELETE, but this post will focus on a fetch which is one of the most common features in every app.&lt;/p&gt;
 &lt;h2&gt;Saga&lt;/h2&gt;
 &lt;p&gt;We will do a ducks pattern here, as we said in the redux-thunk post, you can have different sagas doing different things, for example, you might have a contacts saga that works doing a CRUD just for contacts. You can have another saga for handling the posts of a blog. Each saga will have its respective types, action creators, watcher and worker saga and reducer.&lt;/p&gt;
-&lt;p&gt;If you have more than one saga then its adviced you create the store in a separate folder called “store” in the src folder.&lt;/p&gt;
+&lt;p&gt;If you have more than one saga then it’s adviced you create the store in a separate folder called “store” in the src folder.&lt;/p&gt;
 &lt;p&gt;In this file we will have types, actions, reducer and the sagas!&lt;/p&gt;
 &lt;p&gt;
   &lt;a
@@ -838,7 +991,7 @@ npm start&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;Wait… This looks more complicated! It sure does look like it, but its the same logic we did, we’re just separating them. Inside the &lt;strong&gt;contacts/sagas folder&lt;/strong&gt; we will have the four worker sagas and inside index.js we will have the watcher saga for each of them and it will look like this:&lt;/p&gt;
+&lt;p&gt;Wait… This looks more complicated! It sure does look like it, but it’s the same logic we did, we’re just separating them. Inside the &lt;strong&gt;contacts/sagas folder&lt;/strong&gt; we will have the four worker sagas and inside index.js we will have the watcher saga for each of them and it will look like this:&lt;/p&gt;
 &lt;p&gt;
   &lt;a
     class=&quot;gatsby-resp-image-link&quot;
@@ -966,7 +1119,7 @@ npm start&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;li&gt;Connect it to Provider.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2&gt;Conclusion&lt;/h2&gt;
-&lt;p&gt;We learned how to setup a Redux structure with Redux Saga in our React app, it can be a bit overkill for simple apps, but in general its very easy to use and its a matter of preference, but in the next post we will see why Redux Thunks is prefered for most apps when used with the brand new Redux Toolkit.&lt;/p&gt;
+&lt;p&gt;We learned how to setup a Redux structure with Redux Saga in our React app, it can be a bit overkill for simple apps, but in general it’s very easy to use and a matter of preference, but in the next post we will see why Redux Thunks is prefered for most apps when used with the brand new Redux Toolkit.&lt;/p&gt;
 &lt;p&gt;See you on the next post.&lt;/p&gt;
 &lt;p&gt;Sincerely,&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Eng Adrian Beria.&lt;/strong&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Redux Thunk]]></title><description><![CDATA[Introduction Redux Thunk middleware allows you to write action creators that return a function instead of an action. The thunk can be used…]]></description><link>https://radinax.github.io/React-Personal-Blog-Gatsby/8-redux-thunk/</link><guid isPermaLink="false">https://radinax.github.io/React-Personal-Blog-Gatsby/8-redux-thunk/</guid><pubDate>Tue, 17 Mar 2020 11:53:32 GMT</pubDate><content:encoded>&lt;h2&gt;Introduction&lt;/h2&gt;
@@ -979,7 +1132,7 @@ npm start&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 axios.get(url).then(response =&amp;gt; console.log(response))&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;h2&gt;Installing dependencies&lt;/h2&gt;
-&lt;p&gt;For an alredy created project:&lt;/p&gt;
+&lt;p&gt;For an already created project:&lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;yarn add redux react-redux&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;If you’re doing some async&lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;yarn add axios redux-thunk&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
@@ -1149,7 +1302,7 @@ axios.get(url).then(response =&amp;gt; console.log(response))&lt;/code&gt;&lt;/p
   
   &lt;/a&gt;
     &lt;/p&gt;
-&lt;p&gt;Notice how it only does something when we do only a fetch request, its because our POST, DELETE and PUT will only do a HTTP request and won’t mess with the global state, but when we do a GET the app will reload.&lt;/p&gt;
+&lt;p&gt;Notice how it only does something when we do only a fetch request, it’s because our POST, DELETE and PUT will only do a HTTP request and won’t mess with the global state, but when we do a GET the app will reload.&lt;/p&gt;
 &lt;h2&gt;Store&lt;/h2&gt;
 &lt;p&gt;This is where our store will be configured.&lt;/p&gt;
 &lt;p&gt;
@@ -1274,21 +1427,21 @@ axios.get(url).then(response =&amp;gt; console.log(response))&lt;/code&gt;&lt;/p
   
   &lt;/a&gt;
     &lt;/p&gt;
-&lt;p&gt;Don’t worry about the URL looking so awkward, its just to showcase where its coming from.&lt;/p&gt;
-&lt;p&gt;As you can see this pattern makes everything more smooth and its recomended in the Redux documentation.&lt;/p&gt;
+&lt;p&gt;Don’t worry about the URL looking so awkward, it’s just to showcase where it’s coming from.&lt;/p&gt;
+&lt;p&gt;As you can see this pattern makes everything more smooth and it’s recomended in the Redux documentation.&lt;/p&gt;
 &lt;h2&gt;Conclusion&lt;/h2&gt;
-&lt;p&gt;We learned how to setup a Redux structure in our React app, its very straightforward when you start doing it, but there are even easier ways of doing this kind of setup, with a ducks pattern (everything on a single file) as we just saw and using the new Redux Toolkit which we will see later.&lt;/p&gt;
+&lt;p&gt;We learned how to setup a Redux structure in our React app, it’s very straightforward when you start doing it, but there are even easier ways of doing this kind of setup, with a ducks pattern (everything on a single file) as we just saw and using the new Redux Toolkit which we will see later.&lt;/p&gt;
 &lt;p&gt;See you on the next post.&lt;/p&gt;
 &lt;p&gt;Sincerely,&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Eng Adrian Beria.&lt;/strong&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Redux]]></title><description><![CDATA[What is Redux According to the documentation: Redux is a predictable state container for JavaScript apps. Its generally used with React when…]]></description><link>https://radinax.github.io/React-Personal-Blog-Gatsby/7-Redux/</link><guid isPermaLink="false">https://radinax.github.io/React-Personal-Blog-Gatsby/7-Redux/</guid><pubDate>Tue, 03 Mar 2020 11:53:32 GMT</pubDate><content:encoded>&lt;h2&gt;What is Redux&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Eng Adrian Beria.&lt;/strong&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Redux]]></title><description><![CDATA[What is Redux According to the documentation: Redux is a predictable state container for JavaScript apps. It’s generally used with React…]]></description><link>https://radinax.github.io/React-Personal-Blog-Gatsby/7-Redux/</link><guid isPermaLink="false">https://radinax.github.io/React-Personal-Blog-Gatsby/7-Redux/</guid><pubDate>Tue, 03 Mar 2020 11:53:32 GMT</pubDate><content:encoded>&lt;h2&gt;What is Redux&lt;/h2&gt;
 &lt;p&gt;According to the documentation:&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Redux is a predictable state container for JavaScript apps.&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;Its generally used with React when we need to make our state available for the whole app. The global state is stored inside an object tree called &lt;strong&gt;STORE&lt;/strong&gt; and the only way to make changes (Create, Update and Delete) is with &lt;strong&gt;ACTIONS&lt;/strong&gt; which is an object describing the change in the main state using &lt;strong&gt;REDUCERS&lt;/strong&gt; which says how it will change.&lt;/p&gt;
+&lt;p&gt;It’s generally used with React when we need to make our state available for the whole app. The global state is stored inside an object tree called &lt;strong&gt;STORE&lt;/strong&gt; and the only way to make changes (Create, Update and Delete) is with &lt;strong&gt;ACTIONS&lt;/strong&gt; which is an object describing the change in the main state using &lt;strong&gt;REDUCERS&lt;/strong&gt; which says how it will change.&lt;/p&gt;
 &lt;p&gt;The flow in which these three core concepts relate to each other is shown in the following diagram:&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;/React-Personal-Blog-Gatsby/redux-overview-1-34fe2bcc4741f0e192b5a5c029ac3f45.svg&quot; alt=&quot;code&quot;&gt;&lt;/p&gt;
-&lt;p&gt;Seeing it like this its very simple in theory, you create a store, declare an initial state, create a rootReducer that will have all the reducers and use actions creators to &lt;strong&gt;dispatch&lt;/strong&gt; actions to the reducer stating how the state will change.&lt;/p&gt;
+&lt;p&gt;Seeing it like this it’s very simple in theory, you create a store, declare an initial state, create a rootReducer that will have all the reducers and use actions creators to &lt;strong&gt;dispatch&lt;/strong&gt; actions to the reducer stating how the state will change.&lt;/p&gt;
 &lt;p&gt;Lets check some small concepts we need to grasp before creating our project:&lt;/p&gt;
 &lt;h3&gt;Actions Creators&lt;/h3&gt;
 &lt;p&gt;Action creators simply create actions to be dispatched by your store to be processed by your Reducer.&lt;/p&gt;
@@ -1464,10 +1617,10 @@ axios.get(url).then(response =&amp;gt; console.log(response))&lt;/code&gt;&lt;/p
   
   &lt;/a&gt;
     &lt;/p&gt;
-&lt;p&gt;Spread operator is commonly used and its more elegant than Object.assign, which is one of the most common alternatives.&lt;/p&gt;
+&lt;p&gt;Spread operator is commonly used and it’s more elegant than Object.assign, which is one of the most common alternatives.&lt;/p&gt;
 &lt;p&gt;To organize our reducers we generally have a rootReducer where we import all our reducers into that file and then we import that rootReducer into our store.&lt;/p&gt;
 &lt;h3&gt;react-redux important functions&lt;/h3&gt;
-&lt;p&gt;Redux on can be used with React or with Vanilla Javascript, this post is focusing more on React so there are several things I’m not talking about like subscribe, dispatch, getState, since we will take on a more practical look we will focus instead on what we be using more often and its a source of confusion by many people learning Redux for the first time.&lt;/p&gt;
+&lt;p&gt;Redux on can be used with React or with Vanilla Javascript, this post is focusing more on React so there are several things I’m not talking about like subscribe, dispatch, getState, since we will take on a more practical look we will focus instead on what we be using more often and it’s a source of confusion by many people learning Redux for the first time.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;mapStateToProps&lt;/strong&gt;: You use this inside a component or page and make it read a specific part of the store’s state as props.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;mapDispatchToProps&lt;/strong&gt;: You use this to dispatch action creators, you import the AC inside the component and then use mapDispatchToProps to use it as props.&lt;/li&gt;
@@ -1568,7 +1721,7 @@ npm start&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;&lt;strong&gt;Object.keys(Obj)&lt;/strong&gt;  takes an object (Obj) and returns an array with its keys.
 &lt;strong&gt;Object.values(Obj)&lt;/strong&gt;  takes an object (Obj) and returns an array with its values.&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;We will work with these a lot in our career as React Developers so its crucial to understand how to use them. Lets check line by line what we’re doing:&lt;/p&gt;
+&lt;p&gt;We will work with these a lot in our career as React Developers so it’s crucial to understand how to use them. Lets check line by line what we’re doing:&lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;Object.keys(lines).map((c, ci) =&amp;gt; {&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;We’re taking the object &lt;strong&gt;lines&lt;/strong&gt; and creating an array with its keys:&lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;[c1,c2]&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
@@ -1642,7 +1795,7 @@ j = j + 3;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
   
   &lt;/a&gt;
     &lt;/p&gt;
-&lt;p&gt;For graphing the state will pretty much be the same according to Apex Chart documentation, but we need to find a way to explore the &lt;strong&gt;this.props.data&lt;/strong&gt; we’re sending to the Chart component. Since its an object:&lt;/p&gt;
+&lt;p&gt;For graphing the state will pretty much be the same according to Apex Chart documentation, but we need to find a way to explore the &lt;strong&gt;this.props.data&lt;/strong&gt; we’re sending to the Chart component. Since it’s an object:&lt;/p&gt;
 &lt;p&gt;
   &lt;a
     class=&quot;gatsby-resp-image-link&quot;
@@ -1737,12 +1890,12 @@ time = [
     &lt;/p&gt;
 &lt;h2&gt;Conclusion&lt;/h2&gt;
 &lt;p&gt;We learned how to get data inside a deep JSON just by using Object.values and .map(), knowing this is crucial and will save you many hours trying to figure out how to get the data, so simply writting it down in a piece of paper can help you figure out how to get that data. In future posts we will learn how to use GraphQL to get data that are much deep inside a more complex JSON and doing a simple Query we can get it without wasting time and code lines.&lt;/p&gt;
-&lt;p&gt;On the next post we will go into the big beast which is called Redux, its a state management that can seem very complex at first, but we will break it down so its much easier to digest.&lt;/p&gt;
+&lt;p&gt;On the next post we will go into the big beast which is called Redux, it’s a state management that can seem very complex at first, but we will break it down so it’s much easier to digest.&lt;/p&gt;
 &lt;p&gt;See you on the next post.&lt;/p&gt;
 &lt;p&gt;Sincerely,&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Eng Adrian Beria.&lt;/strong&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Array Manipulation in React]]></title><description><![CDATA[Most of the time you will be fetching Data from somewhere, either an external source like we did before with the Bitcoin Chart, or some data…]]></description><link>https://radinax.github.io/React-Personal-Blog-Gatsby/5-array-manipulation/</link><guid isPermaLink="false">https://radinax.github.io/React-Personal-Blog-Gatsby/5-array-manipulation/</guid><pubDate>Sun, 16 Dec 2018 11:53:32 GMT</pubDate><content:encoded>&lt;p&gt;Most of the time you will be fetching Data from somewhere, either an external source like we did before with the Bitcoin Chart, or some data sent through the Backend. Said Data is generally an Object that we need to turn into arrays sometimes and then do some short of manipulation using Javascript. In this post we will go through some examples on how to deal with some common problems.&lt;/p&gt;
 &lt;h2&gt;Rendering a list of components&lt;/h2&gt;
-&lt;p&gt;One of the first examples come from the documentation and its something we will be doing a lot:&lt;/p&gt;
+&lt;p&gt;One of the first examples come from the documentation and it’s something we will be doing a lot:&lt;/p&gt;
 &lt;p&gt;
   &lt;a
     class=&quot;gatsby-resp-image-link&quot;
@@ -1786,7 +1939,7 @@ time = [
 &lt;blockquote&gt;
 &lt;p&gt;Keys help React identify which items have changed, are added, or are removed. Keys should be given to the elements inside the array to give the elements a stable identity.&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;It should be &lt;strong&gt;unique&lt;/strong&gt;, its not a good idea to define it always as the index if you know it will change.&lt;/p&gt;
+&lt;p&gt;It should be &lt;strong&gt;unique&lt;/strong&gt;, it’s not a good idea to define it always as the index if you know it will change.&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;In practice, finding a key is not really hard. Most of the time, the element you are going to display already has a unique id. When that’s not the case, you can add a new ID property to your model or hash some parts of the content to generate a key. Remember that the key only has to be unique among its siblings, not globally unique.&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -1875,7 +2028,7 @@ time = [
 &lt;p&gt;Not going to go through adding or updating the state with a click, because for adding its using a simple concat and updating just using .map with spread operator to do what we need is enough.&lt;/p&gt;
 &lt;p&gt;We will continue this as a project in the other post where we will tackle Object manipulation as well. With the next project you should be able to handle any kind of weird Object distribution you encounter.&lt;/p&gt;
 &lt;h2&gt;Conclusion&lt;/h2&gt;
-&lt;p&gt;So we learned a bit of Array Manipulation on this post and about the “key” element which is a way of React to keep track of what’s changing so its important you give it a unique identification. &lt;/p&gt;
+&lt;p&gt;So we learned a bit of Array Manipulation on this post and about the “key” element which is a way of React to keep track of what’s changing so it’s important you give it a unique identification. &lt;/p&gt;
 &lt;p&gt;On the next post we will be handling a more complex JSON and how you could easily identify the best way to get the values you need.&lt;/p&gt;
 &lt;p&gt;See you on the next post.&lt;/p&gt;
 &lt;p&gt;Sincerely,&lt;/p&gt;
@@ -1909,7 +2062,7 @@ npm start&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
     └── serviceWorker.js&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;README&lt;/strong&gt;: Is a markdown file which is where we write the basics of our app, as developers its important that someone can read this section and understand what your app is doing.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Node Modules&lt;/strong&gt;: Its where we will store our modules which you can consider as Javascript Libraries.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Node Modules&lt;/strong&gt;: It’s where we will store our modules which you can consider as Javascript Libraries.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;&lt;a href=&quot;https://docs.npmjs.com/files/package.json&quot;&gt;Package.json&lt;/a&gt;&lt;/strong&gt;: This file holds various metadata relevant to the project. This file is used to give information to npm that allows it to identify the project as well as handle the project’s dependencies.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;.gitignore&lt;/strong&gt;: Its files we generally ignore when uploading our project in github, we don’t want to upload ALL our node modules into our github, with the Package.json we can do &lt;strong&gt;npm install&lt;/strong&gt; and we can have our dependencies back.&lt;/li&gt;
 &lt;li&gt;
@@ -1919,11 +2072,11 @@ npm start&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;strong&gt;src folder&lt;/strong&gt;: Its where our React code will be.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;src folder&lt;/strong&gt;: It’s where our React code will be.&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Index.js&lt;/strong&gt;: Its where our ReactDOM.render will be and it will render our App.js component.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;App.js&lt;/strong&gt;: Its where will put all our components.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;serviceWorker.js:&lt;/strong&gt; The &lt;strong&gt;service worker code&lt;/strong&gt; basically registers a service worker for the React app. We first check if the app is being served from localhost via the &lt;code class=&quot;language-text&quot;&gt;isLocalhost&lt;/code&gt; const value that will either return a truthy or falsy value. The &lt;code class=&quot;language-text&quot;&gt;register()&lt;/code&gt; function helps to register the service worker to the React app only if its in a production mode and if the browser supports Service workers.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Index.js&lt;/strong&gt;: It’s where our ReactDOM.render will be and it will render our App.js component.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;App.js&lt;/strong&gt;: It’s where will put all our components.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;serviceWorker.js:&lt;/strong&gt; The &lt;strong&gt;service worker code&lt;/strong&gt; basically registers a service worker for the React app. We first check if the app is being served from localhost via the &lt;code class=&quot;language-text&quot;&gt;isLocalhost&lt;/code&gt; const value that will either return a truthy or falsy value. The &lt;code class=&quot;language-text&quot;&gt;register()&lt;/code&gt; function helps to register the service worker to the React app only if it’s in a production mode and if the browser supports Service workers.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
@@ -2014,7 +2167,7 @@ Now how will we get the Bitcoin value? We will use&lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;bpi:  {
 	date: value
 }&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Fetch API is based on &lt;a href=&quot;https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Promise&quot;&gt;Promises&lt;/a&gt; which do something and when its done it does another. In our context it will look like this:&lt;/p&gt;
+&lt;p&gt;Fetch API is based on &lt;a href=&quot;https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Promise&quot;&gt;Promises&lt;/a&gt; which do something and when it’s done it does another. In our context it will look like this:&lt;/p&gt;
 &lt;p&gt;
   &lt;a
     class=&quot;gatsby-resp-image-link&quot;
@@ -2239,7 +2392,7 @@ this.setState(). &lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2&gt;Conclusion&lt;/h2&gt;
-&lt;p&gt;We learned more about &lt;strong&gt;State&lt;/strong&gt;, as you can see its very simple to use and it makes controlling your Data more organized, you know what’s happening and when. &lt;/p&gt;
+&lt;p&gt;We learned more about &lt;strong&gt;State&lt;/strong&gt;, as you can see it’s very simple to use and it makes controlling your Data more organized, you know what’s happening and when. &lt;/p&gt;
 &lt;p&gt;For the next post we will take on our first Project! We will stop using one HTML file and we will create our first App.&lt;/p&gt;
 &lt;p&gt;See you on the next post.&lt;/p&gt;
 &lt;p&gt;Sincerely,&lt;/p&gt;
@@ -2268,7 +2421,7 @@ this.setState(). &lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;https://reactjs.org/docs/react-api.html&quot;&gt;React&lt;/a&gt;: You’re getting the React &lt;strong&gt;Top-Level API&lt;/strong&gt; which is the main entry point to the library.&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;https://reactjs.org/docs/react-dom.html&quot;&gt;React DOM&lt;/a&gt;: This is where we can access the Top-Level APIs, most notably “render()“.&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://babeljs.io/&quot;&gt;Babel&lt;/a&gt;: Its a Javascript transpiler that let us turn our ES6+ into older ES5 because some browsers don’t support it yet.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://babeljs.io/&quot;&gt;Babel&lt;/a&gt;: It’s a Javascript transpiler that let us turn our ES6+ into older ES5 because some browsers don’t support it yet.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;In your React code put the following:&lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;class HelloMessage extends React.Component {
