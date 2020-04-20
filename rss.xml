@@ -1,4 +1,887 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Adrian Beria Blog]]></title><description><![CDATA[A blog made by Adrian Beria to write articles related to Web Development and React JS]]></description><link>https://radinax.github.io/React-Personal-Blog-Gatsby</link><generator>RSS for Node</generator><lastBuildDate>Sat, 11 Apr 2020 04:06:53 GMT</lastBuildDate><item><title><![CDATA[React Testing Library]]></title><description><![CDATA[In our last post we talked about testing with jest, how to trigger events like a click, and see if it does any change, we also checked how…]]></description><link>https://radinax.github.io/React-Personal-Blog-Gatsby/15-react-testing-library/</link><guid isPermaLink="false">https://radinax.github.io/React-Personal-Blog-Gatsby/15-react-testing-library/</guid><pubDate>Sat, 11 Apr 2020 11:53:32 GMT</pubDate><content:encoded>&lt;p&gt;In our last post we talked about testing with jest, how to trigger events like a click, and see if it does any change, we also checked how to do an axios GET request and test it throughly. This time we will use a library called &lt;a href=&quot;https://testing-library.com&quot;&gt;react-testing-library&lt;/a&gt; which is alredy integrated in &lt;a href=&quot;https://create-react-app.dev/docs/getting-started/&quot;&gt;create-react-app&lt;/a&gt;, it provides React specific testing tools  for snapshots, verifying DOM attributes or content, triggering click (or other) events, etc.&lt;/p&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Adrian Beria Blog]]></title><description><![CDATA[A blog made by Adrian Beria to write articles related to Web Development and React JS]]></description><link>https://radinax.github.io/React-Personal-Blog-Gatsby</link><generator>RSS for Node</generator><lastBuildDate>Mon, 20 Apr 2020 03:20:59 GMT</lastBuildDate><item><title><![CDATA[GraphQL - Client with React and Apollo]]></title><description><![CDATA[In the previous post we focused on how to build a server with prisma, graphql-yoga and MySQL. For this post we will focus on building the…]]></description><link>https://radinax.github.io/React-Personal-Blog-Gatsby/20-apollo-client/</link><guid isPermaLink="false">https://radinax.github.io/React-Personal-Blog-Gatsby/20-apollo-client/</guid><pubDate>Mon, 20 Apr 2020 11:53:32 GMT</pubDate><content:encoded>&lt;p&gt;In the previous post we focused on how to build a server with prisma, graphql-yoga and MySQL. For this post we will focus on building the client side using the &lt;a href=&quot;/React-Personal-Blog-Gatsby/18-apollo&quot;&gt;post we made about it as reference&lt;/a&gt; and connect with the server we built.&lt;/p&gt;
+&lt;h2&gt;Installing dependencies&lt;/h2&gt;
+&lt;p&gt;On the same project we worked on last post, write the following commands:&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;npx create-react-app client
+cd client
+yarn add apollo-boost react-apollo graphql&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2&gt;File Structure&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;src&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;App.js&lt;/li&gt;
+&lt;li&gt;App.css&lt;/li&gt;
+&lt;li&gt;index.js&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Erase everything until it looks like this.&lt;/p&gt;
+&lt;p&gt;Now configure index.js with Apollo Provider and use the EP provided by Prisma.&lt;/p&gt;
+&lt;p&gt;Inside App.js import everything necesary to perform a GET request like this:&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;javascript&quot;&gt;&lt;pre class=&quot;language-javascript&quot;&gt;&lt;code class=&quot;language-javascript&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; React &lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;react&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;./App.css&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; gql &lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;graphql-tag&apos;&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; useQuery &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;@apollo/react-hooks&apos;&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;token constant&quot;&gt;GET_DATA&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; gql&lt;span class=&quot;token template-string&quot;&gt;&lt;span class=&quot;token string&quot;&gt;`
+  query getData {
+    feed {
+      id
+      description
+      url
+    }
+  }
+`&lt;/span&gt;&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;token function-variable function&quot;&gt;App&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; loading&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; error&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; data &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;useQuery&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token constant&quot;&gt;GET_DATA&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;loading&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;div&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;&lt;span class=&quot;token constant&quot;&gt;LOADING&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;div&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;
+  &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;error&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;div&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;There was an error&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;error&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;div&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;
+  console&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;data&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;
+    &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;div&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;Test&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;div&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;export&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;default&lt;/span&gt; App&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Check your console and you will see the information you requested!&lt;/p&gt;
+&lt;p&gt;Now lets add a POST query from the client side.&lt;/p&gt;
+&lt;p&gt;
+  &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/React-Personal-Blog-Gatsby/static/8a059433c7fda51c18fa4387a34f64af/a26d8/apollo-client-1.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+  
+  &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 197.62900976290098%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAoCAYAAAD+MdrbAAAACXBIWXMAAAsSAAALEgHS3X78AAAEvklEQVRIx6VW2XLjOAz0J8xat0iKkqjb8pU4nqna2v//JL8J24A8jp3YiXf2AUVRRwtAAw0u3o6H02rsTs24OVXtcGqG8VSP21PbD6eR76/Wpxr3XFWfXN18sPrT9eLtsKLja0lJu6ZyXJNpVxRXPSV5SdqkFChNXqxo6Xm09AOs/mx8HYTzemWLw+s4veyKSblmcuM42W6YzPgyZZvDlLp+Kmw65VUxpfUK+0ZM1f0UGTsFYTQFUXxji/VmINc50v2WAET4gCKdkR9GFMQJhXFMYZLgOpX9vMKieH4H67UtEDupfk12e5QwQ2UuL39n1+9dAIvSkRclpLs1hakWu/fne3bXw7KqKUgNxbaEufdwnwC8B4qQG/LAlg+GPN+X1ed9eLbgg4VX61XYF8DV2FPZgpRhR6odSbcDwh8pMrnkkz2ezco637M3ub7xsAIpnD+z2lEChpOiFkNZCACnQdKRu0tKZJ8VnwiZSXGOfBSu7jfioXx4ZfLRvZBh9/K4KF1FfqJINcMlvN9sh6n6lpDPpAjLmhS3m4Sanz25fflZ5hdl09EPLyQPveoJ08F78QbhQ6BH9xdQFKobS6ruyOSWTAmhQKhhks6MYmVg+RH/MAjulssFsO1a+nUoqdvv0H5vZPc/KetWZHdHXP+ifNiQRp41VEh3GzKohBA9/dDDqmloO+bUr0Yq939TuTmQ7XrK1wcqdj8pH7dUHv/BM4CvX8kgEvb+S0ADIjLjYBWlGiFDA7PM4bqgpERdonzSzM6eSchcMsjxVdi/10XdNpRZQ5muAFJQWSqyRQbGS0qrTuQssQXAkNMomdckfUgSPKzJZJrKfACYo6G3lLfcPT0ptGDKrVi0iKKAgudk0S3K1VK7TJAHb71zkTOohDz2hmzfkUbOUnimKniNDsqLihxqs3Hj2dbY92IG6dCqIIW+Via79rChrkXIADHDiyTd2IxSSJpSOUrIwDQskzWCZ2yp7OdnsVK3raeRs3L7QlUDRisOvaYCKUg1hhMkjUPjdRkE5+L3z/t59eSduQlEYH/8tUTtdai7N/Q0Qm9hq70QEoPdCPnjvDFpCmlI6x4pqSlHVeR5IyqlMT4ieCuAXAbFFvJVQJ7OGsjiECM3LGMBh4lSitFB/FHIEqah8omWsKWjcJ+HmADynDVQbrvB1CsryBYsQ/7gXeLamcGLYNxKmfdBwS+ArMI52s30GPQAiQAohesHV7IfPaE2Z8AQYdn9karXI04Qr+RG9DIKm+WMU5DgBxwm/yT4AlgAmUWLnpVh3/YClOUoZiRfNT1IGEih6BPzDKBjgVWUrfezN0h+CDYDeMOECDEZGEziuX+/0UcpbJszi9BAAITMWoRWCqJZ+4SA4OlThBR2WedU9zxC13PYSENqtAiBeCBnmrOJR8ljDxlwCW8q5IqPcnZYUwEz8FxzEUNpFFScJyIPMo2yymwlUpdnFQS3kjq8AYyQL4UXRebP7XU9qN7nS/h9yHwUyayCqCYo0ug/nWsehlzUBdXo5SQ2ojL3QP0wemoC4uRQyQGy5hnSv1DZbedJ94eeSshcexGUeBnGX47IpwCHFbpA48CpYki8umHsT0AB2FGBweScodLNp63/4+G/0pUd1XAPTroAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+    &gt;
+      &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;code&quot;
+        title=&quot;&quot;
+        src=&quot;/React-Personal-Blog-Gatsby/static/8a059433c7fda51c18fa4387a34f64af/fb8a0/apollo-client-1.png&quot;
+        srcset=&quot;/React-Personal-Blog-Gatsby/static/8a059433c7fda51c18fa4387a34f64af/1a291/apollo-client-1.png 148w,
+/React-Personal-Blog-Gatsby/static/8a059433c7fda51c18fa4387a34f64af/2bc4a/apollo-client-1.png 295w,
+/React-Personal-Blog-Gatsby/static/8a059433c7fda51c18fa4387a34f64af/fb8a0/apollo-client-1.png 590w,
+/React-Personal-Blog-Gatsby/static/8a059433c7fda51c18fa4387a34f64af/a26d8/apollo-client-1.png 717w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+      /&gt;
+    &lt;/span&gt;
+  &lt;/span&gt;
+  
+  &lt;/a&gt;
+    &lt;/p&gt;
+&lt;p&gt;Remember our &lt;strong&gt;post&lt;/strong&gt; inside the mutation was added in the resolvers of our server.&lt;/p&gt;
+&lt;h2&gt;Summary&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Have a server ready with Prisma&lt;/li&gt;
+&lt;li&gt;In client side add the respective libraries and add Apollo Provider with its client&lt;/li&gt;
+&lt;li&gt;In the app you can do queries or mutation based of the schema you made on the backend&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Conclusion&lt;/h2&gt;
+&lt;p&gt;The goal of these posts was to create a small fullstack application with react-graphql-apollo-prisma-node-express-mysql, sounds like a lot of libraries but in practice it takes a few minutes to configure everything, this posts serve as reference when building quick apps.&lt;/p&gt;
+&lt;p&gt;See you on the next post.&lt;/p&gt;
+&lt;p&gt;Sincerely,&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Eng Adrian Beria.&lt;/strong&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[GraphQL - Server with Prisma and MySQL]]></title><description><![CDATA[In the previous post we focused on the client, this time we will work on how to implement a server with GraphQL, Prisma and Express…]]></description><link>https://radinax.github.io/React-Personal-Blog-Gatsby/19-apollo-server/</link><guid isPermaLink="false">https://radinax.github.io/React-Personal-Blog-Gatsby/19-apollo-server/</guid><pubDate>Sun, 19 Apr 2020 11:53:32 GMT</pubDate><content:encoded>&lt;p&gt;In the previous post we focused on the client, this time we will work on how to implement a server with GraphQL, Prisma and Express.&lt;/p&gt;
+&lt;h2&gt;Installing dependencies&lt;/h2&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;yarn add graphql-yoga
+yarn add prisma-client-lib
+yarn global add prisma&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2&gt;File Structure&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;prisma&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;datamodel.prisma&lt;/li&gt;
+&lt;li&gt;prisma.yml&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;src&lt;/li&gt;
+&lt;li&gt;package.json&lt;/li&gt;
+&lt;li&gt;yarn.lock&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;GraphQL Yoga&lt;/h2&gt;
+&lt;p&gt;We will use &lt;a href=&quot;https://github.com/prisma-labs/graphql-yoga&quot;&gt;graphql-yoga&lt;/a&gt; on the server side. So what is this library?&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;It’s Fully-featured GraphQL Server with focus on easy setup, performance &amp;#x26; great developer experience&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;It’s based on the following libraries:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;express/apollo-server: Performant, extensible web server framework&lt;/li&gt;
+&lt;li&gt;graphql-subscriptions/subscriptions-transport-ws: GraphQL subscriptions server&lt;/li&gt;
+&lt;li&gt;graphql.js/graphql-tools: GraphQL engine &amp;#x26; schema helpers&lt;/li&gt;
+&lt;li&gt;graphql-playground: Interactive GraphQL IDE&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;This means it will do a lot of the work under the hood instead of manually doing everything from scratch.&lt;/p&gt;
+&lt;h2&gt;Get everything starting&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Create folder of project, inside do npm init and git init.&lt;/li&gt;
+&lt;li&gt;Create a src folder with a index.js file inside&lt;/li&gt;
+&lt;li&gt;yarn add graphql-yoga nodemon&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Inside the index.js file we will put the following code:&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;javascript&quot;&gt;&lt;pre class=&quot;language-javascript&quot;&gt;&lt;code class=&quot;language-javascript&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; GraphQLServer &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;require&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;graphql-yoga&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;token comment&quot;&gt;// Contains GraphQL type definitions&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; typeDefs &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token template-string&quot;&gt;&lt;span class=&quot;token string&quot;&gt;`
+  type Query {
+    info: String!
+  }
+`&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;// Contains resolvers for the fields specified in typeDefs&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; resolvers &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  Query&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    info&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; &lt;span class=&quot;token template-string&quot;&gt;&lt;span class=&quot;token string&quot;&gt;`This is the API of a Hackernews Clone`&lt;/span&gt;&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; server &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;GraphQLServer&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  typeDefs&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+  resolvers
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+
+server&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;start&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; console&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;Server running at https://localhost:4000&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Inside our package.json we will add in our scripts:&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;javascript&quot;&gt;&lt;pre class=&quot;language-javascript&quot;&gt;&lt;code class=&quot;language-javascript&quot;&gt;&lt;span class=&quot;token string&quot;&gt;&quot;scripts&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token string&quot;&gt;&quot;server&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;nodemon src/index.js&quot;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Now, if we write on the terminal &lt;strong&gt;yarn server&lt;/strong&gt; it will activate in our &lt;strong&gt;&lt;a href=&quot;https://localhost:4000&quot;&gt;https://localhost:4000&lt;/a&gt;&lt;/strong&gt; the graphql playground like this:&lt;/p&gt;
+&lt;p&gt;
+  &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/React-Personal-Blog-Gatsby/static/2f2554e89aec3e108488b8109a2eb677/6c011/graphql-playground.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+  
+  &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 54.67479674796748%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAYAAAB/Ca1DAAAACXBIWXMAAA7DAAAOwwHHb6hkAAABbElEQVQoz32SSXOCQBCFubkriiCiAi4sghB3o9HkYpZDqlJJjqnkmmv+/+VlpsUlFOTwVc9MVb95r2cEPdxA85YotR3kFQNZqXUiV28TeblDHPdJZKU2KloPgjm5gz7eQfPXUN0FFHvK6pyo9kKI5gg5zUFGtWhdMS6gvQ+xG5Cp5nABQeqPUbemkO0ZUbdmUJw5IQ0myHd8LPcvuH//QtVeoOGtofzhmmpzdAOVIdAtZpAIvzmj2nh4+8Dn9w8Jqv4GjQS4aN1dHQTLRgqRcKHjoWrNT41x+DkXszdPkWCKQw4XFrshRWukuONIzhLu7fPRYYC06GXjcK4M2ayiZi3cEq1wx9jS7GpsHFf713PkSkLkS0F5GDmMIsbhkQfrRy6YHvcsGJLD/yJz+KUCbyjpPsoMXovsAWgfcyozB/QIPHocNl85Wgui7qJm+oRqj2EGK0hd9pnVPgqahULTolps2QwnBRui4bG+AL9aBDT6ioH3gQAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+    &gt;
+      &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;code&quot;
+        title=&quot;&quot;
+        src=&quot;/React-Personal-Blog-Gatsby/static/2f2554e89aec3e108488b8109a2eb677/fb8a0/graphql-playground.png&quot;
+        srcset=&quot;/React-Personal-Blog-Gatsby/static/2f2554e89aec3e108488b8109a2eb677/1a291/graphql-playground.png 148w,
+/React-Personal-Blog-Gatsby/static/2f2554e89aec3e108488b8109a2eb677/2bc4a/graphql-playground.png 295w,
+/React-Personal-Blog-Gatsby/static/2f2554e89aec3e108488b8109a2eb677/fb8a0/graphql-playground.png 590w,
+/React-Personal-Blog-Gatsby/static/2f2554e89aec3e108488b8109a2eb677/526de/graphql-playground.png 885w,
+/React-Personal-Blog-Gatsby/static/2f2554e89aec3e108488b8109a2eb677/6c011/graphql-playground.png 984w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+      /&gt;
+    &lt;/span&gt;
+  &lt;/span&gt;
+  
+  &lt;/a&gt;
+    &lt;/p&gt;
+&lt;p&gt;Now if we write a query and we hit the play button while clicking the schema tab, we get the requested information:&lt;/p&gt;
+&lt;p&gt;
+  &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/React-Personal-Blog-Gatsby/static/8ca9987a0c0a7406c7f751f28a794553/e019f/graphql-playground-2.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+  
+  &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 54.759467758444224%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAYAAAB/Ca1DAAAACXBIWXMAAA7DAAAOwwHHb6hkAAABsUlEQVQoz32SS0/CQBSFu/FNWwqlrRTayqMvOi2IVKGABhMTY0xMdG3cunXpzh/gbz7eKVolgIuTO3Mz98w3c69gjR9Q6w4gmi6OdBv7VbPQgdrYqr2KiV2lnq/52Z2yAdFwIDijGzTjKYzgHCWrB809heGPcOyfQTmJIdsRZOeP7BBye4g6m8GKUhyZPiqtGF66gNOfQqi2E8iU4JvHl1c0khlMNsZxlEELx9CCixXV/BR6vIAaXUHrUu0JIyXQKa+6QwhKK8Eh3doZzvH2/oFmMoXVz2Akc+hJBp0uyiPl9cGM9hNogwXKwRy1gMFJGBFGKDVDiPRCQXboBptRokekfeicrMc1gc4Vfcd8nZFJivD6iSivqCZAmQjL5CFxH5Ig5X9ECYqqN6JCouFP3SBuys+w22civobY8HMjyWaFx5JwxXBSFK+JE3b7YM+fqKWPNBkdqo2L+jXCqvtruJmQDL0hOvdvUAd3ROgWhj/aQJhtJ+QKqdvsEoo3gWSFK2ZLQuoMN+Mdqrpn/xIux+ic/m8Bxc/IMFg3rDg9VGhgeRRNj57xn3yU6l1IrdOthF/CyTivxApDsgAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+    &gt;
+      &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;code&quot;
+        title=&quot;&quot;
+        src=&quot;/React-Personal-Blog-Gatsby/static/8ca9987a0c0a7406c7f751f28a794553/fb8a0/graphql-playground-2.png&quot;
+        srcset=&quot;/React-Personal-Blog-Gatsby/static/8ca9987a0c0a7406c7f751f28a794553/1a291/graphql-playground-2.png 148w,
+/React-Personal-Blog-Gatsby/static/8ca9987a0c0a7406c7f751f28a794553/2bc4a/graphql-playground-2.png 295w,
+/React-Personal-Blog-Gatsby/static/8ca9987a0c0a7406c7f751f28a794553/fb8a0/graphql-playground-2.png 590w,
+/React-Personal-Blog-Gatsby/static/8ca9987a0c0a7406c7f751f28a794553/526de/graphql-playground-2.png 885w,
+/React-Personal-Blog-Gatsby/static/8ca9987a0c0a7406c7f751f28a794553/e019f/graphql-playground-2.png 977w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+      /&gt;
+    &lt;/span&gt;
+  &lt;/span&gt;
+  
+  &lt;/a&gt;
+    &lt;/p&gt;
+&lt;h2&gt;Prisma&lt;/h2&gt;
+&lt;p&gt;Let us add &lt;a href=&quot;https://www.prisma.io/&quot;&gt;Prisma&lt;/a&gt;.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;yarn add prisma&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Prisma makes database access easy with an auto-generated and type-safe query builder that’s tailored to your database schema. It provides an alternative to traditional ORMs and SQL query builders. Start with a new database or introspect an existing one to get started.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Where an ORM means:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;in computer science is a programming technique for converting data between incompatible type systems using object-oriented programming languages. This creates, in effect, a “virtual object database” that can be used from within the programming language.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Let’s create a folder named &lt;strong&gt;prisma&lt;/strong&gt; in our root and add two files:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;datamodel.prisma: It’s where we will add our types and create associations and hook up the database. &lt;strong&gt;This is what the database will recieve&lt;/strong&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;javascript&quot;&gt;&lt;pre class=&quot;language-javascript&quot;&gt;&lt;code class=&quot;language-javascript&quot;&gt;type Link &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  id&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token constant&quot;&gt;ID&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;!&lt;/span&gt; @id
+  createdAt&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; DateTime&lt;span class=&quot;token operator&quot;&gt;!&lt;/span&gt; @createdAt
+  description&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; String&lt;span class=&quot;token operator&quot;&gt;!&lt;/span&gt;
+  url&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; String&lt;span class=&quot;token operator&quot;&gt;!&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;prisma.yml: It’s where we will instruct prisma how to hit an endpoint and the infrastructure setup.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;javascript&quot;&gt;&lt;pre class=&quot;language-javascript&quot;&gt;&lt;code class=&quot;language-javascript&quot;&gt;endpoint&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;&apos;&lt;/span&gt;
+
+datamodel&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; datamodel&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;prisma
+
+generate&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+  &lt;span class=&quot;token operator&quot;&gt;-&lt;/span&gt; generator&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; javascript&lt;span class=&quot;token operator&quot;&gt;-&lt;/span&gt;client
+    output&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;src&lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;generated&lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;prisma&lt;span class=&quot;token operator&quot;&gt;-&lt;/span&gt;client&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Now we deploy it from the command line with &lt;strong&gt;prisma deploy&lt;/strong&gt; and it will give us the following options:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Demo server + MySQL database: Free demo enviromenment hosted in Prsima Cloud (requires login)&lt;/li&gt;
+&lt;li&gt;Use other server: Manually provide endpoint of a running Prisma server&lt;/li&gt;
+&lt;li&gt;Use existing database: Connect to existing database&lt;/li&gt;
+&lt;li&gt;Create new database: Set up a local database using Docker&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;We will use the demo server for now, you can login using your github account when prompted.&lt;/p&gt;
+&lt;p&gt;Now it will provide you the endpoint of your server!&lt;/p&gt;
+&lt;p&gt;Next we use &lt;strong&gt;prisma generate&lt;/strong&gt; on the terminal to generate a folder inside src called &lt;strong&gt;generated&lt;/strong&gt; which is the name we used in our prisma.yml file, inside that folder there will be a number of files of schemas and types definition that help us connect with MySQL.&lt;/p&gt;
+&lt;h2&gt;Finishing touches&lt;/h2&gt;
+&lt;p&gt;With our prisma model hooked up, we can erase the links array, instead with our feed method we can access the context we passed as parameter and from it we can access Prisma, which gives us access to our links which are stored in the database.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;javascript&quot;&gt;&lt;pre class=&quot;language-javascript&quot;&gt;&lt;code class=&quot;language-javascript&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; resolvers &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  Query&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    info&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; &lt;span class=&quot;token template-string&quot;&gt;&lt;span class=&quot;token string&quot;&gt;`This is the API of a Hackernews Clone`&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;token comment&quot;&gt;// feed: () =&gt; links&lt;/span&gt;
+    feed&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;root&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; args&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; context&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; info&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; context&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;prisma&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;links&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;token comment&quot;&gt;// Rest of code here&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Now in our mutation we can refactor it to use the create link mutation that Prisma generates for us, which takes an url and description, which we can get from the args.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;javascript&quot;&gt;&lt;pre class=&quot;language-javascript&quot;&gt;&lt;code class=&quot;language-javascript&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; resolvers &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token comment&quot;&gt;// Rest of code here&lt;/span&gt;
+  Mutation&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    post&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;root&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; args&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; context&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; context&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;prisma&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;createLink&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+        url&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; args&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;url&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+        description&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; args&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;description
+      &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Now we want to add a context property to our server and then require the prisma client and assign it to the context property.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;javascript&quot;&gt;&lt;pre class=&quot;language-javascript&quot;&gt;&lt;code class=&quot;language-javascript&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; prisma &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;require&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;prisma-client-lib&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; server &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;GraphQLServer&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  typeDefs&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;./src//schema.graphql&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+  resolvers&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+  context&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; prisma &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Now in your terminal you should see your Prisma Admin address, go there to check your database, now activate &lt;strong&gt;yarn server&lt;/strong&gt; and perform a mutation:&lt;/p&gt;
+&lt;p&gt;
+  &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/React-Personal-Blog-Gatsby/static/4c72c22e0277ab7bf74279b693067a0d/ccb9b/graphql-playground-3.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+  
+  &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 37.06161137440758%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAHCAYAAAAIy204AAAACXBIWXMAAA7DAAAOwwHHb6hkAAABFklEQVQoz22QT1eCQBTF2SV1ZOLvEFAiCqIiCGQnkV2bOu5a5La+/4e4vhnoROXid+7MO9zLnac0TQUzrjH2Y6jWPUam32EF8q4O9Np+IL5nl1HiuoWXNfCzPXi6g0t4qyc4SY3b6YbIJXpUQPVT3ARLuhfdPPqPwqISerKDPitpUJBuO+jMyMT6sJGX4nj6xNvHF+z0EX5+gLPcd6x+VBEGJykRzCvw6RZGmMOYUNAkg9bDwg0FLnB4fUd7PJHxGUH1Al624FXbqYB+ooiPrVkBm1qYFG6EhQwVc42Q2ode3S3A5jXcrJVtOK3qF+sGitiFMI4HjYbNhiqe7q47o3zmBWRD1pv+og3m8izWI5r1gbwPH3IGoM/D9bJPse0AAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+    &gt;
+      &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;code&quot;
+        title=&quot;&quot;
+        src=&quot;/React-Personal-Blog-Gatsby/static/4c72c22e0277ab7bf74279b693067a0d/fb8a0/graphql-playground-3.png&quot;
+        srcset=&quot;/React-Personal-Blog-Gatsby/static/4c72c22e0277ab7bf74279b693067a0d/1a291/graphql-playground-3.png 148w,
+/React-Personal-Blog-Gatsby/static/4c72c22e0277ab7bf74279b693067a0d/2bc4a/graphql-playground-3.png 295w,
+/React-Personal-Blog-Gatsby/static/4c72c22e0277ab7bf74279b693067a0d/fb8a0/graphql-playground-3.png 590w,
+/React-Personal-Blog-Gatsby/static/4c72c22e0277ab7bf74279b693067a0d/526de/graphql-playground-3.png 885w,
+/React-Personal-Blog-Gatsby/static/4c72c22e0277ab7bf74279b693067a0d/ccb9b/graphql-playground-3.png 1055w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+      /&gt;
+    &lt;/span&gt;
+  &lt;/span&gt;
+  
+  &lt;/a&gt;
+    &lt;/p&gt;
+&lt;p&gt;Hit the play button and now check your prisma admin:&lt;/p&gt;
+&lt;p&gt;
+  &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/React-Personal-Blog-Gatsby/static/4398fa100cf91faeeb9ab2ef96e38ec6/23ced/graphql-playground-4.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+  
+  &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 27.081875437368787%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAFCAYAAABFA8wzAAAACXBIWXMAAA7DAAAOwwHHb6hkAAAAq0lEQVQY05VOMQ7CMAzM/x/CFxgYYYAJNiZAqEqEKqVDUQtJ7Bxx0iDogjjFsn26u1hdtUFjDFprQcz/FzFijOiHEbq1UKvtAYvlBuv9Ed578EwsOyeDzJ9BVRcSL+j6O876BnXqgJ0GLql77xACJTPlkPTwdA7D+MhX8FQyO1c+zzyXUIFiptSEpGyW8iG8BYEKL4hTmEA0zPGLl4sV5V+Qlzmq+ddcV7n+BfyNiAO5evrsAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+    &gt;
+      &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;code&quot;
+        title=&quot;&quot;
+        src=&quot;/React-Personal-Blog-Gatsby/static/4398fa100cf91faeeb9ab2ef96e38ec6/fb8a0/graphql-playground-4.png&quot;
+        srcset=&quot;/React-Personal-Blog-Gatsby/static/4398fa100cf91faeeb9ab2ef96e38ec6/1a291/graphql-playground-4.png 148w,
+/React-Personal-Blog-Gatsby/static/4398fa100cf91faeeb9ab2ef96e38ec6/2bc4a/graphql-playground-4.png 295w,
+/React-Personal-Blog-Gatsby/static/4398fa100cf91faeeb9ab2ef96e38ec6/fb8a0/graphql-playground-4.png 590w,
+/React-Personal-Blog-Gatsby/static/4398fa100cf91faeeb9ab2ef96e38ec6/526de/graphql-playground-4.png 885w,
+/React-Personal-Blog-Gatsby/static/4398fa100cf91faeeb9ab2ef96e38ec6/fa2eb/graphql-playground-4.png 1180w,
+/React-Personal-Blog-Gatsby/static/4398fa100cf91faeeb9ab2ef96e38ec6/23ced/graphql-playground-4.png 1429w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+      /&gt;
+    &lt;/span&gt;
+  &lt;/span&gt;
+  
+  &lt;/a&gt;
+    &lt;/p&gt;
+&lt;p&gt;And now it got updated! Our server is now complete!&lt;/p&gt;
+&lt;h2&gt;Summary&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Create project folder and inside open your code editor, then write npm init.&lt;/li&gt;
+&lt;li&gt;Add nodemon and in your package.json add a script &lt;strong&gt;“server”: “nodemon node src/index.js”&lt;/strong&gt;,&lt;/li&gt;
+&lt;li&gt;Add graphql-yoga, prisma-client-lib and add globally prisma.&lt;/li&gt;
+&lt;li&gt;Create a folder called &lt;strong&gt;prisma&lt;/strong&gt; on root and add two files named &lt;strong&gt;datamodel.prisma&lt;/strong&gt; and &lt;strong&gt;prisma.yml&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;Create a &lt;strong&gt;src&lt;/strong&gt; folder and add an &lt;strong&gt;index.js&lt;/strong&gt; and &lt;strong&gt;schema.graphql&lt;/strong&gt; files inside.&lt;/li&gt;
+&lt;li&gt;Inside schema.graphql define your typeDefs.&lt;/li&gt;
+&lt;li&gt;In your index.js file import &lt;strong&gt;GraphQLServer&lt;/strong&gt; from &lt;strong&gt;graphql-yoga&lt;/strong&gt; and create a &lt;strong&gt;new GraphQLServer&lt;/strong&gt; which takes the &lt;strong&gt;typeDefs&lt;/strong&gt; which accepts the route of the &lt;strong&gt;schema.graphql&lt;/strong&gt; file, a context which takes &lt;strong&gt;“prisma”&lt;/strong&gt; from &lt;strong&gt;prisma-client-lib&lt;/strong&gt; and &lt;strong&gt;resolvers&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;Next define your resolvers and typeDefs.&lt;/li&gt;
+&lt;li&gt;Define in your &lt;strong&gt;prisma.yml&lt;/strong&gt; file the EP as empty string, datamodel.prisma file and the generate information needed.&lt;/li&gt;
+&lt;li&gt;In your &lt;strong&gt;datamodel.prisma&lt;/strong&gt; you define your types.&lt;/li&gt;
+&lt;li&gt;In your terminal use &lt;strong&gt;prisma deploy&lt;/strong&gt; and select demo for a simple project with MySQL.&lt;/li&gt;
+&lt;li&gt;That’s it!&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Conclusion&lt;/h2&gt;
+&lt;p&gt;We managed to build ourselves a server with MySQL with the magic of Prisma! It makes thing really easy and let us focus more on how to manage our data, defining our types and resolvers, which we will use in our client to get the data.&lt;/p&gt;
+&lt;p&gt;See you on the next post.&lt;/p&gt;
+&lt;p&gt;Sincerely,&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Eng Adrian Beria.&lt;/strong&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[React with Apollo]]></title><description><![CDATA[Apollo is a client that let us handle global state. Installing dependencies Here’s an overview of the packages you just installed: apollo…]]></description><link>https://radinax.github.io/React-Personal-Blog-Gatsby/18-apollo/</link><guid isPermaLink="false">https://radinax.github.io/React-Personal-Blog-Gatsby/18-apollo/</guid><pubDate>Sat, 18 Apr 2020 11:53:32 GMT</pubDate><content:encoded>&lt;p&gt;Apollo is a client that let us handle global state.&lt;/p&gt;
+&lt;h2&gt;Installing dependencies&lt;/h2&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;yarn add apollo-boost react-apollo graphql&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Here’s an overview of the packages you just installed:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;apollo-boost offers some convenience by bundling several packages you need when working with Apollo Client:&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;apollo-client: Where all the magic happens&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;apollo-cache-inmemory: Our recommended cache&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;apollo-link-http: An Apollo Link for remote data fetching&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;apollo-link-error: An Apollo Link for error handling&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;apollo-link-state: An Apollo Link for local state management&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;graphql-tag: Exports the gql function for your queries &amp;#x26; mutations&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;react-apollo contains the bindings to use Apollo Client with React.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;graphql contains Facebook’s reference implementation of GraphQL - Apollo Client uses some of its functionality as well.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;How to use&lt;/h2&gt;
+&lt;p&gt;We will use create-react-app and on the root we look for index.js file and add the client:&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;javascript&quot;&gt;&lt;pre class=&quot;language-javascript&quot;&gt;&lt;code class=&quot;language-javascript&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; React &lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;react&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; render &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;react-dom&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; ApolloClient &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;apollo-client&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; ApolloProvider &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;react-apollo&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; createHttpLink &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;apollo-link-http&apos;&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; InMemoryCache &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;apollo-cache-inmemory&apos;&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; App &lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;./App&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;as&lt;/span&gt; serviceWorker &lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;./serviceWorker&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; httpLink &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;createHttpLink&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  uri&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;http://localhost:5000&apos;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; client &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;ApolloClient&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  cache&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;InMemoryCache&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+  link&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; httpLink
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token function&quot;&gt;render&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;
+  &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;ApolloProvider client&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;client&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;
+    &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;App &lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;
+  &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;ApolloProvider&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+  document&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;getElementById&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;root&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;It’s very similar to what we did with Redux and the Provider&lt;/p&gt;
+&lt;h2&gt;How to do a Query&lt;/h2&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;javascript&quot;&gt;&lt;pre class=&quot;language-javascript&quot;&gt;&lt;code class=&quot;language-javascript&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; gql &lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;graphql-tag&apos;&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;export&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;token constant&quot;&gt;GET_GAMES&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; gql&lt;span class=&quot;token template-string&quot;&gt;&lt;span class=&quot;token string&quot;&gt;`
+  query getGames {
+    allGames {
+      title
+      description
+    }
+  }
+`&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2&gt;How to CREATE&lt;/h2&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;javascript&quot;&gt;&lt;pre class=&quot;language-javascript&quot;&gt;&lt;code class=&quot;language-javascript&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; gql &lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;graphql-tag&apos;&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;export&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;token constant&quot;&gt;CREATE_GAME&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; gql&lt;span class=&quot;token template-string&quot;&gt;&lt;span class=&quot;token string&quot;&gt;`
+mutation CreateGame($title: String!, $description: String!){
+  createGame(
+    title: $title,
+    description: $description
+  ) {
+    title
+    description
+  }
+}`&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2&gt;How to UPDATE&lt;/h2&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;javascript&quot;&gt;&lt;pre class=&quot;language-javascript&quot;&gt;&lt;code class=&quot;language-javascript&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; gql &lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;graphql-tag&apos;&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;export&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;token constant&quot;&gt;UPDATE_GAME&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; gql&lt;span class=&quot;token template-string&quot;&gt;&lt;span class=&quot;token string&quot;&gt;`
+mutation UpdateGame( $id: ID!, $title: String!, $description: String!) {
+  updateGame(
+    id: $id,
+    title: $title,
+    description: $description
+  ) {
+    id
+    title
+    description
+  }
+}`&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2&gt;How to DELETE&lt;/h2&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;javascript&quot;&gt;&lt;pre class=&quot;language-javascript&quot;&gt;&lt;code class=&quot;language-javascript&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; gql &lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;graphql-tag&apos;&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;export&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;token constant&quot;&gt;DELETE_GAME&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; gql&lt;span class=&quot;token template-string&quot;&gt;&lt;span class=&quot;token string&quot;&gt;`
+mutation DeleteGame($id: ID!) {
+  deleteGame(id: $id) {
+    id
+  }
+}`&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2&gt;How to apply queries and mutations in code&lt;/h2&gt;
+&lt;h3&gt;READ&lt;/h3&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;javascript&quot;&gt;&lt;pre class=&quot;language-javascript&quot;&gt;&lt;code class=&quot;language-javascript&quot;&gt;&lt;span class=&quot;token operator&quot;&gt;...&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; useQuery &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;@apollo/react-hooks&apos;&lt;/span&gt;
+&lt;span class=&quot;token operator&quot;&gt;...&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; loading&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; error&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; data &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;useQuery&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token constant&quot;&gt;GET_GAMES&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;loading&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;div&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;&lt;span class=&quot;token constant&quot;&gt;LOADING&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;div&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;error&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;div&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;There was an error&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;error&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;div&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;data&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;map&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;o &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;
+    &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;div key&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;o&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;title&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;o&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;title&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;div&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3&gt;CREATE&lt;/h3&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;javascript&quot;&gt;&lt;pre class=&quot;language-javascript&quot;&gt;&lt;code class=&quot;language-javascript&quot;&gt;&lt;span class=&quot;token operator&quot;&gt;...&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; useMutation &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;@apollo/react-hooks&apos;&lt;/span&gt;
+&lt;span class=&quot;token operator&quot;&gt;...&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;title&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; setTitle&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;useState&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;description&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; setDescription&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;useState&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;createGame&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;useMutation&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token constant&quot;&gt;CREATE_GAME&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    refetchQueries&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; query&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token constant&quot;&gt;GET_GAMES&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;token function-variable function&quot;&gt;handleSubmit&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token function&quot;&gt;createGame&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; variables&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;title&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; description&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;
+  &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;form onSubmit&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;handleSubmit&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;
+    &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;input type&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;text&apos;&lt;/span&gt; value&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;title&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; onChange&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;e &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;setTitle&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;e&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;target&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;value&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;
+    &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;input type&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;text&apos;&lt;/span&gt; value&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;description&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; onChange&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;e &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;setDescription&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;e&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;target&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;value&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;
+  &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;form&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;We can perform similar codes for updating and deleting using the previous examples.&lt;/p&gt;
+&lt;h2&gt;Summary&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Call the ApolloProvider and add the client where we will put the url of the server.&lt;/li&gt;
+&lt;li&gt;Make queries or mutations and use the respective hook to execute them.&lt;/li&gt;
+&lt;li&gt;For updating and deleting, provide an ID.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Conclusion&lt;/h2&gt;
+&lt;p&gt;We applied the core concepts of Apollo in a simple manner performing a CRUD operation.&lt;/p&gt;
+&lt;p&gt;See you on the next post.&lt;/p&gt;
+&lt;p&gt;Sincerely,&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Eng Adrian Beria.&lt;/strong&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[GraphQL Theory]]></title><description><![CDATA[GraphQL is a new API standard to provide an alternative to REST, it has been gaining popularity along the community and this series is meant…]]></description><link>https://radinax.github.io/React-Personal-Blog-Gatsby/17-graphql-theory/</link><guid isPermaLink="false">https://radinax.github.io/React-Personal-Blog-Gatsby/17-graphql-theory/</guid><pubDate>Fri, 17 Apr 2020 11:53:32 GMT</pubDate><content:encoded>&lt;p&gt;GraphQL is a new API standard to provide an alternative to REST, it has been gaining popularity along the community and this series is meant to learn what makes it so good over REST.&lt;/p&gt;
+&lt;h2&gt;Why use GraphQL&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;We get the precise data we want avoiding over and under fetching. With REST we need to create different end points (EP) like &lt;strong&gt;/users/:id&lt;/strong&gt; to get the information of one user, but what if we don’t need all the data that comes from that EP? That’s where GraphQL shows its flexibility.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Core Concepts&lt;/h2&gt;
+&lt;h3&gt;Schema Definition Language (SDL)&lt;/h3&gt;
+&lt;p&gt;The following is an example of SDL to define a type called Person:&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;javascript&quot;&gt;&lt;pre class=&quot;language-javascript&quot;&gt;&lt;code class=&quot;language-javascript&quot;&gt;type Person &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  name&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; String&lt;span class=&quot;token operator&quot;&gt;!&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+  age&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; Int&lt;span class=&quot;token operator&quot;&gt;!&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Where you can define the data tyoe (String, Int, Bool) and you can add the &lt;strong&gt;!&lt;/strong&gt; to say its required.&lt;/p&gt;
+&lt;p&gt;You can also relate two types:&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;javascript&quot;&gt;&lt;pre class=&quot;language-javascript&quot;&gt;&lt;code class=&quot;language-javascript&quot;&gt;type Post &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  title&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; String&lt;span class=&quot;token operator&quot;&gt;!&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+  author&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; Person&lt;span class=&quot;token operator&quot;&gt;!&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;And you need to relate both types by modifying Person:&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;javascript&quot;&gt;&lt;pre class=&quot;language-javascript&quot;&gt;&lt;code class=&quot;language-javascript&quot;&gt;type Person &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  name&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; String&lt;span class=&quot;token operator&quot;&gt;!&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+  age&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; Int&lt;span class=&quot;token operator&quot;&gt;!&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+  posts&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;Post&lt;span class=&quot;token operator&quot;&gt;!&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;!&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;We created a one to many relationship between Person and Post and made posts in Person an array of Post.&lt;/p&gt;
+&lt;h3&gt;Fetching Data with Queries&lt;/h3&gt;
+&lt;p&gt;Instead of providing several EP so you can fetch information from them like you did with REST, now with GraphQL you have one EP.&lt;/p&gt;
+&lt;h4&gt;Basic Query&lt;/h4&gt;
+&lt;p&gt;Lets check a basic query:&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;javascript&quot;&gt;&lt;pre class=&quot;language-javascript&quot;&gt;&lt;code class=&quot;language-javascript&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  allPersons &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    name
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Where &lt;strong&gt;allPersons&lt;/strong&gt; is the root field of the query and everything that follows is the payload of the query, the response would be:&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;javascript&quot;&gt;&lt;pre class=&quot;language-javascript&quot;&gt;&lt;code class=&quot;language-javascript&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+
+  &lt;span class=&quot;token string&quot;&gt;&quot;allPersons&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;name&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;Adrian&quot;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;name&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;Alberto&quot;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;name&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;Carlos&quot;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;If you add age to the query you get the response with the age inside each object.&lt;/p&gt;
+&lt;h4&gt;Queries with Arguments&lt;/h4&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;javascript&quot;&gt;&lt;pre class=&quot;language-javascript&quot;&gt;&lt;code class=&quot;language-javascript&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token function&quot;&gt;allPersons&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;last&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    name
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;This time you add a “last” parameter to return a specific number of persons. This is defined in the &lt;strong&gt;schema&lt;/strong&gt; (we will check this later).&lt;/p&gt;
+&lt;h4&gt;CRUD with Mutations&lt;/h4&gt;
+&lt;p&gt;Well… disregarding the R which means read, we can create, update and delete data.&lt;/p&gt;
+&lt;p&gt;For creating:&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;javascript&quot;&gt;&lt;pre class=&quot;language-javascript&quot;&gt;&lt;code class=&quot;language-javascript&quot;&gt;mutation &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token function&quot;&gt;createPerson&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;name&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;Bob&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; age&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;20&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    name
+    age
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;This time the &lt;strong&gt;root field is createPerson&lt;/strong&gt;, and the response to the server would look like:&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;javascript&quot;&gt;&lt;pre class=&quot;language-javascript&quot;&gt;&lt;code class=&quot;language-javascript&quot;&gt;&lt;span class=&quot;token string&quot;&gt;&quot;createPerson&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token string&quot;&gt;&quot;name&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;Bob&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;token string&quot;&gt;&quot;age&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;20&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;For updating:&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;javascript&quot;&gt;&lt;pre class=&quot;language-javascript&quot;&gt;&lt;code class=&quot;language-javascript&quot;&gt;mutation &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token function&quot;&gt;updatePerson&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;id&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    id
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;For delete:&lt;/p&gt;
+&lt;p&gt;IN PROGRESS&lt;/p&gt;
+&lt;h3&gt;Realtime updates with Subscription&lt;/h3&gt;
+&lt;p&gt;Instead of the typical request-response cycle from mutations and queries, you can send streams of data at real time.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;javascript&quot;&gt;&lt;pre class=&quot;language-javascript&quot;&gt;&lt;code class=&quot;language-javascript&quot;&gt;subscription &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  newPerson &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    name
+    age
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;When a new mutation is performed that creates a new Person, the server sends the information to the client.&lt;/p&gt;
+&lt;h3&gt;Defining a Schema&lt;/h3&gt;
+&lt;p&gt;A Schema specifies the capacity of the API and defines how the client can request the data, its a collection of GraphQL types.&lt;/p&gt;
+&lt;p&gt;To write thhem you need to define the root types:&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;javascript&quot;&gt;&lt;pre class=&quot;language-javascript&quot;&gt;&lt;code class=&quot;language-javascript&quot;&gt;type Query &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;...&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+type Mutation &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;...&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+type Subscription &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;...&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;To enable the codes we wrote before we define the schema:&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;javascript&quot;&gt;&lt;pre class=&quot;language-javascript&quot;&gt;&lt;code class=&quot;language-javascript&quot;&gt;type Query &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token function&quot;&gt;allPersons&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;last&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; Int&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;Person&lt;span class=&quot;token operator&quot;&gt;!&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;!&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+type Mutation &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token function&quot;&gt;createPerson&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;name&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; String&lt;span class=&quot;token operator&quot;&gt;!&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; age&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; Int&lt;span class=&quot;token operator&quot;&gt;!&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; Person&lt;span class=&quot;token operator&quot;&gt;!&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+type Subscription &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  newPerson&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; Person&lt;span class=&quot;token operator&quot;&gt;!&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+type Person &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  name&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; String&lt;span class=&quot;token operator&quot;&gt;!&lt;/span&gt;
+  age&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; Int&lt;span class=&quot;token operator&quot;&gt;!&lt;/span&gt;
+  posts&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;Post&lt;span class=&quot;token operator&quot;&gt;!&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;!&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+type Post &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  title&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; String&lt;span class=&quot;token operator&quot;&gt;!&lt;/span&gt;
+  author&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; Person&lt;span class=&quot;token operator&quot;&gt;!&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2&gt;Architecture&lt;/h2&gt;
+&lt;p&gt;There are three cases:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;GraphQL server with a connected database&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;When query arrives to server it gets read and fetches the required information from the database, this is called &lt;strong&gt;resolving&lt;/strong&gt; the query. You can use a network protocol like TCP, WebSockets, etc. You can also use the database of your choice.&lt;/p&gt;
+&lt;ol start=&quot;2&quot;&gt;
+&lt;li&gt;GraphQL layer that integrates existing systems&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;You can connect a legacy system, microservice and third-party API to graphQL, this way new clients can connect to this GraphQL server to fetch the data they need, it would connect those three systems to the client.&lt;/p&gt;
+&lt;ol start=&quot;3&quot;&gt;
+&lt;li&gt;Connected database and integration of existing system&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;When a query reach the server it will resolve and retrieve the required data from the database or the integrated API.&lt;/p&gt;
+&lt;h2&gt;Resolver Functions&lt;/h2&gt;
+&lt;p&gt;Its purpose is to fetch the data for its field. When a server receives the query it will call all the functions for the fields that are specified in the query’s payload, once all resolvers returned, the server will pack the data in the format described by the query and send it back to the client&lt;/p&gt;
+&lt;p&gt;If the query is:&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;javascript&quot;&gt;&lt;pre class=&quot;language-javascript&quot;&gt;&lt;code class=&quot;language-javascript&quot;&gt;query &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token function&quot;&gt;User&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;id&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;120&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    name
+    &lt;span class=&quot;token function&quot;&gt;followers&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;first&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+      name
+      age
+    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;The resolvers would be:&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;javascript&quot;&gt;&lt;pre class=&quot;language-javascript&quot;&gt;&lt;code class=&quot;language-javascript&quot;&gt;&lt;span class=&quot;token function&quot;&gt;User&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;id&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; String&lt;span class=&quot;token operator&quot;&gt;!&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; User
+&lt;span class=&quot;token function&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;user&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; User&lt;span class=&quot;token operator&quot;&gt;!&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; String
+&lt;span class=&quot;token function&quot;&gt;age&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;user&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; User&lt;span class=&quot;token operator&quot;&gt;!&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; Int
+&lt;span class=&quot;token function&quot;&gt;friends&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;first&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; Int&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; user&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; User&lt;span class=&quot;token operator&quot;&gt;!&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;User&lt;span class=&quot;token operator&quot;&gt;!&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;!&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2&gt;GraphQL Client Libraries&lt;/h2&gt;
+&lt;p&gt;Lets see the steps a REST API has to go through:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Construct and send HTTP request.&lt;/li&gt;
+&lt;li&gt;Receive and parse server response.&lt;/li&gt;
+&lt;li&gt;Store data locally (in memory or persistent).&lt;/li&gt;
+&lt;li&gt;Display data in UI.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;What GraphQL will offer:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Describe data requirement.&lt;/li&gt;
+&lt;li&gt;Display data in UI.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2&gt;Client Concepts&lt;/h2&gt;
+&lt;h3&gt;Infrastructure Features&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;send queries and mutations directly without constructing HTTP requests&lt;/li&gt;
+&lt;li&gt;view-layer integration&lt;/li&gt;
+&lt;li&gt;caching&lt;/li&gt;
+&lt;li&gt;validation and optimization of queries based on the schema&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Caching Results&lt;/h3&gt;
+&lt;p&gt;Caching information locally is essential to provide a fluent UX, the idea is to put the information into a local store, we can use Apollo (the state management we will use instead of Redux).&lt;/p&gt;
+&lt;h2&gt;Server Concepts&lt;/h2&gt;
+&lt;p&gt;Lets review once again the schema and how resolvers execute each field:&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;javascript&quot;&gt;&lt;pre class=&quot;language-javascript&quot;&gt;&lt;code class=&quot;language-javascript&quot;&gt;type Query &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token function&quot;&gt;author&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;id&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token constant&quot;&gt;ID&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;!&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; Author
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+type Author &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  posts&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;Post&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+type Post &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  title&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; String
+  content&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; String
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Lets check the query we’re sending:&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;javascript&quot;&gt;&lt;pre class=&quot;language-javascript&quot;&gt;&lt;code class=&quot;language-javascript&quot;&gt;query &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token function&quot;&gt;author&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;id&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;abc&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    posts &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+      title
+      content
+    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Every field in the query can be associated with a type:&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;javascript&quot;&gt;&lt;pre class=&quot;language-javascript&quot;&gt;&lt;code class=&quot;language-javascript&quot;&gt;query&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; Query &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token function&quot;&gt;author&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;id&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;abc&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; Author &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    posts&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;Post&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+      title&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; String
+      content&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; String
+    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3&gt;Reusability with Fragments&lt;/h3&gt;
+&lt;p&gt;They’re a colleection of fields on a specific type.&lt;/p&gt;
+&lt;p&gt;If we have the following type:&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;javascript&quot;&gt;&lt;pre class=&quot;language-javascript&quot;&gt;&lt;code class=&quot;language-javascript&quot;&gt;type User &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  name&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; String&lt;span class=&quot;token operator&quot;&gt;!&lt;/span&gt;
+  age&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; Int&lt;span class=&quot;token operator&quot;&gt;!&lt;/span&gt;
+  email&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; String&lt;span class=&quot;token operator&quot;&gt;!&lt;/span&gt;
+  street&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; String&lt;span class=&quot;token operator&quot;&gt;!&lt;/span&gt;
+  zipcode&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; String&lt;span class=&quot;token operator&quot;&gt;!&lt;/span&gt;
+  city&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; String&lt;span class=&quot;token operator&quot;&gt;!&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;We can turn it into a fragment:&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;javascript&quot;&gt;&lt;pre class=&quot;language-javascript&quot;&gt;&lt;code class=&quot;language-javascript&quot;&gt;fragment addressDetails on User &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  name
+  street
+  zipcode
+  city
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;You can now write this as:&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;javascript&quot;&gt;&lt;pre class=&quot;language-javascript&quot;&gt;&lt;code class=&quot;language-javascript&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  allUsers &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token operator&quot;&gt;...&lt;/span&gt; addressDetails
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3&gt;Parametrizing Fields with Arguments&lt;/h3&gt;
+&lt;p&gt;Lets consider these Schemas:&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;javascript&quot;&gt;&lt;pre class=&quot;language-javascript&quot;&gt;&lt;code class=&quot;language-javascript&quot;&gt;type Query &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  allUsers&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;User&lt;span class=&quot;token operator&quot;&gt;!&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;!&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+type User &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  name&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; String&lt;span class=&quot;token operator&quot;&gt;!&lt;/span&gt;
+  age&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; Int&lt;span class=&quot;token operator&quot;&gt;!&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;We can pass an argument like:&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;javascript&quot;&gt;&lt;pre class=&quot;language-javascript&quot;&gt;&lt;code class=&quot;language-javascript&quot;&gt;type Query &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token function&quot;&gt;allUsers&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;olderThan&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; Int &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;User&lt;span class=&quot;token operator&quot;&gt;!&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;!&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;And the query would look like:&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;javascript&quot;&gt;&lt;pre class=&quot;language-javascript&quot;&gt;&lt;code class=&quot;language-javascript&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token function&quot;&gt;allUsers&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;olderThan&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;30&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    name
+    age
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3&gt;Naming Query Results with Aliases&lt;/h3&gt;
+&lt;p&gt;We can do:&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;javascript&quot;&gt;&lt;pre class=&quot;language-javascript&quot;&gt;&lt;code class=&quot;language-javascript&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  first&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;User&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;id&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;1&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    name
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+  second&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;User&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;id&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;2&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    name
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Which translates to:&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;javascript&quot;&gt;&lt;pre class=&quot;language-javascript&quot;&gt;&lt;code class=&quot;language-javascript&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token string&quot;&gt;&quot;first&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token string&quot;&gt;&quot;name&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;Alice&quot;&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;token string&quot;&gt;&quot;second&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token string&quot;&gt;&quot;name&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;Sarah&quot;&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2&gt;Summary&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;GraphQL is a standard in designing API’s.&lt;/li&gt;
+&lt;li&gt;You can use queries for fetching and mutations for creating, editing and deleting.&lt;/li&gt;
+&lt;li&gt;A Schema specifies the capacity of the API and defines how the client can request the data.&lt;/li&gt;
+&lt;li&gt;A resolver function will call all the functions for the fields that are specified in the query’s payload.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Conclusion&lt;/h2&gt;
+&lt;p&gt;We are starting to learn about GraphQL, its the new concept that’s being hyped up as a better alternative to REST due to avoid over fetching information you don’t need.&lt;/p&gt;
+&lt;p&gt;See you on the next post.&lt;/p&gt;
+&lt;p&gt;Sincerely,&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Eng Adrian Beria.&lt;/strong&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[React Testing Library part 2]]></title><description><![CDATA[In our last post we talked about testing with jest with react-testing-library, we will continue with more components. Table The table we…]]></description><link>https://radinax.github.io/React-Personal-Blog-Gatsby/16-testing-more-components/</link><guid isPermaLink="false">https://radinax.github.io/React-Personal-Blog-Gatsby/16-testing-more-components/</guid><pubDate>Sun, 12 Apr 2020 11:53:32 GMT</pubDate><content:encoded>&lt;p&gt;In our last post we talked about testing with jest with react-testing-library, we will continue with more components.&lt;/p&gt;
+&lt;h2&gt;Table&lt;/h2&gt;
+&lt;p&gt;The table we want to test is shown &lt;a href=&quot;https://radinax.github.io/covid-19-chart/&quot;&gt;here live&lt;/a&gt; and the source code is &lt;a href=&quot;https://github.com/Radinax/covid-19-chart/blob/master/src/components/table/index.js&quot;&gt;this&lt;/a&gt;, we want to test what the user see, in this case if it renders, if it has buttons on the header, if the body is showing the right data and that when we click the header it sort the data.&lt;/p&gt;
+&lt;p&gt;To check if it renders we do a Snapshot.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;javascript&quot;&gt;&lt;pre class=&quot;language-javascript&quot;&gt;&lt;code class=&quot;language-javascript&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; headerData &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;country&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;recovered&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;test&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; bodyData &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; country&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;Test&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; recovered&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;test&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; deaths&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;test&apos;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; country&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;Test&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; recovered&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;test&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; deaths&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;test&apos;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;
+
+&lt;span class=&quot;token function&quot;&gt;it&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;renders&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; asFragment &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;render&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;Table headerData&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;headerData&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; bodyData&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;bodyData&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;token function&quot;&gt;expect&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;asFragment&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;toMatchSnapshot&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;To check if it has buttons as elements in its header we use getByTestId.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;javascript&quot;&gt;&lt;pre class=&quot;language-javascript&quot;&gt;&lt;code class=&quot;language-javascript&quot;&gt;&lt;span class=&quot;token function&quot;&gt;it&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;has buttons elements in the header&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; container &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;render&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;Table headerData&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;headerData&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; bodyData&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;bodyData&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;token function&quot;&gt;expect&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;container&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;querySelector&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;button&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;toBeTruthy&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Now lets show how the testing will look adding the other unit test:&lt;/p&gt;
+&lt;p&gt;
+  &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/React-Personal-Blog-Gatsby/static/85b58bab32a97e590889afb74d0a1823/4a9bb/twitter-table-testing-code-1.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+  
+  &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 201.4030612244898%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAoCAYAAAD+MdrbAAAACXBIWXMAAAsSAAALEgHS3X78AAAGPUlEQVRIx4VW2ZLjNgz0L2Q8ti6KEklRt+Rzjk0q//9L8+ROg/Ix3t3UPqAo0xQENBoNrj4/z1/T3H3V8/FrnPqvYRq+/DB9mcp/WTFfB5PfxlV/tNXfnyOOe4t8eoOeTvDziHI+IBuOUNMZabeHGg6ICoeX9Rovrxva693Wm+2Trf75MV2Oh+qidx+X+nC46H6+5PsfF9VOl9xVlyRNL9sku0RZftnSIqXD8802Ufxkq/N5wNBq5L6HHnZQzQA/dCi8R14UKJsaiWuR93tk9YC4dIgLe183UYLXbcQ1Drba71rY2iDlC6rpkeQKsbGIVI5tXiJyDeK8QGLpuDDYbDZ4ZWp3uzq7rathbDEMM6P6QN72sKaBtxNUUdEcGjch0QaqXKK5RfJ/tnK+QRJrpDEjSjMkKdNXTEdpxFkOrStE3I+zLESx3i5RPdtjb9UQM0eMip5RtRN02yGtPFKmmEmahpEywqI0SPiBOFHPli5rlGTYxAlW5A7qqkLbTcRyh3o4Qfa86VHbIZgpa6jMMFo6ZsS5Is1yC507aBamyCtk/G+TpJJyjTQ3iFiAWEzbUL1IUuahtGTKPBhnSUhtLUX5JeWHrYxldKRGN+1ghjPs9A7bjKj9Hm1/QDW+o273mLojumZGU80oC49Se5iihjG0okEmFIqvESYJo4kVi0M8opS/BascUUxcMkXLwrPsCWYh0mu0L1dbXylEDD0xdIxuRMZWU+MBKTEs6xmW3Cz9BENsSz/CdNzjflVJZBUxJH6klmCZEq5QlMI4ppdh3jco+yMs0zasbl8d0DHtzjHNeoJvD3ANi+bJCsuzTDcn9jEplZJqESMPPDSssNaMkMQtWD3NakrVxHJlAnXSokQpe4pn1fKf4CdrmukrN68pC4aKLyasbiJf5AHpjFix4qpApIUBbD3Z5++UluX6Gxez504pWeWxs+gOM/T5X2hiaIlV3RxDddv2jLpmtZlyNR3hDHvf+oWDVwyl4qnwMGBoBcMcdc9umT9QNB1J3aGtdldij+FF6WtlPFszv1Z8sW2cXHucPF0idMhSw/brUVl2h+uIp2cUHffINduyCCIa3XLGjXBlQwwZHSPLCMGN1BvBUBxKWzk6snzRV+KwCg4sHVpJkc8mpNotzkshs6TMPifui3zdMWSEWcnDy4sVhaIUh+FlRkg5Cw7Lh0NT+OBQqrxNkidNfDi8RugoqEVRPVK+O2zCR51bxELrMhRGkQ1Pil06F2hTBQwp/xUjIPiClXTEEhXJbPpwxnNfRNiUUt16cRhFj5SFh5nwkGzPMnKMVUzI+iSs2bImV+OznJHOWM7oJ/m/93LjHfu2C2NTkTYStWaK8iGVpov+0ZQQnZiJI0lX2u6XmSIYOpej6wbYlmSeP+E43Xz3hopCULNIY3MOxXIsjGAq+hn6N8metPDeKb5SbHwfhr1ixBUpUhl+oJB1RE5aZRQRGQtbviS9+12ybgW5V9mUJTxHqKWIWk/qsBC137EAC6kL0kSLkU7yLCyQcaC5Sm/LEJOOeTjUHQb27uTfcKJ8taz0UJ+o0iO6eo+xPqP3p3Bm131i17/xeUJXHUNXidJsvhPbas5m4jc27zx85CwWh2c6HIImDv5ME4en4HDfv2PmhOz8zeFPPBSs+nofXpqkMLyWLBHNdMzf5J5wTjTQluQlC+OYvuyJHj45DDNF+EQFkapFHDRxmgTwN1tRkRQv2w3+el3f58fL5pW/X8PzLd2F3AFDj77hbN7NyPefKEXz+BFTjaEIRili7MNkK0TGNIktrcrfSuZI9JsqW6s4StnLzYF3nDc6ZIu1J/JwuuJ5CrcLEQjp46DksVQ2DZL1Wx7a1kPN78iIqRBYbg4LDwe2YxFuXnItkYjWtzG6vfEw+YmHFMtGhjujktUzqpay35CTIgY3gRVtFAERkXB0briXcxZtebPYfOehLXpW94y5+cBpfCMdBlLoDTMvUFLlqX4PNBr5wX33Awde/XbtLjChvPHwMaQsediFwxN5uA/EHkL/isOekQ6/EPv9QWxeRZ5oIzctqaBwreZQbz1vBhTZ2oowDMtdhlGkxFGkS7RTNFApHYRZaPbksO2HIElLo2+/XSgfl8jvRXi69W+fr8Ri/wHBLkrLLWDO4AAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+    &gt;
+      &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;code&quot;
+        title=&quot;&quot;
+        src=&quot;/React-Personal-Blog-Gatsby/static/85b58bab32a97e590889afb74d0a1823/fb8a0/twitter-table-testing-code-1.png&quot;
+        srcset=&quot;/React-Personal-Blog-Gatsby/static/85b58bab32a97e590889afb74d0a1823/1a291/twitter-table-testing-code-1.png 148w,
+/React-Personal-Blog-Gatsby/static/85b58bab32a97e590889afb74d0a1823/2bc4a/twitter-table-testing-code-1.png 295w,
+/React-Personal-Blog-Gatsby/static/85b58bab32a97e590889afb74d0a1823/fb8a0/twitter-table-testing-code-1.png 590w,
+/React-Personal-Blog-Gatsby/static/85b58bab32a97e590889afb74d0a1823/4a9bb/twitter-table-testing-code-1.png 784w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+      /&gt;
+    &lt;/span&gt;
+  &lt;/span&gt;
+  
+  &lt;/a&gt;
+    &lt;/p&gt;
+&lt;p&gt;Where the new skill we used was accessing the table cells, in this case we used container from rendering the Table and accessed the query ‘thead’ or ‘tbody’, then we just started accessing their children and see if its value matched the text we wanted.&lt;/p&gt;
+&lt;h2&gt;Summary&lt;/h2&gt;
+&lt;p&gt;We took a step further into learning how to test, lets see what we learned:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;react-testing-library has all its methods wrapped on the ACT api we used last post.&lt;/li&gt;
+&lt;li&gt;To execute snapshots we simply render the element and take the &lt;strong&gt;asFragment&lt;/strong&gt; property from render and make a snapshot out of it.&lt;/li&gt;
+&lt;li&gt;We need to test the initial state of the component and what happens when we make a change like doing a click event.&lt;/li&gt;
+&lt;li&gt;For the select input we needed to target it and execute an event, to make sure it works properly we went inside the onChange function and see that the value we’re sending it’s the same as the one we expected it to be.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Conclusion&lt;/h2&gt;
+&lt;p&gt;We have learned how to test a counter and select component using react-testing-library, which is the accepted library to be used with jest to test our react components and testing the user interaction with the DOM.&lt;/p&gt;
+&lt;p&gt;See you on the next post.&lt;/p&gt;
+&lt;p&gt;Sincerely,&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Eng Adrian Beria.&lt;/strong&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[React Testing Library]]></title><description><![CDATA[In our last post we talked about testing with jest, how to trigger events like a click, and see if it does any change, we also checked how…]]></description><link>https://radinax.github.io/React-Personal-Blog-Gatsby/15-react-testing-library/</link><guid isPermaLink="false">https://radinax.github.io/React-Personal-Blog-Gatsby/15-react-testing-library/</guid><pubDate>Sat, 11 Apr 2020 11:53:32 GMT</pubDate><content:encoded>&lt;p&gt;In our last post we talked about testing with jest, how to trigger events like a click, and see if it does any change, we also checked how to do an axios GET request and test it throughly. This time we will use a library called &lt;a href=&quot;https://testing-library.com&quot;&gt;react-testing-library&lt;/a&gt; which is alredy integrated in &lt;a href=&quot;https://create-react-app.dev/docs/getting-started/&quot;&gt;create-react-app&lt;/a&gt;, it provides React specific testing tools  for snapshots, verifying DOM attributes or content, triggering click (or other) events, etc.&lt;/p&gt;
 &lt;h2&gt;When to use&lt;/h2&gt;
 &lt;p&gt;It should be used all the time with Jest.&lt;/p&gt;
 &lt;h2&gt;Installing dependencies&lt;/h2&gt;
