@@ -191,6 +191,7 @@ And now it got updated! Our server is now complete!
 ## Summary
 
 - Create project folder and inside open your code editor, then write npm init.
+- yarn add graphql-yoga nodemon prisma-client-lib
 - Add nodemon and in your package.json add a script **"server": "nodemon node src/index.js"**,
 - Add graphql-yoga, prisma-client-lib and add globally prisma.
 - Create a folder called **prisma** on root and add two files named **datamodel.prisma** and **prisma.yml**.

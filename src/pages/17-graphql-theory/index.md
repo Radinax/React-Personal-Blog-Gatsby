@@ -124,7 +124,13 @@ mutation {
 
 For delete:
 
-IN PROGRESS
+```javascript
+mutation {
+  deletePerson(id: 1) {
+    id
+  }
+}
+```
 
 ### Realtime updates with Subscription
 
