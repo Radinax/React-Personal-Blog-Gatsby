@@ -2,8 +2,9 @@ module.exports = {
   siteMetadata: {
     title: 'Adrian Beria Blog',
     author: 'Adrian Beria',
-    description: 'A blog made by Adrian Beria to write articles related to Web Development and React JS',
-    siteUrl: 'https://radinax.github.io/React-Personal-Blog-Gatsby'
+    description:
+      'A blog made by Adrian Beria to write articles related to Web Development and React JS',
+    siteUrl: 'https://radinax.github.io/React-Personal-Blog-Gatsby',
   },
   pathPrefix: '/React-Personal-Blog-Gatsby',
   plugins: [
