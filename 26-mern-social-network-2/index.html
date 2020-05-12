@@ -1,0 +1,624 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><style data-href="/React-Personal-Blog-Gatsby/1.8a22d5eb22a0d5bb33ba.css">@font-face{font-family:Montserrat;font-style:normal;font-display:swap;font-weight:100;src:local("Montserrat Thin "),local("Montserrat-Thin"),url(/React-Personal-Blog-Gatsby/static/montserrat-latin-100-50d279861fb3cbfed809eae6ed8b9ac9.woff2) format("woff2"),url(/React-Personal-Blog-Gatsby/static/montserrat-latin-100-5e334eff013f12fbb8ed72c2a253f119.woff) format("woff")}@font-face{font-family:Montserrat;font-style:italic;font-display:swap;font-weight:100;src:local("Montserrat Thin italic"),local("Montserrat-Thinitalic"),url(/React-Personal-Blog-Gatsby/static/montserrat-latin-100italic-8c0705336558194799a8729840d7ed9d.woff2) format("woff2"),url(/React-Personal-Blog-Gatsby/static/montserrat-latin-100italic-03e19243272affe738654a157625ec26.woff) format("woff")}@font-face{font-family:Montserrat;font-style:normal;font-display:swap;font-weight:200;src:local("Montserrat Extra Light "),local("Montserrat-Extra Light"),url(/React-Personal-Blog-Gatsby/static/montserrat-latin-200-4343d3d91a9446226e7a8bbb024111ad.woff2) format("woff2"),url(/React-Personal-Blog-Gatsby/static/montserrat-latin-200-f2022ecd65a0703ec3edcb7641709a75.woff) format("woff")}@font-face{font-family:Montserrat;font-style:italic;font-display:swap;font-weight:200;src:local("Montserrat Extra Light italic"),local("Montserrat-Extra Lightitalic"),url(/React-Personal-Blog-Gatsby/static/montserrat-latin-200italic-116c4c4b14ef76b0555da09854512022.woff2) format("woff2"),url(/React-Personal-Blog-Gatsby/static/montserrat-latin-200italic-89614a6008fc5c60739012463d0ee7e6.woff) format("woff")}@font-face{font-family:Montserrat;font-style:normal;font-display:swap;font-weight:300;src:local("Montserrat Light "),local("Montserrat-Light"),url(/React-Personal-Blog-Gatsby/static/montserrat-latin-300-d2ad295b60682a6537c358e06ea80c61.woff2) format("woff2"),url(/React-Personal-Blog-Gatsby/static/montserrat-latin-300-3a371ee0d175f5c2b15ce1d6b981dc4e.woff) format("woff")}@font-face{font-family:Montserrat;font-style:italic;font-display:swap;font-weight:300;src:local("Montserrat Light italic"),local("Montserrat-Lightitalic"),url(/React-Personal-Blog-Gatsby/static/montserrat-latin-300italic-f6b6bf2431003f8142e800f9df157989.woff2) format("woff2"),url(/React-Personal-Blog-Gatsby/static/montserrat-latin-300italic-16521668f5f238098329cdd7d27c391e.woff) format("woff")}@font-face{font-family:Montserrat;font-style:normal;font-display:swap;font-weight:400;src:local("Montserrat Regular "),local("Montserrat-Regular"),url(/React-Personal-Blog-Gatsby/static/montserrat-latin-400-240a84447b78da0920fcb07e378f2c5f.woff2) format("woff2"),url(/React-Personal-Blog-Gatsby/static/montserrat-latin-400-b20cc131034316b1c85d0498fb9ed5c5.woff) format("woff")}@font-face{font-family:Montserrat;font-style:italic;font-display:swap;font-weight:400;src:local("Montserrat Regular italic"),local("Montserrat-Regularitalic"),url(/React-Personal-Blog-Gatsby/static/montserrat-latin-400italic-86172bb829de6be08b92512096b6aca6.woff2) format("woff2"),url(/React-Personal-Blog-Gatsby/static/montserrat-latin-400italic-9405e78785a55cf0e4ea7669d4616ea9.woff) format("woff")}@font-face{font-family:Montserrat;font-style:normal;font-display:swap;font-weight:500;src:local("Montserrat Medium "),local("Montserrat-Medium"),url(/React-Personal-Blog-Gatsby/static/montserrat-latin-500-fb8d6b71dbe8d9294be43082936f649e.woff2) format("woff2"),url(/React-Personal-Blog-Gatsby/static/montserrat-latin-500-50825d47af7ae47e055018eb689c6c99.woff) format("woff")}@font-face{font-family:Montserrat;font-style:italic;font-display:swap;font-weight:500;src:local("Montserrat Medium italic"),local("Montserrat-Mediumitalic"),url(/React-Personal-Blog-Gatsby/static/montserrat-latin-500italic-c0a555a4f8e997385a3eebbd4da0b9ee.woff2) format("woff2"),url(/React-Personal-Blog-Gatsby/static/montserrat-latin-500italic-635de59c4be86285b1f70068c95b9816.woff) format("woff")}@font-face{font-family:Montserrat;font-style:normal;font-display:swap;font-weight:600;src:local("Montserrat SemiBold "),local("Montserrat-SemiBold"),url(/React-Personal-Blog-Gatsby/static/montserrat-latin-600-d5615136a08cfee70deb4be1ee1651df.woff2) format("woff2"),url(/React-Personal-Blog-Gatsby/static/montserrat-latin-600-f300da4fb4fe00e23915f62b2c643681.woff) format("woff")}@font-face{font-family:Montserrat;font-style:italic;font-display:swap;font-weight:600;src:local("Montserrat SemiBold italic"),local("Montserrat-SemiBolditalic"),url(/React-Personal-Blog-Gatsby/static/montserrat-latin-600italic-10f29d139edacde92df63374c5672568.woff2) format("woff2"),url(/React-Personal-Blog-Gatsby/static/montserrat-latin-600italic-2bc37d86a4ba12ce526c4af904a9946e.woff) format("woff")}@font-face{font-family:Montserrat;font-style:normal;font-display:swap;font-weight:700;src:local("Montserrat Bold "),local("Montserrat-Bold"),url(/React-Personal-Blog-Gatsby/static/montserrat-latin-700-7d77e1f03eefc452dab14d7f89080083.woff2) format("woff2"),url(/React-Personal-Blog-Gatsby/static/montserrat-latin-700-81826529772e52f0f14a4c73c2f2c7f1.woff) format("woff")}@font-face{font-family:Montserrat;font-style:italic;font-display:swap;font-weight:700;src:local("Montserrat Bold italic"),local("Montserrat-Bolditalic"),url(/React-Personal-Blog-Gatsby/static/montserrat-latin-700italic-1dd2b53f1567a29e0505de9b27c4352c.woff2) format("woff2"),url(/React-Personal-Blog-Gatsby/static/montserrat-latin-700italic-c162d257f5e9f9b108a96a604cfb2132.woff) format("woff")}@font-face{font-family:Montserrat;font-style:normal;font-display:swap;font-weight:800;src:local("Montserrat ExtraBold "),local("Montserrat-ExtraBold"),url(/React-Personal-Blog-Gatsby/static/montserrat-latin-800-d4e7bf86bbd8e5f43ca73fa831218648.woff2) format("woff2"),url(/React-Personal-Blog-Gatsby/static/montserrat-latin-800-895aadbff357be35ac8dd107c7975ee7.woff) format("woff")}@font-face{font-family:Montserrat;font-style:italic;font-display:swap;font-weight:800;src:local("Montserrat ExtraBold italic"),local("Montserrat-ExtraBolditalic"),url(/React-Personal-Blog-Gatsby/static/montserrat-latin-800italic-fc0cbe442f7b3733c91e982e825c4daa.woff2) format("woff2"),url(/React-Personal-Blog-Gatsby/static/montserrat-latin-800italic-b3362875067300abedb7a8fb97903258.woff) format("woff")}@font-face{font-family:Montserrat;font-style:normal;font-display:swap;font-weight:900;src:local("Montserrat Black "),local("Montserrat-Black"),url(/React-Personal-Blog-Gatsby/static/montserrat-latin-900-c8bdd772c0d1347720ff7e3fb72719f3.woff2) format("woff2"),url(/React-Personal-Blog-Gatsby/static/montserrat-latin-900-1b99ef78e627dd9bbd0ca4b5c0789547.woff) format("woff")}@font-face{font-family:Montserrat;font-style:italic;font-display:swap;font-weight:900;src:local("Montserrat Black italic"),local("Montserrat-Blackitalic"),url(/React-Personal-Blog-Gatsby/static/montserrat-latin-900italic-cb72c1f90f66c124fb897a75bec64c78.woff2) format("woff2"),url(/React-Personal-Blog-Gatsby/static/montserrat-latin-900italic-b78bb9f8ecec6c5a924c873f1818095f.woff) format("woff")}@font-face{font-family:Merriweather;font-style:normal;font-display:swap;font-weight:300;src:local("Merriweather Light "),local("Merriweather-Light"),url(/React-Personal-Blog-Gatsby/static/merriweather-latin-300-f015f1e9a46a3b9db4fd64564dacece4.woff2) format("woff2"),url(/React-Personal-Blog-Gatsby/static/merriweather-latin-300-92dfe81b725c342d31d962da975c07a6.woff) format("woff")}@font-face{font-family:Merriweather;font-style:italic;font-display:swap;font-weight:300;src:local("Merriweather Light italic"),local("Merriweather-Lightitalic"),url(/React-Personal-Blog-Gatsby/static/merriweather-latin-300italic-7fd86b32accf2df4403d1d4fa3a81502.woff2) format("woff2"),url(/React-Personal-Blog-Gatsby/static/merriweather-latin-300italic-878b76f59d5ba58dd1652dc8d2a0f4f9.woff) format("woff")}@font-face{font-family:Merriweather;font-style:normal;font-display:swap;font-weight:400;src:local("Merriweather Regular "),local("Merriweather-Regular"),url(/React-Personal-Blog-Gatsby/static/merriweather-latin-400-12dbf4c00ae43698f278b099e4b0ec9e.woff2) format("woff2"),url(/React-Personal-Blog-Gatsby/static/merriweather-latin-400-1fffad22b085a877995812dbf1d9ac08.woff) format("woff")}@font-face{font-family:Merriweather;font-style:italic;font-display:swap;font-weight:400;src:local("Merriweather Regular italic"),local("Merriweather-Regularitalic"),url(/React-Personal-Blog-Gatsby/static/merriweather-latin-400italic-1e0d3e8121d88969bfb153c8f174b758.woff2) format("woff2"),url(/React-Personal-Blog-Gatsby/static/merriweather-latin-400italic-de18d4c4e8e808a7248a185f866ff094.woff) format("woff")}@font-face{font-family:Merriweather;font-style:normal;font-display:swap;font-weight:700;src:local("Merriweather Bold "),local("Merriweather-Bold"),url(/React-Personal-Blog-Gatsby/static/merriweather-latin-700-dc8fec81a125fc63856587e6683da73b.woff2) format("woff2"),url(/React-Personal-Blog-Gatsby/static/merriweather-latin-700-d7d2ed8e58f303392cc3fc00ba3a9186.woff) format("woff")}@font-face{font-family:Merriweather;font-style:italic;font-display:swap;font-weight:700;src:local("Merriweather Bold italic"),local("Merriweather-Bolditalic"),url(/React-Personal-Blog-Gatsby/static/merriweather-latin-700italic-b7b7e5da4d7be8c12bd5a6c809edc8fc.woff2) format("woff2"),url(/React-Personal-Blog-Gatsby/static/merriweather-latin-700italic-6210a5fc1c54ca85a5d82aa85d7a9b5c.woff) format("woff")}@font-face{font-family:Merriweather;font-style:normal;font-display:swap;font-weight:900;src:local("Merriweather Black "),local("Merriweather-Black"),url(/React-Personal-Blog-Gatsby/static/merriweather-latin-900-43f870d543dd89fbeb66d417c0d97276.woff2) format("woff2"),url(/React-Personal-Blog-Gatsby/static/merriweather-latin-900-8f3806df74937c7b8b53f24ae1e725d1.woff) format("woff")}@font-face{font-family:Merriweather;font-style:italic;font-display:swap;font-weight:900;src:local("Merriweather Black italic"),local("Merriweather-Blackitalic"),url(/React-Personal-Blog-Gatsby/static/merriweather-latin-900italic-168c1ab28ed0e4e7d654334def288bc1.woff2) format("woff2"),url(/React-Personal-Blog-Gatsby/static/merriweather-latin-900italic-ae7778f01871e35ee142ef207b313b34.woff) format("woff")}</style><meta name="generator" content="Gatsby 2.0.64"/><link rel="alternate" type="application/rss+xml" href="/React-Personal-Blog-Gatsby/rss.xml"/><link rel="shortcut icon" href="/React-Personal-Blog-Gatsby/icons/icon-48x48.png"/><link rel="manifest" href="/React-Personal-Blog-Gatsby/manifest.webmanifest"/><meta name="theme-color" content="#663399"/><title data-react-helmet="true">MERN Social Network - Server part 2 Authentication | Adrian Beria Blog</title><meta data-react-helmet="true" name="description" content="In this post we will continue with the next part of our application which is authentication, which we covered using Prisma and Apollo with…"/><style id="typography.js">html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}article,aside,details,figcaption,figure,footer,header,main,menu,nav,section,summary{display:block}audio,canvas,progress,video{display:inline-block}audio:not([controls]){display:none;height:0}progress{vertical-align:baseline}[hidden],template{display:none}a{background-color:transparent;-webkit-text-decoration-skip:objects}a:active,a:hover{outline-width:0}abbr[title]{border-bottom:none;text-decoration:underline;text-decoration:underline dotted}b,strong{font-weight:inherit;font-weight:bolder}dfn{font-style:italic}h1{font-size:2em;margin:.67em 0}mark{background-color:#ff0;color:#000}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}img{border-style:none}svg:not(:root){overflow:hidden}code,kbd,pre,samp{font-family:monospace,monospace;font-size:1em}figure{margin:1em 40px}hr{box-sizing:content-box;height:0;overflow:visible}button,input,optgroup,select,textarea{font:inherit;margin:0}optgroup{font-weight:700}button,input{overflow:visible}button,select{text-transform:none}[type=reset],[type=submit],button,html [type=button]{-webkit-appearance:button}[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner,button::-moz-focus-inner{border-style:none;padding:0}[type=button]:-moz-focusring,[type=reset]:-moz-focusring,[type=submit]:-moz-focusring,button:-moz-focusring{outline:1px dotted ButtonText}fieldset{border:1px solid silver;margin:0 2px;padding:.35em .625em .75em}legend{box-sizing:border-box;color:inherit;display:table;max-width:100%;padding:0;white-space:normal}textarea{overflow:auto}[type=checkbox],[type=radio]{box-sizing:border-box;padding:0}[type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}[type=search]::-webkit-search-cancel-button,[type=search]::-webkit-search-decoration{-webkit-appearance:none}::-webkit-input-placeholder{color:inherit;opacity:.54}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}html{font:100%/1.625 -apple-system,'BlinkMacSystemFont','Segoe UI','Roboto','Helvetica','Arial',sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';box-sizing:border-box;overflow-y:scroll;}*{box-sizing:inherit;}*:before{box-sizing:inherit;}*:after{box-sizing:inherit;}body{color:hsla(0,0%,0%,0.8);font-family:-apple-system,'BlinkMacSystemFont','Segoe UI','Roboto','Helvetica','Arial',sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';font-weight:normal;word-wrap:break-word;font-kerning:normal;-moz-font-feature-settings:"kern", "liga", "clig", "calt";-ms-font-feature-settings:"kern", "liga", "clig", "calt";-webkit-font-feature-settings:"kern", "liga", "clig", "calt";font-feature-settings:"kern", "liga", "clig", "calt";}img{max-width:100%;margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:0.8125rem;}h1{margin-left:0;margin-right:0;margin-top:2.4375rem;padding-bottom:calc(0.40625rem - 1px);padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.21875rem;color:inherit;font-family:-apple-system,'BlinkMacSystemFont','Segoe UI','Roboto','Helvetica','Arial',sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';font-weight:600;text-rendering:optimizeLegibility;font-size:2rem;line-height:1.1;border-bottom:1px solid hsla(0,0%,0%,0.07);}h2{margin-left:0;margin-right:0;margin-top:1.625rem;padding-bottom:calc(0.40625rem - 1px);padding-left:0;padding-right:0;padding-top:0;margin-bottom:0.40625rem;color:inherit;font-family:-apple-system,'BlinkMacSystemFont','Segoe UI','Roboto','Helvetica','Arial',sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';font-weight:600;text-rendering:optimizeLegibility;font-size:1.51572rem;line-height:1.1;border-bottom:1px solid hsla(0,0%,0%,0.07);}h3{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:0.8125rem;color:inherit;font-family:-apple-system,'BlinkMacSystemFont','Segoe UI','Roboto','Helvetica','Arial',sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';font-weight:600;text-rendering:optimizeLegibility;font-size:1.31951rem;line-height:1.1;}h4{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:0.8125rem;color:inherit;font-family:-apple-system,'BlinkMacSystemFont','Segoe UI','Roboto','Helvetica','Arial',sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';font-weight:600;text-rendering:optimizeLegibility;font-size:1rem;line-height:1.1;}h5{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:0.8125rem;color:inherit;font-family:-apple-system,'BlinkMacSystemFont','Segoe UI','Roboto','Helvetica','Arial',sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';font-weight:600;text-rendering:optimizeLegibility;font-size:0.87055rem;line-height:1.1;}h6{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:0.8125rem;color:hsla(0,0%,0%,0.53);font-family:-apple-system,'BlinkMacSystemFont','Segoe UI','Roboto','Helvetica','Arial',sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';font-weight:600;text-rendering:optimizeLegibility;font-size:0.81225rem;line-height:1.1;}hgroup{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:0.8125rem;}ul{margin-left:1.625rem;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:0.8125rem;list-style-position:outside;list-style-image:none;}ol{margin-left:1.625rem;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:0.8125rem;list-style-position:outside;list-style-image:none;}dl{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:0.8125rem;}dd{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:0.8125rem;}p{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:0.8125rem;}figure{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:0.8125rem;}pre{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:0.8125rem;font-size:0.85rem;line-height:1.625rem;}table{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:0.8125rem;font-size:1rem;line-height:1.625rem;border-collapse:collapse;width:100%;}fieldset{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:0.8125rem;}blockquote{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:calc(0.8125rem - 1px);padding-right:0;padding-top:0;margin-bottom:0.8125rem;border-left:4px solid hsla(0,0%,0%,0.13);color:hsla(0,0%,0%,0.53);}form{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:0.8125rem;}noscript{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:0.8125rem;}iframe{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:0.8125rem;}hr{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:calc(0.8125rem - 1px);background:hsla(0,0%,0%,0.2);border:none;height:1px;}address{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:0.8125rem;}b{font-weight:600;}strong{font-weight:600;}dt{font-weight:600;}th{font-weight:600;}li{margin-bottom:calc(0.8125rem / 2);}ol li{padding-left:0;}ul li{padding-left:0;}li > ol{margin-left:1.625rem;margin-bottom:calc(0.8125rem / 2);margin-top:calc(0.8125rem / 2);}li > ul{margin-left:1.625rem;margin-bottom:calc(0.8125rem / 2);margin-top:calc(0.8125rem / 2);}blockquote *:last-child{margin-bottom:0;}li *:last-child{margin-bottom:0;}p *:last-child{margin-bottom:0;}li > p{margin-bottom:calc(0.8125rem / 2);}code{font-size:0.85rem;line-height:1.625rem;}kbd{font-size:0.85rem;line-height:1.625rem;}samp{font-size:0.85rem;line-height:1.625rem;}abbr{border-bottom:1px dotted hsla(0,0%,0%,0.5);cursor:help;}acronym{border-bottom:1px dotted hsla(0,0%,0%,0.5);cursor:help;}abbr[title]{border-bottom:1px dotted hsla(0,0%,0%,0.5);cursor:help;text-decoration:none;}thead{text-align:left;}td,th{text-align:left;border-bottom:1px solid hsla(0,0%,0%,0.12);font-feature-settings:"tnum";-moz-font-feature-settings:"tnum";-ms-font-feature-settings:"tnum";-webkit-font-feature-settings:"tnum";padding-left:1.08333rem;padding-right:1.08333rem;padding-top:0.8125rem;padding-bottom:calc(0.8125rem - 1px);}th:first-child,td:first-child{padding-left:0;}th:last-child,td:last-child{padding-right:0;}h3,h4,h5,h6{margin-bottom:0.8125rem;margin-top:1.625rem;}ol,ul{margin-left:2.03125rem;}li>ol,li>ul{margin-left:2.03125rem;}a{color:#4078c0;text-decoration:none;}a:hover,a:active{text-decoration:underline;}a.gatsby-resp-image-link{box-shadow:none;}</style><link as="script" rel="preload" href="/React-Personal-Blog-Gatsby/1-0ca38feffad4eeaaf45d.js"/><link as="script" rel="preload" href="/React-Personal-Blog-Gatsby/component---src-templates-blog-post-js-453bf1286b7dd5e6e7f5.js"/><link as="script" rel="preload" href="/React-Personal-Blog-Gatsby/app-4e11346c8e77271929a6.js"/><link as="script" rel="preload" href="/React-Personal-Blog-Gatsby/0-536b63d17895bdbe58d7.js"/><link as="script" rel="preload" href="/React-Personal-Blog-Gatsby/webpack-runtime-78793ec8d726818f1117.js"/><link rel="preload" href="/React-Personal-Blog-Gatsby/static/d/212/path---26-mern-social-network-2-c-40-157-ivSCA4APkTMf4SUAKDkVdJ7FE.json" as="fetch" crossOrigin="use-credentials"/></head><body><div id="___gatsby"><div style="outline:none" tabindex="-1" role="group"><div style="margin-left:auto;margin-right:auto;max-width:39rem;padding:2.4375rem 1.21875rem"><h3 style="margin-top:0;margin-bottom:-1.625rem;text-align:center;font-size:3rem;padding:15px"><a style="box-shadow:none;text-decoration:none;color:inherit" href="/React-Personal-Blog-Gatsby/">Adrian Beria Blog</a></h3><h1>MERN Social Network - Server part 2 Authentication</h1><p style="font-size:0.87055rem;line-height:1.625rem;display:block;margin-bottom:1.625rem;margin-top:-0.8125rem">May 06, 2020</p><div><p>In this post we will continue with the next part of our application which is authentication, which we covered using Prisma and Apollo with GraphQL using the same libraries, now we will apply the same knowledge with REST.</p>
+<h2>Create users model</h2>
+<p>We will create a schema (similar to graphQL):</p>
+<blockquote>
+<p>A database schema is the skeleton structure that represents the logical view of the entire database. It defines how the data is organized and how the relations among them are associated. It formulates all the constraints that are to be applied on the data.</p>
+</blockquote>
+<ul>
+<li>models/User.js</li>
+</ul>
+<div class="gatsby-highlight" data-language="javascript"><pre class="language-javascript"><code class="language-javascript"><span class="token keyword">const</span> mongoose <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'mongoose'</span><span class="token punctuation">)</span>
+<span class="token keyword">const</span> Schema <span class="token operator">=</span> mongoose<span class="token punctuation">.</span>Schema
+
+<span class="token comment">// Create Schema</span>
+<span class="token keyword">const</span> UserSchema <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Schema</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  name<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    type<span class="token punctuation">:</span> String<span class="token punctuation">,</span>
+    required<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  email<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    type<span class="token punctuation">:</span> String<span class="token punctuation">,</span>
+    required<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  password<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    type<span class="token punctuation">:</span> String<span class="token punctuation">,</span>
+    required<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  avatar<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    type<span class="token punctuation">:</span> String<span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  date<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    type<span class="token punctuation">:</span> Date<span class="token punctuation">,</span>
+    <span class="token keyword">default</span><span class="token punctuation">:</span> Date<span class="token punctuation">.</span>now<span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+module<span class="token punctuation">.</span>exports <span class="token operator">=</span> User <span class="token operator">=</span> mongoose<span class="token punctuation">.</span><span class="token function">model</span><span class="token punctuation">(</span><span class="token string">'users'</span><span class="token punctuation">,</span> UserSchema<span class="token punctuation">)</span></code></pre></div>
+<h2>Using POSTMAN</h2>
+<p>This is a very valuable tool for testing your EPs provided to the client or service that wants to consume your API.</p>
+<ul>
+<li>Go to <a href="https://www.postman.com/">https://www.postman.com/</a> and download the app.</li>
+<li>Now on the GET input put the URL you want to test:</li>
+</ul>
+<p>
+  <a
+    class="gatsby-resp-image-link"
+    href="/React-Personal-Blog-Gatsby/static/931aae4aae629a945a263d54de4e6d70/60b15/mern-1.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+  
+  <span
+    class="gatsby-resp-image-wrapper"
+    style="position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;"
+  >
+    <span
+      class="gatsby-resp-image-background-image"
+      style="padding-bottom: 62.5%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAANCAYAAACpUE5eAAAACXBIWXMAAA7DAAAOwwHHb6hkAAAB30lEQVQ4y3VSWXLTQBDVnY0XKk6cC3AFTsEHRcXrF1/cgSqgsGStM5pF2+P1OHLiEEv1qtfpft0z0Y/tN2y3W+x2O+z3e2w2G6zX6wDRD4cD9sQYXz89XeLik7icF0h+9PXTA5bLe2KJ1WqF+XyO6XQaMJvN8Hi/xMPdHT7OqT+u8IE+8U8mkyDlnOSKXCwWiEpdo21bDMOAruvgvQ/2+HWtR2cNuloDWgHOXWKOetN49F3LvBbWWkS6KmGMCYaua6RpGpAkCeJjjOR0QnY8ovz9B0UcI2cszzKkWQ5fl/j8XWH2pcTPvxlUWSASVk3TBAiz6hRDVRWU1qiUSIWaDRWbiQyg7jhJQ8Slw6/MwSjmkVyEV5+MbZgsxUdbPmnU0if2xUfb2nF8+luSMvW54JjU9z1qMpLxjbNByk7HCWSasGfuTRlNtjWMd9ylQasrOO75quDAgkWaoMhzZNxTlhccW4UVeB6WhoJQuO8uek/d8eK0fluQ8ELdu8DIK42eib2MNP5D/y7kdMXG1wUppdu5tOyAOi8GXDaXBnY6+0K8f5aDjBakPKGbBUPn8CMsfCDTgWMPfHO3mHaM/XfLLwxfd7/Kegdnv5yN/PP7e8Fb+3ZMGFkr71Lzpm14n/8AMSfPQTorqGEAAAAASUVORK5CYII='); background-size: cover; display: block;"
+    >
+      <img
+        class="gatsby-resp-image-image"
+        style="width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;"
+        alt="code"
+        title=""
+        src="/React-Personal-Blog-Gatsby/static/931aae4aae629a945a263d54de4e6d70/fb8a0/mern-1.png"
+        srcset="/React-Personal-Blog-Gatsby/static/931aae4aae629a945a263d54de4e6d70/1a291/mern-1.png 148w,
+/React-Personal-Blog-Gatsby/static/931aae4aae629a945a263d54de4e6d70/2bc4a/mern-1.png 295w,
+/React-Personal-Blog-Gatsby/static/931aae4aae629a945a263d54de4e6d70/fb8a0/mern-1.png 590w,
+/React-Personal-Blog-Gatsby/static/931aae4aae629a945a263d54de4e6d70/526de/mern-1.png 885w,
+/React-Personal-Blog-Gatsby/static/931aae4aae629a945a263d54de4e6d70/fa2eb/mern-1.png 1180w,
+/React-Personal-Blog-Gatsby/static/931aae4aae629a945a263d54de4e6d70/60b15/mern-1.png 1264w"
+        sizes="(max-width: 590px) 100vw, 590px"
+      />
+    </span>
+  </span>
+  
+  </a>
+    </p>
+<p>And we see it works.</p>
+<h2>Registration</h2>
+<p>Our next step is to add registration.</p>
+<p>In routes/api/users.js</p>
+<div class="gatsby-highlight" data-language="javascript"><pre class="language-javascript"><code class="language-javascript"><span class="token keyword">const</span> express <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'express'</span><span class="token punctuation">)</span>
+<span class="token keyword">const</span> router <span class="token operator">=</span> express<span class="token punctuation">.</span><span class="token function">Router</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">const</span> gravatar <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'gravatar'</span><span class="token punctuation">)</span>
+<span class="token keyword">const</span> bcrypt <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'brypt'</span><span class="token punctuation">)</span>
+
+<span class="token comment">// Load User model</span>
+<span class="token keyword">const</span> User <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'../../models/User'</span><span class="token punctuation">)</span>
+
+<span class="token comment">// @route  GET api/users/test</span>
+<span class="token comment">// @desc   Tests users route</span>
+<span class="token comment">// @access Public</span>
+router<span class="token punctuation">.</span><span class="token keyword">get</span><span class="token punctuation">(</span><span class="token string">'/test'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span>req<span class="token punctuation">,</span> res<span class="token punctuation">)</span> <span class="token operator">=></span>
+  res<span class="token punctuation">.</span><span class="token function">json</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+    msg<span class="token punctuation">:</span> <span class="token string">'Users works'</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token punctuation">)</span>
+
+<span class="token comment">// @route  GET api/users/register</span>
+<span class="token comment">// @desc   Register user</span>
+<span class="token comment">// @access Public</span>
+router<span class="token punctuation">.</span><span class="token function">post</span><span class="token punctuation">(</span><span class="token string">'/register'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span>req<span class="token punctuation">,</span> res<span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+  User<span class="token punctuation">.</span><span class="token function">findOne</span><span class="token punctuation">(</span><span class="token punctuation">{</span> email<span class="token punctuation">:</span> req<span class="token punctuation">.</span>body<span class="token punctuation">.</span>email <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span>user <span class="token operator">=></span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>user<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> res<span class="token punctuation">.</span><span class="token function">status</span><span class="token punctuation">(</span><span class="token number">400</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">json</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+        email<span class="token punctuation">:</span> <span class="token string">'Email alredy exists'</span><span class="token punctuation">,</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+      <span class="token keyword">const</span> avatar <span class="token operator">=</span> gravatar<span class="token punctuation">.</span><span class="token function">url</span><span class="token punctuation">(</span>req<span class="token punctuation">.</span>body<span class="token punctuation">.</span>email<span class="token punctuation">,</span> <span class="token punctuation">{</span>
+        s<span class="token punctuation">:</span> <span class="token string">'200'</span><span class="token punctuation">,</span> <span class="token comment">// Size</span>
+        r<span class="token punctuation">:</span> <span class="token string">'pg'</span><span class="token punctuation">,</span> <span class="token comment">// Rating</span>
+        d<span class="token punctuation">:</span> <span class="token string">'mm'</span><span class="token punctuation">,</span> <span class="token comment">// Default</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span>
+      <span class="token comment">// new model Name</span>
+      <span class="token keyword">const</span> newUser <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">User</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+        name<span class="token punctuation">:</span> req<span class="token punctuation">.</span>body<span class="token punctuation">.</span>name<span class="token punctuation">,</span>
+        email<span class="token punctuation">:</span> req<span class="token punctuation">.</span>body<span class="token punctuation">.</span>email<span class="token punctuation">,</span>
+        avatar<span class="token punctuation">,</span>
+        password<span class="token punctuation">:</span> req<span class="token punctuation">.</span>body<span class="token punctuation">.</span>password<span class="token punctuation">,</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span>
+      bcrypt<span class="token punctuation">.</span><span class="token function">genSalt</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">,</span> <span class="token punctuation">(</span>err<span class="token punctuation">,</span> salt<span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+        bcrypt<span class="token punctuation">.</span><span class="token function">hash</span><span class="token punctuation">(</span>newUser<span class="token punctuation">.</span>password<span class="token punctuation">,</span> salt<span class="token punctuation">,</span> <span class="token punctuation">(</span>err<span class="token punctuation">,</span> hash<span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+          <span class="token keyword">if</span> <span class="token punctuation">(</span>err<span class="token punctuation">)</span> <span class="token keyword">throw</span> err
+          newUser<span class="token punctuation">.</span>password <span class="token operator">=</span> hash
+          newUser
+            <span class="token punctuation">.</span><span class="token function">save</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+            <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span>user <span class="token operator">=></span> res<span class="token punctuation">.</span><span class="token function">json</span><span class="token punctuation">(</span>user<span class="token punctuation">)</span><span class="token punctuation">)</span>
+            <span class="token punctuation">.</span><span class="token keyword">catch</span><span class="token punctuation">(</span>err <span class="token operator">=></span> console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span><span class="token punctuation">)</span>
+        <span class="token punctuation">}</span><span class="token punctuation">)</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+module<span class="token punctuation">.</span>exports <span class="token operator">=</span> router</code></pre></div>
+<p>Now go to POSTMAN and make a POST request:</p>
+<p>
+  <a
+    class="gatsby-resp-image-link"
+    href="/React-Personal-Blog-Gatsby/static/6ac6d77835a565fe785f85224a7465cc/4b05c/mern-2.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+  
+  <span
+    class="gatsby-resp-image-wrapper"
+    style="position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;"
+  >
+    <span
+      class="gatsby-resp-image-background-image"
+      style="padding-bottom: 62.58879242304657%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAANCAYAAACpUE5eAAAACXBIWXMAAA7DAAAOwwHHb6hkAAACHklEQVQ4y2VSua4aQRDcD0YcDwFCzpz5G/wbjhxagIHQsR3wAmNg2d25Z89ydy/7zJNHKs3RNdU9NZ382H3DbrfDfr8XbLdbbDYbwZbOD8cjDocDvlOM5yHGYP6R4nyfwXeTL5/WWCyXWBLW6zVmsxkmk4lgNpviw3qF1XKB+cuLxMfjMabTKUajkXAXiyVxp1itVpjP50gKYxFjRF3XKMsS3nuUtO9Hh9prlN6hVDkamp+HtQ5V9GirIBrGGCROawTa8IFzDmmaIssymW+3G9J7hoxgzmfo6xWqKFAQ8rxAdBqf9xYfv2r8ueUwWiEpy16MwRVyFk1QlKgwhPyOIr3Ins/NAz0/4vUe8esa4YnrWLBualRVJeBny5NJuKZqq8sFVZ4j0FPFFuJwrG1b4cdYvlnTVaVYkzx7woKn06n3kNDRJbAIrS0laJqmv951IiqQNQnSmpMlA4EHE9gfFu7z/kvEFQ0izOczxiDO3P8FqQKdpdCaPVQ0K/ooixCCVDmIhBjg6Xe9zBzziLqAt/a9IM8spBT9Iv+mUjBE8iTaVvFRc4+ua58qbiUhd8mbIGvKUyhYe4v0fMXP3wVeLwqZDshtRKo8Uu2RmwAb6HOIS+8SQU7CHr+rkFUr9oufQpXlNshl7QIcCWgXoajfeN2If+27qsXD6uELqw/mcys1bUM/18glbomWrOgMIc/QWoOG7GioxaL0cRCw338BgOrKwTbl8IAAAAAASUVORK5CYII='); background-size: cover; display: block;"
+    >
+      <img
+        class="gatsby-resp-image-image"
+        style="width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;"
+        alt="code"
+        title=""
+        src="/React-Personal-Blog-Gatsby/static/6ac6d77835a565fe785f85224a7465cc/fb8a0/mern-2.png"
+        srcset="/React-Personal-Blog-Gatsby/static/6ac6d77835a565fe785f85224a7465cc/1a291/mern-2.png 148w,
+/React-Personal-Blog-Gatsby/static/6ac6d77835a565fe785f85224a7465cc/2bc4a/mern-2.png 295w,
+/React-Personal-Blog-Gatsby/static/6ac6d77835a565fe785f85224a7465cc/fb8a0/mern-2.png 590w,
+/React-Personal-Blog-Gatsby/static/6ac6d77835a565fe785f85224a7465cc/526de/mern-2.png 885w,
+/React-Personal-Blog-Gatsby/static/6ac6d77835a565fe785f85224a7465cc/fa2eb/mern-2.png 1180w,
+/React-Personal-Blog-Gatsby/static/6ac6d77835a565fe785f85224a7465cc/4b05c/mern-2.png 1267w"
+        sizes="(max-width: 590px) 100vw, 590px"
+      />
+    </span>
+  </span>
+  
+  </a>
+    </p>
+<h2>Login</h2>
+<p>Once the email and password are verified, they get as response a TOKEN, which we can use to access a protected route, for this we will use passport-jwt.</p>
+<div class="gatsby-highlight" data-language="javascript"><pre class="language-javascript"><code class="language-javascript"><span class="token keyword">const</span> express <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'express'</span><span class="token punctuation">)</span>
+<span class="token keyword">const</span> router <span class="token operator">=</span> express<span class="token punctuation">.</span><span class="token function">Router</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">const</span> gravatar <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'gravatar'</span><span class="token punctuation">)</span>
+<span class="token keyword">const</span> bcrypt <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'brypt'</span><span class="token punctuation">)</span>
+
+<span class="token comment">// Load User model</span>
+<span class="token keyword">const</span> User <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'../../models/User'</span><span class="token punctuation">)</span>
+
+<span class="token comment">// @route  GET api/users/test</span>
+<span class="token comment">// @desc   Tests users route</span>
+<span class="token comment">// @access Public</span>
+router<span class="token punctuation">.</span><span class="token keyword">get</span><span class="token punctuation">(</span><span class="token string">'/test'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span>req<span class="token punctuation">,</span> res<span class="token punctuation">)</span> <span class="token operator">=></span>
+  res<span class="token punctuation">.</span><span class="token function">json</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+    msg<span class="token punctuation">:</span> <span class="token string">'Users works'</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token punctuation">)</span>
+
+<span class="token comment">// @route  GET api/users/register</span>
+<span class="token comment">// @desc   Register user</span>
+<span class="token comment">// @access Public</span>
+router<span class="token punctuation">.</span><span class="token function">post</span><span class="token punctuation">(</span><span class="token string">'/register'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span>req<span class="token punctuation">,</span> res<span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+  User<span class="token punctuation">.</span><span class="token function">findOne</span><span class="token punctuation">(</span><span class="token punctuation">{</span> email<span class="token punctuation">:</span> req<span class="token punctuation">.</span>body<span class="token punctuation">.</span>email <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span>user <span class="token operator">=></span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>user<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> res<span class="token punctuation">.</span><span class="token function">status</span><span class="token punctuation">(</span><span class="token number">400</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">json</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+        email<span class="token punctuation">:</span> <span class="token string">'Email alredy exists'</span><span class="token punctuation">,</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+      <span class="token keyword">const</span> avatar <span class="token operator">=</span> gravatar<span class="token punctuation">.</span><span class="token function">url</span><span class="token punctuation">(</span>req<span class="token punctuation">.</span>body<span class="token punctuation">.</span>email<span class="token punctuation">,</span> <span class="token punctuation">{</span>
+        s<span class="token punctuation">:</span> <span class="token string">'200'</span><span class="token punctuation">,</span> <span class="token comment">// Size</span>
+        r<span class="token punctuation">:</span> <span class="token string">'pg'</span><span class="token punctuation">,</span> <span class="token comment">// Rating</span>
+        d<span class="token punctuation">:</span> <span class="token string">'mm'</span><span class="token punctuation">,</span> <span class="token comment">// Default</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span>
+      <span class="token comment">// new model Name</span>
+      <span class="token keyword">const</span> newUser <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">User</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+        name<span class="token punctuation">:</span> req<span class="token punctuation">.</span>body<span class="token punctuation">.</span>name<span class="token punctuation">,</span>
+        email<span class="token punctuation">:</span> req<span class="token punctuation">.</span>body<span class="token punctuation">.</span>email<span class="token punctuation">,</span>
+        avatar<span class="token punctuation">,</span>
+        password<span class="token punctuation">:</span> req<span class="token punctuation">.</span>body<span class="token punctuation">.</span>password<span class="token punctuation">,</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span>
+      bcrypt<span class="token punctuation">.</span><span class="token function">genSalt</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">,</span> <span class="token punctuation">(</span>err<span class="token punctuation">,</span> salt<span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+        bcrypt<span class="token punctuation">.</span><span class="token function">hash</span><span class="token punctuation">(</span>newUser<span class="token punctuation">.</span>password<span class="token punctuation">,</span> salt<span class="token punctuation">,</span> <span class="token punctuation">(</span>err<span class="token punctuation">,</span> hash<span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+          <span class="token keyword">if</span> <span class="token punctuation">(</span>err<span class="token punctuation">)</span> <span class="token keyword">throw</span> err
+          newUser<span class="token punctuation">.</span>password <span class="token operator">=</span> hash
+          newUser
+            <span class="token punctuation">.</span><span class="token function">save</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+            <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span>user <span class="token operator">=></span> res<span class="token punctuation">.</span><span class="token function">json</span><span class="token punctuation">(</span>user<span class="token punctuation">)</span><span class="token punctuation">)</span>
+            <span class="token punctuation">.</span><span class="token keyword">catch</span><span class="token punctuation">(</span>err <span class="token operator">=></span> console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span><span class="token punctuation">)</span>
+        <span class="token punctuation">}</span><span class="token punctuation">)</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+<span class="token comment">// @route  GET api/users/login</span>
+<span class="token comment">// @desc   Login User / Returning JWT Token</span>
+<span class="token comment">// @access Public</span>
+router<span class="token punctuation">.</span><span class="token function">post</span><span class="token punctuation">(</span><span class="token string">'/login'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span>req<span class="token punctuation">,</span> res<span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> email <span class="token operator">=</span> req<span class="token punctuation">.</span>body<span class="token punctuation">.</span>email
+  <span class="token keyword">const</span> password <span class="token operator">=</span> req<span class="token punctuation">.</span>body<span class="token punctuation">.</span>password
+
+  <span class="token comment">// Find user by email</span>
+  User<span class="token punctuation">.</span><span class="token function">findOne</span><span class="token punctuation">(</span><span class="token punctuation">{</span> email <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span>user <span class="token operator">=></span> <span class="token punctuation">{</span>
+    <span class="token comment">// Check for user</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>user<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> res<span class="token punctuation">.</span><span class="token function">status</span><span class="token punctuation">(</span><span class="token number">404</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">json</span><span class="token punctuation">(</span><span class="token punctuation">{</span> email<span class="token punctuation">:</span> <span class="token string">'User not found'</span> <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment">// Check password</span>
+    bcrypt<span class="token punctuation">.</span><span class="token function">compare</span><span class="token punctuation">(</span>password<span class="token punctuation">,</span> user<span class="token punctuation">.</span>password<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span>isMatch <span class="token operator">=></span> <span class="token punctuation">{</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span>isMatch<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        res<span class="token punctuation">.</span><span class="token function">json</span><span class="token punctuation">(</span><span class="token punctuation">{</span> msg<span class="token punctuation">:</span> <span class="token string">'Success'</span> <span class="token punctuation">}</span><span class="token punctuation">)</span>
+      <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> res<span class="token punctuation">.</span><span class="token function">status</span><span class="token punctuation">(</span><span class="token number">400</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">json</span><span class="token punctuation">(</span><span class="token punctuation">{</span> password<span class="token punctuation">:</span> <span class="token string">'Password incorrect'</span> <span class="token punctuation">}</span><span class="token punctuation">)</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+module<span class="token punctuation">.</span>exports <span class="token operator">=</span> router</code></pre></div>
+<p>If we test it in POSTMAN forcing an error:</p>
+<p>
+  <a
+    class="gatsby-resp-image-link"
+    href="/React-Personal-Blog-Gatsby/static/22345ebf0d429ddf1b0214663e23ddae/fcf37/mern-3.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+  
+  <span
+    class="gatsby-resp-image-wrapper"
+    style="position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;"
+  >
+    <span
+      class="gatsby-resp-image-background-image"
+      style="padding-bottom: 61.75675675675676%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAMCAYAAABiDJ37AAAACXBIWXMAAA7DAAAOwwHHb6hkAAABnUlEQVQoz4VS7XLCIBDk/Z/OvkDHHzWjUZIAgRASct09jdPpaBtnPVjuFu7DnM9nadtWuq5TezqdpGkatfvaWitd36vPfzA9HJ1zCq6HYcABgvtOBnCW58GLA08f770ihKC+tD9h+JdSejg4ydMk3iE4gu+t2K9PicE9BVKMMmIdYcmVUqSuq9RaZYU1OWcVpCVmCGbdzxqcU5Q4jlLmWSZgRhBtgi+/DSjgMjiKGpIzNn99fE3dEEoRpC24AKRsBDNE7QPqvFKQTWFNlmV5i4RXJ9RyOh6lwLdCZIVoBU+7ksOjNOWPw0Eul4umS+IVtBkAhWdcUPFqvliBpJdH/VQwwmniTdhscHgFnrM+WjNyWN9xP2fJdh8T7FWLzjox9XFCF7HfO7gybdgCy0CCPBs2oPu3sROfgnj40xrbfIm93XQGObzW3jAevXIBwpazBpt8rx19povXvIJh+/fBHVEnDrPzQTrMZMI6tqjv9Sqls1IxTjWiGYip2xtB0TlapORJHRfOVEF6a9VgdAOjMojg0o3A6zfwG38Q/Y1voUqjNDjzWzEAAAAASUVORK5CYII='); background-size: cover; display: block;"
+    >
+      <img
+        class="gatsby-resp-image-image"
+        style="width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;"
+        alt="code"
+        title=""
+        src="/React-Personal-Blog-Gatsby/static/22345ebf0d429ddf1b0214663e23ddae/fb8a0/mern-3.png"
+        srcset="/React-Personal-Blog-Gatsby/static/22345ebf0d429ddf1b0214663e23ddae/1a291/mern-3.png 148w,
+/React-Personal-Blog-Gatsby/static/22345ebf0d429ddf1b0214663e23ddae/2bc4a/mern-3.png 295w,
+/React-Personal-Blog-Gatsby/static/22345ebf0d429ddf1b0214663e23ddae/fb8a0/mern-3.png 590w,
+/React-Personal-Blog-Gatsby/static/22345ebf0d429ddf1b0214663e23ddae/fcf37/mern-3.png 740w"
+        sizes="(max-width: 590px) 100vw, 590px"
+      />
+    </span>
+  </span>
+  
+  </a>
+    </p>
+<p>If we input the correct data:</p>
+<p>
+  <a
+    class="gatsby-resp-image-link"
+    href="/React-Personal-Blog-Gatsby/static/3200539d409fba42ac4d95a65d5399da/d7148/mern-4.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+  
+  <span
+    class="gatsby-resp-image-wrapper"
+    style="position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;"
+  >
+    <span
+      class="gatsby-resp-image-background-image"
+      style="padding-bottom: 53.32555425904317%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAYAAAB/Ca1DAAAACXBIWXMAAA7DAAAOwwHHb6hkAAABfUlEQVQoz41SOXLcMBDEB/0c/cGvcKYfKFDkRLFjR44UcEkWL1wECIKtHqzA4pYUGFVdMyR6DvSM6vse4ziibVs0TXPiRgzDgGmavoXEzNOIpp/w9KLx49eMn78NlNYagnmesSxLIS+alr42BvXe0DeXb2stYTBri9e/Ds9/LN7+eah1Xe+XziF4D02SdwbL7R3eLrxzTKQhPEeOJyfGiOM4CnLOAPYTqhIEW1iLDQyOq4djofJ/2wokaUoJcmLcSoF937HnA2k/sCUmlIB6Djyea4KT89lZLSAdXrtVXdedP8VWyLd0IHrVTmpgxbVAhRKh7zrgC6l2+F0iKVDvzhhaFahbCAGemoUYTtEloGjHoKqhIIYI6y2M5+A4LEPfid6rw2YWqJ5PHoYRnezjNKClnWSNjOXELVaS8kWOUihtHEIqKH66+3mL3EOuieXemUUzEasxYeharLeGtkPi8j5qW4eQv0AKq1KJmbNoIlry2eATuIx3W3Yu/zc+AMdFVs523tjqAAAAAElFTkSuQmCC'); background-size: cover; display: block;"
+    >
+      <img
+        class="gatsby-resp-image-image"
+        style="width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;"
+        alt="code"
+        title=""
+        src="/React-Personal-Blog-Gatsby/static/3200539d409fba42ac4d95a65d5399da/fb8a0/mern-4.png"
+        srcset="/React-Personal-Blog-Gatsby/static/3200539d409fba42ac4d95a65d5399da/1a291/mern-4.png 148w,
+/React-Personal-Blog-Gatsby/static/3200539d409fba42ac4d95a65d5399da/2bc4a/mern-4.png 295w,
+/React-Personal-Blog-Gatsby/static/3200539d409fba42ac4d95a65d5399da/fb8a0/mern-4.png 590w,
+/React-Personal-Blog-Gatsby/static/3200539d409fba42ac4d95a65d5399da/d7148/mern-4.png 857w"
+        sizes="(max-width: 590px) 100vw, 590px"
+      />
+    </span>
+  </span>
+  
+  </a>
+    </p>
+<p>Now that we know it works, we need for when we login we get a TOKEN.</p>
+<h2>Handling TOKENS</h2>
+<p>Inside in our config/key.js we need to add a secret key in order to use JWT:</p>
+<div class="gatsby-highlight" data-language="javascript"><pre class="language-javascript"><code class="language-javascript">module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
+  mongoURI<span class="token punctuation">:</span>
+    <span class="token string">'mongodb://Adrian:AdrianPassword123@ds157956.mlab.com:57956/socialnetwork'</span><span class="token punctuation">,</span>
+  secretOrKey<span class="token punctuation">:</span> <span class="token string">'secret'</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span></code></pre></div>
+<p>Now in our user API:</p>
+<div class="gatsby-highlight" data-language="javascript"><pre class="language-javascript"><code class="language-javascript"><span class="token keyword">const</span> express <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'express'</span><span class="token punctuation">)</span>
+<span class="token keyword">const</span> router <span class="token operator">=</span> express<span class="token punctuation">.</span><span class="token function">Router</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">const</span> gravatar <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'gravatar'</span><span class="token punctuation">)</span>
+<span class="token keyword">const</span> bcrypt <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'brypt'</span><span class="token punctuation">)</span>
+<span class="token keyword">const</span> jwt <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'jsonwebtoken'</span><span class="token punctuation">)</span>
+<span class="token keyword">const</span> keys <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'../../config/keys'</span><span class="token punctuation">)</span>
+
+<span class="token comment">// Load User model</span>
+<span class="token keyword">const</span> User <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'../../models/User'</span><span class="token punctuation">)</span>
+
+<span class="token comment">// @route  GET api/users/test</span>
+<span class="token comment">// @desc   Tests users route</span>
+<span class="token comment">// @access Public</span>
+router<span class="token punctuation">.</span><span class="token keyword">get</span><span class="token punctuation">(</span><span class="token string">'/test'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span>req<span class="token punctuation">,</span> res<span class="token punctuation">)</span> <span class="token operator">=></span>
+  res<span class="token punctuation">.</span><span class="token function">json</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+    msg<span class="token punctuation">:</span> <span class="token string">'Users works'</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token punctuation">)</span>
+
+<span class="token comment">// @route  GET api/users/register</span>
+<span class="token comment">// @desc   Register user</span>
+<span class="token comment">// @access Public</span>
+router<span class="token punctuation">.</span><span class="token function">post</span><span class="token punctuation">(</span><span class="token string">'/register'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span>req<span class="token punctuation">,</span> res<span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+  User<span class="token punctuation">.</span><span class="token function">findOne</span><span class="token punctuation">(</span><span class="token punctuation">{</span> email<span class="token punctuation">:</span> req<span class="token punctuation">.</span>body<span class="token punctuation">.</span>email <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span>user <span class="token operator">=></span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>user<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> res<span class="token punctuation">.</span><span class="token function">status</span><span class="token punctuation">(</span><span class="token number">400</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">json</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+        email<span class="token punctuation">:</span> <span class="token string">'Email alredy exists'</span><span class="token punctuation">,</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+      <span class="token keyword">const</span> avatar <span class="token operator">=</span> gravatar<span class="token punctuation">.</span><span class="token function">url</span><span class="token punctuation">(</span>req<span class="token punctuation">.</span>body<span class="token punctuation">.</span>email<span class="token punctuation">,</span> <span class="token punctuation">{</span>
+        s<span class="token punctuation">:</span> <span class="token string">'200'</span><span class="token punctuation">,</span> <span class="token comment">// Size</span>
+        r<span class="token punctuation">:</span> <span class="token string">'pg'</span><span class="token punctuation">,</span> <span class="token comment">// Rating</span>
+        d<span class="token punctuation">:</span> <span class="token string">'mm'</span><span class="token punctuation">,</span> <span class="token comment">// Default</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span>
+      <span class="token comment">// new model Name</span>
+      <span class="token keyword">const</span> newUser <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">User</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+        name<span class="token punctuation">:</span> req<span class="token punctuation">.</span>body<span class="token punctuation">.</span>name<span class="token punctuation">,</span>
+        email<span class="token punctuation">:</span> req<span class="token punctuation">.</span>body<span class="token punctuation">.</span>email<span class="token punctuation">,</span>
+        avatar<span class="token punctuation">,</span>
+        password<span class="token punctuation">:</span> req<span class="token punctuation">.</span>body<span class="token punctuation">.</span>password<span class="token punctuation">,</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span>
+      bcrypt<span class="token punctuation">.</span><span class="token function">genSalt</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">,</span> <span class="token punctuation">(</span>err<span class="token punctuation">,</span> salt<span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+        bcrypt<span class="token punctuation">.</span><span class="token function">hash</span><span class="token punctuation">(</span>newUser<span class="token punctuation">.</span>password<span class="token punctuation">,</span> salt<span class="token punctuation">,</span> <span class="token punctuation">(</span>err<span class="token punctuation">,</span> hash<span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+          <span class="token keyword">if</span> <span class="token punctuation">(</span>err<span class="token punctuation">)</span> <span class="token keyword">throw</span> err
+          newUser<span class="token punctuation">.</span>password <span class="token operator">=</span> hash
+          newUser
+            <span class="token punctuation">.</span><span class="token function">save</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+            <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span>user <span class="token operator">=></span> res<span class="token punctuation">.</span><span class="token function">json</span><span class="token punctuation">(</span>user<span class="token punctuation">)</span><span class="token punctuation">)</span>
+            <span class="token punctuation">.</span><span class="token keyword">catch</span><span class="token punctuation">(</span>err <span class="token operator">=></span> console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span><span class="token punctuation">)</span>
+        <span class="token punctuation">}</span><span class="token punctuation">)</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+<span class="token comment">// @route  GET api/users/login</span>
+<span class="token comment">// @desc   Login User / Returning JWT Token</span>
+<span class="token comment">// @access Public</span>
+router<span class="token punctuation">.</span><span class="token function">post</span><span class="token punctuation">(</span><span class="token string">'/login'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span>req<span class="token punctuation">,</span> res<span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> email <span class="token operator">=</span> req<span class="token punctuation">.</span>body<span class="token punctuation">.</span>email
+  <span class="token keyword">const</span> password <span class="token operator">=</span> req<span class="token punctuation">.</span>body<span class="token punctuation">.</span>password
+
+  <span class="token comment">// Find user by email</span>
+  User<span class="token punctuation">.</span><span class="token function">findOne</span><span class="token punctuation">(</span><span class="token punctuation">{</span> email <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span>user <span class="token operator">=></span> <span class="token punctuation">{</span>
+    <span class="token comment">// user is from DB</span>
+    <span class="token comment">// Check for user</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>user<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> res<span class="token punctuation">.</span><span class="token function">status</span><span class="token punctuation">(</span><span class="token number">404</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">json</span><span class="token punctuation">(</span><span class="token punctuation">{</span> email<span class="token punctuation">:</span> <span class="token string">'User not found'</span> <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment">// Check password</span>
+    bcrypt<span class="token punctuation">.</span><span class="token function">compare</span><span class="token punctuation">(</span>password<span class="token punctuation">,</span> user<span class="token punctuation">.</span>password<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span>isMatch <span class="token operator">=></span> <span class="token punctuation">{</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span>isMatch<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment">// User Matched</span>
+        <span class="token keyword">const</span> payload <span class="token operator">=</span> <span class="token punctuation">{</span>
+          id<span class="token punctuation">:</span> user<span class="token punctuation">.</span>id<span class="token punctuation">,</span>
+          name<span class="token punctuation">:</span> user<span class="token punctuation">.</span>name<span class="token punctuation">,</span>
+          avatar<span class="token punctuation">:</span> user<span class="token punctuation">.</span>avatar<span class="token punctuation">,</span>
+        <span class="token punctuation">}</span>
+
+        <span class="token comment">// Sign Token</span>
+        <span class="token comment">// Takes a Payload, key</span>
+        <span class="token comment">// It expires after certain time</span>
+        jwt<span class="token punctuation">.</span><span class="token function">sign</span><span class="token punctuation">(</span>
+          payload<span class="token punctuation">,</span>
+          keys<span class="token punctuation">.</span>secretOrKey<span class="token punctuation">,</span>
+          <span class="token punctuation">{</span>
+            expiresIn<span class="token punctuation">:</span> <span class="token number">3600</span><span class="token punctuation">,</span>
+          <span class="token punctuation">}</span><span class="token punctuation">,</span>
+          <span class="token punctuation">(</span>err<span class="token punctuation">,</span> token<span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+            res<span class="token punctuation">.</span><span class="token function">json</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+              success<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+              token<span class="token punctuation">:</span> <span class="token string">'Bearer '</span> <span class="token operator">+</span> token<span class="token punctuation">,</span>
+            <span class="token punctuation">}</span><span class="token punctuation">)</span>
+          <span class="token punctuation">}</span>
+        <span class="token punctuation">)</span>
+      <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> res<span class="token punctuation">.</span><span class="token function">status</span><span class="token punctuation">(</span><span class="token number">400</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">json</span><span class="token punctuation">(</span><span class="token punctuation">{</span> password<span class="token punctuation">:</span> <span class="token string">'Password incorrect'</span> <span class="token punctuation">}</span><span class="token punctuation">)</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+module<span class="token punctuation">.</span>exports <span class="token operator">=</span> router</code></pre></div>
+<p>Now if we POST again we get a message with success and the token.</p>
+<h2>Connecting PASSPORT</h2>
+<p>Inside server.js we add passport for authentication.</p>
+<div class="gatsby-highlight" data-language="javascript"><pre class="language-javascript"><code class="language-javascript"><span class="token keyword">const</span> express <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'express'</span><span class="token punctuation">)</span>
+<span class="token keyword">const</span> mongoose <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'mongoose'</span><span class="token punctuation">)</span>
+<span class="token keyword">const</span> bodyParser <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'body-parser'</span><span class="token punctuation">)</span>
+<span class="token keyword">const</span> passport <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'passport'</span><span class="token punctuation">)</span>
+
+<span class="token keyword">const</span> users <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'./routes/api/users'</span><span class="token punctuation">)</span>
+<span class="token keyword">const</span> profile <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'./routes/api/profile'</span><span class="token punctuation">)</span>
+<span class="token keyword">const</span> posts <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'./routes/api/posts'</span><span class="token punctuation">)</span>
+
+<span class="token keyword">const</span> app <span class="token operator">=</span> <span class="token function">express</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token comment">// Body  Parser middleware</span>
+app<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span>bodyParser<span class="token punctuation">.</span><span class="token function">urlencoded</span><span class="token punctuation">(</span><span class="token punctuation">{</span> extended<span class="token punctuation">:</span> <span class="token boolean">true</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+app<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span>bodyParser<span class="token punctuation">.</span><span class="token function">json</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+<span class="token comment">// DB CONFIG</span>
+<span class="token keyword">const</span> db <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'./config/keys'</span><span class="token punctuation">)</span><span class="token punctuation">.</span>mongoURI
+
+<span class="token comment">// Connect to MongoDB</span>
+mongoose
+  <span class="token punctuation">.</span><span class="token function">connect</span><span class="token punctuation">(</span>
+    db<span class="token punctuation">,</span>
+    <span class="token punctuation">{</span> useUnifiedTopology<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span> useNewUrlParser<span class="token punctuation">:</span> <span class="token boolean">true</span> <span class="token punctuation">}</span>
+  <span class="token punctuation">)</span>
+  <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'MongoDB connected'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+  <span class="token punctuation">.</span><span class="token keyword">catch</span><span class="token punctuation">(</span>err <span class="token operator">=></span> console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+<span class="token comment">// Passport middelware</span>
+app<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span>passport<span class="token punctuation">.</span><span class="token function">initialize</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+<span class="token comment">// Passport Config</span>
+<span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'./config/passport'</span><span class="token punctuation">)</span><span class="token punctuation">(</span>passport<span class="token punctuation">)</span>
+
+<span class="token comment">// Use Routes</span>
+app<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span><span class="token string">'/api/users'</span><span class="token punctuation">,</span> users<span class="token punctuation">)</span>
+app<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span><span class="token string">'/api/profile'</span><span class="token punctuation">,</span> profile<span class="token punctuation">)</span>
+app<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span><span class="token string">'/api/posts'</span><span class="token punctuation">,</span> posts<span class="token punctuation">)</span>
+
+<span class="token keyword">const</span> port <span class="token operator">=</span> process<span class="token punctuation">.</span>env<span class="token punctuation">.</span><span class="token constant">PORT</span> <span class="token operator">||</span> <span class="token number">5000</span>
+
+app<span class="token punctuation">.</span><span class="token function">listen</span><span class="token punctuation">(</span>port<span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token string">`Server running on port </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>port<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">)</span></code></pre></div>
+<p>Now create the config file:</p>
+<div class="gatsby-highlight" data-language="javascript"><pre class="language-javascript"><code class="language-javascript"><span class="token keyword">const</span> JwtStrategy <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'passport-jwt'</span><span class="token punctuation">)</span><span class="token punctuation">.</span>Strategy
+<span class="token keyword">const</span> ExtractJwt <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'passport-jwt'</span><span class="token punctuation">)</span><span class="token punctuation">.</span>ExtractJwt
+<span class="token keyword">const</span> mongoose <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'mongoose'</span><span class="token punctuation">)</span>
+<span class="token comment">// This 'users' comes from the string in the model</span>
+<span class="token keyword">const</span> User <span class="token operator">=</span> mongoose<span class="token punctuation">.</span><span class="token function">model</span><span class="token punctuation">(</span><span class="token string">'users'</span><span class="token punctuation">)</span>
+<span class="token keyword">const</span> keys <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'../config/keys'</span><span class="token punctuation">)</span>
+
+<span class="token keyword">const</span> opts <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+opts<span class="token punctuation">.</span>jwtFromRequest <span class="token operator">=</span> ExtractJwt<span class="token punctuation">.</span><span class="token function">fromAuthHeaderAsBearerToken</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+opts<span class="token punctuation">.</span>secretOrKey <span class="token operator">=</span> keys<span class="token punctuation">.</span>secretOrKey
+
+module<span class="token punctuation">.</span><span class="token function-variable function">exports</span> <span class="token operator">=</span> passport <span class="token operator">=></span> <span class="token punctuation">{</span>
+  passport<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span>
+    <span class="token keyword">new</span> <span class="token class-name">JwtStrategy</span><span class="token punctuation">(</span>opts<span class="token punctuation">,</span> <span class="token punctuation">(</span>jwt_payload<span class="token punctuation">,</span> done<span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+      <span class="token comment">// This payload is the one we used in User Match</span>
+      User<span class="token punctuation">.</span><span class="token function">findById</span><span class="token punctuation">(</span>jwt_payload<span class="token punctuation">.</span>id<span class="token punctuation">)</span>
+        <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span>user <span class="token operator">=></span> <span class="token punctuation">{</span>
+          <span class="token keyword">if</span> <span class="token punctuation">(</span>user<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">return</span> <span class="token function">done</span><span class="token punctuation">(</span><span class="token keyword">null</span><span class="token punctuation">,</span> user<span class="token punctuation">)</span>
+          <span class="token punctuation">}</span>
+          <span class="token keyword">return</span> <span class="token function">done</span><span class="token punctuation">(</span><span class="token keyword">null</span><span class="token punctuation">,</span> <span class="token boolean">false</span><span class="token punctuation">)</span>
+        <span class="token punctuation">}</span><span class="token punctuation">)</span>
+        <span class="token punctuation">.</span><span class="token keyword">catch</span><span class="token punctuation">(</span>err <span class="token operator">=></span> console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">)</span>
+<span class="token punctuation">}</span></code></pre></div>
+<p>Now we need to create a protected route inside our user API:</p>
+<div class="gatsby-highlight" data-language="javascript"><pre class="language-javascript"><code class="language-javascript"><span class="token keyword">const</span> passport <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'passport'</span><span class="token punctuation">)</span>
+
+<span class="token comment">// @route  GET api/users/current</span>
+<span class="token comment">// @desc   Return current user</span>
+<span class="token comment">// @access Private</span>
+router<span class="token punctuation">.</span><span class="token keyword">get</span><span class="token punctuation">(</span>
+  <span class="token string">'/current'</span><span class="token punctuation">,</span>
+  passport<span class="token punctuation">.</span><span class="token function">authenticate</span><span class="token punctuation">(</span><span class="token string">'jwt'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> session<span class="token punctuation">:</span> <span class="token boolean">false</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+  <span class="token punctuation">(</span>req<span class="token punctuation">,</span> res<span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+    res<span class="token punctuation">.</span><span class="token function">json</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+      id<span class="token punctuation">:</span> req<span class="token punctuation">.</span>user<span class="token punctuation">.</span>id<span class="token punctuation">,</span>
+      name<span class="token punctuation">:</span> req<span class="token punctuation">.</span>user<span class="token punctuation">.</span>name<span class="token punctuation">,</span>
+      email<span class="token punctuation">:</span> req<span class="token punctuation">.</span>user<span class="token punctuation">.</span>email<span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">)</span></code></pre></div>
+<p>Now to test everything works perform a POST request to login:</p>
+<p>
+  <a
+    class="gatsby-resp-image-link"
+    href="/React-Personal-Blog-Gatsby/static/c145a0a011ec0ed6847cd18c8541c0c6/e81c3/mern-5.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+  
+  <span
+    class="gatsby-resp-image-wrapper"
+    style="position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;"
+  >
+    <span
+      class="gatsby-resp-image-background-image"
+      style="padding-bottom: 55.83153347732181%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAYAAAB/Ca1DAAAACXBIWXMAAA7DAAAOwwHHb6hkAAABo0lEQVQoz3WSSZLbMAxFdcEcK+focyQ5Q5apysKb2GprMgdREkVN/v0BSS5vwvIzIBAAQRBZ0zSw1ipVVSllWVLWMMbAew/n3Av5todurMP3XwHfPlr8/OMRg0EmDiEEdWjbVhO71sE+GjhvNYHQdZ0ifsMwKD35fY348XfEtWqRgkU2jiOEIUakMSLSKVIfTI3YtRhT0mD1oVyWBdu2vQAONtq5l4lxmqbdYV2VdaX+hCaTBM/nU/dX7skSXaqd51n9Vv4tEpsiMumZVCRLAk9kiV0CExO/771X+LKLzqTZLc816D3gRBIJ74HnwadtN+hPyaa492dh+fMy6zXOPp26XFWkIO2JvFrf9yrTlJQ19ljlyqbI97HhSxrPUXA7nbwigxIPXKRHPEBIPCTOEyYmH1nAqDoLoV/n5ZV5JRmLnmMSOJMDk03Bk1bl1geAQZjTIf/PMvTItAX8GC8X5Jcrin8FfMFhv9dwlIL5rPAQ8lJ1e6/gZJ/sfrXafNkgk0bOzDzdbqgLg/Ja4k6qvFJELw5Et+WDN7HoSDgQvW0MdYMvIpNQHSilD5YAAAAASUVORK5CYII='); background-size: cover; display: block;"
+    >
+      <img
+        class="gatsby-resp-image-image"
+        style="width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;"
+        alt="code"
+        title=""
+        src="/React-Personal-Blog-Gatsby/static/c145a0a011ec0ed6847cd18c8541c0c6/fb8a0/mern-5.png"
+        srcset="/React-Personal-Blog-Gatsby/static/c145a0a011ec0ed6847cd18c8541c0c6/1a291/mern-5.png 148w,
+/React-Personal-Blog-Gatsby/static/c145a0a011ec0ed6847cd18c8541c0c6/2bc4a/mern-5.png 295w,
+/React-Personal-Blog-Gatsby/static/c145a0a011ec0ed6847cd18c8541c0c6/fb8a0/mern-5.png 590w,
+/React-Personal-Blog-Gatsby/static/c145a0a011ec0ed6847cd18c8541c0c6/526de/mern-5.png 885w,
+/React-Personal-Blog-Gatsby/static/c145a0a011ec0ed6847cd18c8541c0c6/e81c3/mern-5.png 926w"
+        sizes="(max-width: 590px) 100vw, 590px"
+      />
+    </span>
+  </span>
+  
+  </a>
+    </p>
+<p>With the token perform a GET request with the token in the headers getting as result:</p>
+<p>
+  <a
+    class="gatsby-resp-image-link"
+    href="/React-Personal-Blog-Gatsby/static/d77514f8af668006f0bf0eabfc3a208d/144fd/mern-6.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+  
+  <span
+    class="gatsby-resp-image-wrapper"
+    style="position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;"
+  >
+    <span
+      class="gatsby-resp-image-background-image"
+      style="padding-bottom: 51.31428571428571%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAYAAAC0VX7mAAAACXBIWXMAAA7DAAAOwwHHb6hkAAABqElEQVQoz21SWY6cMBTkWnO1HCPSXCX/Ocf8jHqBZvGKbYzBVMqmezSJIlEq7LfWe27WxWDxM7wPCCFgXRZEp2HFACdG2KnwgHU2SNuGI2ccx1GhlELXdZBigqfdaIVGKYFpGmnUWEqygjViiScCz2GJ5z3P37GmhI1FTNjQqQBlPZpxHCGEhJQSfd/Xim3b4kF+8CyFqJ0U+7+YaHNG4scvg7d3jZ+/NRqtNZxzsNZCsWXD1gtbSwnsfJ5nFJ/Cxe/lW9RURXFBqyI+hoheOjRhppGz895XFCdHdrz3cvqylfmG5/++78h1lrkyUHDw29Fs+znk6pDz30y3Eryu6zmzJ+f8Labygb3GHJQ89LWjmdWNpyRKsJQVOezEZGWziYkSF/BCkW0CFQTGLYwJBDnZsuWxx3S7QV2ukJcLzPUK8fkJe7/z7gLX3phkrd3m/+HZ6QtN4kV8dIj9A2YU6DsBLTQUkbiIzGLZGBxSII8Dcns/wZjctch8g9loZC4ys+Nm42ATk6X7DYHPZGoHqG6EnyQOOoLBfIQAx1Hh5hNcWmV2j7x/4Q9/qAG3ztasJQAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+    >
+      <img
+        class="gatsby-resp-image-image"
+        style="width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;"
+        alt="code"
+        title=""
+        src="/React-Personal-Blog-Gatsby/static/d77514f8af668006f0bf0eabfc3a208d/fb8a0/mern-6.png"
+        srcset="/React-Personal-Blog-Gatsby/static/d77514f8af668006f0bf0eabfc3a208d/1a291/mern-6.png 148w,
+/React-Personal-Blog-Gatsby/static/d77514f8af668006f0bf0eabfc3a208d/2bc4a/mern-6.png 295w,
+/React-Personal-Blog-Gatsby/static/d77514f8af668006f0bf0eabfc3a208d/fb8a0/mern-6.png 590w,
+/React-Personal-Blog-Gatsby/static/d77514f8af668006f0bf0eabfc3a208d/144fd/mern-6.png 875w"
+        sizes="(max-width: 590px) 100vw, 590px"
+      />
+    </span>
+  </span>
+  
+  </a>
+    </p>
+<h2>Summary</h2>
+<ul>
+<li>We perform authentication with JWT and Tokens.</li>
+<li>When user login we get a token which we use with a GET request to obtain the data we need.</li>
+<li>If we try this without token we get “UNAUTHORIZED” message.</li>
+<li>We created our Schema file.</li>
+<li>In our users API file we configured our endpoints, we import the schema (model), validate the email and then use bcrypt to hash the password.</li>
+<li>With the login EP we check if the email is valid and then we compare the password, once we got it we get a token.</li>
+<li>With said token we use passport, initialize it in our server file, then configure the authentication using the token in our configuration file, finally we use passport.authenticate to use that token to obtain the information we need after we login.</li>
+</ul>
+<h2>Conclusion</h2>
+<p>For this part of the series we handled a good part of the authentication configuration. Using passport and bcrypt we managed to create a signup and login system.</p>
+<p>See you on the next post.</p>
+<p>Sincerely,</p>
+<p><strong>Eng Adrian Beria.</strong></p></div><hr style="margin-bottom:1.625rem"/><ul style="display:flex;flex-wrap:wrap;justify-content:space-between;list-style:none;padding:0"><li><a rel="prev" href="/React-Personal-Blog-Gatsby/25-mern-social-network/">← <!-- -->MERN Social Network - Server part 1</a></li><li><a rel="next" href="/React-Personal-Blog-Gatsby/27-mern-social-network-3/">MERN Social Network - Server part 3 Validation<!-- --> →</a></li></ul></div></div></div><script>
+  
+  
+  if(true) {
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  }
+  if (typeof ga === "function") {
+    ga('create', 'undefined', 'auto', {});
+      
+      }
+      </script><script id="gatsby-script-loader">/*<![CDATA[*/window.page={"componentChunkName":"component---src-templates-blog-post-js","jsonName":"26-mern-social-network-2-c40","path":"/26-mern-social-network-2/"};window.dataPath="212/path---26-mern-social-network-2-c-40-157-ivSCA4APkTMf4SUAKDkVdJ7FE";/*]]>*/</script><script id="gatsby-chunk-mapping">/*<![CDATA[*/window.___chunkMapping={"app":["/app-4e11346c8e77271929a6.js"],"component---node-modules-gatsby-plugin-offline-app-shell-js":["/component---node-modules-gatsby-plugin-offline-app-shell-js-0d0a529deb4700809c6b.js"],"component---src-templates-blog-post-js":["/component---src-templates-blog-post-js-453bf1286b7dd5e6e7f5.js"],"component---src-pages-404-js":["/component---src-pages-404-js-12d1e7628384a501a7eb.js"],"component---src-pages-index-js":["/component---src-pages-index-js-d957837aa6e586a5cd6b.js"]};/*]]>*/</script><script src="/React-Personal-Blog-Gatsby/webpack-runtime-78793ec8d726818f1117.js" async=""></script><script src="/React-Personal-Blog-Gatsby/0-536b63d17895bdbe58d7.js" async=""></script><script src="/React-Personal-Blog-Gatsby/app-4e11346c8e77271929a6.js" async=""></script><script src="/React-Personal-Blog-Gatsby/component---src-templates-blog-post-js-453bf1286b7dd5e6e7f5.js" async=""></script><script src="/React-Personal-Blog-Gatsby/1-0ca38feffad4eeaaf45d.js" async=""></script></body></html>
