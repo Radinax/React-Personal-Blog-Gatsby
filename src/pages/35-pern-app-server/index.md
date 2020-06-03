@@ -41,29 +41,13 @@ Our server will look like this when we're done.
 
 ## Endpoints
 
-These are the endpoints for reference, we be using all the profile ones
+These are the endpoints for reference for CRUD operations on posts, we will add later the CRUDs for Users and Comments.
 
 ```bash
-└── /api/users
-              /register                         [POST]
-              /login                            [POST]
-              /current                          [GET]
-
-└── /api/profile                                [GET] [POST] [DELETE]
-              /all                              [GET]
-              /handle/:handle                   [GET]
-              /user/:user_id                    [GET]
-              /experience                       [POST]
-              /education                        [POST]
-              /experience/:exp_id               [DELETE]
-              /education/:edu_id                [DELETE]
-
-└── /api/posts                                  [GET] [POST]
-              /:post_id                         [GET] [DELETE]
-              /like/:post_id                    [POST]
-              /unlike/:post_id                  [POST]
-              /comment/:post_id                 [POST]
-              /comment/:post_id/:comment_id     [DELETE]
+└── /api/posts                  [GET] [POST]
+              /:post_id         [GET]
+              /:post_id         [PUT]
+              /:post_id         [DELETE]
 ```
 
 ## Install dependencies
