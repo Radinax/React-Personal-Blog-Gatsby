@@ -6,6 +6,8 @@ import Bio from '../components/Bio'
 import Layout from '../components/Layout'
 import { rhythm, scale } from '../utils/typography'
 
+import './blog-post.css'
+
 class BlogPostTemplate extends React.Component {
   render() {
     const post = this.props.data.markdownRemark
@@ -26,7 +28,7 @@ class BlogPostTemplate extends React.Component {
             ...scale(-1 / 5),
             display: 'block',
             marginBottom: rhythm(1),
-            marginTop: rhythm(-.5),
+            marginTop: rhythm(-0.5),
           }}
         >
           {post.frontmatter.date}
@@ -47,20 +49,18 @@ class BlogPostTemplate extends React.Component {
           }}
         >
           <li>
-            {
-              previous &&
+            {previous && (
               <Link to={previous.fields.slug} rel="prev">
                 ← {previous.frontmatter.title}
               </Link>
-            }
+            )}
           </li>
           <li>
-            {
-              next &&
+            {next && (
               <Link to={next.fields.slug} rel="next">
                 {next.frontmatter.title} →
               </Link>
-            }
+            )}
           </li>
         </ul>
       </Layout>
