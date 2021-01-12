@@ -22,18 +22,26 @@
  */
 
 .gatsby-highlight {
-  background-color: #001f3f;
-  color: hsla(210, 100%, 75%, 1);
+  background-color: #fdf6e3;
   border-radius: 0.3em;
   margin: 0.5em 0;
   padding: 1em;
   overflow: auto;
 }
 
-.gatsby-highlight pre[class*='language-'].line-numbers {
+.gatsby-highlight pre[class*='language'] {
+  background-color: transparent;
+  margin: 0;
   padding: 0;
-  padding-left: 2.8em;
   overflow: initial;
+  float: left;
+  min-width: 100%;
+}
+
+.gatsby-highlight pre[class*='language-'].line-numbers {
+  /*padding: 0;*/
+  padding-left: 2.8em;
+  /*overflow: initial;*/
 }
 
 .command-line-prompt > span:before {

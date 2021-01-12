@@ -19,7 +19,7 @@ Let's see some properties of block boxes:
 
 - The width of block boxes is set automatically based on the width of its parent container. In this case, our blocks are always the width of the browser window.
 
-- The default height of block boxes is based on the content it contains. When you narrow the browser window, the <h1> gets split over two lines, and its height adjusts accordingly.
+- The default height of block boxes is based on the content it contains. When you narrow the browser window, the `<h1>` gets split over two lines, and its height adjusts accordingly.
 
 - Inline boxes don’t affect vertical spacing. They’re not for determining layout—they’re for styling stuff inside of a block.
 

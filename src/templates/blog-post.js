@@ -1,12 +1,11 @@
 import React from 'react'
 import Helmet from 'react-helmet'
 import { Link, graphql } from 'gatsby'
+import 'prismjs/themes/prism-tomorrow.css'
 
 import Bio from '../components/Bio'
 import Layout from '../components/Layout'
 import { rhythm, scale } from '../utils/typography'
-
-import './blog-post.css'
 
 class BlogPostTemplate extends React.Component {
   render() {
