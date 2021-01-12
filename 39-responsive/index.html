@@ -1,0 +1,454 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><style data-href="/React-Personal-Blog-Gatsby/1.8a22d5eb22a0d5bb33ba.css">@font-face{font-family:Montserrat;font-style:normal;font-display:swap;font-weight:100;src:local("Montserrat Thin "),local("Montserrat-Thin"),url(/React-Personal-Blog-Gatsby/static/montserrat-latin-100-50d279861fb3cbfed809eae6ed8b9ac9.woff2) format("woff2"),url(/React-Personal-Blog-Gatsby/static/montserrat-latin-100-5e334eff013f12fbb8ed72c2a253f119.woff) format("woff")}@font-face{font-family:Montserrat;font-style:italic;font-display:swap;font-weight:100;src:local("Montserrat Thin italic"),local("Montserrat-Thinitalic"),url(/React-Personal-Blog-Gatsby/static/montserrat-latin-100italic-8c0705336558194799a8729840d7ed9d.woff2) format("woff2"),url(/React-Personal-Blog-Gatsby/static/montserrat-latin-100italic-03e19243272affe738654a157625ec26.woff) format("woff")}@font-face{font-family:Montserrat;font-style:normal;font-display:swap;font-weight:200;src:local("Montserrat Extra Light "),local("Montserrat-Extra Light"),url(/React-Personal-Blog-Gatsby/static/montserrat-latin-200-4343d3d91a9446226e7a8bbb024111ad.woff2) format("woff2"),url(/React-Personal-Blog-Gatsby/static/montserrat-latin-200-f2022ecd65a0703ec3edcb7641709a75.woff) format("woff")}@font-face{font-family:Montserrat;font-style:italic;font-display:swap;font-weight:200;src:local("Montserrat Extra Light italic"),local("Montserrat-Extra Lightitalic"),url(/React-Personal-Blog-Gatsby/static/montserrat-latin-200italic-116c4c4b14ef76b0555da09854512022.woff2) format("woff2"),url(/React-Personal-Blog-Gatsby/static/montserrat-latin-200italic-89614a6008fc5c60739012463d0ee7e6.woff) format("woff")}@font-face{font-family:Montserrat;font-style:normal;font-display:swap;font-weight:300;src:local("Montserrat Light "),local("Montserrat-Light"),url(/React-Personal-Blog-Gatsby/static/montserrat-latin-300-d2ad295b60682a6537c358e06ea80c61.woff2) format("woff2"),url(/React-Personal-Blog-Gatsby/static/montserrat-latin-300-3a371ee0d175f5c2b15ce1d6b981dc4e.woff) format("woff")}@font-face{font-family:Montserrat;font-style:italic;font-display:swap;font-weight:300;src:local("Montserrat Light italic"),local("Montserrat-Lightitalic"),url(/React-Personal-Blog-Gatsby/static/montserrat-latin-300italic-f6b6bf2431003f8142e800f9df157989.woff2) format("woff2"),url(/React-Personal-Blog-Gatsby/static/montserrat-latin-300italic-16521668f5f238098329cdd7d27c391e.woff) format("woff")}@font-face{font-family:Montserrat;font-style:normal;font-display:swap;font-weight:400;src:local("Montserrat Regular "),local("Montserrat-Regular"),url(/React-Personal-Blog-Gatsby/static/montserrat-latin-400-240a84447b78da0920fcb07e378f2c5f.woff2) format("woff2"),url(/React-Personal-Blog-Gatsby/static/montserrat-latin-400-b20cc131034316b1c85d0498fb9ed5c5.woff) format("woff")}@font-face{font-family:Montserrat;font-style:italic;font-display:swap;font-weight:400;src:local("Montserrat Regular italic"),local("Montserrat-Regularitalic"),url(/React-Personal-Blog-Gatsby/static/montserrat-latin-400italic-86172bb829de6be08b92512096b6aca6.woff2) format("woff2"),url(/React-Personal-Blog-Gatsby/static/montserrat-latin-400italic-9405e78785a55cf0e4ea7669d4616ea9.woff) format("woff")}@font-face{font-family:Montserrat;font-style:normal;font-display:swap;font-weight:500;src:local("Montserrat Medium "),local("Montserrat-Medium"),url(/React-Personal-Blog-Gatsby/static/montserrat-latin-500-fb8d6b71dbe8d9294be43082936f649e.woff2) format("woff2"),url(/React-Personal-Blog-Gatsby/static/montserrat-latin-500-50825d47af7ae47e055018eb689c6c99.woff) format("woff")}@font-face{font-family:Montserrat;font-style:italic;font-display:swap;font-weight:500;src:local("Montserrat Medium italic"),local("Montserrat-Mediumitalic"),url(/React-Personal-Blog-Gatsby/static/montserrat-latin-500italic-c0a555a4f8e997385a3eebbd4da0b9ee.woff2) format("woff2"),url(/React-Personal-Blog-Gatsby/static/montserrat-latin-500italic-635de59c4be86285b1f70068c95b9816.woff) format("woff")}@font-face{font-family:Montserrat;font-style:normal;font-display:swap;font-weight:600;src:local("Montserrat SemiBold "),local("Montserrat-SemiBold"),url(/React-Personal-Blog-Gatsby/static/montserrat-latin-600-d5615136a08cfee70deb4be1ee1651df.woff2) format("woff2"),url(/React-Personal-Blog-Gatsby/static/montserrat-latin-600-f300da4fb4fe00e23915f62b2c643681.woff) format("woff")}@font-face{font-family:Montserrat;font-style:italic;font-display:swap;font-weight:600;src:local("Montserrat SemiBold italic"),local("Montserrat-SemiBolditalic"),url(/React-Personal-Blog-Gatsby/static/montserrat-latin-600italic-10f29d139edacde92df63374c5672568.woff2) format("woff2"),url(/React-Personal-Blog-Gatsby/static/montserrat-latin-600italic-2bc37d86a4ba12ce526c4af904a9946e.woff) format("woff")}@font-face{font-family:Montserrat;font-style:normal;font-display:swap;font-weight:700;src:local("Montserrat Bold "),local("Montserrat-Bold"),url(/React-Personal-Blog-Gatsby/static/montserrat-latin-700-7d77e1f03eefc452dab14d7f89080083.woff2) format("woff2"),url(/React-Personal-Blog-Gatsby/static/montserrat-latin-700-81826529772e52f0f14a4c73c2f2c7f1.woff) format("woff")}@font-face{font-family:Montserrat;font-style:italic;font-display:swap;font-weight:700;src:local("Montserrat Bold italic"),local("Montserrat-Bolditalic"),url(/React-Personal-Blog-Gatsby/static/montserrat-latin-700italic-1dd2b53f1567a29e0505de9b27c4352c.woff2) format("woff2"),url(/React-Personal-Blog-Gatsby/static/montserrat-latin-700italic-c162d257f5e9f9b108a96a604cfb2132.woff) format("woff")}@font-face{font-family:Montserrat;font-style:normal;font-display:swap;font-weight:800;src:local("Montserrat ExtraBold "),local("Montserrat-ExtraBold"),url(/React-Personal-Blog-Gatsby/static/montserrat-latin-800-d4e7bf86bbd8e5f43ca73fa831218648.woff2) format("woff2"),url(/React-Personal-Blog-Gatsby/static/montserrat-latin-800-895aadbff357be35ac8dd107c7975ee7.woff) format("woff")}@font-face{font-family:Montserrat;font-style:italic;font-display:swap;font-weight:800;src:local("Montserrat ExtraBold italic"),local("Montserrat-ExtraBolditalic"),url(/React-Personal-Blog-Gatsby/static/montserrat-latin-800italic-fc0cbe442f7b3733c91e982e825c4daa.woff2) format("woff2"),url(/React-Personal-Blog-Gatsby/static/montserrat-latin-800italic-b3362875067300abedb7a8fb97903258.woff) format("woff")}@font-face{font-family:Montserrat;font-style:normal;font-display:swap;font-weight:900;src:local("Montserrat Black "),local("Montserrat-Black"),url(/React-Personal-Blog-Gatsby/static/montserrat-latin-900-c8bdd772c0d1347720ff7e3fb72719f3.woff2) format("woff2"),url(/React-Personal-Blog-Gatsby/static/montserrat-latin-900-1b99ef78e627dd9bbd0ca4b5c0789547.woff) format("woff")}@font-face{font-family:Montserrat;font-style:italic;font-display:swap;font-weight:900;src:local("Montserrat Black italic"),local("Montserrat-Blackitalic"),url(/React-Personal-Blog-Gatsby/static/montserrat-latin-900italic-cb72c1f90f66c124fb897a75bec64c78.woff2) format("woff2"),url(/React-Personal-Blog-Gatsby/static/montserrat-latin-900italic-b78bb9f8ecec6c5a924c873f1818095f.woff) format("woff")}@font-face{font-family:Merriweather;font-style:normal;font-display:swap;font-weight:300;src:local("Merriweather Light "),local("Merriweather-Light"),url(/React-Personal-Blog-Gatsby/static/merriweather-latin-300-f015f1e9a46a3b9db4fd64564dacece4.woff2) format("woff2"),url(/React-Personal-Blog-Gatsby/static/merriweather-latin-300-92dfe81b725c342d31d962da975c07a6.woff) format("woff")}@font-face{font-family:Merriweather;font-style:italic;font-display:swap;font-weight:300;src:local("Merriweather Light italic"),local("Merriweather-Lightitalic"),url(/React-Personal-Blog-Gatsby/static/merriweather-latin-300italic-7fd86b32accf2df4403d1d4fa3a81502.woff2) format("woff2"),url(/React-Personal-Blog-Gatsby/static/merriweather-latin-300italic-878b76f59d5ba58dd1652dc8d2a0f4f9.woff) format("woff")}@font-face{font-family:Merriweather;font-style:normal;font-display:swap;font-weight:400;src:local("Merriweather Regular "),local("Merriweather-Regular"),url(/React-Personal-Blog-Gatsby/static/merriweather-latin-400-12dbf4c00ae43698f278b099e4b0ec9e.woff2) format("woff2"),url(/React-Personal-Blog-Gatsby/static/merriweather-latin-400-1fffad22b085a877995812dbf1d9ac08.woff) format("woff")}@font-face{font-family:Merriweather;font-style:italic;font-display:swap;font-weight:400;src:local("Merriweather Regular italic"),local("Merriweather-Regularitalic"),url(/React-Personal-Blog-Gatsby/static/merriweather-latin-400italic-1e0d3e8121d88969bfb153c8f174b758.woff2) format("woff2"),url(/React-Personal-Blog-Gatsby/static/merriweather-latin-400italic-de18d4c4e8e808a7248a185f866ff094.woff) format("woff")}@font-face{font-family:Merriweather;font-style:normal;font-display:swap;font-weight:700;src:local("Merriweather Bold "),local("Merriweather-Bold"),url(/React-Personal-Blog-Gatsby/static/merriweather-latin-700-dc8fec81a125fc63856587e6683da73b.woff2) format("woff2"),url(/React-Personal-Blog-Gatsby/static/merriweather-latin-700-d7d2ed8e58f303392cc3fc00ba3a9186.woff) format("woff")}@font-face{font-family:Merriweather;font-style:italic;font-display:swap;font-weight:700;src:local("Merriweather Bold italic"),local("Merriweather-Bolditalic"),url(/React-Personal-Blog-Gatsby/static/merriweather-latin-700italic-b7b7e5da4d7be8c12bd5a6c809edc8fc.woff2) format("woff2"),url(/React-Personal-Blog-Gatsby/static/merriweather-latin-700italic-6210a5fc1c54ca85a5d82aa85d7a9b5c.woff) format("woff")}@font-face{font-family:Merriweather;font-style:normal;font-display:swap;font-weight:900;src:local("Merriweather Black "),local("Merriweather-Black"),url(/React-Personal-Blog-Gatsby/static/merriweather-latin-900-43f870d543dd89fbeb66d417c0d97276.woff2) format("woff2"),url(/React-Personal-Blog-Gatsby/static/merriweather-latin-900-8f3806df74937c7b8b53f24ae1e725d1.woff) format("woff")}@font-face{font-family:Merriweather;font-style:italic;font-display:swap;font-weight:900;src:local("Merriweather Black italic"),local("Merriweather-Blackitalic"),url(/React-Personal-Blog-Gatsby/static/merriweather-latin-900italic-168c1ab28ed0e4e7d654334def288bc1.woff2) format("woff2"),url(/React-Personal-Blog-Gatsby/static/merriweather-latin-900italic-ae7778f01871e35ee142ef207b313b34.woff) format("woff")}</style><style data-href="/React-Personal-Blog-Gatsby/component---src-templates-blog-post-js.08eb512c534233bffd38.css">code[class*=language-],pre[class*=language-]{color:#ccc;background:none;font-family:Consolas,Monaco,Andale Mono,Ubuntu Mono,monospace;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-ms-hyphens:none;hyphens:none}pre[class*=language-]{padding:1em;margin:.5em 0;overflow:auto}:not(pre)>code[class*=language-],pre[class*=language-]{background:#2d2d2d}:not(pre)>code[class*=language-]{padding:.1em;border-radius:.3em;white-space:normal}.token.block-comment,.token.cdata,.token.comment,.token.doctype,.token.prolog{color:#999}.token.punctuation{color:#ccc}.token.attr-name,.token.deleted,.token.namespace,.token.tag{color:#e2777a}.token.function-name{color:#6196cc}.token.boolean,.token.function,.token.number{color:#f08d49}.token.class-name,.token.constant,.token.property,.token.symbol{color:#f8c555}.token.atrule,.token.builtin,.token.important,.token.keyword,.token.selector{color:#cc99cd}.token.attr-value,.token.char,.token.regex,.token.string,.token.variable{color:#7ec699}.token.entity,.token.operator,.token.url{color:#67cdcc}.token.bold,.token.important{font-weight:700}.token.italic{font-style:italic}.token.entity{cursor:help}.token.inserted{color:green}</style><meta name="generator" content="Gatsby 2.0.64"/><link rel="alternate" type="application/rss+xml" href="/React-Personal-Blog-Gatsby/rss.xml"/><link rel="shortcut icon" href="/React-Personal-Blog-Gatsby/icons/icon-48x48.png"/><link rel="manifest" href="/React-Personal-Blog-Gatsby/manifest.webmanifest"/><meta name="theme-color" content="#663399"/><title data-react-helmet="true">Mastering CSS - Responsive Design | Adrian Beria Blog</title><meta data-react-helmet="true" name="description" content="Responsive design is accomplished through CSS “media queries”. Think of media queries as a way to conditionally apply CSS rules. They tell…"/><style id="typography.js">html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}article,aside,details,figcaption,figure,footer,header,main,menu,nav,section,summary{display:block}audio,canvas,progress,video{display:inline-block}audio:not([controls]){display:none;height:0}progress{vertical-align:baseline}[hidden],template{display:none}a{background-color:transparent;-webkit-text-decoration-skip:objects}a:active,a:hover{outline-width:0}abbr[title]{border-bottom:none;text-decoration:underline;text-decoration:underline dotted}b,strong{font-weight:inherit;font-weight:bolder}dfn{font-style:italic}h1{font-size:2em;margin:.67em 0}mark{background-color:#ff0;color:#000}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}img{border-style:none}svg:not(:root){overflow:hidden}code,kbd,pre,samp{font-family:monospace,monospace;font-size:1em}figure{margin:1em 40px}hr{box-sizing:content-box;height:0;overflow:visible}button,input,optgroup,select,textarea{font:inherit;margin:0}optgroup{font-weight:700}button,input{overflow:visible}button,select{text-transform:none}[type=reset],[type=submit],button,html [type=button]{-webkit-appearance:button}[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner,button::-moz-focus-inner{border-style:none;padding:0}[type=button]:-moz-focusring,[type=reset]:-moz-focusring,[type=submit]:-moz-focusring,button:-moz-focusring{outline:1px dotted ButtonText}fieldset{border:1px solid silver;margin:0 2px;padding:.35em .625em .75em}legend{box-sizing:border-box;color:inherit;display:table;max-width:100%;padding:0;white-space:normal}textarea{overflow:auto}[type=checkbox],[type=radio]{box-sizing:border-box;padding:0}[type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}[type=search]::-webkit-search-cancel-button,[type=search]::-webkit-search-decoration{-webkit-appearance:none}::-webkit-input-placeholder{color:inherit;opacity:.54}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}html{font:100%/1.625 -apple-system,'BlinkMacSystemFont','Segoe UI','Roboto','Helvetica','Arial',sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';box-sizing:border-box;overflow-y:scroll;}*{box-sizing:inherit;}*:before{box-sizing:inherit;}*:after{box-sizing:inherit;}body{color:hsla(0,0%,0%,0.8);font-family:-apple-system,'BlinkMacSystemFont','Segoe UI','Roboto','Helvetica','Arial',sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';font-weight:normal;word-wrap:break-word;font-kerning:normal;-moz-font-feature-settings:"kern", "liga", "clig", "calt";-ms-font-feature-settings:"kern", "liga", "clig", "calt";-webkit-font-feature-settings:"kern", "liga", "clig", "calt";font-feature-settings:"kern", "liga", "clig", "calt";}img{max-width:100%;margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:0.8125rem;}h1{margin-left:0;margin-right:0;margin-top:2.4375rem;padding-bottom:calc(0.40625rem - 1px);padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.21875rem;color:inherit;font-family:-apple-system,'BlinkMacSystemFont','Segoe UI','Roboto','Helvetica','Arial',sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';font-weight:600;text-rendering:optimizeLegibility;font-size:2rem;line-height:1.1;border-bottom:1px solid hsla(0,0%,0%,0.07);}h2{margin-left:0;margin-right:0;margin-top:1.625rem;padding-bottom:calc(0.40625rem - 1px);padding-left:0;padding-right:0;padding-top:0;margin-bottom:0.40625rem;color:inherit;font-family:-apple-system,'BlinkMacSystemFont','Segoe UI','Roboto','Helvetica','Arial',sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';font-weight:600;text-rendering:optimizeLegibility;font-size:1.51572rem;line-height:1.1;border-bottom:1px solid hsla(0,0%,0%,0.07);}h3{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:0.8125rem;color:inherit;font-family:-apple-system,'BlinkMacSystemFont','Segoe UI','Roboto','Helvetica','Arial',sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';font-weight:600;text-rendering:optimizeLegibility;font-size:1.31951rem;line-height:1.1;}h4{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:0.8125rem;color:inherit;font-family:-apple-system,'BlinkMacSystemFont','Segoe UI','Roboto','Helvetica','Arial',sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';font-weight:600;text-rendering:optimizeLegibility;font-size:1rem;line-height:1.1;}h5{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:0.8125rem;color:inherit;font-family:-apple-system,'BlinkMacSystemFont','Segoe UI','Roboto','Helvetica','Arial',sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';font-weight:600;text-rendering:optimizeLegibility;font-size:0.87055rem;line-height:1.1;}h6{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:0.8125rem;color:hsla(0,0%,0%,0.53);font-family:-apple-system,'BlinkMacSystemFont','Segoe UI','Roboto','Helvetica','Arial',sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';font-weight:600;text-rendering:optimizeLegibility;font-size:0.81225rem;line-height:1.1;}hgroup{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:0.8125rem;}ul{margin-left:1.625rem;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:0.8125rem;list-style-position:outside;list-style-image:none;}ol{margin-left:1.625rem;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:0.8125rem;list-style-position:outside;list-style-image:none;}dl{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:0.8125rem;}dd{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:0.8125rem;}p{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:0.8125rem;}figure{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:0.8125rem;}pre{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:0.8125rem;font-size:0.85rem;line-height:1.625rem;}table{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:0.8125rem;font-size:1rem;line-height:1.625rem;border-collapse:collapse;width:100%;}fieldset{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:0.8125rem;}blockquote{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:calc(0.8125rem - 1px);padding-right:0;padding-top:0;margin-bottom:0.8125rem;border-left:4px solid hsla(0,0%,0%,0.13);color:hsla(0,0%,0%,0.53);}form{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:0.8125rem;}noscript{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:0.8125rem;}iframe{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:0.8125rem;}hr{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:calc(0.8125rem - 1px);background:hsla(0,0%,0%,0.2);border:none;height:1px;}address{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:0.8125rem;}b{font-weight:600;}strong{font-weight:600;}dt{font-weight:600;}th{font-weight:600;}li{margin-bottom:calc(0.8125rem / 2);}ol li{padding-left:0;}ul li{padding-left:0;}li > ol{margin-left:1.625rem;margin-bottom:calc(0.8125rem / 2);margin-top:calc(0.8125rem / 2);}li > ul{margin-left:1.625rem;margin-bottom:calc(0.8125rem / 2);margin-top:calc(0.8125rem / 2);}blockquote *:last-child{margin-bottom:0;}li *:last-child{margin-bottom:0;}p *:last-child{margin-bottom:0;}li > p{margin-bottom:calc(0.8125rem / 2);}code{font-size:0.85rem;line-height:1.625rem;}kbd{font-size:0.85rem;line-height:1.625rem;}samp{font-size:0.85rem;line-height:1.625rem;}abbr{border-bottom:1px dotted hsla(0,0%,0%,0.5);cursor:help;}acronym{border-bottom:1px dotted hsla(0,0%,0%,0.5);cursor:help;}abbr[title]{border-bottom:1px dotted hsla(0,0%,0%,0.5);cursor:help;text-decoration:none;}thead{text-align:left;}td,th{text-align:left;border-bottom:1px solid hsla(0,0%,0%,0.12);font-feature-settings:"tnum";-moz-font-feature-settings:"tnum";-ms-font-feature-settings:"tnum";-webkit-font-feature-settings:"tnum";padding-left:1.08333rem;padding-right:1.08333rem;padding-top:0.8125rem;padding-bottom:calc(0.8125rem - 1px);}th:first-child,td:first-child{padding-left:0;}th:last-child,td:last-child{padding-right:0;}h3,h4,h5,h6{margin-bottom:0.8125rem;margin-top:1.625rem;}ol,ul{margin-left:2.03125rem;}li>ol,li>ul{margin-left:2.03125rem;}a{color:#4078c0;text-decoration:none;}a:hover,a:active{text-decoration:underline;}a.gatsby-resp-image-link{box-shadow:none;}</style><link as="script" rel="preload" href="/React-Personal-Blog-Gatsby/app-4e11346c8e77271929a6.js"/><link as="script" rel="preload" href="/React-Personal-Blog-Gatsby/component---src-templates-blog-post-js-447bf4a52774d7d624f1.js"/><link as="script" rel="preload" href="/React-Personal-Blog-Gatsby/1-0ca38feffad4eeaaf45d.js"/><link as="script" rel="preload" href="/React-Personal-Blog-Gatsby/0-e0d2f349bc4c793dea0c.js"/><link as="script" rel="preload" href="/React-Personal-Blog-Gatsby/webpack-runtime-7ab23110f6cf4610ce74.js"/><link rel="preload" href="/React-Personal-Blog-Gatsby/static/d/858/path---39-responsive-89-d-4e0-JoNSMfZJmlYTuU7FCZ49w0i0sM.json" as="fetch" crossOrigin="use-credentials"/></head><body><div id="___gatsby"><div style="outline:none" tabindex="-1" role="group"><div style="margin-left:auto;margin-right:auto;max-width:39rem;padding:2.4375rem 1.21875rem"><h3 style="margin-top:0;margin-bottom:-1.625rem;text-align:center;font-size:3rem;padding:15px"><a style="box-shadow:none;text-decoration:none;color:inherit" href="/React-Personal-Blog-Gatsby/">Adrian Beria Blog</a></h3><h1>Mastering CSS - Responsive Design</h1><p style="font-size:0.87055rem;line-height:1.625rem;display:block;margin-bottom:1.625rem;margin-top:-0.8125rem">September 03, 2020</p><div><p>Responsive design is accomplished through CSS “media queries”. Think of media queries as a way to conditionally apply CSS rules. They tell the browser that it should ignore or apply certain rules depending on the user’s device.</p>
+<h2>CSS Media Queries</h2>
+<p>We’ll start small by simply updating the background color on the <body> element based on the device width. This is a good way to make sure our media queries are actually working before getting into complicated layouts.</p>
+<p>
+  <a
+    class="gatsby-resp-image-link"
+    href="/React-Personal-Blog-Gatsby/static/703f8b435c9c0eac8abbdabb741495f6/b792b/layouts.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+  
+  <span
+    class="gatsby-resp-image-wrapper"
+    style="position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;"
+  >
+    <span
+      class="gatsby-resp-image-background-image"
+      style="padding-bottom: 39.73880597014926%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAICAYAAAD5nd/tAAAACXBIWXMAAAsSAAALEgHS3X78AAACI0lEQVQoz2NgAII1S5YxbF25imnx4iUgLsP3Lc4M0/f+5Ulf9J9v8v7/fA+fvWNmgII5U3vYlk8oFVjVX8i/pDuXf2VfPv/WBR3869auZgErWL1tOwM6SKqYJ3Bi1+LLt48t+Hjp0LLvmzett4fJLVq1pXDT8Qf/N5x4+n798UefNpx8+nHj0ds/Vq7d6AY3YMHqtWIL1m80X7x8BTeIH9V8QvjOwUnP/9/o+f/l0sz/q5YvhCteu/N41YEn//9vuvH//5ZbQHz7///t13/9X7F2kx/cwEPzF+U9Xr3u/7xZc8xA/KzeMyJ3Dk6+9+di+99Xpyb9X7lsgQtM7cZ9Zwt23vn/f+ON/982Xf//C0j/3Hj+0//lqzfC1TAcmTmn4s+mrf9nTZlmDeI3zDwudvPYko//7y/9//P+5v+bN671gqnduufolFOP/v/fdeUzEH/6v+f6t/+Hb3z8v27jlgy4gQcPHrI8evhI/85du6XB4bRwAfeVK1erL1+51nn12vX+ffv3q4PEp0ybKbZ6zdraHdu3d23dsqVp9erVLdu2bQXibd1Ll60oLC6rZGf4/+sXg09AsJaNk5t5QHCYFFLc8Jtb25kJiUnJgTi7du9hRI44GwdXPSBWNzSzVsGI1fTMHL7snHyppNQMHphYb/8EjvzCYsmKqhohmNi06TMZvnz9xjhr7gK2rNxCiey8QpHCkgqBC5euMh87foKprqGJAQDMDBawU/cGGwAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+    >
+      <img
+        class="gatsby-resp-image-image"
+        style="width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;"
+        alt="code"
+        title=""
+        src="/React-Personal-Blog-Gatsby/static/703f8b435c9c0eac8abbdabb741495f6/fb8a0/layouts.png"
+        srcset="/React-Personal-Blog-Gatsby/static/703f8b435c9c0eac8abbdabb741495f6/1a291/layouts.png 148w,
+/React-Personal-Blog-Gatsby/static/703f8b435c9c0eac8abbdabb741495f6/2bc4a/layouts.png 295w,
+/React-Personal-Blog-Gatsby/static/703f8b435c9c0eac8abbdabb741495f6/fb8a0/layouts.png 590w,
+/React-Personal-Blog-Gatsby/static/703f8b435c9c0eac8abbdabb741495f6/526de/layouts.png 885w,
+/React-Personal-Blog-Gatsby/static/703f8b435c9c0eac8abbdabb741495f6/b792b/layouts.png 1072w"
+        sizes="(max-width: 590px) 100vw, 590px"
+      />
+    </span>
+  </span>
+  
+  </a>
+    </p>
+<p>Let’s differentiate between narrow, medium, and wide layouts by creating a new styles.css stylesheet and adding the following:</p>
+<div class="gatsby-highlight" data-language="css"><pre class="language-css"><code class="language-css"><span class="token selector">*</span> <span class="token punctuation">{</span>
+  <span class="token property">margin</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+  <span class="token property">padding</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+  <span class="token property">box-sizing</span><span class="token punctuation">:</span> border-box<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">/* Mobile Styles */</span>
+<span class="token atrule"><span class="token rule">@media</span> only screen and <span class="token punctuation">(</span><span class="token property">max-width</span><span class="token punctuation">:</span> 400px<span class="token punctuation">)</span></span> <span class="token punctuation">{</span>
+  <span class="token selector">body</span> <span class="token punctuation">{</span>
+    <span class="token property">background-color</span><span class="token punctuation">:</span> #f09a9d<span class="token punctuation">;</span> <span class="token comment">/* Red */</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">/* Tablet Styles */</span>
+<span class="token atrule"><span class="token rule">@media</span> only screen and <span class="token punctuation">(</span><span class="token property">min-width</span><span class="token punctuation">:</span> 401px<span class="token punctuation">)</span> and <span class="token punctuation">(</span><span class="token property">max-width</span><span class="token punctuation">:</span> 960px<span class="token punctuation">)</span></span> <span class="token punctuation">{</span>
+  <span class="token selector">body</span> <span class="token punctuation">{</span>
+    <span class="token property">background-color</span><span class="token punctuation">:</span> #f5cf8e<span class="token punctuation">;</span> <span class="token comment">/* Yellow */</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">/* Desktop Styles */</span>
+<span class="token atrule"><span class="token rule">@media</span> only screen and <span class="token punctuation">(</span><span class="token property">min-width</span><span class="token punctuation">:</span> 961px<span class="token punctuation">)</span></span> <span class="token punctuation">{</span>
+  <span class="token selector">body</span> <span class="token punctuation">{</span>
+    <span class="token property">background-color</span><span class="token punctuation">:</span> #b2d6ff<span class="token punctuation">;</span> <span class="token comment">/* Blue */</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre></div>
+<p>When you resize your browser, you should see three different background colors: blue when it’s greater than 960px wide, yellow when it’s between 401px and 960px, and red when it’s less than 400px.</p>
+<p>Media queries always begin with the @media “at-rule” followed by some kind of conditional statement, and then some curly braces. Inside the curly braces, you put a bunch of ordinary CSS rules. The browser only pays attention to those rules if the condition is met.</p>
+<p>
+  <a
+    class="gatsby-resp-image-link"
+    href="/React-Personal-Blog-Gatsby/static/137d06a796c606ff8ff4973cf142394c/9f6e6/syntax.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+  
+  <span
+    class="gatsby-resp-image-wrapper"
+    style="position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;"
+  >
+    <span
+      class="gatsby-resp-image-background-image"
+      style="padding-bottom: 45.33333333333333%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAJCAYAAAAywQxIAAAACXBIWXMAAAsSAAALEgHS3X78AAABqklEQVQoz6WQzW7TQBSFB4kFsMDNHiIeLY9S8QQUusyIpC0iCYE1IKiQIlpTJ0UggeN0EtsoTvwz/pk4thOP7OHWsCkS6qJH+nRnzh3p3jkI3Vz3gNvAneq293T/rqHr+2HgP6ee22RRhH3qYeo5UF0chQFmjOEI/BWLcOBT7LkO9F3sOsuWvVy8dBynY5pmu9ls1tBX5WRnYbsiWKXCZ4m4FFtngkbrirwQVxTGmfDCWPjQu6wb/sdP01QcHB4+QhE5kUY/ZsHbU7U8Vi7y0U+dfzqfATp/d6ryz9+mfDweAyqXv0/5+y8TfjwkVf/D2YR/VEiuEaOckov4yd6zh0g5kyVKfba0HTHTjdI0fwkDgHOFZS1ElmVis9mIDFgn2V/SiiTNyjzPBcSSHh29qKPBYCBBbsy2l0LTtGIy0UrTgIlTAlNJaVlWWRRFCb/6H1Uo2+02abXadaSqqkQIScIwFDcRbLlttw/qSJbl+7CZNZ/P0ziO2eofgbe6RgzerCmlDsb4AWo0GkhRRtJweF7rdLq1Xq8PvLpCv//6Gt7Uut3ezu7u41u/ARXhGnEHkrv4AAAAAElFTkSuQmCC'); background-size: cover; display: block;"
+    >
+      <img
+        class="gatsby-resp-image-image"
+        style="width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;"
+        alt="code"
+        title=""
+        src="/React-Personal-Blog-Gatsby/static/137d06a796c606ff8ff4973cf142394c/fb8a0/syntax.png"
+        srcset="/React-Personal-Blog-Gatsby/static/137d06a796c606ff8ff4973cf142394c/1a291/syntax.png 148w,
+/React-Personal-Blog-Gatsby/static/137d06a796c606ff8ff4973cf142394c/2bc4a/syntax.png 295w,
+/React-Personal-Blog-Gatsby/static/137d06a796c606ff8ff4973cf142394c/fb8a0/syntax.png 590w,
+/React-Personal-Blog-Gatsby/static/137d06a796c606ff8ff4973cf142394c/526de/syntax.png 885w,
+/React-Personal-Blog-Gatsby/static/137d06a796c606ff8ff4973cf142394c/fa2eb/syntax.png 1180w,
+/React-Personal-Blog-Gatsby/static/137d06a796c606ff8ff4973cf142394c/9f6e6/syntax.png 1200w"
+        sizes="(max-width: 590px) 100vw, 590px"
+      />
+    </span>
+  </span>
+  
+  </a>
+    </p>
+<p>The only screen “media type” means that the contained styles should only be applied to devices with screens (opposed to printed documents, like when you hit Cmd+P in a browser). The min-width and max-width parts are called “media features”, and they specify the device dimensions you’re targeting.</p>
+<p>The above media queries are by far the most common ones you’ll encounter, but there are a lot of <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@media">other conditions</a> you can check for, including whether the device is in portrait or landscape mode, the resolution of its screen, and whether it has a mouse or not.</p>
+<h2>A few notes</h2>
+<p>Ok, so @media is how we define different layouts for specific device widths, but what layouts are we actually trying to implement? The example web page for this chapter is going to look something like this:</p>
+<p>
+  <a
+    class="gatsby-resp-image-link"
+    href="/React-Personal-Blog-Gatsby/static/be30e42a8fdffbf0889a529fd4fd6172/e588f/layouts-2.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+  
+  <span
+    class="gatsby-resp-image-wrapper"
+    style="position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;"
+  >
+    <span
+      class="gatsby-resp-image-background-image"
+      style="padding-bottom: 74.3103448275862%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAPCAYAAADkmO9VAAAACXBIWXMAAAsSAAALEgHS3X78AAAD/UlEQVQ4y42T7U9bVRzHL7jEZEbNllRnYvTdTKhPWQxbdAKZRJfURf8RX/vCF5IQRdjm5ngo5VE3x2AMBAa0rkAppQ9QaGkLbe/tc2+57W1LS59oby/t19PON5qY+E2+Od/zO+d8cnIeKIqouU12rvWLr9+4eKntRepvvX+l/fzV9hsXSGyk/qVzb39w9uNrstebW69LSPfMPwYBUL90d3zU3fnd9QeDPa89r3leHuntbr7d1dGecq1cIHMaIDhfAI5fJfnszP3+prs9ndcG7vz4yYFu9k1Se4mMvQJwDdTk4vp5wwG3Y2aSMa010FkDbuwF9WYmzlt8KcbkihaXdbbPVJv2K3oHWzI5ucMdmmd3vcnAricR3HbHDkmNN+xHIjMq/UXq5hObZECTKk7sA/0rsbEaUK7N+Md3SF+TwiMn8POC70bfsq/tMckj+jzGTCVioe5RYxHjpB3W5dAzufMuNaVxS9boYsocA545MooaUOMp0/oQsOoqlCxJ4OlWWPa7MdOiIXMWaJQXGVRmbYXKnKNUWfSi8tQLzDMoj6gZKbWhN0qi8aO0WAUC4chQDcjFEkwmXwSfSAnlCkDTjGxuVd/iZOMwOtziuj0OpbUK1V4FWiNfNeoC0Gn94tTkmpTasdol4Ug0nS2U4AuEnwP5JJNIZRBgo0KJAK3etCyi+qYFPjkES6cY2tZAvwkYDWVEJlTVwkA/0nKFaO6+KaU0OoOEi6fSZXJV/jBXB0b4FHNcEJGIx4RKOQebKyBj1d+2VNwKJI0/iP5tLVbXTqDVZhGcVFdjff3g5MOi5dZdKfXMHJBY2dO0Pw+Y/Sd1oCWUZ+gUwDseC6B74VTfkgXXu1vgV6Bo7RKDZi0MBsBkOgVLgPnBQRwpRsWtnttSSrc6Iwm6deks7wBjX6sD95gk4+FERK3TQsU1BPfS9zK9i29N5ErwsJzoCmdhZorY9ZXg8maqXjoBt4sX/1QZpZRtoUOSNvyUxv49xDa6CBDU4a8P6eOJadhXaMG5f4rlaYtsL5RoPToFfImK6E+W4Y3l4OPz8B+J1cBxFd5kWVSbHFLKeqdHkhzpS1cnx3E4dK++Q7a335sbGsH2kq9isQNTD+kvQ6z701KZnGvyqBRPpkQuFhejfEJMkExc4ePJkt6w1URpBx5JvBMrqficCc77yuEa0CcfbQoMKC5tzts+1Kzzl0mpwRMIfkXuDfmSiGK5iuNcEdmCUM8CeQnZEwF6k/k9anbBJ9HoTk7s5Beo19K/Uf+hA7fncvgwtkG8RKyMRONKluOVtUxaVZDllta0+reoB2OrZ5bn3FeV857P/5iyvlNbzIw9aQz1yRsNC67GZVWiMcqhgfqf+guFWxtB7TH0lQAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+    >
+      <img
+        class="gatsby-resp-image-image"
+        style="width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;"
+        alt="code"
+        title=""
+        src="/React-Personal-Blog-Gatsby/static/be30e42a8fdffbf0889a529fd4fd6172/fb8a0/layouts-2.png"
+        srcset="/React-Personal-Blog-Gatsby/static/be30e42a8fdffbf0889a529fd4fd6172/1a291/layouts-2.png 148w,
+/React-Personal-Blog-Gatsby/static/be30e42a8fdffbf0889a529fd4fd6172/2bc4a/layouts-2.png 295w,
+/React-Personal-Blog-Gatsby/static/be30e42a8fdffbf0889a529fd4fd6172/fb8a0/layouts-2.png 590w,
+/React-Personal-Blog-Gatsby/static/be30e42a8fdffbf0889a529fd4fd6172/526de/layouts-2.png 885w,
+/React-Personal-Blog-Gatsby/static/be30e42a8fdffbf0889a529fd4fd6172/e588f/layouts-2.png 1160w"
+        sizes="(max-width: 590px) 100vw, 590px"
+      />
+    </span>
+  </span>
+  
+  </a>
+    </p>
+<p>There’s a few <a href="https://developers.google.com/web/fundamentals/design-and-ui/responsive/patterns/?hl=en">well defined patterns</a> for how a desktop layout collapses into a mobile layout (we’re using “layout shifter”). There are two concepts that you must understand as a developer:</p>
+<ul>
+<li>A “fluid” layout is one that stretches and shrinks to fill the width of the screen, just like the flexible boxes we covered a few chapters ago.</li>
+<li>A “fixed-width” layout is the opposite: it has the same width regardless of the screen dimensions (we created one of these in the CSS Selectors chapter).</li>
+</ul>
+<p>
+  <a
+    class="gatsby-resp-image-link"
+    href="/React-Personal-Blog-Gatsby/static/258df9a09a9003047d222e9549185b2d/9f6e6/fluid-fixed.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+  
+  <span
+    class="gatsby-resp-image-wrapper"
+    style="position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;"
+  >
+    <span
+      class="gatsby-resp-image-background-image"
+      style="padding-bottom: 39.333333333333336%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAICAYAAAD5nd/tAAAACXBIWXMAAAsSAAALEgHS3X78AAAChUlEQVQoz2MQYmBgKs8Jk8hLDRYPNGVmDrCXZy3ODJNIjXLjTY/zFSzOCBJhgIK66Hih/KAw4YrIWIna2AR+kFhJUJhMZmAIX35QqCRY0erl883XL50yef2yqZPXrphru3b5HDcgf9qG5dOa1i+b0rVu2bS6FSvWcoPUrpg+M3jN1BkT106bMX3p5GnO1x8+1N04b8HEVZOndq6fPbfvxOGjvgx7Ny9se3Dj1P8nt0//37pm3rT925YtfH7v3P+7105+f3Dj9L+T+9e9X7xwoTbIwL0rVs2+f/rM//snTv5fN2tOw8evX3c/PHP2/63jJ7/dOHzk/8snT58zHNgyv/Xlw8v/3z65CjRw9tSDO5Yt/Pji1v8n9y79fPno2v+zhzZ8WjB3jhbIwH3LV859efXa/xeXLv9fO31m85efPzc/P3/x/8OLl37dA1ry+unTRwz7Ns/vfPfy4f8v757837x69iygC5d9//Ti//PHd/9/ePPs/5kjW3/MnzMT4sLlKxe+e/T4//t7D/6vnj6z/cuPH7vfXL/x/8mdu/8fX7wMNPDZS4Z921dWnDux59ul0/s+bt+wtPHQ7vU9V88d/Hjl3KF7V84efHVkz7rbixctUQMbuHZ9/8X9B99f3HfgzYYFiwuBXp579eixjxcPHLp76eCh548fPDzHkFPWwRbkqMIb6GEhmpCcoZGQnK4SEeqvHxbkreNiJMSbEB3EU1I3hRFkYGljC2uoq6d8RFCoSWJqhnx0fJJefHySeqinr0FsZKx2dGomHyxFMERktbFExyUoRsUmyMUkpivEJmVKMSCB7JwiMB2dmc0bk5SqHB2XKAPEqhGxCeKxqRkqUfFJ4GQDAM/qVcwA+jqOAAAAAElFTkSuQmCC'); background-size: cover; display: block;"
+    >
+      <img
+        class="gatsby-resp-image-image"
+        style="width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;"
+        alt="code"
+        title=""
+        src="/React-Personal-Blog-Gatsby/static/258df9a09a9003047d222e9549185b2d/fb8a0/fluid-fixed.png"
+        srcset="/React-Personal-Blog-Gatsby/static/258df9a09a9003047d222e9549185b2d/1a291/fluid-fixed.png 148w,
+/React-Personal-Blog-Gatsby/static/258df9a09a9003047d222e9549185b2d/2bc4a/fluid-fixed.png 295w,
+/React-Personal-Blog-Gatsby/static/258df9a09a9003047d222e9549185b2d/fb8a0/fluid-fixed.png 590w,
+/React-Personal-Blog-Gatsby/static/258df9a09a9003047d222e9549185b2d/526de/fluid-fixed.png 885w,
+/React-Personal-Blog-Gatsby/static/258df9a09a9003047d222e9549185b2d/fa2eb/fluid-fixed.png 1180w,
+/React-Personal-Blog-Gatsby/static/258df9a09a9003047d222e9549185b2d/9f6e6/fluid-fixed.png 1200w"
+        sizes="(max-width: 590px) 100vw, 590px"
+      />
+    </span>
+  </span>
+  
+  </a>
+    </p>
+<p>In our example web page, the mobile and tablet versions are fluid, and the desktop version is fixed-width.</p>
+<h3>Choosing breakpoints</h3>
+<p>Most of those responsive design patterns have similar behavior, using fluid layouts for mobile/tablet devices and fixed-width layouts for wider screens. There’s a reason for this.</p>
+<p>Fluid layouts let us target a range of screen widths instead of specific mobile devices. This is very important for web designers. When they set out to create a mobile layout, they aren’t trying to make something that looks good on an iPhone 6s, Galaxy S7, or iPad mini—they’re designing a fluid layout that looks good anywhere between 300 pixels and 500 pixels (or whatever).</p>
+<p>In other words, the exact pixel values for the min-width and max-width parameters in a media query (collectively known as the “breakpoints” for a responsive website) don’t actually matter. Our website doesn’t care about the specific device the user is on. All it needs to know is that it should display a layout that looks pretty at 400 pixels wide (or whatever).</p>
+<h2>Mobile First Development</h2>
+<p>It’s always a good idea to start with the mobile layout and work your way up to the desktop version. Desktop layouts are typically more complex than their mobile counterparts, and <strong>this “mobile-first” approach maximizes the amount of CSS that you can reuse across your layouts</strong>.</p>
+<p>First, we need to fill in responsive.html’s <body> element with some empty boxes. Each box has an image in it so we can tell them apart a little bit easier.</p>
+<div class="gatsby-highlight" data-language="html"><pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>page<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>section menu<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>section header<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>images/header.svg<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>section content<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>images/content.svg<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>section sign-up<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>images/sign-up.svg<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>section feature-1<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>images/feature.svg<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>section feature-2<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>images/feature.svg<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>section feature-3<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>images/feature.svg<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></code></pre></div>
+<p>And here’s our base styles, which should apply to all layouts (mobile, tablet, and desktop). Make sure to add these above the @media rules we created earlier and below the <a href="https://www.internetingishard.com/html-and-css/css-box-model/#resetting-styles">universal selector</a> rule that resets our margins and padding:</p>
+<div class="gatsby-highlight" data-language="css"><pre class="language-css"><code class="language-css"><span class="token selector">.page</span> <span class="token punctuation">{</span>
+  <span class="token property">display</span><span class="token punctuation">:</span> flex<span class="token punctuation">;</span>
+  <span class="token property">flex-wrap</span><span class="token punctuation">:</span> wrap<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">.section</span> <span class="token punctuation">{</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> 100%<span class="token punctuation">;</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> 300px<span class="token punctuation">;</span>
+  <span class="token property">display</span><span class="token punctuation">:</span> flex<span class="token punctuation">;</span>
+  <span class="token property">justify-content</span><span class="token punctuation">:</span> center<span class="token punctuation">;</span>
+  <span class="token property">align-items</span><span class="token punctuation">:</span> center<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">.menu</span> <span class="token punctuation">{</span>
+  <span class="token property">background-color</span><span class="token punctuation">:</span> #5995da<span class="token punctuation">;</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> 80px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">.header</span> <span class="token punctuation">{</span>
+  <span class="token property">background-color</span><span class="token punctuation">:</span> #b2d6ff<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">.content</span> <span class="token punctuation">{</span>
+  <span class="token property">background-color</span><span class="token punctuation">:</span> #eaedf0<span class="token punctuation">;</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> 600px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">.sign-up</span> <span class="token punctuation">{</span>
+  <span class="token property">background-color</span><span class="token punctuation">:</span> #d6e9fe<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">.feature-1</span> <span class="token punctuation">{</span>
+  <span class="token property">background-color</span><span class="token punctuation">:</span> #f5cf8e<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">.feature-2</span> <span class="token punctuation">{</span>
+  <span class="token property">background-color</span><span class="token punctuation">:</span> #f09a9d<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">.feature-3</span> <span class="token punctuation">{</span>
+  <span class="token property">background-color</span><span class="token punctuation">:</span> #c8c6fa<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre></div>
+<p>If you make the browser window narrow, you’ll see that this gives us our entire mobile layout. Pretty easy, huh? No media queries required. That’s why it’s called “mobile-first”—the mobile version doesn’t require any special handling. Also notice that flex-wrap property in the containing .page div. This will make it very easy to implement our tablet and desktop layouts.</p>
+<p>
+  <a
+    class="gatsby-resp-image-link"
+    href="/React-Personal-Blog-Gatsby/static/55fdadde0485e1f046b75e766a8d5905/35d48/mobile.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+  
+  <span
+    class="gatsby-resp-image-wrapper"
+    style="position: relative; display: block;  max-width: 238px; margin-left: auto; margin-right: auto;"
+  >
+    <span
+      class="gatsby-resp-image-background-image"
+      style="padding-bottom: 328.57142857142856%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,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'); background-size: cover; display: block;"
+    >
+      <img
+        class="gatsby-resp-image-image"
+        style="width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;"
+        alt="code"
+        title=""
+        src="/React-Personal-Blog-Gatsby/static/55fdadde0485e1f046b75e766a8d5905/35d48/mobile.png"
+        srcset="/React-Personal-Blog-Gatsby/static/55fdadde0485e1f046b75e766a8d5905/9635e/mobile.png 148w,
+/React-Personal-Blog-Gatsby/static/55fdadde0485e1f046b75e766a8d5905/35d48/mobile.png 238w"
+        sizes="(max-width: 238px) 100vw, 238px"
+      />
+    </span>
+  </span>
+  
+  </a>
+    </p>
+<p>By keeping these base styles outside of the media queries, we’re able to override and add on to them as we implement our specific layouts. This is really convenient when, for instance, your designer wants to tweak the color scheme for the entire website. Instead of tracking down redundant background-color declarations in several @media rules, you only have to update it here. That change automatically applies to the mobile, tablet, and desktop layouts.</p>
+<h3>Tablet Layout</h3>
+<p>On to the tablet layout. The only difference between the mobile and tablet mockups is that the Sign Up and Feature sections form a 2×2 grid instead of a single column.</p>
+<p>Flexbox makes this real easy. Simply adjust the widths of the flex items to be half the screen and flex-wrap will take care of the rest. Of course, we only want this behavior to apply to tablet-sized screens, so it needs to go into an @media rule. Replace the existing /_ Tablet Styles _/ media query with the following:</p>
+<div class="gatsby-highlight" data-language="css"><pre class="language-css"><code class="language-css"><span class="token comment">/* Tablet Styles */</span>
+<span class="token atrule"><span class="token rule">@media</span> only screen and <span class="token punctuation">(</span><span class="token property">min-width</span><span class="token punctuation">:</span> 401px<span class="token punctuation">)</span> and <span class="token punctuation">(</span><span class="token property">max-width</span><span class="token punctuation">:</span> 960px<span class="token punctuation">)</span></span> <span class="token punctuation">{</span>
+  <span class="token selector">.sign-up,
+  .feature-1,
+  .feature-2,
+  .feature-3</span> <span class="token punctuation">{</span>
+    <span class="token property">width</span><span class="token punctuation">:</span> 50%<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre></div>
+<p>To see these changes, make sure your browser window is between 400 pixels and 960 pixels wide, then scroll down to the bottom of the page. You should see a colorful grid:</p>
+<p>
+  <a
+    class="gatsby-resp-image-link"
+    href="/React-Personal-Blog-Gatsby/static/081d9ecf754a37c1e93fb8e75c6f049e/ad753/tablet.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+  
+  <span
+    class="gatsby-resp-image-wrapper"
+    style="position: relative; display: block;  max-width: 340px; margin-left: auto; margin-right: auto;"
+  >
+    <span
+      class="gatsby-resp-image-background-image"
+      style="padding-bottom: 197.05882352941174%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAnCAYAAAAPZ2gOAAAACXBIWXMAAAsSAAALEgHS3X78AAAGg0lEQVRIx6WW2VMb2RWHW0nlb0glb1NZHvKYvyM1qkqe8hBnKZJMzdgxlmA8GdsT11TGksFsMgKDzWonHmOwgTFgBGJHEkKWhDYEAgkhg9COpEYwoL6/nO5mEZ6ME9fcqq/OvX27vz73dEt9OY7agtXGfdd2p65B7owZJxVifPK078e2Vw71ksujcjhdKseSW2WzO1VWm121SIiR5um4S553uq44Xe5Ks8VaVq6u/IHo+LKnl+P8K4Hvi4Opmblfg9r+wdc4KjIcFgX8tyYeZUSRyePtaIxdu37zPdHR3tGt4AKr/u+Jg9nZ2fe/3t9DMh49zKQSxXQyXtzLZ4t0jOAlDgr5YoHPSdDc0UGBZ7Gd7ewnf7/xU9HR0vpAwV3WT0nC8ppnSvWjNZR3+oXLHT5W3rnM/tbuZZfaPKeI4xKE8q4VXGpZzP/xw6s/ER1lnzQoOHW7XRKqGw3Kq8/SUD+JCuon24zAtxMVI6vsTUD1MMD/6eKnkvAv15sVXM98RBK2DS4oJzcBQwACwUYD1F8DxtbPIx4T5whmDAGDzjx/qeIzSfh5PdXw4VRYEjY/MyuH6cR+LxP6PYwN+ICnr3g8tqRP+bcpgT7nAQa8dJ5HYF+tAE+sWf6iWhZ+VtOl4B5Ny8J7z83Kl3T3QR+EAS9jL/zAY1Mc7YZVdE+G0WkMSv2ni1mIcwNegQ2t0k1tZ8J/1JKw+zRDi3JIyhACwfq9Uh/9vmO8JZF47oGc4WKO/6g0w57ZkFzDAZNycoNqtCIIBCMgUzxGOMfoSpEZqaaDjgzV8IZcw7pOBWd3+SThy/FJZSa/j51kVthJ7jICbyOa2GXJ7B7WNl7zlVevScLG5vsKzun2SsJREmb5AuKpXSGeyjACbyWZYZkcj2A4cirUi0JHiXCX35eEMcqQQCyZ+RakOZbO8lgvyVD/ZoZnQjHDXSQzuW+QSGdPxMfCyP8WEky8aC20idVgGAGCLpRiaHNLPOfdhdF4Ck63D9ZXTtiXPPD6A3jldMMfCJ5k+f8LT5YsZilGUVAa33nJ4sknshLB6Q3ibxO+/SmfIL4m6XPEkmkS5hHc2CwRtiq4pWOhYXxCmaP3MJHKCAQjIJMmSJouvMEeS+ePsL4ZI+F1+cW+16bgFpYCkvDF2KwymmMIJ/eFcKLACIhsJA8QiWWQCc28CeMjJkQ8Bv7jygpJ2Ky7reAmHfKfQ5/BolzNAJ4dJrijjFGkvgBXDFh5ncSeTUPcOo287RY7dGqxM/tP/qrqQ0nYUqVScFOODVk4alKu79LFSQgEW44D/gSwnAQCWykUnHXYX6rHAXEcmeDVIWq6w3+s+kgWVleeCfuNi0pRMOeJCtOu18wWzMFC5jkyrm2nEDdXIzylRWhSK8V1o4ZFZm5je66K/7Ty4rGw4kw4MEFCyopKIEzYQ8yymsK8N0rCFNa2koiZqkimwZpRg/C0Fr6XX7D1CS22Zm/z184LQ2dLphqSVCDYcozBHxMgLn1VrKGjTlp2wVl/Ajvy0JLnq6mGJUuedG9Jwl5a8uoePZQ0BE8KjICIK03CWBb7Ds05CnYNK7pvI246eyit1fRQLCMz8mvzuF8ZdQYRti4LGwvLjMCGlVjw0zE3IjbDOTYXDSzqNGJ55iu+4opKEuqqbik4X229JJzQVikPWu4j29gkEIzAbmMzcjod4m1fYm4eMnOnMIsFGB/P85fL5W/KLQ19Rj13myTh+J065UHXI+QedAgEI6jfiXzrA8S6+7BgPoTVcoRFwirD7DZ6iMYECeVfilbbTkKdXhJO19QrU/fbEbzbJKzr9Cx0twkBnR7Bep0knJ7KYmx0B4bRKMYMOxgd2WLG8QQIXqW+KQk12o4z4QwJYy0PsNLQKPjq77JAQyMcNQ3w1NSS8BllksLIcARDL0KiDP3PV9jwUBjGsTivrvj8m8Lx6tr399o6kW1tOySKEvfbi7l7rcVYV2/RYjokjooLZkKOR1aLgAljMnu5XP6MajQk9Or00v7QWF37GzzuwVHnQxSpljL/AuvoQqFnCC4nZBxyXLIDPg8wNZFG+ZUbP5NrSN/l+Tt1UoaDX2h/6dPpF5Z1evMJPl2T2V+vM7vudZuHhzYkRo7j8FDI9HJk09rX6x776weqH4mOmzcbpd0w523Qf6f99c/f++HZINveKe+1q2oUtMOV7kDxnTjXLvyhjPvVL34r9X/3+7J350IZd+HCn2UXxf8A7WoFjIbiNY4AAAAASUVORK5CYII='); background-size: cover; display: block;"
+    >
+      <img
+        class="gatsby-resp-image-image"
+        style="width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;"
+        alt="code"
+        title=""
+        src="/React-Personal-Blog-Gatsby/static/081d9ecf754a37c1e93fb8e75c6f049e/ad753/tablet.png"
+        srcset="/React-Personal-Blog-Gatsby/static/081d9ecf754a37c1e93fb8e75c6f049e/7f1de/tablet.png 148w,
+/React-Personal-Blog-Gatsby/static/081d9ecf754a37c1e93fb8e75c6f049e/4896a/tablet.png 295w,
+/React-Personal-Blog-Gatsby/static/081d9ecf754a37c1e93fb8e75c6f049e/ad753/tablet.png 340w"
+        sizes="(max-width: 340px) 100vw, 340px"
+      />
+    </span>
+  </span>
+  
+  </a>
+    </p>
+<p>Again, it doesn’t matter what the exact width of the screen is: this layout will fluidly respond to any width in the media query’s range. Our mobile layout is also fluid, so we now have a website that looks beautiful (if a bit empty) in every device smaller than 960px wide.</p>
+<h3>Desktop Layout</h3>
+<p>And that’s where our desktop layout comes in. We don’t want our web page to expand endlessly, so we’re going to give it a fixed width and center it with auto-margins. As with tablet styles, this needs to go into a media query. Replace the existing /_ Desktop Styles _/ media query with the following:</p>
+<div class="gatsby-highlight" data-language="css"><pre class="language-css"><code class="language-css"><span class="token comment">/* Desktop Styles */</span>
+<span class="token atrule"><span class="token rule">@media</span> only screen and <span class="token punctuation">(</span><span class="token property">min-width</span><span class="token punctuation">:</span> 961px<span class="token punctuation">)</span></span> <span class="token punctuation">{</span>
+  <span class="token selector">.page</span> <span class="token punctuation">{</span>
+    <span class="token property">width</span><span class="token punctuation">:</span> 960px<span class="token punctuation">;</span>
+    <span class="token property">margin</span><span class="token punctuation">:</span> 0 auto<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token selector">.feature-1,
+  .feature-2,
+  .feature-3</span> <span class="token punctuation">{</span>
+    <span class="token property">width</span><span class="token punctuation">:</span> 33.3%<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token selector">.header</span> <span class="token punctuation">{</span>
+    <span class="token property">height</span><span class="token punctuation">:</span> 400px<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre></div>
+<p>This gives us the correct widths for everything, and we have more real estate to play with, so we made the header a little taller, too. Almost there, but our desktop layout calls for some reordering: the Sign Up and Content boxes should appear underneath all the Feature sections.</p>
+<p>
+  <a
+    class="gatsby-resp-image-link"
+    href="/React-Personal-Blog-Gatsby/static/8479d0ab05eaff73083a8d57c490159b/258d9/desktop.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+  
+  <span
+    class="gatsby-resp-image-wrapper"
+    style="position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;"
+  >
+    <span
+      class="gatsby-resp-image-background-image"
+      style="padding-bottom: 73.98230088495575%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAPCAYAAADkmO9VAAAACXBIWXMAAAsSAAALEgHS3X78AAAECklEQVQ4y22S208cdRTHhxfT2FdjjKaaBW0fTBq3xECb9MU/wcRYsECrXCpo4i2++NCNmlRYLFRQsahAI62AoVzaxIVSoBT2zu66ywK7sFdgZ3ZmdmEvw87OzO/rb7EPJvpLPjnn/M5nfg/nDJOK+59GbrcacvIsFIHC/5tqFLjz2n7sBSG69hSy8WoUk+f+15OTJe8EM/rAo79ni2smFwsKMbk4mNwcntTqUlDC3aWgYWTWrZu2xrSj/n895R8vYGT6TGH9oPVQG7LJGLQWyIBFwoA5X8pLqGPrwM35pKHvz2D5oDlHbh15h2TALOHXlSeeRVLG/NR7yBqZ24/39JN+qFP0Q4o27pHJH6sSoXeE1srcDjBqzxiGl3ndhB/a1Cb1NqFN+GQy7s6R6QDI5BaKc0lgxC0ZmRl7WG8NSao9KsMWPiSl6IgWYYsUiC1cUNZTwLxPMMyZRnUOj1Pz+JywegJk1qVhxgMsWkQ4Z73KpjWOxWmbkVlb39DzQkoV0/sQU2nCJnkkWA6CmCJCKq2oGkEoxhlid2t0WUeHVnR9Bd5xm1iWClhe0bB5z4dsb4+CwVvYudFjZLz+DT3Hp1Q+tY+kmCY7exxiOwnQO0JrRVYJtqKsITr1ro63dmmC5Rr27KNkaTGLBwtZ+O/7wX7/g5IbGkakt8/IuNYC+p3kvpoQs9jlM2RPyGFPzB3lFCVXBNYjvCEyUafLOLs02dMOzjFCrCsKzDbaow9m+voU/HYHsd4fjcyil9X/xUL10aGu8SCuWB7OSBa0Jl4BSlQBLOG8wWJZ0W1EE9rWLoeNeIqsbhdgDx7CF5IQ2OQVNqHA6QzRGT4a0Iu+39XMxjB2vXPEsarBToe9/ihCxLEJpWhaxPbQHcNCCroAK2shEdgWVBJkcwgkMjQvYiulKrwGuCOikYnMX3tt3/pNMW02aJxtWH00n1cfLuRV/5RPFW90y9LPA4h3dF51FxUdyyUVni6LF0SV40WVTQpqki6U1nJBVrAdinQw4YXOSsnTg6L3Og58k3DQuVgdQHgujGx/P/0JxxHr+u5rV0GtSB/kkCsoyEgyhHSWLvEAmXwB6ayE0tmOxLsZ/0z7KdH6rVtytTtZx4ht5bHsXLYQh//+mv2g7yeLcPOX7UBnV5sjX3g+Etv1JJLiKsXO8iknJ6RLsYR5l+VDaxvBzxj6MGP44tPjTc3NlU3NV6oaWz44/V5z25nGptbXGxtbqt9vaa3w9A+VfXz1y7Lr3T3HWlo/fLXpStsZyunGltYqGitpPPvRJ58/t7xiL2NK59iJ82U1dZfLKRW1dQ0vUspr6y+9Ult/+eTbFxueKTlvVJ07ci+8U/9szcWGlyjUu3SS8jLl1JtvXThe6v8NJIuT/ucyGh4AAAAASUVORK5CYII='); background-size: cover; display: block;"
+    >
+      <img
+        class="gatsby-resp-image-image"
+        style="width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;"
+        alt="code"
+        title=""
+        src="/React-Personal-Blog-Gatsby/static/8479d0ab05eaff73083a8d57c490159b/fb8a0/desktop.png"
+        srcset="/React-Personal-Blog-Gatsby/static/8479d0ab05eaff73083a8d57c490159b/1a291/desktop.png 148w,
+/React-Personal-Blog-Gatsby/static/8479d0ab05eaff73083a8d57c490159b/2bc4a/desktop.png 295w,
+/React-Personal-Blog-Gatsby/static/8479d0ab05eaff73083a8d57c490159b/fb8a0/desktop.png 590w,
+/React-Personal-Blog-Gatsby/static/8479d0ab05eaff73083a8d57c490159b/526de/desktop.png 885w,
+/React-Personal-Blog-Gatsby/static/8479d0ab05eaff73083a8d57c490159b/258d9/desktop.png 1130w"
+        sizes="(max-width: 590px) 100vw, 590px"
+      />
+    </span>
+  </span>
+  
+  </a>
+    </p>
+<p>This is where flexbox really shines. Trying to create this combination of mobile and desktop layouts would be very difficult with floats. With flexbox’s order property, it’s just a few lines of CSS. Append these rules to the desktop media query:</p>
+<div class="gatsby-highlight" data-language="css"><pre class="language-css"><code class="language-css"><span class="token selector">.sign-up</span> <span class="token punctuation">{</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> 200px<span class="token punctuation">;</span>
+  <span class="token property">order</span><span class="token punctuation">:</span> 1<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">.content</span> <span class="token punctuation">{</span>
+  <span class="token property">order</span><span class="token punctuation">:</span> 2<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre></div>
+<p>Ta da! A responsive website! Not bad for less than a hundred lines of CSS. More importantly, we didn’t have to alter a single line of HTML to accommodate our mobile, tablet, and desktop layouts.</p>
+<p>This was just one example of laying out a responsive site. You can use these exact same techniques to implement all sorts of other designs. Start with the base styles that apply to your entire site, then tweak them for various device widths by selectively applying CSS rules with @media. You could even add another media query to, say, create a dedicated layout for ultra-widescreen monitors.</p>
+<h2>Disabling Viewport Zooming</h2>
+<p>Before responsive design was a thing, mobile devices only had a desktop layout to work with. To cope with this, they zoomed out to fit the entire desktop layout into the width of the screen, letting the user interact with it by zooming in when necessary.</p>
+<p>
+  <a
+    class="gatsby-resp-image-link"
+    href="/React-Personal-Blog-Gatsby/static/5c4be6158e95aad554c974c3556d4318/ea230/zoom.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+  
+  <span
+    class="gatsby-resp-image-wrapper"
+    style="position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;"
+  >
+    <span
+      class="gatsby-resp-image-background-image"
+      style="padding-bottom: 63.44086021505376%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAANCAYAAACpUE5eAAAACXBIWXMAAAsSAAALEgHS3X78AAADh0lEQVQ4y2WR709aVxjH6dautmavlizbktK+XDLtm2Vrtyxb4pY0W6sIxm5vtnTZX9DFKnR1YtemY2sjtu6dWZaFVhxBwWEjIL+ugFavgMhFfgoU5cK9gBcRUeDeZ/de7PZiJ/nmPDnPJ5/z5ByBgF2/jT18NeAynMusW844Z34XeixqIY7ZziIm/Vvn3us6xjHKkQfcJrh99+eWoNtw9jDlFkadGuGGQy3kamzJeEYmV5zgIZsdubUcSMCCd7M85wpUzUsbFacv0Vj1hxKjvwy/zjF/G2aPc/u82dhlWw6CaTm2N4OsV/UO/77xWexg0RepmJ7OvM8LF1e8t3VBgD89QD9G90HlqcGTEIBhKU5M3L/+JsdY7Ah/uxddkjxxk6C0lplH1iI8su7AqL0CaiQBVsPkh7zQ4/XJsWgEVoObNZOPYRwrVMPvSoLLsYrfH7vzBscgTjcv9HtRsWWjAoYI1Ke8ezQXtmZMXrxh0Ko+EDShZXl1bQSoZ2M1ZKHOYLo1uvpQCZh2CpfqdPyEC04XL/SsopJgkoQwXm2EMxWGT7YKnmCC1mrUTaHPg8pL4b+A8E/VXCsME7DE6d0JLfifGvEfHv/BC52uphBFUUkGz8IORTWyOYLhQpV2IRKN0erJyabQ6/PLE4UGxPJ0LbhdYUL4AZ0qAaDrEfzOre//J0xncpDLU41YMs1sprYZcmcXQpE4Pfmf0CcvsIdFqlzDiTyTyxcbu5UD8K9juEw2wL+h0+l8IRQ/38ahQJXrZLHEsKEL1B4TisToCfVEUxjAsOFiqQxZslBPpjOwlckxxdIeBEPhrFz+Iz+h273Y/JQ1nySB70A8V6HDWxRE2CSIfcBizxn9tPZIGAgMlstlyBHEfigcrqdSqcN8Pg/JZDI9IJXyE9rt9uNHE4pIkgSCIA+i0Vg9Ft+ssXU9vbV1ODU9fZEXajSa18zz8+fZtCMI0mY2m887HI42nV7/9tfXrr3MMePj4zyrUqla54xz7fNHrM1mbbfbbW2zs7Pv3FMoTglerC5x72ed3T0ffdEpviDu/erLK909n4gkVy9wvW++/U5w6bKI5y6LJK1dkt4Olu/4/Er3u6Keq51s/Sl79vG/shHl6LG+flmr4tcHJ4aGfzo5ODR88sbAzdNsWrh+xyWRoK9fyrPX+/pf6huQnb57T/EKx94cHGq5IeVY2akRpVLwD5+IXZd9ugwZAAAAAElFTkSuQmCC'); background-size: cover; display: block;"
+    >
+      <img
+        class="gatsby-resp-image-image"
+        style="width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;"
+        alt="code"
+        title=""
+        src="/React-Personal-Blog-Gatsby/static/5c4be6158e95aad554c974c3556d4318/fb8a0/zoom.png"
+        srcset="/React-Personal-Blog-Gatsby/static/5c4be6158e95aad554c974c3556d4318/1a291/zoom.png 148w,
+/React-Personal-Blog-Gatsby/static/5c4be6158e95aad554c974c3556d4318/2bc4a/zoom.png 295w,
+/React-Personal-Blog-Gatsby/static/5c4be6158e95aad554c974c3556d4318/fb8a0/zoom.png 590w,
+/React-Personal-Blog-Gatsby/static/5c4be6158e95aad554c974c3556d4318/526de/zoom.png 885w,
+/React-Personal-Blog-Gatsby/static/5c4be6158e95aad554c974c3556d4318/ea230/zoom.png 930w"
+        sizes="(max-width: 590px) 100vw, 590px"
+      />
+    </span>
+  </span>
+  
+  </a>
+    </p>
+<p>This default behavior will prevent mobile devices from using our mobile layout, which is obviously very terrible. To disable it, add the following element to the <head> of our document. Just like <meta charset='UTF-8'/>, this is a critical element that should be on every single web page you create:</p>
+<div class="gatsby-highlight" data-language="html"><pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span>
+  <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>viewport<span class="token punctuation">"</span></span>
+  <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>width=device-width, initial-scale=1.0, maximum-scale=1.0<span class="token punctuation">"</span></span>
+<span class="token punctuation">/></span></span></code></pre></div>
+<h2>Conclusion</h2>
+<p>Believe it or not, that’s actually all you need to know to create responsive websites. If we boil it down, we’re really only concerned with three things:</p>
+<ul>
+<li>The responsive design (the mockups for each layout)</li>
+<li>CSS rules for implementing each of those layouts</li>
+<li>Media queries for conditionally applying those CSS rules</li>
+</ul>
+<p>We started this chapter by learning about the difference between fluid layouts and fixed-width layouts. Then, we went on to create a mobile-first stylesheet that used media queries to build tablet and desktop layouts on top of a shared set of base styles. Finally, we disabled the default viewport zoom behavior of mobile browsers.</p>
+<p>So, that was the easy part of responsive design. In the next chapter, we’ll discover the hard part: images. Presenting different CSS to specific devices isn’t too bad, but optimizing images for those devices requires a bit more planning.</p>
+<p>See you on the next post.</p>
+<p>Sincerely,</p>
+<p><strong>Eng Adrian Beria.</strong></p></div><hr style="margin-bottom:1.625rem"/><ul style="display:flex;flex-wrap:wrap;justify-content:space-between;list-style:none;padding:0"><li><a rel="prev" href="/React-Personal-Blog-Gatsby/37-flexbox/">← <!-- -->Mastering CSS - Flexbox</a></li><li><a rel="next" href="/React-Personal-Blog-Gatsby/40-responsive-images/">Mastering CSS - Responsive Images<!-- --> →</a></li></ul></div></div></div><script>
+  
+  
+  if(true) {
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  }
+  if (typeof ga === "function") {
+    ga('create', 'undefined', 'auto', {});
+      
+      }
+      </script><script id="gatsby-script-loader">/*<![CDATA[*/window.page={"componentChunkName":"component---src-templates-blog-post-js","jsonName":"39-responsive-89d","path":"/39-responsive/"};window.dataPath="858/path---39-responsive-89-d-4e0-JoNSMfZJmlYTuU7FCZ49w0i0sM";/*]]>*/</script><script id="gatsby-chunk-mapping">/*<![CDATA[*/window.___chunkMapping={"app":["/app-4e11346c8e77271929a6.js"],"component---node-modules-gatsby-plugin-offline-app-shell-js":["/component---node-modules-gatsby-plugin-offline-app-shell-js-0d0a529deb4700809c6b.js"],"component---src-templates-blog-post-js":["/component---src-templates-blog-post-js.08eb512c534233bffd38.css","/component---src-templates-blog-post-js-447bf4a52774d7d624f1.js"],"component---src-pages-404-js":["/component---src-pages-404-js-12d1e7628384a501a7eb.js"],"component---src-pages-index-js":["/component---src-pages-index-js-d957837aa6e586a5cd6b.js"]};/*]]>*/</script><script src="/React-Personal-Blog-Gatsby/webpack-runtime-7ab23110f6cf4610ce74.js" async=""></script><script src="/React-Personal-Blog-Gatsby/0-e0d2f349bc4c793dea0c.js" async=""></script><script src="/React-Personal-Blog-Gatsby/1-0ca38feffad4eeaaf45d.js" async=""></script><script src="/React-Personal-Blog-Gatsby/component---src-templates-blog-post-js-447bf4a52774d7d624f1.js" async=""></script><script src="/React-Personal-Blog-Gatsby/app-4e11346c8e77271929a6.js" async=""></script></body></html>
