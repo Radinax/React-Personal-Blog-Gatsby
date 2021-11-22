@@ -28,7 +28,7 @@ class Bio extends React.Component {
           }}
         />
         <p>
-          Personal blog by React JS Web Developer <a href="https://radinax.github.io/gatsby-react-personal-portfolio/"><strong>Adrian Beria</strong></a>. Lets take a journey together into learning React.
+          Personal blog by React JS Web Developer <a href="https://radinax.github.io/gatsby-react-personal-portfolio/"><strong>Adrian Beria</strong></a>. Lets take a journey together into learning React!
         </p>
       </div>
     )
